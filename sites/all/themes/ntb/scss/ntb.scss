@@ -1,0 +1,16 @@
+@import 'bootstrap';
+@import 'compass';
+
+.navbar-fixed-top {
+  margin-top: -50px;
+}
+
+.user-nav {
+  @include background-image(linear-gradient(to right, $primary-blue, white));
+}
+
+#logo {
+  margin: auto;
+  width: 410px;
+  display: block;
+}

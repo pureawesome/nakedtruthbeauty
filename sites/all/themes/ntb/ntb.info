@@ -1,0 +1,19 @@
+; Theme info
+name = Naked Truth Beauty
+description = Theme for Naked Truth Beauty site
+version = 1.0
+core = 7.x
+
+regions[header] = Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = Left sidebar
+regions[sidebar_second] = Right sidebar
+regions[footer] = Footer
+
+; Custom Stylesheets
+stylesheets[all][] = css/ntb.css
+
+; Custom JavaScript
+scripts[] = js/ntb.behaviors.js
