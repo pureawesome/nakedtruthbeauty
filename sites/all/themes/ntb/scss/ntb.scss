@@ -9,6 +9,10 @@
   @include background-image(linear-gradient(to right, $primary-blue, white));
 }
 
+.nav>li>a:hover, .nav>li>a:focus {
+  background: lighten($primary-blue, 20%);
+}
+
 #logo {
   margin: auto;
   width: 410px;
