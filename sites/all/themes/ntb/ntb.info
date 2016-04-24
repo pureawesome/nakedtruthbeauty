@@ -16,4 +16,4 @@ regions[footer] = Footer
 stylesheets[all][] = css/ntb.css
 
 ; Custom JavaScript
-scripts[] = js/ntb.behaviors.js
+;scripts[] = js/ntb.behaviors.js
