@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Site Marquee feature.
+ */
+
+include_once 'site_marquee.features.inc';
