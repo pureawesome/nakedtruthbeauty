@@ -17,3 +17,6 @@ stylesheets[all][] = css/ntb.css
 
 ; Custom JavaScript
 ;scripts[] = js/ntb.behaviors.js
+
+; Panels Layouts
+plugins[panels][layouts] = layouts

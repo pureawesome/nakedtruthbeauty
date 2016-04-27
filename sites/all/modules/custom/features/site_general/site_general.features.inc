@@ -24,6 +24,30 @@ function site_general_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function site_general_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: tile_square__500x500_.
+  $styles['tile_square__500x500_'] = array(
+    'label' => 'Tile Square (500x500)',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 500,
+          'height' => 500,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function site_general_node_info() {

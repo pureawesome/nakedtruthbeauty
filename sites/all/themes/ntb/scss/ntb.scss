@@ -1,20 +1,7 @@
+@import 'fonts';
+@import 'variables';
 @import 'bootstrap';
 @import 'compass';
 
-.navbar-fixed-top {
-  margin-top: -50px;
-}
-
-.user-nav {
-  @include background-image(linear-gradient(to right, $primary-blue, white));
-}
-
-.nav>li>a:hover, .nav>li>a:focus {
-  background: lighten($primary-blue, 20%);
-}
-
-#logo {
-  margin: auto;
-  width: 410px;
-  display: block;
-}
+@import 'front';
+@import 'theme';

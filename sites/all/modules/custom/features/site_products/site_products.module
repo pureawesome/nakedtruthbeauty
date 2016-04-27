@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Site Products feature.
+ */
+
+include_once 'site_products.features.inc';
