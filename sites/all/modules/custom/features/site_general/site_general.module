@@ -5,3 +5,36 @@
  */
 
 include_once 'site_general.features.inc';
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function site_general_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['square'] = array(
+    'label' => t('Square Tile'),
+    'custom settings' => FALSE,
+  );
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function site_general_preprocess_node(&$vars) {
+  if ($vars['view_mode'] == 'square') {
+    $vars['theme_hook_suggestions'][] = 'node__square';
+    $node = $vars['node'];
+    $type = $node->type;
+
+    if ($type == 'product_display') {
+      $image_uri = $vars['content']['product:field_primary_image']['#items'][0]['uri'];
+    }
+    else {
+      $image_uri = $vars['field_primary_image'][0]['uri'];
+    }
+    $img_array = array(
+      'style_name' => 'tile_square_500x500',
+      'path' => $image_uri,
+    );
+    $vars['image'] = theme('image_style', $img_array);
+  }
+}
