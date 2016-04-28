@@ -9,3 +9,4 @@ sites/*/private
 
 bower_components/*
 sites/all/themes/ntb/.sass-cache
+.sass-cache
