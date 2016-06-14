@@ -1,0 +1,16 @@
+.line {
+  display: block;
+  padding-bottom: 15px;
+
+  .img,
+  .title {
+    display: inline-block;
+  }
+
+  @include breakpoint(960px) {
+    .img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

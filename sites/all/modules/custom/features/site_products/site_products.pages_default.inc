@@ -19,7 +19,7 @@ function site_products_default_page_manager_pages() {
   $page->access = array();
   $page->menu = array(
     'type' => 'normal',
-    'title' => '',
+    'title' => 'Shop',
     'name' => 'main-menu',
     'weight' => '0',
     'parent' => array(
@@ -53,7 +53,7 @@ function site_products_default_page_manager_pages() {
     'name' => '',
   );
   $display = new panels_display();
-  $display->layout = 'threecol_25_50_25_stacked';
+  $display->layout = 'ntb_main';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(

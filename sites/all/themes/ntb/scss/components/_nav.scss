@@ -1,0 +1,96 @@
+.navbar-fixed-top {
+  margin-top: 0;
+
+  .navbar-collapse {
+    max-height: 100%;
+    @include background-image(linear-gradient($primary-blue, #ffcc99));
+
+    &.in {
+      height: 100vh;
+    }
+  }
+}
+
+.navbar-default {
+  background-color: $white;
+  border: none;
+
+  .navbar-nav > li > a {
+    display: inline-block;
+    width: 100%;
+    color: #333;
+    font-size: 20px;
+    padding: 20px 25px;
+  }
+
+  .navbar-nav > .active > a {
+    background: rgba($white, 0.5);
+
+    &:hover,
+    &:focus {
+      background: rgba($white, 0.5);
+    }
+  }
+
+  .navbar-toggle {
+    &:hover, &:focus {
+      background-color: rgba($primary-blue, 0.5);
+    }
+    .icon-bar {
+      background-color: $secondary-blue;
+    }
+  }
+}
+
+.navbar-nav > li > a {
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.navbar-toggle {
+  border: 0;
+  position: absolute;
+  margin: 0 auto;
+  right: 15px;
+  top: 10px;
+
+
+}
+
+.navbar-form.navbar-search {
+  width: 100%;
+  display: inline-block;
+  border: 0;
+  margin: 7px 0;
+
+  .btn {
+    display: none;
+  }
+}
+
+.nav>li>a:hover,
+.nav>li>a:focus {
+  background: lighten($primary-blue, 20%);
+}
+
+.user-nav {
+  @include background-image(linear-gradient(to right, $primary-blue, white));
+}
+
+#navigation {
+  display: none;
+}
+
+
+@include breakpoint($nav-break) {
+  #navigation {
+    display: block;
+  }
+
+  .navbar-fixed-top {
+    margin-top: -50px;
+    @include background-image(linear-gradient(to right, $primary-blue, white));
+    height: 50px;
+    overflow: hidden;
+  }
+}

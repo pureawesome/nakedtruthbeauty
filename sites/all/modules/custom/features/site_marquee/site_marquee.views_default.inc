@@ -37,7 +37,7 @@ function site_marquee_views_default_views() {
   $handler->display->display_options['fields']['field_marquee_image']['table'] = 'field_data_field_marquee_image';
   $handler->display->display_options['fields']['field_marquee_image']['field'] = 'field_marquee_image';
   $handler->display->display_options['fields']['field_marquee_image']['label'] = '';
-  $handler->display->display_options['fields']['field_marquee_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_marquee_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_marquee_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_marquee_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_marquee_image']['settings'] = array(
@@ -49,7 +49,10 @@ function site_marquee_views_default_views() {
   $handler->display->display_options['fields']['field_marquee_link']['table'] = 'field_data_field_marquee_link';
   $handler->display->display_options['fields']['field_marquee_link']['field'] = 'field_marquee_link';
   $handler->display->display_options['fields']['field_marquee_link']['label'] = '';
-  $handler->display->display_options['fields']['field_marquee_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_marquee_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_marquee_link']['alter']['text'] = '[field_marquee_image]';
+  $handler->display->display_options['fields']['field_marquee_link']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_marquee_link']['alter']['path'] = '[field_marquee_link]';
   $handler->display->display_options['fields']['field_marquee_link']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';

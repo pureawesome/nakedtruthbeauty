@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Square Tile view mode node template.
+ * Line view mode node template.
  */
 ?>
-<div class="tile <?php print $type; ?>">
+<div class="line <?php print $type; ?>">
   <?php if (isset($image)): ?>
     <div class="img">
       <?php print render($image); ?>

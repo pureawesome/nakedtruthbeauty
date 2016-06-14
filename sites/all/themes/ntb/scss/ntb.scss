@@ -1,7 +1,20 @@
-@import 'fonts';
-@import 'variables';
+@import 'base/fonts';
+@import 'base/variables';
 @import 'bootstrap';
 @import 'compass';
+@import 'breakpoint';
 
-@import 'front';
-@import 'theme';
+/* View components */
+@import 'components/header';
+@import 'components/nav';
+
+/* View types */
+@import 'display/tile';
+@import 'display/line';
+
+/* View displays */
+@import 'view/front';
+@import 'view/product';
+
+/* General Theming */
+@import 'extra/theme';

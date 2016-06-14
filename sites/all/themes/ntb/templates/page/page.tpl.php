@@ -75,14 +75,33 @@
 
   <div id="page-wrapper"><div id="page">
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <?php if ($main_menu || $secondary_menu): ?>
-          <div><div class="section container-fluid">
-            <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
+
+      <?php if ($main_menu || $secondary_menu): ?>
+        <div><div class="section container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="h3 mobile-logo" href="<?php print $front_page; ?>">naked<span>truth</span></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navbar-1">
+            <form class="navbar-form navbar-left pull-right navbar-search" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
             <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
-          </div></div> <!-- /.section, /#navigation -->
-        <?php endif; ?>
-      </div>
+            <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
+          </div><!-- /.navbar-collapse -->
+        </div></div> <!-- /.section, /#navigation -->
+      <?php endif; ?>
+
     </nav>
 
     <div id="header"><div class="section clearfix container-fluid">
@@ -133,13 +152,15 @@
 
     <?php if ($main_menu): ?>
       <div id="navigation"><div class="section container-fluid">
-        <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
+        <nav class="navbar-default">
+          <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
+        </nav>
       </div></div> <!-- /.section, /#navigation -->
     <?php endif; ?>
 
-    <?php if ($breadcrumb): ?>
+    <!-- <?php if ($breadcrumb): ?>
       <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
+    <?php endif; ?> -->
 
     <?php print $messages; ?>
 
