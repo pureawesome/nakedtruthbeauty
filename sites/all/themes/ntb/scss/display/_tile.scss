@@ -2,41 +2,85 @@
   position: relative;
   margin-bottom: 15px;
 
-  .title {
-    position: absolute;
-    width: 100%;
+  a {
     text-align: center;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    background: rgba($secondary-blue, 0.5);
-    opacity: 0;
-    @include transition(opacity 0.5s ease-in-out);
-
-    h3 {
-      display: table;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-    }
-
-    a {
-      display: table-cell;
-      vertical-align: middle;
-
-      text-align: center;
-      color: #fff;
-      text-decoration: none;
-    }
   }
-u
-  &:hover {
+}
+
+@include breakpoint($screen-xs) {
+  .tile {
+    display: inline-block;
+
+    .img,
     .title {
-      opacity: 1;
+      float: left;
+      display: inline;
+    }
+
+    .img {
+      width: 30%;
+    }
+    .title {
+      position: absolute;
+      width: 70%;
+      height: 100%;
+
+      h3 {
+        display: table;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      a {
+        display: table-cell;
+        vertical-align: middle;
+      }
     }
   }
+}
+
+@include breakpoint($screen-sm) {
+  .tile {
+    .img,
+    .title {
+      width: 100%;
+      display: block;
+      position: relative;
+    }
+  }
+}
+
+@include breakpoint($screen-md) {
+  .tile {
+    .title {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background: rgba($secondary-blue, 0.5);
+      opacity: 0;
+      @include transition(opacity 0.5s ease-in-out);
+
+
+      a {
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      .title {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@include breakpoint($screen-lg) {
+
 }

@@ -27,3 +27,4 @@ features[variable][] = menu_parent_ingredient
 features[variable][] = node_options_ingredient
 features[variable][] = node_preview_ingredient
 features[variable][] = node_submitted_ingredient
+features[variable][] = pathauto_node_ingredient_pattern

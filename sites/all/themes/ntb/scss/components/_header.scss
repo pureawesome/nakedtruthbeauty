@@ -21,7 +21,7 @@
   }
 }
 
-@include breakpoint($nav-break) {
+@include breakpoint($screen-sm) {
   #header {
     display: block;
   }

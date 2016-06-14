@@ -34,4 +34,5 @@ features[variable][] = menu_parent_product_display
 features[variable][] = node_options_product_display
 features[variable][] = node_preview_product_display
 features[variable][] = node_submitted_product_display
+features[variable][] = pathauto_node_product_display_pattern
 features[views_view][] = shop

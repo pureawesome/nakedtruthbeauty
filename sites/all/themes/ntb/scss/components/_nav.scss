@@ -82,7 +82,7 @@
 }
 
 
-@include breakpoint($nav-break) {
+@include breakpoint($screen-sm) {
   #navigation {
     display: block;
   }

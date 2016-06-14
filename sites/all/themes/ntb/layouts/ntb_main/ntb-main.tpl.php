@@ -11,15 +11,15 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="panel-panel panel-col col-md-4">
+      <div class="panel-panel panel-col col-sm-4">
         <div class="inside"><?php print $content['upper-left']; ?></div>
       </div>
 
-      <div class="panel-panel panel-col col-md-4">
+      <div class="panel-panel panel-col col-sm-4">
         <div class="inside"><?php print $content['upper-middle']; ?></div>
       </div>
 
-      <div class="panel-panel panel-col col-md-4">
+      <div class="panel-panel panel-col col-sm-4">
         <div class="inside"><?php print $content['upper-right']; ?></div>
       </div>
     </div>

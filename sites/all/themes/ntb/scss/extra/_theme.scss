@@ -27,7 +27,7 @@ ul.inline li {
   margin-top: 50px;
 }
 
-@include breakpoint($nav-break) {
+@include breakpoint($screen-sm) {
   #main-wrapper {
     margin-top: 0;
   }

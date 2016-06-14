@@ -14,7 +14,7 @@
   }
 }
 
-@include breakpoint($nav-break) {
+@include breakpoint($screen-sm) {
   .cloud-zoom-container .cloud-zoom-gallery-thumbs a {
     width: 100px;
     height: 100px;
