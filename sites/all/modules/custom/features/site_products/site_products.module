@@ -5,3 +5,24 @@
  */
 
 include_once 'site_products.features.inc';
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function site_products_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['product'] = array(
+    'label' => t('Product'),
+    'custom settings' => FALSE,
+  );
+}
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function site_products_view_mode_alter(&$view_mode, $context) {
+  dpm($context);
+  // For nodes, change the view mode when it is teaser.
+  // if ($context['entity_type'] == 'node' && $view_mode == 'full') {
+  //   $view_mode = 'product';
+  // }
+}

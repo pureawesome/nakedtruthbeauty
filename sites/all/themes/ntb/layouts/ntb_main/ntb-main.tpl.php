@@ -50,6 +50,19 @@
       <div class="panel-panel panel-col col-md-2">
         <div class="inside"><?php print $content['lower-right']; ?></div>
       </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="panel-panel panel-col col-md-3">
+        <div class="inside"><?php print $content['bottom-left']; ?></div>
+      </div>
+
+      <div class="panel-panel panel-col col-md-9">
+        <div class="inside"><?php print $content['bottom-right']; ?></div>
+      </div>
+    </div>
   </div>
 
 

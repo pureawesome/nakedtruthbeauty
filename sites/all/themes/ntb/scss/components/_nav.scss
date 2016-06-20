@@ -16,11 +16,11 @@
   border: none;
 
   .navbar-nav > li > a {
-    display: inline-block;
     width: 100%;
     color: #333;
     font-size: 20px;
     padding: 20px 25px;
+    @include inline-block;
   }
 
   .navbar-nav > .active > a {
@@ -59,9 +59,9 @@
 
 .navbar-form.navbar-search {
   width: 100%;
-  display: inline-block;
   border: 0;
   margin: 7px 0;
+  @include inline-block;
 
   .btn {
     display: none;
@@ -85,12 +85,53 @@
 @include breakpoint($screen-sm) {
   #navigation {
     display: block;
+
+    #main-menu {
+      @include inline-block;
+    }
+  }
+
+  .navbar-nav {
+    float: none;
+  }
+
+  .navbar-default {
+    text-align: center;
   }
 
   .navbar-fixed-top {
     margin-top: -50px;
-    @include background-image(linear-gradient(to right, $primary-blue, white));
     height: 50px;
     overflow: hidden;
+    @include background-image(linear-gradient(to right, $primary-blue, white));
+    @include transition(all 0.3s ease-out);
+
+    &.visible {
+      margin-top: 0;
+    }
+  }
+
+  .navbar-fixed-top {
+    @include background-image(linear-gradient($primary-blue, #b3cdb8));
+
+    .navbar-collapse {
+      @include background-image(none);
+      display: inline-block !important;
+      width: calc(100% - 175px);
+    }
+  }
+
+  .navbar-form.navbar-search {
+    width: auto;
+    float: right;
+  }
+
+  .navbar-default.navbar-fixed-top .navbar-nav > li > a {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  #secondary-menu {
+    float: right;
   }
 }

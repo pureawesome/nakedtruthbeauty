@@ -9,7 +9,16 @@
     },
 
     stickyNav: function() {
-      console.log('stick');
+      var hdr = $('#header').height() + $('#navigation').height();
+      var $sticky = $('.navbar-fixed-top');
+      console.log(hdr);
+      $(window).scroll(function() {
+        if( $(this).scrollTop() > hdr ) {
+          $sticky.addClass('visible');
+        } else {
+          $sticky.removeClass('visible');
+        }
+      });
     }
   };
 })(jQuery);

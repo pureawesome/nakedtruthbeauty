@@ -17,6 +17,8 @@ $plugin = array(
     'lower-left' => t('Lower Left 1/6'),
     'lower-middle' => t('Lower Middle 2/3'),
     'lower-right' => t('Lower Right 1/6'),
+    'bottom-left' => t('Bottom Left 1/4'),
+    'bottom-right' => t('Bottom Right 3/4'),
     'bottom' => t('Bottom')
   ),
 );

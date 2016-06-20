@@ -1,6 +1,7 @@
 $primary-blue: #91cdc5;
 $secondary-blue: #50a89f;
 $white: #fff;
+$border-light: #eee;
 
 $brand-primary: $secondary-blue;
 $font-family-sans-serif: quicksand, 'quicksand', helvetica, arial, sans-serif;
@@ -25,17 +26,17 @@ $font-size-base: 16px;
 // $screen-md-max:              ($screen-lg-min - 1) !default;
 
 // @include breakpoint($screen-xs) {
-//
+//   border: 1px solid red;
 // }
 //
 // @include breakpoint($screen-sm) {
-//
+//   border: 1px solid blue;
 // }
 //
 // @include breakpoint($screen-md) {
-//
+//   border: 1px solid yellow;
 // }
 //
 // @include breakpoint($screen-lg) {
-//
+//   border: 1px solid green;
 // }

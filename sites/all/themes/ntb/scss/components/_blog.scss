@@ -1,0 +1,10 @@
+.view-blog-authored {
+  .views-field-name {
+    text-align:center;
+  }
+
+  .views-field-picture {
+    overflow: hidden;
+    @include border-radius(200px);
+  }
+}

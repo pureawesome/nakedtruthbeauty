@@ -4,7 +4,8 @@
 
   .img,
   .title {
-    display: inline-block;
+    display: block;
+    text-align: center;
   }
 
   @include breakpoint(960px) {
@@ -13,4 +14,47 @@
       height: 100px;
     }
   }
+}
+
+@include breakpoint($screen-xs) {
+  .line {
+    width: 50%;
+    float: left;
+  }
+}
+
+@include breakpoint($screen-sm) {
+  .line {
+    width: 50%;
+    float: left;
+
+    .img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .title {
+      text-align: left;
+      width: calc(100% - 120px);
+      height: 100px;
+    }
+
+    h3 {
+      @include vertical-align();
+    }
+
+    .img,
+    .title {
+      @include inline-block;
+      float: left;
+    }
+  }
+}
+
+@include breakpoint($screen-md) {
+
+}
+
+@include breakpoint($screen-lg) {
+
 }

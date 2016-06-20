@@ -1,5 +1,6 @@
 @import 'base/fonts';
 @import 'base/variables';
+@import 'base/mixins';
 @import 'bootstrap';
 @import 'compass';
 @import 'breakpoint';
@@ -7,14 +8,18 @@
 /* View components */
 @import 'components/header';
 @import 'components/nav';
+@import 'components/blog';
 
 /* View types */
 @import 'display/tile';
 @import 'display/line';
+@import 'display/product-display';
 
 /* View displays */
 @import 'view/front';
-@import 'view/product';
+@import 'view/ingredients';
+@import 'view/blog';
+@import 'view/shop';
 
 /* General Theming */
 @import 'extra/theme';
