@@ -1,10 +1,20 @@
 .view-blog-authored {
+  height: 60px;
+
   .views-field-name {
-    text-align:center;
+    text-align:left;
+    width: calc(100% - 100px);
+    @include inline-block();
+
+    .field-content {
+      @include vertical-align();
+    }
   }
 
   .views-field-picture {
     overflow: hidden;
-    @include border-radius(200px);
+    @include border-radius(30px);
+    @include inline-block();
+    width: 60px;
   }
 }
