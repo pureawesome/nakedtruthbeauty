@@ -5,3 +5,22 @@
  */
 
 include_once 'site_marquee.features.inc';
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function site_marquee_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['slide'] = array(
+    'label' => t('Slide'),
+    'custom settings' => FALSE,
+  );
+}
+
+function site_marquee_preprocess_node(&$vars) {
+  if ($vars['view_mode'] == 'slide') {
+    dpm($vars);
+    $vars['image'] = $vars['field_marquee_image'];
+    $vars['body'] = $vars['body'];
+    $vars['$link'] = $vars['field_marquee_link'][0]['value'];
+  }
+}

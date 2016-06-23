@@ -3,7 +3,7 @@
 
   .navbar-collapse {
     max-height: 100%;
-    @include background-image(linear-gradient($primary-blue, #ffcc99));
+    @include background-image(linear-gradient($primary-blue, $primary-peach));
 
     &.in {
       height: 100vh;

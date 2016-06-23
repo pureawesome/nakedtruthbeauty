@@ -7749,13 +7749,6 @@ button.close {
   margin-bottom: 30px;
 }
 
-.view-marquee {
-  margin: 0 -15px;
-}
-.view-marquee .flexslider {
-  border: 0;
-}
-
 .pane-front-tiles h2 {
   display: block;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzkxY2RjNSIgc3RvcC1vcGFjaXR5PSIwLjMiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZmY2M5OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzkxY2RjNSIgc3RvcC1vcGFjaXR5PSIwLjMiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
@@ -7842,6 +7835,21 @@ button.close {
 @media (min-width: 1200px) {
   .view-shop {
     border: 1px solid green;
+  }
+}
+
+.view-marquee {
+  height: 225px;
+}
+.view-marquee .flex-control-paging li a {
+  color: #91cdc5;
+}
+.view-marquee .flex-control-paging li a.flex-active {
+  color: #ffcc99;
+}
+@media (min-width: 768px) {
+  .view-marquee {
+    height: 350px;
   }
 }
 

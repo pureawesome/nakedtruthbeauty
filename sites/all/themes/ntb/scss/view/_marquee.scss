@@ -1,0 +1,15 @@
+.view-marquee {
+  height: 225px;
+
+  .flex-control-paging li a {
+    color: $primary-blue;
+
+    &.flex-active {
+      color: $primary-peach;
+    }
+  }
+
+  @include breakpoint($screen-sm) {
+    height: 350px;
+  }
+}
