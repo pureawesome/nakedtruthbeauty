@@ -86,6 +86,12 @@ function site_products_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'line' => array(
+        'custom_settings' => FALSE,
+      ),
+      'product' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -105,31 +111,31 @@ function site_products_strongarm() {
       'display' => array(
         'product:sku' => array(
           'default' => array(
-            'weight' => '7',
+            'weight' => '8',
             'visible' => FALSE,
           ),
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '6',
             'visible' => FALSE,
           ),
         ),
         'product:status' => array(
           'default' => array(
-            'weight' => '8',
+            'weight' => '9',
             'visible' => FALSE,
           ),
         ),
         'product:commerce_price' => array(
           'default' => array(
-            'weight' => '3',
+            'weight' => '1',
             'visible' => TRUE,
           ),
         ),
         'product:field_primary_image' => array(
           'default' => array(
-            'weight' => '6',
+            'weight' => '7',
             'visible' => FALSE,
           ),
         ),
@@ -141,8 +147,14 @@ function site_products_strongarm() {
         ),
         'product:field_ingredients' => array(
           'default' => array(
-            'weight' => '2',
+            'weight' => '3',
             'visible' => TRUE,
+          ),
+        ),
+        'product:field_product_type' => array(
+          'default' => array(
+            'weight' => '5',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -195,6 +207,26 @@ function site_products_strongarm() {
   $strongarm->name = 'pathauto_node_product_display_pattern';
   $strongarm->value = 'shop/[node:title]';
   $export['pathauto_node_product_display_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_product_display';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_product_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_product_types';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_product_types'] = $strongarm;
 
   return $export;
 }

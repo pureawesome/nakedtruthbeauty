@@ -68,6 +68,11 @@ function site_products_default_page_manager_pages() {
       'upper-right' => NULL,
       'middle-left' => NULL,
       'middle-right' => NULL,
+      'lower-left' => NULL,
+      'lower-middle' => NULL,
+      'lower-right' => NULL,
+      'bottom-left' => NULL,
+      'bottom-right' => NULL,
     ),
   );
   $display->cache = array();
@@ -76,8 +81,8 @@ function site_products_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-b0eac843-cc2f-4328-b4fc-6afd75a5fff1';
-    $pane->panel = 'top';
+    $pane->pid = 'new-6057eec0-ac17-4871-bb3f-2ac145b69f10';
+    $pane->panel = 'bottom';
     $pane->type = 'views';
     $pane->subtype = 'shop';
     $pane->shown = TRUE;
@@ -94,7 +99,7 @@ function site_products_default_page_manager_pages() {
       'link_to_view' => 0,
       'args' => '',
       'url' => '',
-      'display' => 'default',
+      'display' => 'block',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -107,11 +112,11 @@ function site_products_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'b0eac843-cc2f-4328-b4fc-6afd75a5fff1';
-    $display->content['new-b0eac843-cc2f-4328-b4fc-6afd75a5fff1'] = $pane;
-    $display->panels['top'][0] = 'new-b0eac843-cc2f-4328-b4fc-6afd75a5fff1';
+    $pane->uuid = '6057eec0-ac17-4871-bb3f-2ac145b69f10';
+    $display->content['new-6057eec0-ac17-4871-bb3f-2ac145b69f10'] = $pane;
+    $display->panels['bottom'][0] = 'new-6057eec0-ac17-4871-bb3f-2ac145b69f10';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-b0eac843-cc2f-4328-b4fc-6afd75a5fff1';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['shop'] = $page;

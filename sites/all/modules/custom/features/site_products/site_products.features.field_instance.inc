@@ -22,7 +22,7 @@ function site_products_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -72,7 +72,7 @@ function site_products_field_default_field_instances() {
           'show_single_product_attributes' => FALSE,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',

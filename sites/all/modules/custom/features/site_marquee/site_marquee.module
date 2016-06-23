@@ -18,7 +18,6 @@ function site_marquee_entity_info_alter(&$entity_info) {
 
 function site_marquee_preprocess_node(&$vars) {
   if ($vars['view_mode'] == 'slide') {
-    dpm($vars);
     $vars['image'] = $vars['field_marquee_image'];
     $vars['body'] = $vars['body'];
     $vars['$link'] = $vars['field_marquee_link'][0]['value'];
