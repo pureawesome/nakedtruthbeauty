@@ -14,10 +14,7 @@ img {
 }
 
 .flex-direction-nav a {
-  // @include sr-only();
-
   &:before {
-
     content: '\f0a8';
     @include fa-icon();
     font-size: 40px;
@@ -69,5 +66,10 @@ a {
 @include breakpoint($screen-sm) {
   #main-wrapper {
     margin-top: 0;
+  }
+
+  .form-submit {
+    width: auto;
+    @include inline-block();
   }
 }
