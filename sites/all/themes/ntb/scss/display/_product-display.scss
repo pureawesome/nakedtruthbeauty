@@ -1,11 +1,13 @@
 .cloud-zoom-container {
   .cloud-zoom-gallery-thumbs {
+    width: 100%;
     a {
       width: 50px;
       height: 50px;
       display: block;
       float: left;
       margin: 10px;
+
 
       &:first-child {
         margin-left: 0;
@@ -14,9 +16,89 @@
   }
 }
 
+.field-name-commerce-price {
+  font-size: 36px;
+  text-align: center;
+}
+
+.add-to-cart-block {
+  border: 0;
+  font-size: 20px;
+  margin-bottom: 15px;
+
+  .form-submit {
+    padding: 10px;
+  }
+}
+
+.node-type-product-display #page-title {
+  text-align: center;
+}
+
+.field-name-field-ingredients {
+  .field-label {
+    text-transform: lowercase;
+    text-align: center;
+    @include inline-block();
+
+  }
+  .field-items {
+    @include inline-block();
+  }
+  .field-item {
+    text-align: center;
+    background: $primary-blue;
+    @include border-radius(5px);
+    margin: 0 10px 5px 0;
+    padding: 2px 5px;
+    width: auto;
+    @include inline-block();
+
+    &:hover {
+      background: $secondary-blue;
+    }
+  }
+
+  a {
+    color: #000;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 @include breakpoint($screen-sm) {
   .cloud-zoom-container .cloud-zoom-gallery-thumbs a {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
   }
+
+  .field-name-field-ingredients {
+    .field-label {
+      width: 100%;
+    }
+
+    .field-item {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+
+@include breakpoint($screen-xs) {
+  border: 1px solid red;
+}
+
+@include breakpoint($screen-sm) {
+  border: 1px solid blue;
+}
+
+@include breakpoint($screen-md) {
+  border: 1px solid yellow;
+}
+
+@include breakpoint($screen-lg) {
+  border: 1px solid green;
 }

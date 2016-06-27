@@ -89,7 +89,7 @@
   <?php print render($title_suffix); ?>
 
 
-  <div class="content"<?php print $content_attributes; ?>>
+  <div class="container-fluid content"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
@@ -100,14 +100,19 @@
 
 
     <div class="row">
-      <div class="panel-panel panel-col col-sm-4">
+      <div class="panel-panel panel-col col-sm-4 col-sm-offset-3">
         <?php print render($content['product:field_product_images']); ?>
       </div>
-
-      <div class="panel-panel panel-col col-sm-8">
-        <?php print render($content['product:commerce_price']); ?>
-        <?php print render($content['field_product']); ?>
+      <div class="panel-panel panel-col col-sm-2">
+        <div class="add-to-cart-block">
+          <?php print render($content['product:commerce_price']); ?>
+          <?php print render($content['field_product']); ?>
+        </div>
         <?php print render($content['product:field_ingredients']); ?>
+      </div>
+    </div>
+    <div class="row">
+      <div class="panel-panel panel-col col-sm-8 col-sm-offset-2">
         <?php print render($content['body']); ?>
       </div>
     </div>

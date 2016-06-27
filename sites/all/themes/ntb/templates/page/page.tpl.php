@@ -78,6 +78,12 @@
 
       <?php if ($main_menu || $secondary_menu): ?>
         <div><div class="section container-fluid">
+          <div class='mobile-cart'>
+            <a href="<?php print base_path(); ?>cart">
+              <i class="fa fa-shopping-cart"></i>
+              <span class="sr-only">Cart</span>
+            </a>
+          </div>
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>

@@ -62,7 +62,7 @@ function site_products_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'commerce_cart',
         'settings' => array(
           'combine' => TRUE,
