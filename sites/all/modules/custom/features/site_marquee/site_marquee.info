@@ -14,6 +14,7 @@ features[field_base][] = body
 features[field_base][] = field_marquee_hex
 features[field_base][] = field_marquee_image
 features[field_base][] = field_marquee_link
+features[field_instance][] = comment-comment_node_marquee-comment_body
 features[field_instance][] = node-marquee-body
 features[field_instance][] = node-marquee-field_marquee_hex
 features[field_instance][] = node-marquee-field_marquee_image
