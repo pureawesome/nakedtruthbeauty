@@ -414,5 +414,52 @@ function site_general_views_default_views() {
   );
   $export['front_tiles'] = $view;
 
+  $view = new view();
+  $view->name = 'tags';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Tags';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Tags';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'tags');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy term: Vocabulary */
+  $handler->display->display_options['filters']['vid']['id'] = 'vid';
+  $handler->display->display_options['filters']['vid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['vid']['field'] = 'vid';
+  $handler->display->display_options['filters']['vid']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['block_description'] = 'tags';
+  $export['tags'] = $view;
+
   return $export;
 }

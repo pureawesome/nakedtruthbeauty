@@ -13,6 +13,23 @@ img {
   }
 }
 
+.flex-direction-nav a {
+  &:before {
+    content: '\f0a8';
+    @include fa-icon();
+    font-size: 40px;
+    color: rgba($secondary-blue, 0.8);
+  }
+
+  &.flex-next:before {
+    content: '\f0a9';
+  }
+}
+
+#page-title {
+  text-align: center;
+}
+
 ul.inline li {
   padding: 0;
 }
@@ -27,8 +44,34 @@ ul.inline li {
   margin-top: 50px;
 }
 
+.form-submit {
+  border: 0;
+  background: transparent;
+  text-align: center;
+  width: 100%;
+  text-transform: lowercase;
+  background: $primary-blue;
+  // @include background-image(linear-gradient(white, $primary-blue));
+  @include border-radius(5px);
+
+  &:hover {
+    background: $secondary-blue;
+  }
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 @include breakpoint($screen-sm) {
   #main-wrapper {
     margin-top: 0;
+  }
+
+  .form-submit {
+    width: auto;
+    @include inline-block();
   }
 }

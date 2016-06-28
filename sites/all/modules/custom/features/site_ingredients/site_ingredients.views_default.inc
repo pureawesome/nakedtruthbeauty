@@ -22,7 +22,7 @@ function site_ingredients_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Ingredients';
+  $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -66,6 +66,7 @@ function site_ingredients_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['path'] = 'ingredients';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Ingredients';

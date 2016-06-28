@@ -81,6 +81,14 @@
   display: none;
 }
 
+#secondary-menu .last {
+  // text-indent: -9999px;
+  &:before {
+    // content: '\f0a9';
+    // @include fa-icon();
+  }
+}
+
 
 @include breakpoint($screen-sm) {
   #navigation {

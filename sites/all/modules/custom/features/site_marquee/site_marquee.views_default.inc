@@ -31,7 +31,8 @@ function site_marquee_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'flexslider';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'slider';
   /* Field: Content: Marquee Image */
   $handler->display->display_options['fields']['field_marquee_image']['id'] = 'field_marquee_image';
   $handler->display->display_options['fields']['field_marquee_image']['table'] = 'field_data_field_marquee_image';

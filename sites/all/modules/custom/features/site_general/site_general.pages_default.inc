@@ -233,6 +233,8 @@ function site_general_default_page_manager_pages() {
       'lower-left' => NULL,
       'lower-middle' => NULL,
       'lower-right' => NULL,
+      'bottom-left' => NULL,
+      'bottom-right' => NULL,
     ),
   );
   $display->cache = array();
@@ -240,6 +242,41 @@ function site_general_default_page_manager_pages() {
   $display->uuid = 'ca9ff854-4e5f-4d0d-8950-2e3d3403e0bc';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-1813d728-8b04-4cd5-9d22-5bcafd37cf27';
+    $pane->panel = 'lower-left';
+    $pane->type = 'views';
+    $pane->subtype = 'tags';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'tags',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '1813d728-8b04-4cd5-9d22-5bcafd37cf27';
+    $display->content['new-1813d728-8b04-4cd5-9d22-5bcafd37cf27'] = $pane;
+    $display->panels['lower-left'][0] = 'new-1813d728-8b04-4cd5-9d22-5bcafd37cf27';
     $pane = new stdClass();
     $pane->pid = 'new-2e5cbfeb-bbd5-483b-a5ea-74129cd3c400';
     $pane->panel = 'lower-middle';

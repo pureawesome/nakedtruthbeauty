@@ -1,15 +1,56 @@
 .view-marquee {
-  height: 225px;
+  .slider-image {
+    height: 225px;
+    background-size: cover;
+    background-position: center center;
+    display: block;
+  }
+  .flexslider {
+    border: 0;
+  }
+
+  .title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+  }
+
+  .marquee-body {
+    font-size: 18px;
+  }
+
+  .flex-control-nav {
+    width: auto;
+    bottom: 0;
+    top: 235px;
+    right: 0;
+  }
 
   .flex-control-paging li a {
-    color: $primary-blue;
+    background: $primary-blue;
+    @include box-shadow(none);
 
     &.flex-active {
-      color: $primary-peach;
+      background: $primary-peach;
     }
   }
 
   @include breakpoint($screen-sm) {
-    height: 350px;
+    .slider-image,
+    .content {
+      height: 350px;
+    }
+
+    .flex-control-nav {
+      top: 360px;
+    }
+
+    .title {
+      margin-top: 50px;
+    }
+
+    .marquee-body {
+      padding: 0 30px;
+    }
   }
 }
