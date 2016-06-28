@@ -4,4 +4,9 @@
     padding-bottom: 15px;
     margin-bottom: 15px;
   }
+
+  .field-name-field-tags .field-item {
+    @include inline-block();
+    margin-right: 15px;
+  }
 }

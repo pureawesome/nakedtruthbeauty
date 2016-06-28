@@ -62,6 +62,8 @@ function site_general_default_page_manager_handlers() {
       'lower-middle' => NULL,
       'lower-right' => NULL,
       'bottom' => NULL,
+      'bottom-left' => NULL,
+      'bottom-right' => NULL,
     ),
   );
   $display->cache = array();
@@ -144,7 +146,7 @@ function site_general_default_page_manager_handlers() {
       'link' => 1,
       'term_delimiter' => ', ',
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
