@@ -28,6 +28,7 @@
 
   .form-submit {
     padding: 10px;
+    width: 100%;
   }
 }
 
@@ -88,17 +89,17 @@
 
 
 @include breakpoint($screen-xs) {
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 
 @include breakpoint($screen-sm) {
-  border: 1px solid blue;
+  // border: 1px solid blue;
 }
 
 @include breakpoint($screen-md) {
-  border: 1px solid yellow;
+  // border: 1px solid yellow;
 }
 
 @include breakpoint($screen-lg) {
-  border: 1px solid green;
+  // border: 1px solid green;
 }

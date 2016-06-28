@@ -15,3 +15,5 @@ function site_products_entity_info_alter(&$entity_info) {
     'custom settings' => FALSE,
   );
 }
+
+// TODO: resize columns
