@@ -29,6 +29,51 @@ function site_general_views_api($module = NULL, $api = NULL) {
 function site_general_image_default_styles() {
   $styles = array();
 
+  // Exported image style: square_1000x1000.
+  $styles['square_1000x1000'] = array(
+    'label' => 'Square_1000x1000',
+    'effects' => array(
+      4 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1000,
+          'height' => 1000,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: square_200x200.
+  $styles['square_200x200'] = array(
+    'label' => 'Square_200x200',
+    'effects' => array(
+      3 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 200,
+          'height' => 200,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: square_500x500.
+  $styles['square_500x500'] = array(
+    'label' => 'Square_500x500',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 500,
+          'height' => 500,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: tile_square__500x500_.
   $styles['tile_square__500x500_'] = array(
     'label' => 'Tile Square (500x500)',

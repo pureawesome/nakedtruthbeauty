@@ -9,3 +9,30 @@
     vertical-align: middle;
   }
 }
+
+@mixin buttons() {
+  border: 0;
+  background: transparent;
+  text-align: center;
+  width: auto;
+  text-transform: lowercase;
+  background: $primary-blue;
+  margin: 0 10px 5px 0;
+  padding: 2px 5px;
+  @include inline-block();
+  @include border-radius(5px);
+
+  &:hover {
+    background: $secondary-blue;
+  }
+
+  a {
+    color: #000;
+  }
+
+  @include breakpoint($screen-md) {
+    display: block;
+    width: 100%;
+    margin: 0 0 5px 0;
+  }
+}
