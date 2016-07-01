@@ -10863,6 +10863,38 @@ button.close {
   }
 }
 
+.checkout-buttons .checkout-cancel {
+  background: #91cdc5;
+  color: #000;
+  padding: 2px 6px 3px;
+}
+.checkout-buttons .checkout-cancel:hover {
+  background: #50a89f;
+  text-decoration: none;
+  color: #000;
+}
+
+.page-checkout .button-operator {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+@media (min-width: 768px) {
+  .checkout-buttons .checkout-cancel {
+    margin-left: 0;
+  }
+
+  .page-checkout .button-operator {
+    width: auto;
+    margin: 0 5px;
+  }
+}
 /* General Theming */
 img {
   width: auto;
@@ -10918,6 +10950,7 @@ ul.inline li {
   width: 100%;
   text-transform: lowercase;
   background: #91cdc5;
+  margin-bottom: 10px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -10942,6 +10975,10 @@ a:hover {
     *vertical-align: auto;
     *zoom: 1;
     *display: inline;
+  }
+
+  input ~ input {
+    margin-left: 10px;
   }
 }
 

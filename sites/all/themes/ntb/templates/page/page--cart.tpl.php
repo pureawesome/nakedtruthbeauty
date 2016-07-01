@@ -188,7 +188,9 @@
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
         <div class="container-fluid">
           <div class="row">
-            <?php print render($page['content']); ?>
+            <div class="col-sm-12">
+              <?php print render($page['content']); ?>
+            </div>
           </div>
         </div>
 
