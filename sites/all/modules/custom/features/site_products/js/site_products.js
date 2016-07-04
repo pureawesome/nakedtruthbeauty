@@ -13,8 +13,38 @@
         setTimeout(function () {
           self.resizeColumns();
         }, 2500);
-
       });
+
+      $('.node-type-product-display').once('tabs', function () {
+        self.enableTabs();
+      })
+    },
+
+    enableTabs: function() {
+      $('.product-body .nav-tabs a').on('click', function (event) {
+        event.preventDefault();
+        $(this).tab('show');
+      });
+      // var $bodys = $('.product-body-wrapper .product-body');
+      // var $tabs = $('.product-body-tabs li');
+      //
+      // $('.product-body-tabs li').on('click', function (event) {
+      //   // event.preventDefault();
+      //
+      //   if (!$(this).hasClass('active')) {
+      //     $.each($bodys, function () {
+      //       $(this).fadeOut();
+      //     });
+      //
+      //     $.each($tabs, function () {
+      //       $(this).removeClass('active');
+      //     });
+      //
+      //     var tab_class = $(this).attr('class');
+      //     $('.product-body-tabs .' + tab_class).addClass('active');
+      //     $('.product-body-wrapper .' + tab_class).fadeIn();
+      //   }
+      // });
     },
 
     resizeColumns: function () {

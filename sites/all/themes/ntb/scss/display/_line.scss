@@ -18,29 +18,33 @@
 
 @include breakpoint($screen-xs) {
   .line {
-    width: 50%;
     float: left;
+    height: 350px;
+    overflow: hidden;
+    margin-bottom: 30px;
   }
 }
 
 @include breakpoint($screen-sm) {
   .line {
-    width: 50%;
     float: left;
+    height: 200px;
 
     .img {
       width: 100px;
       height: 100px;
+      margin-right: 10px;
     }
 
     .title {
       text-align: left;
-      width: calc(100% - 120px);
-      height: 100px;
+      width: calc(100% - 110px);
+      height: auto;
     }
 
     h3 {
-      @include vertical-align();
+      // padding-left: 10px;
+      // @include vertical-align();
     }
 
     .img,
