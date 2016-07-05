@@ -17,6 +17,10 @@
   @include inline-block();
 }
 
+.checkout-review {
+  width: 100%;
+}
+
 @include breakpoint($screen-sm) {
   .checkout-buttons .checkout-cancel {
     margin-left: 0;
