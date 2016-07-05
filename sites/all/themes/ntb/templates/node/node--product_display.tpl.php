@@ -82,11 +82,7 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
+
 
 
   <div class="container-fluid content"<?php print $content_attributes; ?>>
@@ -99,20 +95,59 @@
 
 
     <div class="row">
-      <div class="panel-panel panel-col col-sm-4 col-sm-offset-3">
+      <div class="panel-panel panel-col col-xs-offset-2 col-xs-8 col-sm-4 col-sm-offset-0 ">
         <?php print render($content['product:field_product_images']); ?>
       </div>
-      <div class="panel-panel panel-col col-sm-2">
+      <div class="panel-panel panel-col col-sm-8">
+        <h1 id="product-title">
+          <?php print $title; ?>
+        </h1>
+
         <div class="add-to-cart-block">
           <?php print render($content['product:commerce_price']); ?>
           <?php print render($content['field_product']); ?>
         </div>
-        <?php print render($content['product:field_ingredients']); ?>
-      </div>
-    </div>
-    <div class="row">
-      <div class="panel-panel panel-col col-sm-8 col-sm-offset-2">
-        <?php print render($content['body']); ?>
+
+
+        <div class='product-body'>
+          <!-- Nav tabs -->
+          <ul class="nav" role="tablist">
+            <li class="product active"><a href="#body" aria-controls="body" role="tab" data-toggle="tab">Product</a></li>
+            <li class="use"><a href="#use" aria-controls="use" role="tab" data-toggle="tab">Use</a></li>
+            <li class="ingredients"><a href="#ingredients" aria-controls="ingredients" role="tab" data-toggle="tab">Ingredients</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="body">
+              <?php print render($content['body']); ?>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="use">
+
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="ingredients">
+              <?php print render($content['product:field_ingredients']); ?>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- <ul class='product-body-tabs'>
+          <li class="product active">Product</li><li class="use">Use</li><li class="ingredients">Ingredients</li>
+        </ul>
+        <div class="product-body-wrapper">
+          <div class='product-body product'>
+            <?php print render($content['body']); ?>
+          </div>
+          <div class='product-body use'>
+
+          </div>
+          <div class='product-body ingredients'>
+            <?php print render($content['product:field_ingredients']); ?>
+          </div>
+        </div> -->
+
       </div>
     </div>
 

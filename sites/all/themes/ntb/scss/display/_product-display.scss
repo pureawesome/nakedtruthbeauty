@@ -16,6 +16,10 @@
   }
 }
 
+.mousetrap {
+  max-width: 100%;
+}
+
 .field-name-commerce-price {
   font-size: 36px;
   text-align: center;
@@ -27,7 +31,7 @@
   margin-bottom: 15px;
 
   .form-submit {
-    padding: 10px;
+    padding: 6px;
     width: 100%;
   }
 }
@@ -36,6 +40,53 @@
   text-align: center;
 }
 
+.node-type-product-display #product-title {
+    display: none;
+}
+
+// .product-body-tabs {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+//   display: block;
+//
+//   li {
+//     width: 33%;
+//     text-align:center;
+//     border-right: 1px solid #ccc;
+//     margin: 0 0 15px 0;
+//     cursor: pointer;
+//     padding: 5px;
+//     // display: inline;
+//     @include inline-block();
+//
+//     &:last-child {
+//       border-right: 0;
+//     }
+//
+//     &:hover {
+//       background: rgba($primary-peach, 1);
+//     }
+//   }
+// }
+
+// .product-body-wrapper {
+//   position: relative;
+//   .product-body {
+//     position:absolute;
+//     top: 0;
+//     left: 0;
+//     display: none;
+//     width: 100%;
+//     height: auto;
+//
+//     &:first-child {
+//       display: block;
+//     }
+//   }
+// }
+
+
 .field-name-field-ingredients {
   .field-label {
     text-transform: lowercase;
@@ -43,22 +94,22 @@
     @include inline-block();
 
   }
-  .field-items {
-    @include inline-block();
-  }
   .field-item {
-    text-align: center;
-    background: $primary-blue;
-    @include border-radius(5px);
-    margin: 0 10px 5px 0;
-    padding: 2px 5px;
-    width: auto;
     @include inline-block();
-
-    &:hover {
-      background: $secondary-blue;
-    }
   }
+  // .field-item {
+  //   text-align: center;
+  //   background: $primary-blue;
+  //   @include border-radius(5px);
+  //   margin: 0 10px 5px 0;
+  //   padding: 2px 5px;
+  //   width: auto;
+  //   @include inline-block();
+  //
+  //   &:hover {
+  //     background: $secondary-blue;
+  //   }
+  // }
 
   a {
     color: #000;
@@ -69,7 +120,66 @@
   }
 }
 
+.product-body .nav {
+  li {
+    @include inline-block();
+
+    &.active {
+      a {
+        color: #000;
+      }
+    }
+
+    a {
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        background: none;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.node-type-product-display {
+  text-align: center;
+
+  .product-body {
+    text-align: center;
+  }
+
+  .nav {
+    @include inline-block();
+  }
+
+  .tab-content {
+    text-align: left;
+  }
+}
+
 @include breakpoint($screen-sm) {
+  .add-to-cart-block {
+    & > div {
+      @include inline-block();
+    }
+
+    .form-submit {
+      font-size: 16px;
+      width: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  .node-type-product-display #page-title {
+    display: none;
+  }
+
+  .node-type-product-display #product-title {
+    text-align: center;
+    display: block;
+  }
+
   .cloud-zoom-container .cloud-zoom-gallery-thumbs a {
     width: 60px;
     height: 60px;
@@ -81,9 +191,13 @@
     }
 
     .field-item {
-      width: 100%;
+      // width: 100%;
       margin-bottom: 5px;
     }
+  }
+
+  .field-name-commerce-price {
+    font-size: 26px;
   }
 }
 

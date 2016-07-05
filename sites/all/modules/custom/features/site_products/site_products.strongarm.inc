@@ -95,6 +95,9 @@ function site_products_strongarm() {
       'slide' => array(
         'custom_settings' => FALSE,
       ),
+      'slider' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -120,7 +123,7 @@ function site_products_strongarm() {
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '6',
+            'weight' => '5',
             'visible' => FALSE,
           ),
         ),
@@ -156,7 +159,7 @@ function site_products_strongarm() {
         ),
         'product:field_product_type' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '6',
             'visible' => FALSE,
           ),
         ),

@@ -5,14 +5,41 @@
 
 .pane-front-tiles {
   h2 {
-    display: block;
-    @include background-image(linear-gradient(to right,  rgba($primary-blue, 0.3), #ffcc99, rgba($primary-blue, 0.3)));
+    // display: block;
+    // @include background-image(linear-gradient(to right,  rgba($primary-blue, 0.3), #ffcc99, rgba($primary-blue, 0.3)));
     // border: 0.5px solid $primary-blue;
-    text-transform: lowercase;
+    display: block;
+    background: $primary-peach;
+    text-transform: uppercase;;
     text-align: center;
     font-size: 20px;
     padding: 5px 10px;
-    margin: 0 -15px 15px -15px;
+    margin: -10px 0 0 -10px;
+    position: absolute;
+    z-index: 10;
+    @include inline-block();
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      display: block;
+
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 10px 10px 0;
+      border-color: transparent $primary-blue transparent transparent;
+    }
+
+    // &:first-child {
+    //   background: $primary-blue;
+    // }
+    //
+    // &:last-child {
+    //   background: $secondary-blue;
+    // }
   }
 
   .view-footer {
