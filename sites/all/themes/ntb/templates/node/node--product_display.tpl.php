@@ -128,6 +128,7 @@
             </div>
             <div role="tabpanel" class="tab-pane fade" id="ingredients">
               <?php print render($content['field_product_ingredients']); ?>
+              <?php print render($content['field_product_ingredients_text']); ?>
             </div>
           </div>
 

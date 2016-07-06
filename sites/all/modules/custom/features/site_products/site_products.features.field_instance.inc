@@ -622,7 +622,7 @@ function site_products_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 41,
+      'weight' => 4,
     ),
   );
 
@@ -672,7 +672,7 @@ function site_products_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 44,
+      'weight' => 7,
     ),
   );
 
@@ -723,7 +723,7 @@ function site_products_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'commerce_product_reference_autocomplete',
-      'weight' => 42,
+      'weight' => 5,
     ),
   );
 
@@ -793,7 +793,7 @@ function site_products_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 45,
+      'weight' => 8,
     ),
   );
 
@@ -836,7 +836,48 @@ function site_products_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 46,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-product_display-field_product_ingredients_text'.
+  $field_instances['node-product_display-field_product_ingredients_text'] = array(
+    'bundle' => 'product_display',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_product_ingredients_text',
+    'label' => 'Product Ingredients Text',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 11,
     ),
   );
 
@@ -872,7 +913,7 @@ function site_products_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 47,
+      'weight' => 6,
     ),
   );
 
@@ -912,7 +953,7 @@ function site_products_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 48,
+      'weight' => 9,
     ),
   );
 
@@ -930,6 +971,7 @@ function site_products_field_default_field_instances() {
   t('Product');
   t('Product Images');
   t('Product Ingredients');
+  t('Product Ingredients Text');
   t('Product Type');
   t('Product Use');
   t('Total');
