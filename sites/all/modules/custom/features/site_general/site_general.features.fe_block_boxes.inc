@@ -11,6 +11,17 @@ function site_general_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Footer menu';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'footer_menu';
+  $fe_block_boxes->body = '<div class="col-sm-12" style="margin-top: 150px">
+<div style="display:inline; float:right">2016 ©&nbsp;naked truth beauty |&nbsp;<a href="/details#contact">Contact Us</a> | <a href="/details#shipping">Shipping Policy</a> | <a href="/details#returns">Return Policy</a> | <a href="/details#privacy">Privacy Policy</a></div>
+</div>
+';
+
+  $export['footer_menu'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'mission';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'ntb_mission';
