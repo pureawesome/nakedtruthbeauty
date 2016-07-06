@@ -28,13 +28,10 @@ function site_general_preprocess_node(&$vars) {
     $vars['theme_hook_suggestions'][] = 'node__square';
     $node = $vars['node'];
     $type = $node->type;
+    // dpm($vars);
 
-    if ($type == 'product_display') {
-      $image_uri = $vars['content']['product:field_primary_image']['#items'][0]['uri'];
-    }
-    else {
-      $image_uri = $vars['field_primary_image'][0]['uri'];
-    }
+    $image_uri = $vars['field_primary_image'][0]['uri'];
+
     $img_array = array(
       'style_name' => 'square_500x500',
       'path' => $image_uri,

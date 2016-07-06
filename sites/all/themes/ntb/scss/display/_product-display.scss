@@ -143,7 +143,10 @@
 }
 
 .node-type-product-display {
-  text-align: center;
+  .content {
+    text-align: center;
+  }
+
 
   .product-body {
     text-align: center;
