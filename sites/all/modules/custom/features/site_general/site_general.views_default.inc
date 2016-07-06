@@ -164,10 +164,6 @@ function site_general_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  /* Relationship: Content: Referenced products */
-  $handler->display->display_options['relationships']['field_product_product_id']['id'] = 'field_product_product_id';
-  $handler->display->display_options['relationships']['field_product_product_id']['table'] = 'field_data_field_product';
-  $handler->display->display_options['relationships']['field_product_product_id']['field'] = 'field_product_product_id';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -212,7 +208,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Primary Image */
+  /* Field: Content: Primary Image */
   $handler->display->display_options['fields']['field_primary_image']['id'] = 'field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['table'] = 'field_data_field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['field'] = 'field_primary_image';
@@ -244,7 +240,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Primary Image */
+  /* Field: Content: Primary Image */
   $handler->display->display_options['fields']['field_primary_image']['id'] = 'field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['table'] = 'field_data_field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['field'] = 'field_primary_image';
@@ -291,7 +287,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<a href="/products">More Products</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Primary Image */
+  /* Field: Content: Primary Image */
   $handler->display->display_options['fields']['field_primary_image_1']['id'] = 'field_primary_image_1';
   $handler->display->display_options['fields']['field_primary_image_1']['table'] = 'field_data_field_primary_image';
   $handler->display->display_options['fields']['field_primary_image_1']['field'] = 'field_primary_image';

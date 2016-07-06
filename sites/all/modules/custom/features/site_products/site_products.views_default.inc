@@ -148,7 +148,7 @@ function site_products_views_default_views() {
     'product_display' => 'product_display',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Commerce Product: Product Type (field_product_type) */
+  /* Filter criterion: Content: Product Type (field_product_type) */
   $handler->display->display_options['filters']['field_product_type_tid']['id'] = 'field_product_type_tid';
   $handler->display->display_options['filters']['field_product_type_tid']['table'] = 'field_data_field_product_type';
   $handler->display->display_options['filters']['field_product_type_tid']['field'] = 'field_product_type_tid';

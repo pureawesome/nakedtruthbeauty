@@ -123,7 +123,7 @@ function site_products_strongarm() {
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '7',
             'visible' => FALSE,
           ),
         ),
@@ -135,7 +135,7 @@ function site_products_strongarm() {
         ),
         'product:commerce_price' => array(
           'default' => array(
-            'weight' => '1',
+            'weight' => '0',
             'visible' => TRUE,
           ),
         ),

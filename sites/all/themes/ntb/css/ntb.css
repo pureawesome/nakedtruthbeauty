@@ -10710,7 +10710,7 @@ button.close {
   text-decoration: underline;
 }
 
-.node-type-product-display {
+.node-type-product-display .content {
   text-align: center;
 }
 .node-type-product-display .product-body {
