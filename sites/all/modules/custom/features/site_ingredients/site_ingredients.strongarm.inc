@@ -89,6 +89,12 @@ function site_ingredients_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'slider' => array(
+        'custom_settings' => FALSE,
+      ),
+      'product' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
