@@ -13,13 +13,102 @@ function site_general_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_view__page';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -28;
+  $handler->conf = array(
+    'title' => 'page',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'page',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'page' => 'page',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'ntb_main';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'upper-left' => NULL,
+      'upper-middle' => NULL,
+      'upper-right' => NULL,
+      'middle-left' => NULL,
+      'middle-right' => NULL,
+      'lower-left' => NULL,
+      'lower-middle' => NULL,
+      'lower-right' => NULL,
+      'bottom' => NULL,
+      'bottom-left' => NULL,
+      'bottom-right' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'd2cc3530-4f6a-4e3a-ba32-10fbefeed7d2';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-480df0aa-1301-46ac-8c6a-c8902eff5c65';
+    $pane->panel = 'lower-middle';
+    $pane->type = 'node_body';
+    $pane->subtype = 'node_body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '480df0aa-1301-46ac-8c6a-c8902eff5c65';
+    $display->content['new-480df0aa-1301-46ac-8c6a-c8902eff5c65'] = $pane;
+    $display->panels['lower-middle'][0] = 'new-480df0aa-1301-46ac-8c6a-c8902eff5c65';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-480df0aa-1301-46ac-8c6a-c8902eff5c65';
+  $handler->conf['display'] = $display;
+  $export['node_view__page'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_view__panel_context_3e674d82-53cb-4e2e-adec-45fe0237c4a4';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
   $handler->weight = -29;
   $handler->conf = array(
-    'title' => 'Panel',
+    'title' => 'article',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -36,7 +125,6 @@ function site_general_default_page_manager_handlers() {
           'settings' => array(
             'type' => array(
               'article' => 'article',
-              'page' => 'page',
             ),
           ),
           'context' => 'argument_entity_id:node_1',

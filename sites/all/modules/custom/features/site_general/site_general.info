@@ -36,6 +36,7 @@ features[menu_custom][] = main-menu
 features[menu_custom][] = user-menu
 features[node][] = article
 features[node][] = page
+features[page_manager_handlers][] = node_view__page
 features[page_manager_handlers][] = node_view__panel_context_3e674d82-53cb-4e2e-adec-45fe0237c4a4
 features[page_manager_pages][] = blog
 features[page_manager_pages][] = front_page
