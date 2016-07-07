@@ -28,23 +28,11 @@ function site_general_preprocess_node(&$vars) {
     $vars['theme_hook_suggestions'][] = 'node__square';
     $node = $vars['node'];
     $type = $node->type;
-    // dpm($vars);
 
     $image_uri = $vars['field_primary_image'][0]['uri'];
 
     $img_array = array(
       'style_name' => 'square_500x500',
-      'path' => $image_uri,
-    );
-    $vars['image'] = theme('image_style', $img_array);
-  }
-  elseif ($vars['view_mode'] == 'line') {
-    $vars['theme_hook_suggestions'][] = 'node__line';
-    $node = $vars['node'];
-    $type = $node->type;
-    $image_uri = $vars['field_primary_image'][0]['uri'];
-    $img_array = array(
-      'style_name' => 'square_200x200',
       'path' => $image_uri,
     );
     $vars['image'] = theme('image_style', $img_array);

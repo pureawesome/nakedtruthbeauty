@@ -5,3 +5,31 @@
  */
 
 include_once 'site_ingredients.features.inc';
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function site_ingredients_preprocess_node(&$vars) {
+  if ($vars['type'] == 'ingredient') {
+    if ($vars['view_mode'] == 'line') {
+      $vars['theme_hook_suggestions'][] = 'node__line';
+
+      $vars['text'] = field_view_field('node', $vars['node'], 'body', array(
+        'label' => 'hidden',
+        'type' => 'text_summary_or_trimmed',
+        'settings' => array('trim_length' => 150),
+      ));
+
+      $vars['image'] = field_view_field('node', $vars['node'], 'field_primary_image',
+        array(
+          'label' => 'hidden',
+          'settings' => array(
+            'image_style' => 'square_200x200',
+          )
+        )
+      );
+
+      // dpm($vars);
+    }
+  }
+}
