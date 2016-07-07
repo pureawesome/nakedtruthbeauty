@@ -13,11 +13,12 @@
   <div class="title">
     <h3>
       <?php if (isset($title)): ?>
-        <?php print $title; ?>
+        <?php print l($title, $node_url, array('html' => FALSE)); ?>
       <?php endif; ?>
     </h3>
   </div>
   <div class="content">
-    <?php print render($content['body']); ?>
+    <?php print render($text); ?>
+    <span class="read-more"><?php print l(t('Read More'), $node_url); ?></span>
   </div>
 </div>

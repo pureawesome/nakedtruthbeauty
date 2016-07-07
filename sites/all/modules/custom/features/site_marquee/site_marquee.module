@@ -33,6 +33,5 @@ function site_marquee_preprocess_node(&$vars) {
         $vars['hex' . $key] = $value['value'];
       }
     }
-    // dpm($vars);
   }
 }
