@@ -25,6 +25,10 @@
       width: 70%;
       height: 100%;
 
+      a {
+        text-align: left;
+      }
+
       h3 {
         @include vertical-align();
       }
@@ -39,6 +43,10 @@
       width: 100%;
       display: block;
       position: relative;
+    }
+
+    .title a {
+      text-align: center;
     }
   }
 }
