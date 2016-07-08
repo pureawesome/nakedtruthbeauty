@@ -10,6 +10,10 @@
       $('.search-toggle', context).on('click', function () {
         self.searchToggle();
       });
+
+      $('.user-icon', context).on('click', function () {
+        self.userNavToggle();
+      });
     },
 
     stickyNav: function () {
@@ -28,6 +32,10 @@
 
     searchToggle: function () {
       $('.navbar-search').slideToggle();
+    },
+
+    userNavToggle: function () {
+      $('#secondary-menu').slideToggle();
     }
   };
 })(jQuery);

@@ -78,23 +78,30 @@
 
       <?php if ($main_menu || $secondary_menu): ?>
         <div><div class="section container-fluid">
-          <div class="cart">
+
+          <button class="user-icon fa-icon">
+            <i class="fa fa-user"></i>
+            <span class="sr-only">My Account</span>
+          </button>
+
+          <div class="cart fa-icon">
             <a href="<?php print base_path(); ?>cart">
               <i class="fa fa-shopping-cart"></i>
               <span class="sr-only">Cart</span>
             </a>
           </div>
           <div class="search-block">
+            <button class="search-toggle fa-icon">
+              <i class="fa fa-search"></i>
+              <span class="sr-only">Search Toggle</span>
+            </button>
             <form class="navbar-form navbar-left pull-right navbar-search" role="search">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search">
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
-            <button class="search-toggle">
-              <i class="fa fa-search"></i>
-              <span class="sr-only">Search Toggle</span>
-            </button>
+
           </div>
 
           <div class="navbar-header">
@@ -110,7 +117,18 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbar-1">
             <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
-            <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
+
+            <?php if ($logged_in): ?>
+              <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
+            <?php else: ?>
+              <div id="secondary-menu">
+                <ul class="links inline clearfix nav navbar-nav">
+                  <li>
+                    <a href="<?php print base_path(); ?>user">Log In</a>
+                  </li>
+                </ul>
+              </div>
+            <?php endif; ?>
           </div><!-- /.navbar-collapse -->
         </div></div> <!-- /.section, /#navigation -->
       <?php endif; ?>
@@ -125,7 +143,7 @@
               <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'pull-right')))); ?>
             <?php endif; ?>
 
-            <div class="cart">
+            <div class="cart fa-icon">
               <a href="<?php print base_path(); ?>cart">
                 <i class="fa fa-shopping-cart"></i>
                 <span class="sr-only">Cart</span>

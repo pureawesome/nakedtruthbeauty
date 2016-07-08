@@ -127,7 +127,18 @@
   }
 
   #secondary-menu {
-    float: right;
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    width: 200px;
+    border-radius: 0 0 5px 5px;
+    @include background-image(linear-gradient(#b3cdb8, $primary-peach));
+
+    li {
+      width: 100%;
+      display: block;
+    }
   }
 
 }
