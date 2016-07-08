@@ -22,7 +22,7 @@ function site_search_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'search';
+  $handler->display->display_options['title'] = 'Search';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -31,7 +31,8 @@ function site_search_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
@@ -51,6 +52,12 @@ function site_search_views_default_views() {
   $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
+  /* Contextual filter: Search: Fulltext search */
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['summary']['format'] = 'default_summary';
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_default_node_index';
@@ -70,11 +77,21 @@ function site_search_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['path'] = 'search';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Search: Fulltext search */
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['validate']['fail'] = 'empty';
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['search_api_views_fulltext']['not'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
   $export['search'] = $view;
 
   return $export;
