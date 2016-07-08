@@ -5,20 +5,37 @@
 (function ($) {
   Drupal.behaviors.ntb = {
     attach: function (context) {
-      this.stickyNav();
+      var self = this;
+      self.stickyNav();
+      $('.search-toggle', context).on('click', function () {
+        self.searchToggle();
+      });
+
+      $('.user-icon', context).on('click', function () {
+        self.userNavToggle();
+      });
     },
 
-    stickyNav: function() {
+    stickyNav: function () {
       var hdr = $('#header').height() + $('#navigation').height();
       var $sticky = $('.navbar-fixed-top');
-      console.log(hdr);
-      $(window).scroll(function() {
-        if( $(this).scrollTop() > hdr ) {
+
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > hdr) {
           $sticky.addClass('visible');
-        } else {
+        }
+        else {
           $sticky.removeClass('visible');
         }
       });
+    },
+
+    searchToggle: function () {
+      $('.navbar-search').slideToggle();
+    },
+
+    userNavToggle: function () {
+      $('#secondary-menu').slideToggle();
     }
   };
 })(jQuery);

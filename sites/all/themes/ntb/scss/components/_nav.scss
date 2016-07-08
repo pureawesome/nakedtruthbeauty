@@ -51,21 +51,8 @@
   border: 0;
   position: absolute;
   margin: 0 auto;
-  right: 15px;
+  left: 10px;
   top: 10px;
-
-
-}
-
-.navbar-form.navbar-search {
-  width: 100%;
-  border: 0;
-  margin: 7px 0;
-  @include inline-block;
-
-  .btn {
-    display: none;
-  }
 }
 
 .nav>li>a:hover,
@@ -110,7 +97,7 @@
   .navbar-fixed-top {
     margin-top: -50px;
     height: 50px;
-    overflow: hidden;
+    // overflow: hidden;
     @include background-image(linear-gradient(to right, $primary-blue, white));
     @include transition(all 0.3s ease-out);
 
@@ -124,14 +111,14 @@
 
     .navbar-collapse {
       @include background-image(none);
+      float: left;
       display: inline-block !important;
-      width: calc(100% - 175px);
+      width: auto;
+      //
+      .navbar-nav > li > a {
+        padding: 14px 15px;
+      }
     }
-  }
-
-  .navbar-form.navbar-search {
-    width: auto;
-    float: right;
   }
 
   .navbar-default.navbar-fixed-top .navbar-nav > li > a {
@@ -140,6 +127,18 @@
   }
 
   #secondary-menu {
-    float: right;
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    width: 200px;
+    border-radius: 0 0 5px 5px;
+    @include background-image(linear-gradient(#b3cdb8, $primary-peach));
+
+    li {
+      width: 100%;
+      display: block;
+    }
   }
+
 }
