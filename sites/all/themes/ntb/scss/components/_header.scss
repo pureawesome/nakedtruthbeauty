@@ -29,7 +29,7 @@
   color: $secondary-blue;
   line-height: 1;
   padding: 0;
-  top: 5px;
+  top: 11px;
 
   &:hover {
     color: #37746e;
@@ -39,12 +39,10 @@
 .cart {
   position: absolute;
   right: 15px;
-  top: 7px;
 }
 
 .search-toggle {
   position: absolute;
-  top: 11px;
   right: 50px;
   padding: 0;
 }
@@ -94,6 +92,7 @@
   .fa-icon {
     font-size: 36px;
     margin: 0 5px;
+    top: 5px;
   }
 
   .user-icon {
@@ -112,7 +111,6 @@
     position: relative;
     float: right;
     right: 0;
-    top: 5px;
   }
 
   .navbar-form.navbar-search {
