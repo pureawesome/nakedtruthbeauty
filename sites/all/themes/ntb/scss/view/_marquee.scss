@@ -13,6 +13,8 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 36px;
+    margin-top: 0;
+    padding-top: 22px;
   }
 
   .marquee-body {
@@ -47,6 +49,7 @@
 
     .title {
       margin-top: 50px;
+      padding-top: 0;
     }
 
     .marquee-body {

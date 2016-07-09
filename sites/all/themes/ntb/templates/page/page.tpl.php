@@ -140,7 +140,7 @@
         <div class="section row user-nav">
           <div class="col-sm-12">
             <?php if ($secondary_menu): ?>
-              <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'pull-right')))); ?>
+              <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'top-secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'pull-right')))); ?>
             <?php endif; ?>
 
             <div class="cart fa-icon">

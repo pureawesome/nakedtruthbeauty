@@ -5,7 +5,7 @@
 (function ($) {
   'use strict';
 
-  Drupal.behaviors.site_products = {
+  Drupal.behaviors.site_search = {
     attach: function (context, settings) {
       var self = this;
       $('.search-form', context).on('submit', function () {
