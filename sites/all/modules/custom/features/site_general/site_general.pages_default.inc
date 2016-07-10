@@ -352,9 +352,9 @@ function site_general_default_page_manager_pages() {
       'args' => '',
       'url' => '',
       'display' => 'tags',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'override_title' => 1,
+      'override_title_text' => 'Tags',
+      'override_title_heading' => 'h4',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -402,6 +402,29 @@ function site_general_default_page_manager_pages() {
     $pane->uuid = '2e5cbfeb-bbd5-483b-a5ea-74129cd3c400';
     $display->content['new-2e5cbfeb-bbd5-483b-a5ea-74129cd3c400'] = $pane;
     $display->panels['lower-middle'][0] = 'new-2e5cbfeb-bbd5-483b-a5ea-74129cd3c400';
+    $pane = new stdClass();
+    $pane->pid = 'new-5bf40376-7624-4e92-bee5-37f34869720f';
+    $pane->panel = 'lower-right';
+    $pane->type = 'block';
+    $pane->subtype = 'block-4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '@NkdTruthBeauty',
+      'override_title_heading' => 'h4',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '5bf40376-7624-4e92-bee5-37f34869720f';
+    $display->content['new-5bf40376-7624-4e92-bee5-37f34869720f'] = $pane;
+    $display->panels['lower-right'][0] = 'new-5bf40376-7624-4e92-bee5-37f34869720f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -482,6 +505,52 @@ function site_general_default_page_manager_pages() {
   $display->uuid = 'c83c6cbe-1af5-45c2-85ae-78120a10dbef';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-d61dedd9-9a81-49bb-bd29-c93dc19a6cdb';
+    $pane->panel = 'bottom-left';
+    $pane->type = 'block';
+    $pane->subtype = 'block-4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => 'Twitter',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'd61dedd9-9a81-49bb-bd29-c93dc19a6cdb';
+    $display->content['new-d61dedd9-9a81-49bb-bd29-c93dc19a6cdb'] = $pane;
+    $display->panels['bottom-left'][0] = 'new-d61dedd9-9a81-49bb-bd29-c93dc19a6cdb';
+    $pane = new stdClass();
+    $pane->pid = 'new-a6285544-bb31-42d5-9875-a403654a3a3b';
+    $pane->panel = 'bottom-right';
+    $pane->type = 'block';
+    $pane->subtype = 'instagram_block-instagram_block';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a6285544-bb31-42d5-9875-a403654a3a3b';
+    $display->content['new-a6285544-bb31-42d5-9875-a403654a3a3b'] = $pane;
+    $display->panels['bottom-right'][0] = 'new-a6285544-bb31-42d5-9875-a403654a3a3b';
     $pane = new stdClass();
     $pane->pid = 'new-5c210380-bc90-489c-b426-9abb3456426e';
     $pane->panel = 'top';

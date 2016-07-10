@@ -27,10 +27,19 @@ function site_general_default_fe_block_boxes() {
   $fe_block_boxes->machine_name = 'ntb_mission';
   $fe_block_boxes->body = '<div class="col-md-10 col-md-offset-1">
 <h2>Naked Truth Beauty is an all-out commitment to socially responsible beauty: Good for our bodies, environment, and communities.</h2>
+<p>&nbsp;</p>
 </div>
 ';
 
   $export['ntb_mission'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Twitter';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'twitter';
+  $fe_block_boxes->body = '<a class="twitter-timeline" data-height="600" data-theme="light" data-link-color="#50a89f" href="https://twitter.com/NkdTruthBeauty">Tweets by NkdTruthBeauty</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>';
+
+  $export['twitter'] = $fe_block_boxes;
 
   return $export;
 }
