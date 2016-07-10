@@ -76,5 +76,37 @@ function site_general_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['instagram_block-instagram_block'] = array(
+    'cache' => 8,
+    'custom' => 0,
+    'delta' => 'instagram_block',
+    'module' => 'instagram_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ntb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ntb',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '@nakedtruthbeauty',
+    'visibility' => 0,
+  );
+
   return $export;
 }

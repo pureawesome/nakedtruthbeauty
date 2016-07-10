@@ -10896,6 +10896,40 @@ button.close {
   text-align: right;
 }
 
+.front h2.pane-title {
+  display: block;
+  background: #ffcc99;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px 10px;
+  margin: -10px 0 0 -10px;
+  position: absolute;
+  z-index: 10;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-top: 12px;
+}
+.front h2.pane-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 0;
+  border-color: transparent #91cdc5 transparent transparent;
+}
+
+.timeline-Header-title {
+  display: none;
+}
+
 .view-front-tiles .views-row .views-field-title {
   padding: 10px 0;
   font-size: 18px;
