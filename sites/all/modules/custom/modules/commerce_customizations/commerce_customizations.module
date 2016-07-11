@@ -9,6 +9,14 @@
   */
 function commerce_customizations_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'commerce_checkout_form_checkout') {
+      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['locality']['#attributes']['class'][] = 'form-control';
+      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#attributes']['class'][] = 'form-control';
+      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#attributes']['class'][] = 'form-control';
+      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['street_block']['thoroughfare']['#attributes']['class'][] = 'form-control';
+      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['street_block']['premise']['#attributes']['class'][] = 'form-control';
+      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#attributes']['class'][] = 'form-control';
+      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['country']['#attributes']['class'][] = 'form-control';
+
       $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['locality']['#attributes']['class'][] = 'form-control';
       $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#attributes']['class'][] = 'form-control';
       $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#attributes']['class'][] = 'form-control';
@@ -18,7 +26,7 @@ function commerce_customizations_form_alter(&$form, &$form_state, $form_id) {
       $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['country']['#attributes']['class'][] = 'form-control';
 
       $form['account']['login']['mail']['#attributes']['class'][] = 'form-control';
-        // dpm($form);
+        dpm($form);
   }
   // dpm($form);
 }
