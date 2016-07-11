@@ -95,7 +95,7 @@
               <i class="fa fa-search"></i>
               <span class="sr-only">Search Toggle</span>
             </button>
-            <form class="navbar-form navbar-left pull-right navbar-search" role="search">
+            <form class="navbar-form navbar-left pull-right navbar-search search-form" role="search">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search">
               </div>
