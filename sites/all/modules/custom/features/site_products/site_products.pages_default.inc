@@ -76,7 +76,7 @@ function site_products_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'shop';
   $display->uuid = 'f2226584-0746-4627-b4d8-64355198218a';
   $display->content = array();
   $display->panels = array();
@@ -100,7 +100,7 @@ function site_products_default_page_manager_pages() {
       'args' => '',
       'url' => '',
       'display' => 'block',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -115,7 +115,7 @@ function site_products_default_page_manager_pages() {
     $pane->uuid = '6057eec0-ac17-4871-bb3f-2ac145b69f10';
     $display->content['new-6057eec0-ac17-4871-bb3f-2ac145b69f10'] = $pane;
     $display->panels['bottom'][0] = 'new-6057eec0-ac17-4871-bb3f-2ac145b69f10';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;

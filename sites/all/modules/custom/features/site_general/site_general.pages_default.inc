@@ -328,45 +328,10 @@ function site_general_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'blog';
   $display->uuid = 'ca9ff854-4e5f-4d0d-8950-2e3d3403e0bc';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-1813d728-8b04-4cd5-9d22-5bcafd37cf27';
-    $pane->panel = 'lower-left';
-    $pane->type = 'views';
-    $pane->subtype = 'tags';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'tags',
-      'override_title' => 1,
-      'override_title_text' => 'Tags',
-      'override_title_heading' => 'h4',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '1813d728-8b04-4cd5-9d22-5bcafd37cf27';
-    $display->content['new-1813d728-8b04-4cd5-9d22-5bcafd37cf27'] = $pane;
-    $display->panels['lower-left'][0] = 'new-1813d728-8b04-4cd5-9d22-5bcafd37cf27';
     $pane = new stdClass();
     $pane->pid = 'new-2e5cbfeb-bbd5-483b-a5ea-74129cd3c400';
     $pane->panel = 'lower-middle';
@@ -425,6 +390,29 @@ function site_general_default_page_manager_pages() {
     $pane->uuid = '5bf40376-7624-4e92-bee5-37f34869720f';
     $display->content['new-5bf40376-7624-4e92-bee5-37f34869720f'] = $pane;
     $display->panels['lower-right'][0] = 'new-5bf40376-7624-4e92-bee5-37f34869720f';
+    $pane = new stdClass();
+    $pane->pid = 'new-67bfa194-91f3-4339-9ef5-94f757d3c358';
+    $pane->panel = 'lower-right';
+    $pane->type = 'block';
+    $pane->subtype = 'instagram_block-instagram_block';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '67bfa194-91f3-4339-9ef5-94f757d3c358';
+    $display->content['new-67bfa194-91f3-4339-9ef5-94f757d3c358'] = $pane;
+    $display->panels['lower-right'][1] = 'new-67bfa194-91f3-4339-9ef5-94f757d3c358';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

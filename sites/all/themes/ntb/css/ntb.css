@@ -10236,6 +10236,8 @@ button.close {
   margin: auto;
   width: 410px;
   display: block;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .mobile-logo {
@@ -11107,11 +11109,15 @@ button.close {
   font-weight: normal;
 }
 
-table.checkout-review .pane-title td,
-table.checkout-review .pane-data-full {
+table.checkout-review .pane-title td {
   padding: 0.4em 1em;
   font-weight: normal;
   text-transform: uppercase;
+}
+
+table.checkout-review .pane-data-full {
+  padding: 0.4em 1em;
+  font-weight: normal;
 }
 
 @media (min-width: 768px) {
