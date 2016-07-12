@@ -39,11 +39,11 @@ function commerce_customizations_preprocess_views_view(&$type) {
 }
 
 function commerce_customizations_form_element($variables) {
-  dpm($variables);
+  // dpm($variables);
 
   return theme_form_element($variables);
 }
 
 function commerce_customization_preprocess_form_element(&$vars) {
-  dpm($vars);
+  // dpm($vars);
 }
