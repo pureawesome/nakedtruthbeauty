@@ -10930,6 +10930,17 @@ button.close {
   display: none;
 }
 
+.pane-instagram-block-instagram-block .group {
+  max-width: 33.33333%;
+  height: auto;
+  float: left;
+  padding: 0 5px 5px 5px;
+}
+.pane-instagram-block-instagram-block img {
+  max-width: 100%;
+  height: auto !important;
+}
+
 .view-front-tiles .views-row .views-field-title {
   padding: 10px 0;
   font-size: 18px;
@@ -11079,7 +11090,8 @@ button.close {
   margin-right: 0;
 }
 
-.form-item-customer-profile-billing-commerce-customer-address-und-0-name-line {
+.form-item-customer-profile-billing-commerce-customer-address-und-0-name-line,
+.form-item-customer-profile-shipping-commerce-customer-address-und-0-name-line {
   width: 100%;
 }
 
