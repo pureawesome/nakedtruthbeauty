@@ -26,7 +26,7 @@ function commerce_customizations_form_alter(&$form, &$form_state, $form_id) {
       $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['country']['#attributes']['class'][] = 'form-control';
 
       $form['account']['login']['mail']['#attributes']['class'][] = 'form-control';
-        dpm($form);
+        // dpm($form);
   }
   // dpm($form);
 }
