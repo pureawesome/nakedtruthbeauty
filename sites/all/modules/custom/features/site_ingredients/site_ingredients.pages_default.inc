@@ -75,7 +75,7 @@ function site_ingredients_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Ingredients';
+  $display->title = 'ingredients';
   $display->uuid = '15c7e1ab-45c9-46f5-8469-5a06980037ba';
   $display->content = array();
   $display->panels = array();

@@ -49,11 +49,15 @@
   font-weight: normal;
 }
 
-table.checkout-review .pane-title td,
-table.checkout-review .pane-data-full {
+table.checkout-review .pane-title td {
   padding: 0.4em 1em;
   font-weight: normal;
   text-transform: uppercase;
+}
+
+table.checkout-review .pane-data-full {
+  padding: 0.4em 1em;
+  font-weight: normal;
 }
 
 @include breakpoint($screen-sm) {
