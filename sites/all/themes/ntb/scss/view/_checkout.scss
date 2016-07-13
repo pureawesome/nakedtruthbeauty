@@ -1,5 +1,6 @@
 .checkout-buttons .checkout-cancel,
-.checkout-buttons .checkout-back {
+.checkout-buttons .checkout-back,
+#commerce-braintree-tr-redirect-form > div > a {
   background: #91cdc5;
   color: #000;
   padding: 2px 6px 3px;
@@ -60,6 +61,15 @@ table.checkout-review .pane-data-full {
   font-weight: normal;
 }
 
+#commerce-braintree-tr-redirect-form > div > a {
+  border-radius: 5px;
+  margin-top: 15px;
+  width: 100%;
+  text-transform: lowercase;
+  text-align: center;
+  @include inline-block();
+}
+
 @include breakpoint($screen-sm) {
   .checkout-buttons .checkout-cancel {
     margin-left: 0;
@@ -68,6 +78,12 @@ table.checkout-review .pane-data-full {
   .page-checkout .button-operator {
     width: auto;
     margin: 0 5px 10px;
+  }
 
+  #commerce-braintree-tr-redirect-form > div > a {
+    margin-top: 0;
+    margin-left: 15px;
+    width: auto;
+    margin-bottom: 10px;
   }
 }

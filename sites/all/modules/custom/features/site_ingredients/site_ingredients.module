@@ -14,11 +14,9 @@ function site_ingredients_preprocess_node(&$vars) {
     if ($vars['view_mode'] == 'line') {
       $vars['theme_hook_suggestions'][] = 'node__line';
 
-      $vars['text'] = field_view_field('node', $vars['node'], 'body', array(
-        'label' => 'hidden',
-        'type' => 'text_summary_or_trimmed',
-        'settings' => array('trim_length' => 150),
-      ));
+      $body = $vars['body'][0]['value'];
+
+      $vars['text'] = truncate_utf8($body, 150, $wordsafe = TRUE, $add_ellipsis = TRUE, $min_wordsafe_length = 5);
 
       $vars['image'] = field_view_field('node', $vars['node'], 'field_primary_image',
         array(
