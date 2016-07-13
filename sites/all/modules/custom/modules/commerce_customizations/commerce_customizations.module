@@ -28,6 +28,29 @@ function commerce_customizations_form_alter(&$form, &$form_state, $form_id) {
       $form['account']['login']['mail']['#attributes']['class'][] = 'form-control';
         // dpm($form);
   }
+
+  else if ($form_id == 'commerce_checkout_form_payment') {
+    // $form['commerce_payment']['payment_details']['credit_card'][]['#attributes']['class'][] = 'form-control';
+    //
+    $classes = ['number', 'owner', 'exp_month', 'exp_year', 'code'];
+
+    foreach ($classes as $class) {
+      $form['commerce_payment']['payment_details']['credit_card'][$class]['#attributes']['class'][] = 'form-control';
+    }
+
+    $inlines = ['exp_month', 'exp_year', 'code'];
+
+    foreach ($inlines as $inline) {
+      $form['commerce_payment']['payment_details']['credit_card'][$inline]['#attributes']['class'][] = 'form-inline';
+    }
+
+    // $form['commerce_payment']['payment_details']['credit_card']['number']['#attributes']['class'][] = 'form-control';
+    // $form['commerce_payment']['payment_details']['credit_card']['owner']['#attributes']['class'][] = 'form-control';
+    // $form['commerce_payment']['payment_details']['credit_card']['exp_month']['#attributes']['class'][] = 'form-control';
+    // $form['commerce_payment']['payment_details']['credit_card']['exp_year']['#attributes']['class'][] = 'form-control';
+    // $form['commerce_payment']['payment_details']['credit_card']['code']['#attributes']['class'][] = 'form-control';
+    // dpm($form['commerce_payment']['payment_details']);
+  }
   // dpm($form);
 }
 

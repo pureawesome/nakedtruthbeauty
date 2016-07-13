@@ -34,7 +34,17 @@
   display: none;
 }
 
+.pane-block-4 .pane-title:before {
+  @include fa-icon();
+  content: $fa-var-twitter;
+}
+
 .pane-instagram-block-instagram-block {
+  .pane-title:before {
+    @include fa-icon();
+    content: $fa-var-instagram;
+  }
+
   .group {
     max-width: 33.33333%;
     height: auto;

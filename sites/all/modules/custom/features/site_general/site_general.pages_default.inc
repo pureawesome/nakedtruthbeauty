@@ -333,6 +333,29 @@ function site_general_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-67bfa194-91f3-4339-9ef5-94f757d3c358';
+    $pane->panel = 'lower-left';
+    $pane->type = 'block';
+    $pane->subtype = 'instagram_block-instagram_block';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'nakedtruthbeauty',
+      'override_title_heading' => 'h5',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '67bfa194-91f3-4339-9ef5-94f757d3c358';
+    $display->content['new-67bfa194-91f3-4339-9ef5-94f757d3c358'] = $pane;
+    $display->panels['lower-left'][0] = 'new-67bfa194-91f3-4339-9ef5-94f757d3c358';
+    $pane = new stdClass();
     $pane->pid = 'new-2e5cbfeb-bbd5-483b-a5ea-74129cd3c400';
     $pane->panel = 'lower-middle';
     $pane->type = 'views';
@@ -376,8 +399,8 @@ function site_general_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '@NkdTruthBeauty',
-      'override_title_heading' => 'h4',
+      'override_title_text' => 'NkdTruthBeauty',
+      'override_title_heading' => 'h5',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -390,29 +413,6 @@ function site_general_default_page_manager_pages() {
     $pane->uuid = '5bf40376-7624-4e92-bee5-37f34869720f';
     $display->content['new-5bf40376-7624-4e92-bee5-37f34869720f'] = $pane;
     $display->panels['lower-right'][0] = 'new-5bf40376-7624-4e92-bee5-37f34869720f';
-    $pane = new stdClass();
-    $pane->pid = 'new-67bfa194-91f3-4339-9ef5-94f757d3c358';
-    $pane->panel = 'lower-right';
-    $pane->type = 'block';
-    $pane->subtype = 'instagram_block-instagram_block';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '67bfa194-91f3-4339-9ef5-94f757d3c358';
-    $display->content['new-67bfa194-91f3-4339-9ef5-94f757d3c358'] = $pane;
-    $display->panels['lower-right'][1] = 'new-67bfa194-91f3-4339-9ef5-94f757d3c358';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -502,7 +502,7 @@ function site_general_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '@NkdTruthBeauty',
+      'override_title_text' => 'NkdTruthBeauty',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -525,7 +525,7 @@ function site_general_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '@nakedtruthbeauty',
+      'override_title_text' => 'nakedtruthbeauty',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
