@@ -16,6 +16,10 @@
   }
 }
 
+.cloud-zoom-container #wrap {
+  z-index: 150 !important;
+}
+
 .mousetrap {
   max-width: 100%;
 }

@@ -31,7 +31,7 @@ function site_general_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => 0,
+        'weight' => -20,
       ),
       'seven' => array(
         'region' => '',
@@ -73,6 +73,70 @@ function site_general_default_fe_block_settings() {
       ),
     ),
     'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['block-social_footer'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'social_footer',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ntb' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'ntb',
+        'weight' => -21,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['block-twitter'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'twitter',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ntb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ntb',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'NkdTruthBeauty',
     'visibility' => 0,
   );
 

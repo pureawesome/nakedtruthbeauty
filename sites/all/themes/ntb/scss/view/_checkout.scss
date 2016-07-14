@@ -70,6 +70,42 @@ table.checkout-review .pane-data-full {
   @include inline-block();
 }
 
+ul.commerce-checkout-progress {
+  display: block;
+
+  li {
+    margin-left: 0px;
+
+    &:after {
+      @include fa-icon();
+      content: $fa-var-angle-double-right;
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+      }
+    }
+
+    &.visited {
+      color: darken($secondary-blue, 20%);
+    }
+
+    &.active {
+      font-weight: normal;
+      color: $secondary-blue;
+
+    }
+  }
+
+  .page-cart & li {
+    color: #000;
+  }
+}
+
+
 @include breakpoint($screen-sm) {
   .checkout-buttons .checkout-cancel {
     margin-left: 0;

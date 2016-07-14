@@ -39,6 +39,21 @@ function site_general_default_fe_block_boxes() {
   $export['ntb_mission'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'social_footer';
+  $fe_block_boxes->format = 'raw_html';
+  $fe_block_boxes->machine_name = 'social_footer';
+  $fe_block_boxes->body = '<div class="social" id="social_footer">
+<ul class="inline">
+	<li><a class="fb" href="http://facebook.com/ntbeauty"><span class="sr-only">Facebook</span></a></li>
+	<li><a class="tw" href="http://twitter.com/nkdtruthbeauty"><span class="sr-only">Twitter</span></a></li>
+	<li><a class="insta" href="http://instagram.com/nakedtruthbeauty"><span class="sr-only">Instagram</span></a></li>
+</ul>
+</div>
+';
+
+  $export['social_footer'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Twitter';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'twitter';
