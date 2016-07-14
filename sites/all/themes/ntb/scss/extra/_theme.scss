@@ -148,6 +148,10 @@ ul.primary {
   }
 }
 
+#footer {
+  margin-top:150px;
+}
+
 @include breakpoint($screen-sm) {
   #main-wrapper {
     margin-top: 0;
