@@ -76,11 +76,16 @@ table thead th,
 .field .field-label {
   font-weight: normal;
   text-transform: uppercase;
+  font-size: 12px;
 }
 
 #user-pass-reset,
 #user-profile-form,
-.commerce-order-commerce-order {
+.commerce-order-commerce-order,
+#user-login,
+#user-register-form,
+#user-pass,
+.profile {
   padding: 0 15px;
 }
 
@@ -90,7 +95,58 @@ table thead th,
 //   position: absolute;
 //   bottom: 0;
 // }
+//
+ul.primary {
+  border: 0;
 
+  li {
+    a {
+      text-transform: lowercase;
+      background: none;
+      border: 0;
+      padding: 6px;
+
+      &:hover {
+        background: $secondary-blue;
+        color: #000;
+        @include border-radius(5px);
+      }
+    }
+
+    &.active a {
+      border: 0;
+    }
+  }
+}
+
+#social_footer {
+  text-align: center;
+
+  li a {
+    margin: 0 15px;
+
+    &:before {
+      @include fa-icon();
+      color: $secondary-blue;
+      content: $fa-var-facebook;
+      font-size: 36px;
+    }
+
+    &.tw:before {
+      content: $fa-var-twitter;
+    }
+
+    &.insta:before {
+      content: $fa-var-instagram;
+    }
+
+    &:hover {
+      &:before {
+        color: darken($secondary-blue, 15%);
+      }
+    }
+  }
+}
 
 @include breakpoint($screen-sm) {
   #main-wrapper {
@@ -106,5 +162,11 @@ table thead th,
     display: inline-block;
     width: auto;
     vertical-align: middle;
+  }
+
+
+  table thead th,
+  .field .field-label {
+    font-size: 16px;
   }
 }

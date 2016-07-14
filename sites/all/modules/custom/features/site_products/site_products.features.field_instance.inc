@@ -501,6 +501,12 @@ function site_products_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'add_to_cart_confirmation_view' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'commerce_line_item_display' => array(
         'label' => 'hidden',
         'module' => 'commerce_price',
