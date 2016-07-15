@@ -44,6 +44,38 @@ function site_general_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['block-line_break'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'line_break',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ntb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ntb',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['block-ntb_mission'] = array(
     'cache' => -1,
     'custom' => 0,

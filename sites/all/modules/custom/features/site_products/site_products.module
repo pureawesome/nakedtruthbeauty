@@ -14,6 +14,11 @@ function site_products_entity_info_alter(&$entity_info) {
     'label' => t('Product'),
     'custom settings' => FALSE,
   );
+
+  $entity_info['node']['view modes']['add_to_cart'] = array(
+    'label' => t('Add to Cart'),
+    'custom settings' => FALSE,
+  );
 }
 
 /**
