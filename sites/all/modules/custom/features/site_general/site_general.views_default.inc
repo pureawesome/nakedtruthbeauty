@@ -225,7 +225,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Primary Image */
+  /* Field: Field: Primary Image */
   $handler->display->display_options['fields']['field_primary_image']['id'] = 'field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['table'] = 'field_data_field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['field'] = 'field_primary_image';
@@ -257,7 +257,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Primary Image */
+  /* Field: Field: Primary Image */
   $handler->display->display_options['fields']['field_primary_image']['id'] = 'field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['table'] = 'field_data_field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['field'] = 'field_primary_image';
@@ -309,7 +309,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<a href="/shop">More Products</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Primary Image */
+  /* Field: Field: Primary Image */
   $handler->display->display_options['fields']['field_primary_image_1']['id'] = 'field_primary_image_1';
   $handler->display->display_options['fields']['field_primary_image_1']['table'] = 'field_data_field_primary_image';
   $handler->display->display_options['fields']['field_primary_image_1']['field'] = 'field_primary_image';
