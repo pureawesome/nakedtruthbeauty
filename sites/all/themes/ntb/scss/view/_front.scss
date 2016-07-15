@@ -40,6 +40,10 @@
 }
 
 .pane-instagram-block-instagram-block {
+  h2.pane-title {
+    margin-left: -5px;
+  }
+
   .pane-title:before {
     @include fa-icon();
     content: $fa-var-instagram;

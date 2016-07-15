@@ -22,6 +22,14 @@ function site_general_default_fe_block_boxes() {
   $export['footer_menu'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'line_break';
+  $fe_block_boxes->format = 'raw_html';
+  $fe_block_boxes->machine_name = 'line_break';
+  $fe_block_boxes->body = '<div class="line-break"></div>';
+
+  $export['line_break'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'mission';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'ntb_mission';
