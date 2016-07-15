@@ -629,13 +629,13 @@ drupal_fast_404();
 
 if (defined('PANTHEON_ENVIRONMENT')) {
   if (PANTHEON_ENVIRONMENT == 'dev') {
-    $domain = 'sandbox.mysite.com';
+    $domain = 'sandbox.nakedtruthbeauty.com';
   }
   else if (PANTHEON_ENVIRONMENT == 'test') {
-    $domain = 'staging.mysite.com';
+    $domain = 'staging.nakedtruthbeauty.com';
   }
   else if (PANTHEON_ENVIRONMENT == 'live') {
-    $domain = 'www.mysite.com';
+    $domain = 'nakedtruthbeauty.com';
   }
   else {
     # Fallback value for multidev or other environments.
