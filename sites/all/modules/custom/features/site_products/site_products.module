@@ -25,6 +25,8 @@ function site_products_entity_info_alter(&$entity_info) {
  * Implements hook_preprocess_page().
  */
 function site_products_preprocess_page(&$vars) {
+  drupal_add_js(libraries_get_path('jquery-throttle-debounce') . '/jquery.ba-throttle-debounce.min.js');
+  drupal_add_js(libraries_get_path('jquery-match-height') . '/dist/jquery.matchHeight-min.js');
   drupal_add_js(drupal_get_path('module', 'site_products') . '/js/site_products.js');
 }
 

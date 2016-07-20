@@ -79,7 +79,7 @@
       <?php if ($main_menu || $secondary_menu): ?>
         <div><div class="section container-fluid">
 
-          <button class="user-icon fa-icon">
+          <button class="user-icon fa-icon" data-menu="secondary-menu">
             <i class="fa fa-user"></i>
             <span class="sr-only">My Account</span>
           </button>
@@ -119,7 +119,7 @@
             <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
 
             <?php if ($logged_in): ?>
-              <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
+              <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'secondary-menu')))); ?>
             <?php else: ?>
               <div id="secondary-menu">
                 <ul class="links inline clearfix nav navbar-nav">
@@ -139,8 +139,22 @@
       <div>
         <div class="section row user-nav">
           <div class="col-sm-12">
-            <?php if ($secondary_menu): ?>
-              <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'top-secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'pull-right')))); ?>
+
+            <button class="user-icon fa-icon" data-menu="secondary-menu-top">
+              <i class="fa fa-user"></i>
+              <span class="sr-only">My Account</span>
+            </button>
+
+            <?php if ($logged_in): ?>
+              <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu-top', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'navbar-default', 'secondary-menu')))); ?>
+            <?php else: ?>
+              <div id="secondary-menu">
+                <ul class="links inline clearfix nav navbar-nav">
+                  <li>
+                    <a href="<?php print base_path(); ?>user">Log In</a>
+                  </li>
+                </ul>
+              </div>
             <?php endif; ?>
 
             <div class="cart fa-icon">
