@@ -139,10 +139,14 @@
     li {
       width: 100%;
       display: block;
+
+      a {
+        padding: 14px;
+      }
     }
   }
 
   #secondary-menu-top {
-    @include background-image(linear-gradient($primary-peach, #fff));
+    @include background-image(linear-gradient($primary-blue, lighten($primary-blue, 25%)));
   }
 }
