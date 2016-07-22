@@ -122,7 +122,7 @@
               <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'secondary-menu')))); ?>
             <?php else: ?>
               <div id="secondary-menu">
-                <ul class="links inline clearfix nav navbar-nav">
+                <ul class="links inline clearfix nav navbar-nav secondary-menu">
                   <li>
                     <a href="<?php print base_path(); ?>user">Log In</a>
                   </li>
@@ -146,10 +146,12 @@
             </button>
 
             <?php if ($logged_in): ?>
-              <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu-top', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'navbar-default', 'secondary-menu')))); ?>
+              <div class="navbar-default">
+                <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu-top', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'navbar-default', 'secondary-menu')))); ?>
+              </div>
             <?php else: ?>
-              <div id="secondary-menu">
-                <ul class="links inline clearfix nav navbar-nav">
+              <div id="secondary-menu-top" class="navbar-default">
+                <ul class="links inline clearfix nav navbar-nav secondary-menu">
                   <li>
                     <a href="<?php print base_path(); ?>user">Log In</a>
                   </li>
