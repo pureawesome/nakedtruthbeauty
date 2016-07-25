@@ -98,6 +98,9 @@ function site_products_strongarm() {
       'slider' => array(
         'custom_settings' => FALSE,
       ),
+      'add_to_cart' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
