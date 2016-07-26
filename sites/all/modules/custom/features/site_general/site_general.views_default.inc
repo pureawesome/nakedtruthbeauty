@@ -65,6 +65,58 @@ function site_general_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Draggableviews: Content */
+  $handler->display->display_options['fields']['draggableviews']['id'] = 'draggableviews';
+  $handler->display->display_options['fields']['draggableviews']['table'] = 'node';
+  $handler->display->display_options['fields']['draggableviews']['field'] = 'draggableviews';
+  $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 0;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'blog:page_1';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 0;
+  $handler->display->display_options['path'] = 'admin/content/blog';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Sort Articles';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['blog'] = $view;
 
   $view = new view();
@@ -183,11 +235,12 @@ function site_general_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Updated date */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'ingredients:page_1';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 0;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -202,11 +255,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'ingredient' => 'ingredient',
   );
-  /* Filter criterion: Content: Promoted to front page */
-  $handler->display->display_options['filters']['promote']['id'] = 'promote';
-  $handler->display->display_options['filters']['promote']['table'] = 'node';
-  $handler->display->display_options['filters']['promote']['field'] = 'promote';
-  $handler->display->display_options['filters']['promote']['value'] = '1';
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Front Tile Ingredient */
   $handler = $view->new_display('block', 'Front Tile Ingredient', 'front_tile_ingredient');
@@ -225,7 +274,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Primary Image */
+  /* Field: Content: Primary Image */
   $handler->display->display_options['fields']['field_primary_image']['id'] = 'field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['table'] = 'field_data_field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['field'] = 'field_primary_image';
@@ -257,7 +306,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Primary Image */
+  /* Field: Content: Primary Image */
   $handler->display->display_options['fields']['field_primary_image']['id'] = 'field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['table'] = 'field_data_field_primary_image';
   $handler->display->display_options['fields']['field_primary_image']['field'] = 'field_primary_image';
@@ -275,6 +324,13 @@ function site_general_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'blog:page_1';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -291,11 +347,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
   );
-  /* Filter criterion: Content: Promoted to front page */
-  $handler->display->display_options['filters']['promote']['id'] = 'promote';
-  $handler->display->display_options['filters']['promote']['table'] = 'node';
-  $handler->display->display_options['filters']['promote']['field'] = 'promote';
-  $handler->display->display_options['filters']['promote']['value'] = '1';
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Front Tile Product */
   $handler = $view->new_display('block', 'Front Tile Product', 'block_1');
@@ -309,7 +361,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<a href="/shop">More Products</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Primary Image */
+  /* Field: Content: Primary Image */
   $handler->display->display_options['fields']['field_primary_image_1']['id'] = 'field_primary_image_1';
   $handler->display->display_options['fields']['field_primary_image_1']['table'] = 'field_data_field_primary_image';
   $handler->display->display_options['fields']['field_primary_image_1']['field'] = 'field_primary_image';
@@ -328,6 +380,13 @@ function site_general_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'shop:page_1';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -344,11 +403,7 @@ function site_general_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'product_display' => 'product_display',
   );
-  /* Filter criterion: Content: Promoted to front page */
-  $handler->display->display_options['filters']['promote']['id'] = 'promote';
-  $handler->display->display_options['filters']['promote']['table'] = 'node';
-  $handler->display->display_options['filters']['promote']['field'] = 'promote';
-  $handler->display->display_options['filters']['promote']['value'] = '1';
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Front List Ingredients */
   $handler = $view->new_display('block', 'Front List Ingredients', 'block_2');
