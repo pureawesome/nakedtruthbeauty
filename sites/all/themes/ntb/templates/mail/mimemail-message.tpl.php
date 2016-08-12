@@ -31,7 +31,7 @@
     <?php endif; ?>
   </head>
   <body id="mimemail-body" <?php if ($module && $key): print 'class="' . $module . '-' . $key . '"'; endif; ?>>
-    <table>
+    <table id="table" cellpadding="0" cellspacing="0" border="0">
       <tr>
         <td>
           <div id="logo">

@@ -1,6 +1,30 @@
+@import 'compass';
+
 #mimemail-body {
+  #table {
+    @include background-image(linear-gradient(#91cdc5, #b3cdb8));
+    border-spacing: 0;
+  }
+
   #logo {
     text-align: center;
+    padding: 15px;
+    margin: 15px;
+    margin-bottom: 0;
+    background: #fff;
+  }
+
+  #footer {
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  #main {
+    margin: 15px;
+    background: #fff;
+    margin-top: 0;
+    padding: 15px;
   }
 
   img {
