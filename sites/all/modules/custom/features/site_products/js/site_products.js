@@ -28,7 +28,7 @@
     },
 
     resizeColumns: function () {
-      $('.view-shop .views-row').matchHeight();
+      // $('.view-shop .views-row').matchHeight();
     }
   };
 })(jQuery);
