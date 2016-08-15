@@ -2115,9 +2115,12 @@ function commerce_coupon_form_commerce_checkout_form_alter(&$form, &$form_state)
     // Rollback any transactions if necessary. Pass the "save" argument so that
     // if a rollback is done, it saves the order.
     commerce_coupon_rollback_order_transactions($order, TRUE);
-
-    // Add our handler as the first validate handler.
-    array_unshift($form['buttons']['continue']['#validate'], 'commerce_coupon_commerce_checkout_form_review_validate');
+    // dpm($form['buttons']['cntinue']['#validate']);
+    dpm($form);
+    if (!empty($form['buttons']['continue']['#validate'])) {
+      // Add our handler as the first validate handler.
+      array_unshift($form['buttons']['continue']['#validate'], 'commerce_coupon_commerce_checkout_form_review_validate');
+    }
   }
 }
 
