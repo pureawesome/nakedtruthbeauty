@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * NTB Commerce Customizations.
@@ -9,29 +10,25 @@
   */
 function commerce_customizations_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'commerce_checkout_form_checkout') {
-      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['locality']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['street_block']['thoroughfare']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['street_block']['premise']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['country']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['locality']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['street_block']['thoroughfare']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['street_block']['premise']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_shipping']['commerce_customer_address'][LANGUAGE_NONE][0]['country']['#attributes']['class'][] = 'form-control';
 
-      $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['locality']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['street_block']['thoroughfare']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['street_block']['premise']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#attributes']['class'][] = 'form-control';
-      $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['country']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['locality']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['street_block']['thoroughfare']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['street_block']['premise']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#attributes']['class'][] = 'form-control';
+    $form['customer_profile_billing']['commerce_customer_address'][LANGUAGE_NONE][0]['country']['#attributes']['class'][] = 'form-control';
 
-      $form['account']['login']['mail']['#attributes']['class'][] = 'form-control';
-        // dpm($form);
+    $form['account']['login']['mail']['#attributes']['class'][] = 'form-control';
   }
-
-  else if ($form_id == 'commerce_checkout_form_payment') {
-    // $form['commerce_payment']['payment_details']['credit_card'][]['#attributes']['class'][] = 'form-control';
-    //
+  elseif ($form_id == 'commerce_checkout_form_payment') {
     $classes = ['number', 'owner', 'exp_month', 'exp_year', 'code'];
 
     foreach ($classes as $class) {
@@ -43,30 +40,12 @@ function commerce_customizations_form_alter(&$form, &$form_state, $form_id) {
     foreach ($inlines as $inline) {
       $form['commerce_payment']['payment_details']['credit_card'][$inline]['#attributes']['class'][] = 'form-inline';
     }
-
-    // $form['commerce_payment']['payment_details']['credit_card']['number']['#attributes']['class'][] = 'form-control';
-    // $form['commerce_payment']['payment_details']['credit_card']['owner']['#attributes']['class'][] = 'form-control';
-    // $form['commerce_payment']['payment_details']['credit_card']['exp_month']['#attributes']['class'][] = 'form-control';
-    // $form['commerce_payment']['payment_details']['credit_card']['exp_year']['#attributes']['class'][] = 'form-control';
-    // $form['commerce_payment']['payment_details']['credit_card']['code']['#attributes']['class'][] = 'form-control';
-    // dpm($form['commerce_payment']['payment_details']);
   }
-  // dpm($form);
 }
 
 /**
- * Implementation of hook_element_info_alter().
+ * Implementation of hook_form_element().
  */
-function commerce_customizations_preprocess_views_view(&$type) {
-  // view id = view-commerce-cart-form
-}
-
 function commerce_customizations_form_element($variables) {
-  // dpm($variables);
-
   return theme_form_element($variables);
-}
-
-function commerce_customization_preprocess_form_element(&$vars) {
-  // dpm($vars);
 }
