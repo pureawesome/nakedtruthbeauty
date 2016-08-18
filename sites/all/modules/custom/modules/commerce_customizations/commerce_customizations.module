@@ -5,30 +5,6 @@
  */
 
  /**
-  * Implements hook_menu_alter().
-  */
- function commerce_customizations_menu_alter(&$items) {
-  //  dpm($items);
-   $items['user/%user/view']['title'] = 'account';
-  //  $items['user/%user']['title callback'] = '_commerce_kickstart_user_page_title';
-  //  $items['user/%user/connections']['access_callback'] = 'commerce_kickstart_user_access_callback';
-  //  $items['user/%user/view']['title'] = 'User account';
-  //  $items['user/%user/view']['title callback'] = '_commerce_kickstart_user_tab_title';
-  //  $items['user/%user/view']['title arguments'] = array(1);
-   $items['user/%user/edit']['title'] = 'Update email/password';
-  //  $items['user']['type'] = MENU_CALLBACK;
-  //  $items['user/register']['type'] = MENU_CALLBACK;
-  //  $items['user/password']['type'] = MENU_CALLBACK;
- }
-
- /**
-  * Implements hook_user_view().
-  */
- function commerce_customizations_user_view($account, $view_mode, $langcode) {
-   dpm($account);
- }
-
- /**
   * Implements hook_form_alter().
   */
 function commerce_customizations_form_alter(&$form, &$form_state, $form_id) {
