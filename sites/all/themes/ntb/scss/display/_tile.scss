@@ -1,6 +1,7 @@
 .tile {
   position: relative;
   margin-bottom: 15px;
+  max-width: 100%;
 
   a {
     text-align: center;
@@ -30,7 +31,7 @@
       }
 
       h3 {
-        padding: 0 15px;
+        // padding: 0 15px;
         @include vertical-align();
       }
     }
