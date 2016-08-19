@@ -1,0 +1,24 @@
+.masonry-item {
+  width: 98%;
+  background: none;
+  border: none;
+  margin: 0.5%;
+  @include inline-block();
+}
+
+@include breakpoint($screen-sm) {
+  .masonry-item {
+    width: 48%;
+  }
+  // border: 1px solid yellow;
+}
+
+@include breakpoint($screen-md) {
+  .masonry-item {
+    width: 30%;
+  }
+}
+
+@include breakpoint($screen-lg) {
+  // border: 1px solid green;
+}

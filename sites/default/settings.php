@@ -626,6 +626,18 @@ drupal_fast_404();
  */
 # $conf['theme_debug'] = TRUE;
 # Set the $base_url parameter if we are running on Pantheon:
+if (!defined('PANTHEON_ENVIRONMENT')) {
+  $databases['default']['default'] = array(
+    'driver' => 'mysql',
+    'database' => 'nakedtruth',
+    'username' => $DB_USER,
+    'password' => $DB_PASS,
+    'host' => 'localhost',
+    'prefix' => '',
+    'collation' => 'utf8_general_ci',
+  );
+}
+
 
 if (defined('PANTHEON_ENVIRONMENT')) {
   if (PANTHEON_ENVIRONMENT == 'dev') {

@@ -1,0 +1,17 @@
+diff --git a/sites/all/modules/contrib/commerce_coupon/commerce_coupon.module b/sites/all/modules/contrib/commerce_coupon/commerce_coupon.module
+index 50d9bb2..a81eb99 100644
+--- a/sites/all/modules/contrib/commerce_coupon/commerce_coupon.module
++++ b/sites/all/modules/contrib/commerce_coupon/commerce_coupon.module
+@@ -2115,9 +2115,10 @@ function commerce_coupon_form_commerce_checkout_form_alter(&$form, &$form_state)
+     // Rollback any transactions if necessary. Pass the "save" argument so that
+     // if a rollback is done, it saves the order.
+     commerce_coupon_rollback_order_transactions($order, TRUE);
+-
+-    // Add our handler as the first validate handler.
+-    array_unshift($form['buttons']['continue']['#validate'], 'commerce_coupon_commerce_checkout_form_review_validate');
++    if (!empty($form['buttons']['continue']['#validate'])) {
++      // Add our handler as the first validate handler.
++      array_unshift($form['buttons']['continue']['#validate'], 'commerce_coupon_commerce_checkout_form_review_validate');
++    }
+   }
+ }
