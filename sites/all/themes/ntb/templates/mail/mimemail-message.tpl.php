@@ -36,7 +36,7 @@
         <td>
           <div id="logo">
             <div id="logo-inner">
-              <img src="/sites/all/themes/ntb/logo.png" width="400" height="82" />
+              <img src="/sites/all/themes/ntb/logo.png" />
             </div>
           </div>
         </td>
