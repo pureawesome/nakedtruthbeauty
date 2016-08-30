@@ -630,8 +630,8 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
   $databases['default']['default'] = array(
     'driver' => 'mysql',
     'database' => 'nakedtruth',
-    'username' => $DB_USER,
-    'password' => $DB_PASS,
+    'username' => getenv('DB_USER'),
+    'password' => getenv('DB_PASS'),
     'host' => 'localhost',
     'prefix' => '',
     'collation' => 'utf8_general_ci',
