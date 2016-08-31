@@ -37,6 +37,21 @@
     }
   }
 
+  .fa-spinner {
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -8px;
+      margin-left: -8px;
+    }
+
+    &.fa-2x:before {
+      margin-top: -16px;
+      margin-left: -16px;
+    }
+  }
+
   @include breakpoint($screen-sm) {
     .slider-image,
     .content {

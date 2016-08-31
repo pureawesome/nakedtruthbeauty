@@ -35,3 +35,12 @@ function site_marquee_preprocess_node(&$vars) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function site_marquee_preprocess_views_view(&$vars) {
+  if ($vars['view']->name == 'marquee') {
+    drupal_add_js(drupal_get_path('module', 'site_marquee') . '/js/site_marquee.js');
+  }
+}
