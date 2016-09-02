@@ -14,11 +14,15 @@
     text-transform: uppercase;
     font-size: 36px;
     margin-top: 0;
-    padding-top: 22px;
+  }
+
+  .content {
+    padding: 20px 15px;
   }
 
   .marquee-body {
     font-size: 18px;
+    text-align: center;
   }
 
   .flex-control-nav {
@@ -69,6 +73,7 @@
 
     .marquee-body {
       padding: 0 30px;
+      text-align: left;
     }
   }
 }
