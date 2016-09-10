@@ -28,15 +28,16 @@ function site_marquee_image_default_styles() {
 
   // Exported image style: marquee_large.
   $styles['marquee_large'] = array(
-    'label' => 'Marquee Large (1440 x 500)',
+    'label' => 'Marquee Large',
     'effects' => array(
-      1 => array(
-        'name' => 'image_scale_and_crop',
+      2 => array(
+        'name' => 'image_scale',
         'data' => array(
-          'width' => 1440,
-          'height' => 500,
+          'width' => 1000,
+          'height' => '',
+          'upscale' => 0,
         ),
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
   );

@@ -1,3 +1,32 @@
+.view-product-type-taxonomy {
+  text-align: center;
+
+  .active {
+    color: $link-hover-color;
+  }
+
+  .views-row {
+    text-align: center;
+  }
+
+  @include breakpoint($screen-xs) {
+    .views-row {
+      @include inline-block();
+      text-transform: lowercase;
+      font-size: 20px;
+      margin: 0 25px;
+    }
+  }
+
+  @include breakpoint($screen-sm) {
+    .views-row {
+      display: block;
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+}
+
 .view-shop {
   .views-row {
     border-bottom: 0.5px solid $border-light;
@@ -7,28 +36,11 @@
     text-align: center;
   }
 
-  .views-exposed-widget .description {
-    display: none;
-  }
-
-  .views-exposed-form .views-exposed-widget {
-    padding: none;
-    text-align: center;
-    float: none;
-  }
-
   @include breakpoint($screen-xs) {
     // border: 1px solid red;
     a {
       text-align: left;
       padding-left: 10px;
-    }
-
-    .form-type-bef-link {
-      @include inline-block();
-      text-transform: lowercase;
-      font-size: 20px;
-      margin: 0 25px;
     }
   }
 
@@ -37,12 +49,6 @@
     a {
       padding-left: 0;
       text-align: center;
-    }
-
-    .form-type-bef-link {
-      display: block;
-      text-align: center;
-      margin: 10px 0;
     }
   }
 
