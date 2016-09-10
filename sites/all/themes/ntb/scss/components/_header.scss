@@ -93,9 +93,11 @@
   }
 
   .fa-icon {
-    font-size: 36px;
     margin: 0 5px;
-    top: 5px;
+
+    &.cart {
+      margin-right: 8px;
+    }
   }
 
   .user-icon {
