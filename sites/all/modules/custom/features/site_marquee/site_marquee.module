@@ -24,7 +24,7 @@ function site_marquee_preprocess_node(&$vars) {
   if ($vars['view_mode'] == 'slider') {
     $vars['theme_hook_suggestions'][] = 'node__slider';
     $image_url = $vars['field_marquee_image'][0]['uri'];
-    $vars['image'] = file_create_url($image_url);
+    $vars['image'] = image_style_url('square_1000x1000', $image_url);
     $vars['link'] = $vars['field_marquee_link'][0]['value'];
 
     if (!empty($vars['field_marquee_hex'])) {
