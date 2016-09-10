@@ -10,8 +10,6 @@
       var self = this;
 
       $('.view-marquee .flexslider').once('tabs', function () {
-        // var $slider = $(this).data('flexslider', true);
-        // $slider.on('start', self.start($slider));
         self.loadImg(this);
       });
     },
