@@ -56,6 +56,12 @@
     }
   }
 
+  @include breakpoint($screen-xs) {
+    .slider-image {
+      height: 300px;
+    }
+  }
+
   @include breakpoint($screen-sm) {
     .slider-image,
     .content {
