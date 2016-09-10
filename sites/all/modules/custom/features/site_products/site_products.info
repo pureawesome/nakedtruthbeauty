@@ -68,6 +68,7 @@ features[variable][] = node_submitted_product_display
 features[variable][] = pathauto_node_product_display_pattern
 features[variable][] = xmlsitemap_settings_node_product_display
 features[variable][] = xmlsitemap_settings_taxonomy_term_product_types
+features[views_view][] = product_type_taxonomy
 features[views_view][] = shop
 features_exclude[dependencies][entity] = entity
 features_exclude[dependencies][views] = views
