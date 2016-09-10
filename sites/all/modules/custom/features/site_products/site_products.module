@@ -1,10 +1,46 @@
 <?php
+
 /**
  * @file
  * Code for the Site Products feature.
  */
 
 include_once 'site_products.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function site_products_menu() {
+  $items = array();
+
+  $items['ajax/shop/type/%'] = array(
+    'page callback' => 'site_products_get_shop_view',
+    'page arguments' => array(3),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * AJAX callback for the episode list.
+ *
+ * @param string $term
+ *   The taxonomy term to filter with.
+ */
+function site_products_get_shop_view($term) {
+  $term = str_replace("-", " ", $term);
+  $terms = taxonomy_get_term_by_name($term);
+  $term = array_pop($terms);
+
+  $view = views_get_view('shop');
+  $view->set_display('block_no_filter');
+  $view->add_item($view->current_display, 'filter', 'field_data_field_product_type', 'field_product_type_tid', array('value' => $term->tid, 'group' => 1));
+  $view->pre_execute();
+  $view->execute();
+  print $view->render();
+}
 
 /**
  * Implements hook_entity_info_alter().
