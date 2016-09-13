@@ -963,6 +963,40 @@ function site_products_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-product_types-field_url'.
+  $field_instances['taxonomy_term-product_types-field_url'] = array(
+    'bundle' => 'product_types',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_url',
+    'label' => 'URL',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
@@ -981,6 +1015,7 @@ function site_products_field_default_field_instances() {
   t('Product Type');
   t('Product Use');
   t('Total');
+  t('URL');
   t('Unit price');
 
   return $field_instances;

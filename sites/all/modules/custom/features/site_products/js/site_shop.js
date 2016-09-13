@@ -20,8 +20,11 @@
           }
         });
 
+        self.activeMenu();
+
         window.onpopstate = function (e) {
           self.popChange(e, event.state);
+          self.activeMenu();
         };
       });
 
@@ -38,6 +41,19 @@
         $(document).ajaxSuccess(function (event, request, settings) {
           self.fadeInProducts();
         });
+      });
+    },
+
+    activeMenu: function() {
+      var url_array = window.location.pathname.split('/').filter(function (i) {
+        return i.length > 0;
+      });
+      var location = url_array.pop();
+      $('.view-product-type-taxonomy a').each(function () {
+        if ($(this).attr('data') === location) {
+          $('.view-product-type-taxonomy a').removeClass('active');
+          $(this).addClass('active');
+        }
       });
     },
 
@@ -89,12 +105,11 @@
 
         var new_url = '/' + locations.join('/');
         if (pop) {
-          history.pushState(prev, term, new_url);
+          history.pushState(term, term, new_url);
+          // Add active class to click target
+          $('.view-product-type-taxonomy a').removeClass('active');
+          $(e.target).addClass('active');
         }
-
-        // Add active class to click target
-        $('.view-product-type-taxonomy a').removeClass('active');
-        $(e.target).addClass('active');
       });
     }
   };
