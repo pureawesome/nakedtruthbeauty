@@ -8,7 +8,7 @@
       var self = this;
       self.stickyNav();
       $('.search-toggle', context).on('click', function () {
-        self.searchToggle();
+        self.searchToggle(this);
       });
 
       $('.user-icon', context).on('click', function (e) {
@@ -34,14 +34,14 @@
       });
     },
 
-    searchToggle: function () {
-      $('.navbar-search').slideToggle();
+    searchToggle: function (icon) {
+      $(icon).toggleClass('active').next('.navbar-search').slideToggle();
     },
 
     userNavToggle: function (e) {
+      $(e.currentTarget).toggleClass('active');
       var menu = $(e.currentTarget).attr('data-menu');
-      $('#' + menu).slideToggle();
-      $('#' + menu).toggleClass('open');
+      $('#' + menu).slideToggle().toggleClass('open');
     }
   };
 })(jQuery);

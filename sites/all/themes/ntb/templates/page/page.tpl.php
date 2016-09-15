@@ -78,30 +78,31 @@
 
       <?php if ($main_menu || $secondary_menu): ?>
         <div><div class="section container-fluid">
-
-          <button class="user-icon fa-icon" data-menu="secondary-menu">
-            <i class="fa fa-user"></i>
-            <span class="sr-only">My Account</span>
-          </button>
-
-          <div class="cart fa-icon">
-            <a href="<?php print base_path(); ?>cart">
-              <i class="fa fa-shopping-cart"></i>
-              <span class="sr-only">Cart</span>
-            </a>
-          </div>
-          <div class="search-block">
-            <button class="search-toggle fa-icon">
-              <i class="fa fa-search"></i>
-              <span class="sr-only">Search Toggle</span>
+          <div class="icon-menu-fixed">
+            <button class="user-icon fa-icon" data-menu="secondary-menu">
+              <i class="fa fa-user"></i>
+              <span class="sr-only">My Account</span>
             </button>
-            <form class="navbar-form navbar-left pull-right navbar-search search-form" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
 
+            <div class="cart fa-icon">
+              <a href="<?php print base_path(); ?>cart">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="sr-only">Cart</span>
+              </a>
+            </div>
+
+            <div class="search-block">
+              <button class="search-toggle fa-icon">
+                <i class="fa fa-search"></i>
+                <span class="sr-only">Search Toggle</span>
+              </button>
+              <form class="navbar-form navbar-left pull-right navbar-search search-form" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            </div>
           </div>
 
           <div class="navbar-header">
@@ -136,45 +137,50 @@
     </nav>
 
     <div id="header"><div class="section clearfix container-fluid">
-      <div>
-        <div class="section row user-nav">
-          <div class="col-sm-12">
 
-            <button class="user-icon fa-icon" data-menu="secondary-menu-top">
-              <i class="fa fa-user"></i>
-              <span class="sr-only">My Account</span>
-            </button>
 
-            <?php if ($logged_in): ?>
-              <div class="navbar-default">
-                <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu-top', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'navbar-default', 'secondary-menu')))); ?>
-              </div>
-            <?php else: ?>
-              <div id="secondary-menu-top" class="navbar-default">
-                <ul class="links inline clearfix nav navbar-nav secondary-menu">
-                  <li>
-                    <a href="<?php print base_path(); ?>user">Log In</a>
-                  </li>
-                </ul>
-              </div>
-            <?php endif; ?>
+      <div class="icon-menu">
+        <button class="user-icon fa-icon" data-menu="secondary-menu-top">
+          <i class="fa fa-user"></i>
+          <span class="sr-only">My Account</span>
+        </button>
 
-            <div class="cart fa-icon">
-              <a href="<?php print base_path(); ?>cart">
-                <i class="fa fa-shopping-cart"></i>
-                <span class="sr-only">Cart</span>
-              </a>
-            </div>
-
-            <form class="navbar-form navbar-left pull-right search-form" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default sr-only">Submit</button>
-            </form>
+        <?php if ($logged_in): ?>
+          <div class="navbar-default">
+            <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu-top', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'navbar-default', 'secondary-menu')))); ?>
           </div>
+        <?php else: ?>
+          <div id="secondary-menu-top" class="navbar-default">
+            <ul class="links inline clearfix nav navbar-nav secondary-menu">
+              <li>
+                <a href="<?php print base_path(); ?>user">Log In</a>
+              </li>
+            </ul>
+          </div>
+        <?php endif; ?>
+
+        <div class="cart fa-icon">
+          <a href="<?php print base_path(); ?>cart">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="sr-only">Cart</span>
+          </a>
         </div>
-      </div> <!-- /.section, /#navigation -->
+
+        <div class="search-block">
+          <button class="search-toggle fa-icon">
+            <i class="fa fa-search"></i>
+            <span class="sr-only">Search Toggle</span>
+          </button>
+          <form class="navbar-form navbar-left pull-right search-form navbar-search" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default sr-only">Submit</button>
+          </form>
+        </div>
+      </div>
+
+
 
       <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">

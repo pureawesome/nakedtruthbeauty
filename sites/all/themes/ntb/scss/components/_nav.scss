@@ -60,9 +60,9 @@
   background: lighten($primary-blue, 20%);
 }
 
-.user-nav {
-  @include background-image(linear-gradient(to right, $primary-blue, white));
-}
+// .user-nav {
+//   @include background-image(linear-gradient(to right, $primary-blue, white));
+// }
 
 #navigation {
   display: none;
@@ -147,6 +147,8 @@
 
   #secondary-menu-top {
     @include background-image(linear-gradient($primary-blue, lighten($primary-blue, 25%)));
+    top: 36px;
+    border-radius: 5px 0 5px 5px;
   }
 }
 
