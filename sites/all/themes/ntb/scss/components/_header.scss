@@ -4,11 +4,18 @@
 
 #logo {
   margin: auto;
-  width: 462px;
+  width: 400px;
   max-width: 100%;
   display: block;
   text-align: center;
   margin-top: 20px;
+}
+
+.icon-menu-fixed,
+.icon-menu {
+  top: 7px;
+  right: 15px;
+  position: absolute;
 }
 
 .mobile-logo {
@@ -26,28 +33,33 @@
 
 .fa-icon {
   font-size: 26px;
-  display: block;
   background: none;
   border: 0;
   color: $secondary-blue;
   line-height: 1;
   padding: 0;
-  top: 11px;
+  @include inline-block();
+
+  i {
+    padding: 5px;
+  }
 
   &:hover {
     color: #37746e;
   }
 }
 
-.cart {
-  position: absolute;
-  right: 15px;
+.search-block {
+  @include inline-block();
 }
 
+
+.user-icon,
+.cart,
 .search-toggle {
-  position: absolute;
-  right: 50px;
-  padding: 0;
+  display: block;
+  position: relative;
+  float: right;
 }
 
 .user-icon {
@@ -59,8 +71,7 @@
   width: 100%;
   border: 0;
   margin: 0;
-  position: absolute;
-  width: 100%;
+  position: fixed;
   background: white;
   top: 50px;
   left: 0;
@@ -93,37 +104,56 @@
   }
 
   .fa-icon {
-    font-size: 36px;
-    margin: 0 5px;
-    top: 5px;
+
+    &.cart {
+      margin-right: 5px;
+    }
+  }
+
+  .icon-menu-fixed {
+    top: 7px;
   }
 
   .user-icon {
     display: block;
-    position: relative;
-    float: right;
   }
 
-  .cart {
-    position: relative;
-    right: auto;
-    float: right;
-  }
-
-  .search-toggle {
-    position: relative;
-    float: right;
-    right: 0;
+  .icon-menu {
+    position: absolute;
+    top: 10px;
+    right: 15px;
   }
 
   .navbar-form.navbar-search {
-    top: 50px;
+    position: absolute;
+    padding: 5px;
+  }
+
+  // .navbar-fixed-top .icon-menu .search-toggle,
+  .icon-menu .fa-icon.active {
+    // &.active {
+      @include background-image(linear-gradient($secondary-blue, $primary-blue));
+      color: $white;
+      border-radius:5px 5px 0 0;
+    // }
+  }
+
+  .navbar-fixed-top .navbar-form.navbar-search {
+    top: 43px;
     width: auto;
-    right: 45px;
+    right: 0px;
     @include background-image(linear-gradient(#b3cdb8, $primary-peach));
     left: auto;
-    padding: 5px;
     border-radius: 0 0 5px 5px;
+  }
+
+  .icon-menu .navbar-form.navbar-search {
+    top: 36px;
+    width: auto;
+    right: 0px;
+    @include background-image(linear-gradient($primary-blue, lighten($primary-blue, 25%)));
+    left: auto;
+    border-radius: 5px;
   }
 
   .search-block {
