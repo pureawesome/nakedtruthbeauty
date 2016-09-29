@@ -78,7 +78,7 @@
 
       <?php if ($main_menu || $secondary_menu): ?>
         <div><div class="section container-fluid">
-          <div class="icon-menu-fixed">
+          <div class="icon-menu-fixed custom-user-menu">
             <button class="user-icon fa-icon" data-menu="secondary-menu">
               <i class="fa fa-user"></i>
               <span class="sr-only">My Account</span>
@@ -139,7 +139,7 @@
     <div id="header"><div class="section clearfix container-fluid">
 
 
-      <div class="icon-menu">
+      <div class="icon-menu custom-user-menu">
         <button class="user-icon fa-icon" data-menu="secondary-menu-top">
           <i class="fa fa-user"></i>
           <span class="sr-only">My Account</span>

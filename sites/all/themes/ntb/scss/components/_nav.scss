@@ -129,7 +129,7 @@
   #secondary-menu-top {
     display: none;
     position: absolute;
-    right: 0px;
+    right: 15px;
     top: 50px;
     width: 200px;
     border-radius: 0 0 5px 5px;
@@ -149,6 +149,7 @@
     @include background-image(linear-gradient($primary-blue, lighten($primary-blue, 25%)));
     top: 36px;
     border-radius: 5px 0 5px 5px;
+    right: 0px;
   }
 }
 
