@@ -129,13 +129,10 @@
     padding: 5px;
   }
 
-  // .navbar-fixed-top .icon-menu .search-toggle,
   .icon-menu .fa-icon.active {
-    // &.active {
-      @include background-image(linear-gradient($secondary-blue, $primary-blue));
-      color: $white;
-      border-radius:5px 5px 0 0;
-    // }
+    @include background-image(linear-gradient($secondary-blue, $primary-blue));
+    color: $white;
+    border-radius:5px 5px 0 0;
   }
 
   .navbar-fixed-top .navbar-form.navbar-search {
