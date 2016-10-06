@@ -4,11 +4,17 @@
 
 #logo {
   margin: auto;
-  width: 400px;
+  width: 500px;
   max-width: 100%;
   display: block;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  border: 2px solid #50a89f;
+  // border-image: linear-gradient(to bottom right, rgba(#50a89f, 1) 0%, rgba(#ffcc99, 1) 100%);
+  padding: 30px 40px;
+  border-image-slice: 1;
+  background: linear-gradient(to bottom right, rgba(#50a89f, 0.3) 0%, rgba(#ffcc99, 0.3) 100%);
 }
 
 .icon-menu-fixed,
