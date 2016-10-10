@@ -37,7 +37,6 @@
   }
 
   @include breakpoint($screen-xs) {
-    // border: 1px solid red;
     a {
       text-align: left;
       padding-left: 10px;
@@ -45,7 +44,6 @@
   }
 
   @include breakpoint($screen-sm) {
-    // border: 1px solid blue;
     a {
       padding-left: 0;
       text-align: center;
@@ -53,11 +51,9 @@
   }
 
   @include breakpoint($screen-md) {
-    // border: 1px solid yellow;
   }
 
   @include breakpoint($screen-lg) {
-    // border: 1px solid green;
   }
 
 }
