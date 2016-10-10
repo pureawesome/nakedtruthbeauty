@@ -23,6 +23,18 @@
 }
 
 @font-face {
+    font-family: 'zeyada';
+    src: url('../fonts/zeyada-webfont.eot');
+    src: url('../fonts/zeyada-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/zeyada-webfont.woff2') format('woff2'),
+         url('../fonts/zeyada-webfont.woff') format('woff'),
+         url('../fonts/zeyada-webfont.ttf') format('truetype'),
+         url('../fonts/zeyada-webfont.svg#quicksandbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'cinzel';
     src: url('../fonts/Cinzel-Regular-webfont.eot');
     src: url('../fonts/Cinzel-Regular-webfont.eot?#iefix') format('embedded-opentype'),
