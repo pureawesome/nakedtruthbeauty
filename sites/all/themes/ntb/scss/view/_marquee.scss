@@ -1,19 +1,24 @@
 .view-marquee {
+  .flexslider:hover .flex-direction-nav a {
+    display: none;
+  }
+
   .slider-image {
     height: 225px;
     background-size: cover;
     background-position: center center;
     display: block;
   }
+
   .flexslider {
     border: 0;
   }
 
   .title {
     text-align: center;
-    text-transform: uppercase;
-    font-size: 36px;
+    font-size: 56px;
     margin-top: 0;
+    font-family: 'zeyada', sans-serif;
   }
 
   .content {
@@ -63,6 +68,10 @@
   }
 
   @include breakpoint($screen-sm) {
+    .flexslider:hover .flex-direction-nav a {
+      display: block;
+    }
+
     .slider-image,
     .content {
       height: 350px;
@@ -73,13 +82,21 @@
     }
 
     .title {
-      margin-top: 50px;
+      font-size: 64px;
+      margin: 0 15px ;
       padding-top: 0;
     }
 
     .marquee-body {
-      padding: 0 30px;
+      padding: 30px 30px 0;
       text-align: left;
+    }
+
+    .slider-wrapper {
+      height: 100%;
+      @include display-flex;
+      @include flex-direction(column);
+      @include justify-content(center);
     }
   }
 }
