@@ -60,19 +60,12 @@
   background: lighten($primary-blue, 20%);
 }
 
-// .user-nav {
-//   @include background-image(linear-gradient(to right, $primary-blue, white));
-// }
-
 #navigation {
   display: none;
 }
 
 #secondary-menu .last {
-  // text-indent: -9999px;
   &:before {
-    // content: '\f0a9';
-    // @include fa-icon();
   }
 }
 

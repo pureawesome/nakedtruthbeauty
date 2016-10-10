@@ -10,7 +10,6 @@
   .masonry-item {
     width: 48%;
   }
-  // border: 1px solid yellow;
 }
 
 @include breakpoint($screen-md) {
@@ -20,5 +19,4 @@
 }
 
 @include breakpoint($screen-lg) {
-  // border: 1px solid green;
 }
