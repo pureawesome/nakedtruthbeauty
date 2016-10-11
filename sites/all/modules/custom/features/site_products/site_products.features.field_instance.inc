@@ -963,6 +963,46 @@ function site_products_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-product_display-field_tags'.
+  $field_instances['node-product_display-field_tags'] = array(
+    'bundle' => 'product_display',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-product_types-field_url'.
   $field_instances['taxonomy_term-product_types-field_url'] = array(
     'bundle' => 'product_types',
@@ -1014,6 +1054,7 @@ function site_products_field_default_field_instances() {
   t('Product Ingredients Text');
   t('Product Type');
   t('Product Use');
+  t('Tags');
   t('Total');
   t('URL');
   t('Unit price');
