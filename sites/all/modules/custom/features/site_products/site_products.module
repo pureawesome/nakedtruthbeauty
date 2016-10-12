@@ -33,7 +33,7 @@ function site_products_return_tids($object) {
 }
 
 /**
- * AJAX callback for the episode list.
+ * AJAX callback shop view.
  *
  * @param string $term
  *   The taxonomy term to filter with.
@@ -44,7 +44,7 @@ function site_products_get_shop_view($term) {
   $vocabs = taxonomy_vocabulary_get_names();
   $vid = $vocabs['product_types']->vid;
   $tree = taxonomy_get_tree($vid);
-  $tids = array_map(site_products_return_tids, $tree);
+  $tids = array_map('site_products_return_tids', $tree);
   $terms = taxonomy_term_load_multiple($tids);
 
   foreach ($terms as $key => $taxonomy) {
