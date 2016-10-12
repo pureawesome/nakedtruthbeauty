@@ -741,32 +741,15 @@ function site_products_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'cloud_zoom',
+        'module' => 'easyzoom',
         'settings' => array(
-          'gallery_filedset' => array(
-            'gallery_mode' => 1,
-            'thumb_style' => 'square_200x200',
-          ),
-          'slide_style' => 'square_500x500',
-          'zoom_position_fieldset' => array(
-            'adjust_x' => 0,
-            'adjust_y' => 0,
-            'position' => 'right',
-            'zoom_height' => 'auto',
-            'zoom_width' => 'auto',
-          ),
-          'zoom_style' => 0,
-          'zoom_style_fieldset' => array(
-            'Show title' => 1,
-            'lens_opacity' => 0.5,
-            'smooth_move' => 3,
-            'soft_focus' => 0,
-            'tint' => 'false',
-            'tint_opacity' => 0.5,
-            'title_opacity' => 0.5,
-          ),
+          'has_thumbnails' => TRUE,
+          'image_style' => 'square_500x500',
+          'thumbnail_style' => 'square_200x200',
+          'zoom_image_style' => 'square_1000x1000',
+          'zoom_type' => 'overlay',
         ),
-        'type' => 'cloud_zoom',
+        'type' => 'easyzoom_gallery_formatter',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -963,6 +946,46 @@ function site_products_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-product_display-field_tags'.
+  $field_instances['node-product_display-field_tags'] = array(
+    'bundle' => 'product_display',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-product_types-field_url'.
   $field_instances['taxonomy_term-product_types-field_url'] = array(
     'bundle' => 'product_types',
@@ -1014,6 +1037,7 @@ function site_products_field_default_field_instances() {
   t('Product Ingredients Text');
   t('Product Type');
   t('Product Use');
+  t('Tags');
   t('Total');
   t('URL');
   t('Unit price');
