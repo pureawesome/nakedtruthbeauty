@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Installation file for ntb_signup module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function ntb_signup_schema() {
+  $schema['signup_emails'] = array(
+    'description' => 'The table for email signups.',
+    'fields' => array(
+      'email' => array(
+        'description' => 'The added to the signup.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'created' => array(
+        'description' => 'A Unix timestamp indicating when this site link was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'indexes' => array(
+      'signup_emails_index'        => array('email'),
+    ),
+    'unique keys' => array(
+      'email'     => array('email'),
+    ),
+    'primary key' => array('email'),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ntb_signup_uninstall() {
+  variable_del('signup_premessage');
+  variable_del('signup_postmessage');
+  variable_del('signup_code');
+}
