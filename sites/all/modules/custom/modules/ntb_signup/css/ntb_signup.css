@@ -1,0 +1,51 @@
+.ntb-signup {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+}
+
+.ntb-signup-overlay {
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.ntb-signup-form {
+  min-width: 360px;
+  max-width: 45%;
+  width: auto;
+  position: absolute;
+  top: 200px;
+  height: 200px;
+  font-size: 1em;
+  background: #fff;
+  left: 50%;
+  margin-left: -180px;
+  padding: 15px;
+}
+
+.ntb-signup-form input {
+  width: 100%;
+  border: 0;
+  font-size: 24px;
+  line-height: 24px;
+  border: 2px solid red;
+  margin-bottom: 10px;
+}
+
+.ntb-signup-form .btn {
+  width: 100%;
+}
+
+.ntb-signup-form .close {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
