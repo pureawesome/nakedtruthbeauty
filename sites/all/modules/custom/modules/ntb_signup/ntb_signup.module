@@ -141,7 +141,7 @@ function ntb_signup_submit_email() {
         ))
         ->execute();
       $response = 'success';
-      rules_invoke_event('rules_send_welcome_code_email', $email);
+      rules_invoke_event('signup_event', $email);
     }
     catch (Exception $e) {
       $response = $e->getCode();
