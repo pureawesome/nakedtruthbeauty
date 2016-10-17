@@ -31,7 +31,10 @@ function ntb_signup_library() {
     'title' => 'NTB Signup',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'ntb_signup') . '/js/ntb_signup.js' => array(),
+      drupal_get_path('module', 'ntb_signup') . '/js/ntb_signup.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
       array(
         'data' => array(
           'ntb_signup' => array(
@@ -141,7 +144,7 @@ function ntb_signup_submit_email() {
         ))
         ->execute();
       $response = 'success';
-      rules_invoke_event('rules_send_welcome_code_email', $email);
+      rules_invoke_event('signup_event', $email);
     }
     catch (Exception $e) {
       $response = $e->getCode();
