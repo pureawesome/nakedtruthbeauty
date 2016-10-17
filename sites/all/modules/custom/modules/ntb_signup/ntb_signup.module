@@ -31,7 +31,10 @@ function ntb_signup_library() {
     'title' => 'NTB Signup',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'ntb_signup') . '/js/ntb_signup.js' => array(),
+      drupal_get_path('module', 'ntb_signup') . '/js/ntb_signup.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
       array(
         'data' => array(
           'ntb_signup' => array(
