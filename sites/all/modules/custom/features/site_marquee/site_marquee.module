@@ -41,6 +41,23 @@ function site_marquee_preprocess_node(&$vars) {
  */
 function site_marquee_preprocess_views_view(&$vars) {
   if ($vars['view']->name == 'marquee') {
-    drupal_add_js(drupal_get_path('module', 'site_marquee') . '/js/site_marquee.js');
+    drupal_add_library('site_marquee', 'site_marquee');
   }
+}
+
+/**
+ * Implements hook_library().
+ */
+function site_marquee_library() {
+  $libraries['site_marquee'] = array(
+    'title' => 'NTB Marquees',
+    'version' => '1.0',
+    'js' => array(
+      drupal_get_path('module', 'site_marquee') . '/js/site_marquee.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+  return $libraries;
 }
