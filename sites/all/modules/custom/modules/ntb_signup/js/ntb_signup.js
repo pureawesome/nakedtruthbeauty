@@ -30,8 +30,10 @@
       form += '<div class="ntb-signup-form-wrapper">';
       form += '<div class="title">' + Drupal.settings.ntb_signup.premessage + '</div>';
       form += '<div class="errors"></div>';
+      form += '<div class="input-group">'
       form += '<input type="email" title="Please, provide an e-mail" placeholder="Email" class="form-control form-text">';
-      form += '<button class="btn form-submit button">Submit</button>';
+      form += '<span class="input-group-btn"><button class="btn form-submit button">Submit</button></div>';
+      form += '</div>';
       form += '</div>';
       form += '</div>';
       form += '</div>';
@@ -85,7 +87,7 @@
     submit_response: function (response) {
       var msg = '';
       if (response === '23000') {
-        msg = Drupal.t('Looks like we already sent you a code. Please check your email and search <strong>naked truth beauty welcome code</strong>.');
+        msg = Drupal.settings.ntb_signup.alreadymessage;
       }
       else if (response === 'success') {
         msg = Drupal.settings.ntb_signup.postmessage;

@@ -44,6 +44,7 @@
 
 .ntb-signup-form .btn {
   width: 100%;
+  border: 1px solid #91cdc5;
 }
 
 .ntb-signup-form .close {
