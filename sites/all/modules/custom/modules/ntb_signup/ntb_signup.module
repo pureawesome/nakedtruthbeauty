@@ -23,21 +23,24 @@ function ntb_signup_preprocess_page(&$vars) {
  * Implements hook_library().
  */
 function ntb_signup_library() {
-  $pre = variable_get('signup_premessage', t('Sign up and receive a discount code for your first order'));
-  $post = variable_get('signup_postmessage', t('Thanks for signing up! Here is your code:'));
-  $code = variable_get('signup_code', t('We are sorry. Not available currently.'));
+  $pre = variable_get('signup_premessage', t('Sign up and receive a discount code for your first order!'));
+  $post = variable_get('signup_postmessage', t('Thanks for signing up! Here is your code.'));
+  $already = variable_get('signup_alreadymessage', t('Looks like that email has already been submitted. Please check your email for a copy of the code.'));
 
   $libraries['ntb_signup'] = array(
     'title' => 'NTB Signup',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'ntb_signup') . '/js/ntb_signup.js' => array(),
+      drupal_get_path('module', 'ntb_signup') . '/js/ntb_signup.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
       array(
         'data' => array(
           'ntb_signup' => array(
             'premessage' => $pre['value'],
             'postmessage' => $post['value'],
-            'code' => $code,
+            'alreadymessage' => $already['value'],
             'cookie' => 'ntb_signup',
           ),
         ),
@@ -84,7 +87,7 @@ function ntb_signup_admin() {
   $premessage = variable_get('signup_premessage', array('value' => '', 'format' => 'filtered_html'));
   $form['signup']['signup_premessage'] = array(
     '#type' => 'text_format',
-    '#title' => t('First message'),
+    '#title' => t('Welcome Message'),
     '#default_value' => $premessage['value'],
     '#description' => t("This message is the first step message above the form."),
     '#format' => $premessage['format'],
@@ -94,18 +97,20 @@ function ntb_signup_admin() {
   $postmessage = variable_get('signup_postmessage', array('value' => '', 'format' => 'filtered_html'));
   $form['signup']['signup_postmessage'] = array(
     '#type' => 'text_format',
-    '#title' => t('Second message'),
+    '#title' => t('Approval Message'),
     '#default_value' => $postmessage['value'],
     '#description' => t("This message is the response message after form input."),
     '#format' => $postmessage['format'],
     '#required' => TRUE,
   );
 
-  $form['signup']['signup_code'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Code to give'),
-    '#default_value' => variable_get('signup_code', ''),
-    '#description' => t("Text code to use. Future make autocomplete reference"),
+  $alreadymessage = variable_get('signup_alreadymessage', array('value' => '', 'format' => 'filtered_html'));
+  $form['signup']['signup_alreadymessage'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Already Submitted Message'),
+    '#default_value' => $alreadymessage['value'],
+    '#description' => t("This message is the response message after form input."),
+    '#format' => $alreadymessage['format'],
     '#required' => TRUE,
   );
 

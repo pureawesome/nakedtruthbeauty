@@ -23,6 +23,15 @@ function site_products_menu() {
   return $items;
 }
 
+/**
+ * Get object taxonomy ids.
+ *
+ * @param object $object
+ *    Taxonomy item.
+ *
+ * @return int|null
+ *    Integer or null
+ */
 function site_products_return_tids($object) {
   if (!empty($object->tid)) {
     return $object->tid;
@@ -84,8 +93,7 @@ function site_products_entity_info_alter(&$entity_info) {
  */
 function site_products_preprocess_views_view(&$vars) {
   if ($vars['view']->name == 'shop') {
-    drupal_add_js(libraries_get_path('jquery-match-height') . '/dist/jquery.matchHeight-min.js');
-    drupal_add_js(drupal_get_path('module', 'site_products') . '/js/site_shop.js');
+    drupal_add_library('site_products', 'site_shop');
   }
 }
 
@@ -94,6 +102,34 @@ function site_products_preprocess_views_view(&$vars) {
  */
 function site_products_node_view($node, $view_mode, $langcode) {
   if ($node->type == 'product_display' && $view_mode == 'full') {
-    $node->content['#attached']['js'][] = drupal_get_path('module', 'site_products') . '/js/site_products.js';
+    drupal_add_library('site_products', 'site_products');
   }
+}
+
+/**
+ * Implements hook_library().
+ */
+function site_products_library() {
+  $libraries['site_products'] = array(
+    'title' => 'NTB products',
+    'version' => '1.0',
+    'js' => array(
+      drupal_get_path('module', 'site_products') . '/js/site_products.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+  $libraries['site_shop'] = array(
+    'title' => 'NTB Shop',
+    'version' => '1.0',
+    'js' => array(
+      libraries_get_path('jquery-match-height') . '/dist/jquery.matchHeight-min.js' => array(),
+      drupal_get_path('module', 'site_products') . '/js/site_shop.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+  return $libraries;
 }
