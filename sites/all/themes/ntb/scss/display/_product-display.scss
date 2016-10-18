@@ -1,27 +1,20 @@
-.cloud-zoom-container {
-  .cloud-zoom-gallery-thumbs {
-    width: 100%;
-    a {
-      width: 50px;
-      height: 50px;
-      display: block;
-      float: left;
-      margin: 10px;
+.easyzoom-flyout img {
+  max-width: none;
+}
+
+.easyzoom-thumbnails {
+  a {
+    width: 50px;
+    height: 50px;
+    display: block;
+    float: left;
+    margin: 10px;
 
 
-      &:first-child {
-        margin-left: 0;
-      }
+    &:first-child {
+      margin-left: 0;
     }
   }
-}
-
-.cloud-zoom-container #wrap {
-  z-index: 150 !important;
-}
-
-.mousetrap {
-  max-width: 100%;
 }
 
 .field-name-commerce-price {
@@ -48,49 +41,6 @@
     display: none;
 }
 
-// .product-body-tabs {
-//   margin: 0;
-//   padding: 0;
-//   list-style: none;
-//   display: block;
-//
-//   li {
-//     width: 33%;
-//     text-align:center;
-//     border-right: 1px solid #ccc;
-//     margin: 0 0 15px 0;
-//     cursor: pointer;
-//     padding: 5px;
-//     // display: inline;
-//     @include inline-block();
-//
-//     &:last-child {
-//       border-right: 0;
-//     }
-//
-//     &:hover {
-//       background: rgba($primary-peach, 1);
-//     }
-//   }
-// }
-
-// .product-body-wrapper {
-//   position: relative;
-//   .product-body {
-//     position:absolute;
-//     top: 0;
-//     left: 0;
-//     display: none;
-//     width: 100%;
-//     height: auto;
-//
-//     &:first-child {
-//       display: block;
-//     }
-//   }
-// }
-
-
 .field-name-field-ingredients {
   .field-label {
     text-transform: lowercase;
@@ -101,19 +51,6 @@
   .field-item {
     @include inline-block();
   }
-  // .field-item {
-  //   text-align: center;
-  //   background: $primary-blue;
-  //   @include border-radius(5px);
-  //   margin: 0 10px 5px 0;
-  //   padding: 2px 5px;
-  //   width: auto;
-  //   @include inline-block();
-  //
-  //   &:hover {
-  //     background: $secondary-blue;
-  //   }
-  // }
 
   a {
     color: #000;
@@ -187,7 +124,7 @@
     display: block;
   }
 
-  .cloud-zoom-container .cloud-zoom-gallery-thumbs a {
+  .easyzoom-thumbnails a {
     width: 60px;
     height: 60px;
   }
@@ -198,7 +135,6 @@
     }
 
     .field-item {
-      // width: 100%;
       margin-bottom: 5px;
     }
   }
@@ -210,17 +146,13 @@
 
 
 @include breakpoint($screen-xs) {
-  // border: 1px solid red;
 }
 
 @include breakpoint($screen-sm) {
-  // border: 1px solid blue;
 }
 
 @include breakpoint($screen-md) {
-  // border: 1px solid yellow;
 }
 
 @include breakpoint($screen-lg) {
-  // border: 1px solid green;
 }

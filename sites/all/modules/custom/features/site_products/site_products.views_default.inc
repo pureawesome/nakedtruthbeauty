@@ -36,16 +36,21 @@ function site_products_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="views-row"><a href="shop/all">all products</a></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="views-row"><a href="shop/all" data="all" class="active">all products</a></div>';
   $handler->display->display_options['header']['area']['format'] = 'raw_html';
+  /* Field: Taxonomy term: URL */
+  $handler->display->display_options['fields']['field_url']['id'] = 'field_url';
+  $handler->display->display_options['fields']['field_url']['table'] = 'field_data_field_url';
+  $handler->display->display_options['fields']['field_url']['field'] = 'field_url';
+  $handler->display->display_options['fields']['field_url']['exclude'] = TRUE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'shop/[name]';
-  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<a href="shop/[field_url]" data="[field_url]">[name]</a>';
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'shop/[field_url]';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
@@ -96,6 +101,15 @@ function site_products_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'We\'re sorry. There are no available products at this time.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['required'] = TRUE;
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'product_types' => 'product_types',
+    'tags' => 0,
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -129,25 +143,21 @@ function site_products_views_default_views() {
   $handler = $view->new_display('block', 'Block Main', 'block');
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Product Type (field_product_type) */
-  $handler->display->display_options['arguments']['field_product_type_tid']['id'] = 'field_product_type_tid';
-  $handler->display->display_options['arguments']['field_product_type_tid']['table'] = 'field_data_field_product_type';
-  $handler->display->display_options['arguments']['field_product_type_tid']['field'] = 'field_product_type_tid';
-  $handler->display->display_options['arguments']['field_product_type_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_product_type_tid']['exception']['value'] = '';
-  $handler->display->display_options['arguments']['field_product_type_tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_product_type_tid']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['field_product_type_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_product_type_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_product_type_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_product_type_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_product_type_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_product_type_tid']['validate_options']['vocabularies'] = array(
-    'product_types' => 'product_types',
-  );
-  $handler->display->display_options['arguments']['field_product_type_tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['field_product_type_tid']['validate_options']['transform'] = TRUE;
-  $handler->display->display_options['arguments']['field_product_type_tid']['validate']['fail'] = 'ignore';
+  /* Contextual filter: Taxonomy term: URL (field_url) */
+  $handler->display->display_options['arguments']['field_url_value']['id'] = 'field_url_value';
+  $handler->display->display_options['arguments']['field_url_value']['table'] = 'field_data_field_url';
+  $handler->display->display_options['arguments']['field_url_value']['field'] = 'field_url_value';
+  $handler->display->display_options['arguments']['field_url_value']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['arguments']['field_url_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_url_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_url_value']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_url_value']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['field_url_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_url_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_url_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_url_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_url_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_url_value']['limit'] = '0';
 
   /* Display: Block No Filter */
   $handler = $view->new_display('block', 'Block No Filter', 'block_no_filter');

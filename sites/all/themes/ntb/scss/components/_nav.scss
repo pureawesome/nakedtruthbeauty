@@ -60,19 +60,12 @@
   background: lighten($primary-blue, 20%);
 }
 
-.user-nav {
-  @include background-image(linear-gradient(to right, $primary-blue, white));
-}
-
 #navigation {
   display: none;
 }
 
 #secondary-menu .last {
-  // text-indent: -9999px;
   &:before {
-    // content: '\f0a9';
-    // @include fa-icon();
   }
 }
 
@@ -97,40 +90,39 @@
   .navbar-fixed-top {
     margin-top: -50px;
     height: 50px;
-    // overflow: hidden;
-    @include background-image(linear-gradient(to right, $primary-blue, white));
+    @include background-image(linear-gradient($primary-blue, #b3cdb8));
     @include transition(all 0.3s ease-out);
 
     &.visible {
       margin-top: 0;
     }
-  }
-
-  .navbar-fixed-top {
-    @include background-image(linear-gradient($primary-blue, #b3cdb8));
 
     .navbar-collapse {
       @include background-image(none);
       float: left;
       display: inline-block !important;
       width: auto;
-      //
+
       .navbar-nav > li > a {
-        padding: 14px 15px;
+        padding: 14px 10px;
+        font-size: 18px;
+
+        &:hover {
+          @include background-image(radial-gradient(5px, 10px, $primary-peach, transparent));
+        }
+      }
+
+      .navbar-nav > .last > a {
+        padding-right: 0;
       }
     }
-  }
-
-  .navbar-default.navbar-fixed-top .navbar-nav > li > a {
-    padding-top: 14px;
-    padding-bottom: 14px;
   }
 
   #secondary-menu,
   #secondary-menu-top {
     display: none;
     position: absolute;
-    right: 0px;
+    right: 15px;
     top: 50px;
     width: 200px;
     border-radius: 0 0 5px 5px;
@@ -148,5 +140,16 @@
 
   #secondary-menu-top {
     @include background-image(linear-gradient($primary-blue, lighten($primary-blue, 25%)));
+    top: 36px;
+    border-radius: 5px 0 5px 5px;
+    right: 0px;
+  }
+}
+
+@include breakpoint($screen-md) {
+  .navbar-fixed-top .navbar-collapse .navbar-nav > li > a {
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

@@ -24,19 +24,50 @@ function site_products_menu() {
 }
 
 /**
- * AJAX callback for the episode list.
+ * Get object taxonomy ids.
+ *
+ * @param object $object
+ *    Taxonomy item.
+ *
+ * @return int|null
+ *    Integer or null
+ */
+function site_products_return_tids($object) {
+  if (!empty($object->tid)) {
+    return $object->tid;
+  }
+  else {
+    return NULL;
+  }
+}
+
+/**
+ * AJAX callback shop view.
  *
  * @param string $term
  *   The taxonomy term to filter with.
  */
 function site_products_get_shop_view($term) {
-  $term = str_replace("-", " ", $term);
-  $terms = taxonomy_get_term_by_name($term);
-  $term = array_pop($terms);
+  $tids = [];
+  $tid = NULL;
+  $vocabs = taxonomy_vocabulary_get_names();
+  $vid = $vocabs['product_types']->vid;
+  $tree = taxonomy_get_tree($vid);
+  $tids = array_map('site_products_return_tids', $tree);
+  $terms = taxonomy_term_load_multiple($tids);
+
+  foreach ($terms as $key => $taxonomy) {
+    $alias = $taxonomy->field_url[LANGUAGE_NONE][0]['value'];
+
+    if ($alias == $term) {
+      $tid = $key;
+      break;
+    }
+  }
 
   $view = views_get_view('shop');
   $view->set_display('block_no_filter');
-  $view->add_item($view->current_display, 'filter', 'field_data_field_product_type', 'field_product_type_tid', array('value' => $term->tid, 'group' => 1));
+  $view->add_item($view->current_display, 'filter', 'field_data_field_product_type', 'field_product_type_tid', array('value' => $tid, 'group' => 1));
   $view->pre_execute();
   $view->execute();
   print $view->render();
@@ -62,8 +93,7 @@ function site_products_entity_info_alter(&$entity_info) {
  */
 function site_products_preprocess_views_view(&$vars) {
   if ($vars['view']->name == 'shop') {
-    drupal_add_js(libraries_get_path('jquery-match-height') . '/dist/jquery.matchHeight-min.js');
-    drupal_add_js(drupal_get_path('module', 'site_products') . '/js/site_shop.js');
+    drupal_add_library('site_products', 'site_shop');
   }
 }
 
@@ -72,6 +102,34 @@ function site_products_preprocess_views_view(&$vars) {
  */
 function site_products_node_view($node, $view_mode, $langcode) {
   if ($node->type == 'product_display' && $view_mode == 'full') {
-    $node->content['#attached']['js'][] = drupal_get_path('module', 'site_products') . '/js/site_products.js';
+    drupal_add_library('site_products', 'site_products');
   }
+}
+
+/**
+ * Implements hook_library().
+ */
+function site_products_library() {
+  $libraries['site_products'] = array(
+    'title' => 'NTB products',
+    'version' => '1.0',
+    'js' => array(
+      drupal_get_path('module', 'site_products') . '/js/site_products.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+  $libraries['site_shop'] = array(
+    'title' => 'NTB Shop',
+    'version' => '1.0',
+    'js' => array(
+      libraries_get_path('jquery-match-height') . '/dist/jquery.matchHeight-min.js' => array(),
+      drupal_get_path('module', 'site_products') . '/js/site_shop.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+  return $libraries;
 }
