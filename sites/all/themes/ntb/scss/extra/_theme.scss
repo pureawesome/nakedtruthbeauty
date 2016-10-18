@@ -25,10 +25,13 @@ ul.inline li {
   padding: 0;
 }
 
-#navigation,
-#main-wrapper {
+.container-fluid {
   max-width: $bp-large;
   margin: auto;
+}
+
+.container-fluid.full {
+  max-width: 100%;
 }
 
 #main-wrapper {
