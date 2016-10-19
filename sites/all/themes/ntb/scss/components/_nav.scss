@@ -108,7 +108,7 @@
         font-size: 18px;
 
         &:hover {
-          @include background-image(radial-gradient(5px, 10px, $primary-peach, transparent));
+          // @include background-image(radial-gradient(5px, 10px, $primary-peach, transparent));
         }
       }
 
