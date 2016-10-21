@@ -1,0 +1,10 @@
+name = site_taxes
+core = 7.x
+package = Features
+dependencies[] = commerce_order
+dependencies[] = commerce_product_reference
+dependencies[] = commerce_tax
+dependencies[] = entity
+dependencies[] = rules
+features[features_api][] = api:2
+features[rules_config][] = commerce_tax_calculate_taxes_sales_tax_wa
