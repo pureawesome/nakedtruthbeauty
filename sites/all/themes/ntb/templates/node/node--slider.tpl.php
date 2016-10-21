@@ -5,7 +5,7 @@
  */
 ?>
 <div class="slider">
-  <a href="/<?php print $link; ?>" class="slider-image panel-panel panel-col col-sm-6  fa fa-spinner fa-spin fa-2x" data-img="<?php print $image; ?>">
+  <a href="/<?php print $link; ?>" class="slider-image panel-panel panel-col col-sm-6 fa fa-spinner fa-spin fa-2x" data-img="<?php print $image; ?>">
     <div class="sr-only">
       <?php print $title; ?>
     </div>
