@@ -30,7 +30,7 @@
       form += '<div class="ntb-signup-form-wrapper">';
       form += '<div class="title">' + Drupal.settings.ntb_signup.premessage + '</div>';
       form += '<div class="errors"></div>';
-      form += '<div class="input-group">'
+      form += '<div class="input-group">';
       form += '<input type="email" title="Please, provide an e-mail" placeholder="Email" class="form-control form-text">';
       form += '<span class="input-group-btn"><button class="btn form-submit button">Submit</button></div>';
       form += '</div>';
