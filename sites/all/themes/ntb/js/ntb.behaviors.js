@@ -29,6 +29,11 @@
         if ($item.hasClass('user-icon')) {
           self.userNavToggle($item);
         }
+
+        if ($item.hasClass('cart-icon')) {
+          e.preventDefault();
+          self.cartToggle($item);
+        }
       });
     },
 
@@ -59,6 +64,10 @@
         if ($actives.hasClass('user-icon')) {
           Drupal.behaviors.ntb.userNavToggle($actives);
         }
+
+        if ($actives.hasClass('cart-icon')) {
+          Drupal.behaviors.ntb.cartToggle($actives);
+        }
       }
     },
 
@@ -70,6 +79,10 @@
       $(icon).toggleClass('active');
       var menu = icon.attr('data-menu');
       $('#' + menu).slideToggle().toggleClass('open');
+    },
+
+    cartToggle: function (icon) {
+      $(icon).toggleClass('active').next().find('.cart-teaser').slideToggle();
     }
   };
 })(jQuery);

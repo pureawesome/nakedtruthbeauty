@@ -19,9 +19,28 @@ function site_products_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
+  //
+  // $items['commerce/add-to-cart/%'] = array(
+  //   'title' => 'Add item to cart',
+  //   'type' => MENU_CALLBACK,
+  //   'access arguments' => array('access checkout'),
+  //   'page callback' => 'site_products_add_to_cart',
+  //   'page arguments' => array(2),
+  // );
 
   return $items;
 }
+
+/**
+ * Programmatically adds an item to a cart by product id.
+ */
+// function site_products_add_to_cart($product_id) {
+//   // Add the product to the current users cart.
+//   commerce_cart_product_add_by_id($product_id);
+//
+//   // Go to the cart page.
+//   drupal_goto('cart');
+// }
 
 /**
  * Get object taxonomy ids.
@@ -86,6 +105,11 @@ function site_products_entity_info_alter(&$entity_info) {
     'label' => t('Add to Cart'),
     'custom settings' => FALSE,
   );
+
+  $entity_info['node']['view modes']['product_square'] = array(
+    'label' => t('Product Square'),
+    'custom settings' => FALSE,
+  );
 }
 
 /**
@@ -93,6 +117,8 @@ function site_products_entity_info_alter(&$entity_info) {
  */
 function site_products_preprocess_views_view(&$vars) {
   if ($vars['view']->name == 'shop') {
+    // dpm($vars);
+    $vars['classes_array'][] = 'row';
     drupal_add_library('site_products', 'site_shop');
   }
 }
@@ -131,4 +157,31 @@ function site_products_library() {
     ),
   );
   return $libraries;
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function site_products_preprocess_node(&$vars) {
+  if ($vars['view_mode'] == 'product_square') {
+
+    $vars['theme_hook_suggestions'][] = 'node__product_square';
+    $node = $vars['node'];
+    $type = $node->type;
+
+    $image_uri = $vars['field_primary_image'][0]['uri'];
+
+    $img_array = array(
+      'style_name' => 'square_500x500',
+      'path' => $image_uri,
+    );
+    $vars['image'] = theme('image_style', $img_array);
+
+    $vars['product_category'] = $vars['elements']['product:field_product_type'][0]['#title'];
+    $vars['price'] = $vars['content']['product:commerce_price'][0]['#markup'];
+    $vars['cart'] = $vars['elements']['field_product'];
+
+    $vars['cart_link'] = 'commerce/add-to-cart/' . $vars['field_product'][0]['product_id'];
+    // dpm($vars);
+  }
 }
