@@ -48,8 +48,8 @@
   </a>
   <div class="added-product-message"><?php print $configuration['success_message']; ?></div>
   <div class="option-button-wrapper">
-    <div class="option-button form-submit checkout"><?php print $checkout_link; ?></div>
-    <div class="option-button form-submit continue" data-dismiss="add-cart-message"><?php print $configuration['popup_continue_shopping']; ?></div>
+    <div class="form-submit btn checkout"><?php print $checkout_link; ?></div>
+    <div class="form-submit btn continue" data-dismiss="add-cart-message"><?php print $configuration['popup_continue_shopping']; ?></div>
   </div>
   <div class="new-item-details">
     <?php if ($configuration['popup_product_name_display'] == 1) : ?>

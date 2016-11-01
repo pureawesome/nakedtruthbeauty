@@ -247,7 +247,13 @@
         <?php print render($page['help']); ?>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 
-        <?php print render($page['content']); ?>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <?php print render($page['content']); ?>
+            </div>
+          </div>
+        </div>
 
         <?php print $feed_icons; ?>
       </div></div> <!-- /.section, /#content -->

@@ -258,5 +258,6 @@
     @include background-image(linear-gradient($primary-blue, lighten($primary-blue, 25%)));
     left: auto;
     border-radius: 5px;
+    z-index: 50;
   }
 }
