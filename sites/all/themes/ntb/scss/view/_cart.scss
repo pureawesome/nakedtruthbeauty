@@ -96,3 +96,34 @@ div.messages.commerce-add-to-cart-confirmation {
     }
   }
 }
+
+/* Add to Cart popup styling */
+.add-cart-message-wrapper {
+  left: 10%;
+  right: 10%;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: none;
+  text-transform: lowercase;
+}
+
+.new-item-details > div {
+  margin-right: 15px;
+  @include inline-block();
+}
+
+.added-product-message {
+  text-align: center;
+}
+
+.option-button-wrapper {
+  margin-top: 20px;
+
+  a {
+    color: #000;
+
+    &:hover {
+
+    }
+  }
+}

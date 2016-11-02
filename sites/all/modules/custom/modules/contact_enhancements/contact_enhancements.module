@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * NTB Contact Enhancements.
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter.
+ */
+function contact_enhancements_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+  $items = array('name', 'mail', 'subject', 'cid', 'message');
+
+  foreach ($items as $item) {
+    $form[$item]['#attributes']['class'][] = 'form-control';
+  }
+}

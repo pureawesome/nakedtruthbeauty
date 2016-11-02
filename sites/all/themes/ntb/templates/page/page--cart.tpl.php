@@ -86,11 +86,14 @@
                   <span class="sr-only">My Account</span>
                 </button>
 
-                <div class="cart fa-icon">
-                  <a href="<?php print base_path(); ?>cart">
+                <div class="cart">
+                  <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon">
                     <i class="fa fa-shopping-cart"></i>
                     <span class="sr-only">Cart</span>
                   </a>
+                  <?php if (isset($cart)): ?>
+                    <?php print render($cart['content']); ?>
+                  <?php endif; ?>
                 </div>
 
                 <div class="search-block">
@@ -160,11 +163,14 @@
           </div>
         <?php endif; ?>
 
-        <div class="cart fa-icon">
-          <a href="<?php print base_path(); ?>cart">
+        <div class="cart">
+          <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon">
             <i class="fa fa-shopping-cart"></i>
             <span class="sr-only">Cart</span>
           </a>
+          <?php if (isset($cart)): ?>
+            <?php print render($cart['content']); ?>
+          <?php endif; ?>
         </div>
 
         <div class="search-block">
