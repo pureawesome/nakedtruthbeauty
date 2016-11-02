@@ -64,12 +64,7 @@
 @include breakpoint($screen-sm) {
   .tile {
     @include flex-direction(column);
-    // .img,
-    // .title {
-    //   width: 100%;
-    //   display: block;
-    //   position: relative;
-    // }
+
     .title {
       @include flex(1);
     }

@@ -98,7 +98,6 @@ function site_products_entity_info_alter(&$entity_info) {
  */
 function site_products_preprocess_views_view(&$vars) {
   if ($vars['view']->name == 'shop') {
-    // dpm($vars);
     $vars['classes_array'][] = 'row';
     drupal_add_library('site_products', 'site_shop');
   }

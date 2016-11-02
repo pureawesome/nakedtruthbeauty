@@ -147,15 +147,6 @@
   }
 }
 
-// .quantity {
-//   position: absolute;
-//   top: 8px;
-//   right: 50px;
-//   color: white;
-//   font-size: 10px;
-//   font-weight: bold;
-// }
-
 @include breakpoint($screen-sm) {
   #header {
     display: block;
@@ -232,10 +223,6 @@
       white-space: nowrap;
     }
   }
-
-  // .quantity {
-  //   right: 75px;
-  // }
 
   .icon-menu .navbar-form.navbar-search {
     top: 36px;

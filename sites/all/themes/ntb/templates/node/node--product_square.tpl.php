@@ -30,7 +30,6 @@
           <div class="price">
             <?php print render($price); ?>
           </div>
-          <!-- <?php print l(t('add to cart'), $cart_link, array('attributes' => array('class' => 'form-submit'))); ?> -->
           <?php print render($cart); ?>
         </div>
     </div>
