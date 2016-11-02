@@ -1,6 +1,6 @@
 .tile {
   position: relative;
-  margin-bottom: 15px;
+  padding-top: 15px;
   border-bottom: 0.5px solid $border-light;
   padding-bottom: 15px;
 
@@ -63,6 +63,7 @@
 
 @include breakpoint($screen-sm) {
   .tile {
+    height: 100%;
     @include flex-direction(column);
 
     .title {
@@ -73,12 +74,15 @@
       text-align: center;
     }
 
-    .price {
-      display: block;
-    }
 
     h3 {
       text-align: center;
+    }
+  }
+
+  .tile.product_display {
+    .price {
+      display: block;
     }
   }
 }
@@ -86,7 +90,10 @@
 @include breakpoint($screen-md) {
   .tile {
     border-bottom: 0px solid $border-light;
-    padding-bottom: 0px;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-bottom: 30px;
+    height: auto;
 
     .title {
       position: absolute;
