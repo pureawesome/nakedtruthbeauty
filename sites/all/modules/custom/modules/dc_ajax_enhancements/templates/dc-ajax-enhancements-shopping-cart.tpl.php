@@ -38,9 +38,6 @@
  *   empty.
  */
 ?>
-<!-- <div class="quantity">
-  <?php print $quantity; ?>
-</div> -->
 <div class="cart-teaser">
   <?php if ($order && $quantity != 0) : ?>
     <h2 class="title"><?php print t('Shopping cart'); ?></h2>

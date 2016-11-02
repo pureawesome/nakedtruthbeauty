@@ -19,28 +19,9 @@ function site_products_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
-  //
-  // $items['commerce/add-to-cart/%'] = array(
-  //   'title' => 'Add item to cart',
-  //   'type' => MENU_CALLBACK,
-  //   'access arguments' => array('access checkout'),
-  //   'page callback' => 'site_products_add_to_cart',
-  //   'page arguments' => array(2),
-  // );
 
   return $items;
 }
-
-/**
- * Programmatically adds an item to a cart by product id.
- */
-// function site_products_add_to_cart($product_id) {
-//   // Add the product to the current users cart.
-//   commerce_cart_product_add_by_id($product_id);
-//
-//   // Go to the cart page.
-//   drupal_goto('cart');
-// }
 
 /**
  * Get object taxonomy ids.
@@ -182,6 +163,5 @@ function site_products_preprocess_node(&$vars) {
     $vars['cart'] = $vars['elements']['field_product'];
 
     $vars['cart_link'] = 'commerce/add-to-cart/' . $vars['field_product'][0]['product_id'];
-    // dpm($vars);
   }
 }
