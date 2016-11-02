@@ -76,7 +76,6 @@
   <div id="page-wrapper">
     <div id="page">
       <nav class="navbar navbar-default navbar-fixed-top">
-
         <?php if ($main_menu || $secondary_menu): ?>
           <div>
             <div class="section container-fluid">
@@ -86,11 +85,14 @@
                   <span class="sr-only">My Account</span>
                 </button>
 
-                <div class="cart fa-icon">
-                  <a href="<?php print base_path(); ?>cart">
+                <div class="cart">
+                  <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon">
                     <i class="fa fa-shopping-cart"></i>
                     <span class="sr-only">Cart</span>
                   </a>
+                  <?php if (isset($cart)): ?>
+                    <?php print render($cart['content']); ?>
+                  <?php endif; ?>
                 </div>
 
                 <div class="search-block">
@@ -160,11 +162,14 @@
           </div>
         <?php endif; ?>
 
-        <div class="cart fa-icon">
-          <a href="<?php print base_path(); ?>cart">
+        <div class="cart">
+          <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon">
             <i class="fa fa-shopping-cart"></i>
             <span class="sr-only">Cart</span>
           </a>
+          <?php if (isset($cart)): ?>
+            <?php print render($cart['content']); ?>
+          <?php endif; ?>
         </div>
 
         <div class="search-block">
@@ -242,7 +247,13 @@
         <?php print render($page['help']); ?>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 
-        <?php print render($page['content']); ?>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <?php print render($page['content']); ?>
+            </div>
+          </div>
+        </div>
 
         <?php print $feed_icons; ?>
       </div></div> <!-- /.section, /#content -->
