@@ -1,17 +1,4 @@
-@include keyframes(spin) {
-  0% {
-    @include transform( rotate(0) );
-  }
-  100% {
-    @include transform( rotate(360deg) );
-  }
-}
-
 .view-marquee {
-  .fa-spinner:before {
-    @include animation(spin 2s infinite linear);
-  }
-
   .flexslider:hover .flex-direction-nav a {
     display: none;
   }
