@@ -17,7 +17,7 @@
 
   .navbar-nav > li > a {
     width: 100%;
-    color: #333;
+    color: #37746e;
     font-size: 20px;
     padding: 20px 25px;
     @include inline-block;
@@ -108,7 +108,8 @@
         font-size: 18px;
 
         &:hover {
-          @include background-image(radial-gradient(5px, 10px, $primary-peach, transparent));
+          color: #999;
+          // @include background-image(radial-gradient(5px, 10px, $primary-peach, transparent));
         }
       }
 

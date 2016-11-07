@@ -8,6 +8,7 @@ $plugin = array(
   'theme' => 'ntb-main',
   'css' => 'ntb-main.css',
   'regions' => array(
+    'full-width' => t('Full Width'),
     'top' => t('Top'),
     'upper-left' => t('Upper Left 1/3'),
     'upper-middle' => t('Upper Middle 1/3'),

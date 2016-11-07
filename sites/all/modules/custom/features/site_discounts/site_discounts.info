@@ -1,0 +1,10 @@
+name = site_discounts
+core = 7.x
+package = Features
+dependencies[] = commerce_coupon
+dependencies[] = commerce_discount
+dependencies[] = entity
+dependencies[] = features
+features[commerce_discount][] = discount_industry_15
+features[features_api][] = api:2
+features[user_permission][] = redeem coupons of type discount_coupon
