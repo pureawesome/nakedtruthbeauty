@@ -25,10 +25,17 @@ ul.inline li {
   padding: 0;
 }
 
-#navigation,
-#main-wrapper {
+ol li a {
+  word-break: break-all;
+}
+
+.container-fluid {
   max-width: $bp-large;
   margin: auto;
+}
+
+.container-fluid.full {
+  max-width: 100%;
 }
 
 #main-wrapper {
@@ -149,7 +156,7 @@ ul.primary {
 }
 
 #footer {
-  margin-top:150px;
+  margin-top: 50px;
 }
 
 .line-break {
@@ -159,7 +166,7 @@ ul.primary {
   // background: $secondary-blue;
   @include background-image(linear-gradient(left, #fff,$primary-blue,  #fff));
   border-radius: 1px;
-  margin: 45px;
+  margin: 45px 0;
 }
 
 @include breakpoint($screen-sm) {
