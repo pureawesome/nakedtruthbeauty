@@ -10,6 +10,12 @@
       var self = this;
       self.stickyNav();
 
+      $('.navbar-toggle').on('click', function (e) {
+        if ($(this).hasClass('collapsed')) {
+          Drupal.behaviors.ntb.siblingToggle($('.custom-user-menu'));
+        }
+      });
+
       $('.custom-user-menu', context).on('click', function (e) {
         if (!$(e.target).hasClass('fa')) {
           return;
@@ -67,6 +73,11 @@
 
         if ($actives.hasClass('cart-icon')) {
           Drupal.behaviors.ntb.cartToggle($actives);
+        }
+      }
+      else {
+        if (!$('.navbar-toggle').hasClass('collapsed')) {
+          $('.navbar-toggle').trigger('click');
         }
       }
     },
