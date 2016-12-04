@@ -76,7 +76,6 @@
   <div id="page-wrapper">
     <div id="page">
       <nav class="navbar navbar-default navbar-fixed-top">
-
         <?php if ($main_menu || $secondary_menu): ?>
           <div>
             <div class="section container-fluid">
@@ -127,13 +126,12 @@
                 <?php if ($logged_in): ?>
                   <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'secondary-menu')))); ?>
                 <?php else: ?>
-                  <div id="secondary-menu">
-                    <ul class="links inline clearfix nav navbar-nav secondary-menu">
-                      <li>
-                        <a href="<?php print base_path(); ?>user">Log In</a>
-                      </li>
-                    </ul>
-                  </div>
+
+                <ul id="secondary-menu" class="links inline clearfix nav navbar-nav secondary-menu">
+                  <li>
+                    <a href="<?php print base_path(); ?>user">Log In</a>
+                  </li>
+                </ul>
                 <?php endif; ?>
               </div><!-- /.navbar-collapse -->
             </div>
