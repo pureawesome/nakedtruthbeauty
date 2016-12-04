@@ -26,8 +26,6 @@ function site_ingredients_preprocess_node(&$vars) {
           )
         )
       );
-
-      // dpm($vars);
     }
   }
 }
