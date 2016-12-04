@@ -10,6 +10,12 @@
       var self = this;
       self.stickyNav();
 
+      $('.navbar-toggle').on('click', function (e) {
+        if ($(this).hasClass('collapsed')) {
+          Drupal.behaviors.ntb.siblingToggle($('.custom-user-menu'));
+        }
+      });
+
       $('.custom-user-menu', context).on('click', function (e) {
         if (!$(e.target).hasClass('fa')) {
           return;
@@ -28,6 +34,11 @@
 
         if ($item.hasClass('user-icon')) {
           self.userNavToggle($item);
+        }
+
+        if ($item.hasClass('cart-icon')) {
+          e.preventDefault();
+          self.cartToggle($item);
         }
       });
     },
@@ -59,6 +70,15 @@
         if ($actives.hasClass('user-icon')) {
           Drupal.behaviors.ntb.userNavToggle($actives);
         }
+
+        if ($actives.hasClass('cart-icon')) {
+          Drupal.behaviors.ntb.cartToggle($actives);
+        }
+      }
+      else {
+        if (!$('.navbar-toggle').hasClass('collapsed')) {
+          $('.navbar-toggle').trigger('click');
+        }
       }
     },
 
@@ -70,6 +90,10 @@
       $(icon).toggleClass('active');
       var menu = icon.attr('data-menu');
       $('#' + menu).slideToggle().toggleClass('open');
+    },
+
+    cartToggle: function (icon) {
+      $(icon).toggleClass('active').next().find('.cart-teaser').slideToggle();
     }
   };
 })(jQuery);

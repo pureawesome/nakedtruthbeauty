@@ -127,28 +127,12 @@
               <?php print render($content['field_product_use']); ?>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="ingredients">
-              <?php print render($content['field_product_ingredients']); ?>
+              <?php print render($scientific_ingredients); ?>
               <?php print render($content['field_product_ingredients_text']); ?>
             </div>
           </div>
 
         </div>
-
-
-        <!-- <ul class='product-body-tabs'>
-          <li class="product active">Product</li><li class="use">Use</li><li class="ingredients">Ingredients</li>
-        </ul>
-        <div class="product-body-wrapper">
-          <div class='product-body product'>
-            <?php print render($content['body']); ?>
-          </div>
-          <div class='product-body use'>
-
-          </div>
-          <div class='product-body ingredients'>
-            <?php print render($content['product:field_ingredients']); ?>
-          </div>
-        </div> -->
 
       </div>
     </div>

@@ -1,0 +1,51 @@
+<?php
+/**
+ * @file
+ * Code for the ajax add to cart enhancements.
+ */
+
+/**
+ * Implements hook_preprocess_page.
+ */
+function dc_ajax_enhancements_preprocess_page(&$vars) {
+  $block = module_invoke('dc_ajax_add_cart', 'block_view', 'ajax_shopping_cart');
+  $vars['cart'] = $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function dc_ajax_enhancements_theme() {
+  return array(
+    'dc_ajax_shopping_cart' => array(
+      'variables' => array(
+        'order' => NULL,
+        'line_items' => NULL,
+        'quantity' => NULL,
+        'total' => NULL,
+      ),
+      'template' => 'templates/dc-ajax-enhancements-shopping-cart',
+    ),
+    'dc_ajax_add_to_cart_message' => array(
+      'variables' => array(
+        'line_item' => NULL,
+        'product' => NULL,
+        'quantity' => NULL,
+      ),
+      'template' => 'templates/dc-ajax-enhancements-add-to-cart-message',
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function dc_ajax_enhancements_preprocess_dc_ajax_add_to_cart_message(&$vars) {
+  $image_uri = $vars['product']->field_primary_image[LANGUAGE_NONE][0]['uri'];
+
+  $img_array = array(
+    'style_name' => 'square_500x500',
+    'path' => $image_uri,
+  );
+  $vars['product_image'] = theme('image_style', $img_array);
+}

@@ -44,8 +44,31 @@ function commerce_customizations_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * Implementation of hook_form_element().
+ * Implements hook_form_element().
  */
 function commerce_customizations_form_element($variables) {
   return theme_form_element($variables);
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function commerce_customizations_entity_view_alter(&$build, $type) {
+  if ($type == 'commerce_order') {
+    $order = $build['#entity'];
+
+    $order_date = format_date($order->created);
+
+    $markup = t('<div class="field-label">@email:</div>', array('@email' => 'Email'));
+    $markup .= '<div class="field-items">' . $order->mail . '</div>';
+    $markup .= t('<div class="field-label">@date:</div>', array('@date' => 'Order Date'));
+    $markup .= '<div class="field-items">' . $order_date . '</div>';
+
+    $build['email'] = array(
+      '#prefix' => '<div class="field field-label-above">',
+      '#suffix' => '</div>',
+      '#type' => 'markup',
+      '#markup' => $markup,
+    );
+  }
 }

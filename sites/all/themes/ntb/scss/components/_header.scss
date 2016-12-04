@@ -51,13 +51,13 @@
   }
 }
 
-.search-block {
+.search-block,
+.cart {
   @include inline-block();
 }
 
-
 .user-icon,
-.cart,
+.cart-icon,
 .search-toggle {
   display: block;
   position: relative;
@@ -68,7 +68,8 @@
   display: none;
 }
 
-.navbar-form.navbar-search {
+.navbar-form.navbar-search,
+.cart-teaser {
   display: none;
   width: 100%;
   border: 0;
@@ -93,6 +94,63 @@
 
   .btn {
     display: none;
+  }
+}
+
+.ajax-shopping-cart-wrapper {
+  width: auto;
+}
+
+.cart-teaser {
+  background: rgba(white, 1);
+  padding: 14px;
+  line-height: 1;
+
+  .price {
+    display: none;
+  }
+
+  .title,
+  thead {
+    display: none;
+  }
+
+  tbody {
+    border: 0;
+  }
+
+  td {
+    text-align: left;
+    padding: 10px;
+  }
+
+  a {
+    display: block;
+  }
+
+  .empty-shopping-cart {
+    text-align: center;
+    text-transform: lowercase;
+    display: inline;
+  }
+
+  img {
+    display: none;
+  }
+
+  .remove-from-cart a:before {
+    content: '\f00d';
+    display: block;
+    font: normal normal normal 14px/1 FontAwesome;
+  }
+
+  .ajax-shopping-cart-checkout,
+  .ajax-shopping-cart-total {
+    padding: 3px 6px;
+    margin-bottom: 0;
+    a {
+      color: #fff;
+    }
   }
 }
 
@@ -126,6 +184,10 @@
     right: 15px;
   }
 
+  .cart-teaser {
+    min-width: 300px;
+  }
+
   .navbar-form.navbar-search {
     position: absolute;
     padding: 5px;
@@ -146,6 +208,22 @@
     border-radius: 0 0 5px 5px;
   }
 
+  .navbar-fixed-top .cart-teaser {
+    position: absolute;
+    top: 43px;
+    border-radius: 0 0 5px 5px;
+    right: 0;
+    left: auto;
+    width: auto;
+    @include background-image(linear-gradient(#b3cdb8, $primary-peach));
+
+    .empty-shopping-cart {
+      text-transform: lowercase;
+      line-height: 1;
+      white-space: nowrap;
+    }
+  }
+
   .icon-menu .navbar-form.navbar-search {
     top: 36px;
     width: auto;
@@ -158,5 +236,15 @@
   .search-block {
     float: right;
     display: inline-block;
+  }
+
+  .icon-menu .cart-teaser {
+    top: 46px;
+    width: auto;
+    right: 15px;
+    @include background-image(linear-gradient($primary-blue, lighten($primary-blue, 25%)));
+    left: auto;
+    border-radius: 5px;
+    z-index: 50;
   }
 }
