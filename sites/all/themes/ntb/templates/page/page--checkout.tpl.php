@@ -126,12 +126,11 @@
                 <?php if ($logged_in): ?>
                   <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'secondary-menu')))); ?>
                 <?php else: ?>
-
-                <ul id="secondary-menu" class="links inline clearfix nav navbar-nav secondary-menu">
-                  <li>
-                    <a href="<?php print base_path(); ?>user">Log In</a>
-                  </li>
-                </ul>
+                  <ul id="secondary-menu" class="links inline clearfix nav navbar-nav secondary-menu">
+                    <li>
+                      <a href="<?php print base_path(); ?>user">Log In</a>
+                    </li>
+                  </ul>
                 <?php endif; ?>
               </div><!-- /.navbar-collapse -->
             </div>
