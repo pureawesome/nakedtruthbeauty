@@ -47,17 +47,18 @@
     <span class="element-invisible"><?php print t('Close'); ?></span>
   </a>
   <div class="added-product-message"><?php print $configuration['success_message']; ?></div>
-  <div class="option-button-wrapper">
-    <div class="form-submit btn checkout"><?php print $checkout_link; ?></div>
-    <div class="form-submit btn continue" data-dismiss="add-cart-message"><?php print $configuration['popup_continue_shopping']; ?></div>
-  </div>
   <div class="new-item-details">
     <?php if ($configuration['popup_product_name_display'] == 1) : ?>
+      <?php if ($product_image) : ?>
+        <div class="product-image">
+          <?php print render($product_image); ?>
+        </div>
+      <?php endif; ?>
       <div class="product-name">
         <?php if ($configuration['popup_product_name_label'] == 'display_label') : ?>
           <p class="name-label"><?php print t('Name:'); ?></p>
         <?php endif; ?>
-        <p class="name"><?php print $product_name; ?></p>
+        <p class="name h3"><?php print $product_name; ?></p>
       </div>
     <?php endif; ?>
     <?php if ($configuration['popup_product_price_display'] == 1) : ?>
@@ -81,8 +82,12 @@
         <?php if ($configuration['popup_product_total_label'] == 'display_label') : ?>
           <p class="total-label"><?php print t('Total:'); ?></p>
         <?php endif; ?>
-        <p class="total-incl-tax"><?php print $product_price_total; ?></p>
+        <p class="total-incl-tax h4"><?php print $product_price_total; ?></p>
       </div>
     <?php endif; ?>
+  </div>
+  <div class="option-button-wrapper">
+    <div class="form-submit btn checkout"><?php print $checkout_link; ?></div>
+    <div class="form-submit btn continue" data-dismiss="add-cart-message"><?php print $configuration['popup_continue_shopping']; ?></div>
   </div>
 </div>
