@@ -17,7 +17,6 @@
 
   .navbar-nav.inline {
     @include inline-block();
-    display: inline-block;
     width: 100%;
     margin: auto;
   }
