@@ -163,4 +163,18 @@ function site_products_preprocess_node(&$vars) {
 
     $vars['cart_link'] = 'commerce/add-to-cart/' . $vars['field_product'][0]['product_id'];
   }
+
+  if ($vars['type'] == 'product_display' && $vars['view_mode'] == 'full') {
+    $ingredients = $vars['field_product_ingredients'];
+    $ingredient_list = array();
+
+    foreach ($ingredients as $ingredient) {
+      $entity = $ingredient['entity'];
+      $name = field_get_items('node', $entity, 'field_ingredient_scientific_name');
+      $link = l($name[0]['value'], 'node/' . $entity->nid, array('attributes' => array('target' => '_blank')));
+      array_push($ingredient_list, $link);
+    }
+
+    $vars['scientific_ingredients'] = implode(', ', $ingredient_list);
+  }
 }
