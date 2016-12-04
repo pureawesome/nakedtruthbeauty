@@ -15,6 +15,12 @@
   background-color: $white;
   border: none;
 
+  .navbar-nav.inline {
+    @include inline-block();
+    width: 100%;
+    margin: auto;
+  }
+
   .navbar-nav > li > a {
     width: 100%;
     color: #37746e;
@@ -73,14 +79,14 @@
 @include breakpoint($screen-sm) {
   #navigation {
     display: block;
-
-    #main-menu {
-      @include inline-block;
-    }
   }
 
   .navbar-nav {
     float: none;
+  }
+
+  .navbar-default .navbar-nav.inline {
+    width: auto;
   }
 
   .navbar-default {
@@ -109,7 +115,6 @@
 
         &:hover {
           color: #999;
-          // @include background-image(radial-gradient(5px, 10px, $primary-peach, transparent));
         }
       }
 

@@ -9,9 +9,9 @@
     attach: function (context, settings) {
       var self = this;
 
-      self.fadeInProducts();
-
       $('body', context).once('ajax', function () {
+        self.fadeInProducts();
+
         $('.view-product-type-taxonomy a').on('click', function (e) {
           e.preventDefault();
 
@@ -28,13 +28,11 @@
         };
       });
 
-      $('body').once('ajax-fades', function () {
-        $(document).ajaxStart(function (event, request, settings) {
-          $('.view-shop .views-row').fadeTo(200, 0);
-        });
-        $(document).ajaxSuccess(function (event, request, settings) {
+      $(document).ajaxSuccess(function (event, request, settings) {
+        if (request.responseText.indexOf('view-shop') !== -1) {
+          Drupal.attachBehaviors('.view-shop');
           self.fadeInProducts();
-        });
+        }
       });
     },
 

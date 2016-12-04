@@ -9,8 +9,7 @@
  */
 function dc_ajax_enhancements_preprocess_page(&$vars) {
   $block = module_invoke('dc_ajax_add_cart', 'block_view', 'ajax_shopping_cart');
-  // xdebug_break();
-  $vars['cart']  = $block;
+  $vars['cart'] = $block;
 }
 
 /**
@@ -36,4 +35,17 @@ function dc_ajax_enhancements_theme() {
       'template' => 'templates/dc-ajax-enhancements-add-to-cart-message',
     ),
   );
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function dc_ajax_enhancements_preprocess_dc_ajax_add_to_cart_message(&$vars) {
+  $image_uri = $vars['product']->field_primary_image[LANGUAGE_NONE][0]['uri'];
+
+  $img_array = array(
+    'style_name' => 'square_500x500',
+    'path' => $image_uri,
+  );
+  $vars['product_image'] = theme('image_style', $img_array);
 }
