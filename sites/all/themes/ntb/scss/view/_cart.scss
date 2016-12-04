@@ -1,6 +1,4 @@
 div.messages.commerce-add-to-cart-confirmation {
-  // width: 500px;
-
   .message-inner .added-product-title,
   .view-confirm-message-product-display .view-content .views-field-commerce-total .field-content {
     color: $primary-blue;
@@ -108,11 +106,8 @@ div.messages.commerce-add-to-cart-confirmation {
   box-shadow: none;
   text-transform: lowercase;
   color: #333;
-  // max-height:100vh;
-  // overflow-y: auto;
   top: 60px;
   max-height: calc(100vh - 70px);
-  // max-width:75%;overflow:auto;padding:20px 25px;white-space:nowrap;
   //
   @include display-flex();
   @include flex-direction(column);
@@ -148,19 +143,12 @@ div.messages.commerce-add-to-cart-confirmation {
 
   & > div {
     margin-right: 15px;
-    // @include inline-block();
     display: block;
     text-align: center;
   }
 
   p {
     margin-top: 0;
-  }
-
-  @include breakpoint($screen-xs) {
-    // & > div {
-    //   float: left;
-    // }
   }
 }
 

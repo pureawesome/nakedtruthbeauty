@@ -129,9 +129,9 @@
   }
 
   .empty-shopping-cart {
-    // padding: 10px 15px;
     text-align: center;
     text-transform: lowercase;
+    display: inline;
   }
 
   img {
@@ -224,7 +224,6 @@
     @include background-image(linear-gradient(#b3cdb8, $primary-peach));
 
     .empty-shopping-cart {
-      // padding: 14px;
       text-transform: lowercase;
       line-height: 1;
       white-space: nowrap;
