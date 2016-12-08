@@ -197,7 +197,7 @@
     <?php if ($main_menu): ?>
       <div id="navigation"><div class="section container-fluid">
         <nav class="navbar-default">
-          <?php print $main_menu_output; ?>
+          <?php print render($main_menu_output); ?>
         </nav>
       </div></div> <!-- /.section, /#navigation -->
     <?php endif; ?>
