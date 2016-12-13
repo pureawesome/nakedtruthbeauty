@@ -10,6 +10,15 @@
       var self = this;
       self.stickyNav();
 
+      $('body').once('nav-script', function () {
+        $('ul.nav li.dropdown').hover(function () {
+          // alert('st');
+          $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }, function () {
+          $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+      });
+
       $('.navbar-toggle').on('click', function (e) {
         if ($(this).hasClass('collapsed')) {
           Drupal.behaviors.ntb.siblingToggle($('.custom-user-menu'));

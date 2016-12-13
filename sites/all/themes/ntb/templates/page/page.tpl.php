@@ -121,7 +121,7 @@
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="navbar-1">
-                <?php print $main_menu_output; ?>
+                <?php print render($main_menu_output); ?>
 
                 <?php print $secondary_menu_output; ?>
               </div><!-- /.navbar-collapse -->
