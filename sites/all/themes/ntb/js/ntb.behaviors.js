@@ -12,10 +12,11 @@
 
       $('body').once('nav-script', function () {
         $('ul.nav li.dropdown').hover(function () {
-          // alert('st');
           $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+          $(this).find('.fa').removeClass('fa-angle-down').addClass('fa-angle-up');
         }, function () {
           $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+          $(this).find('.fa').removeClass('fa-angle-up').addClass('fa-angle-down');
         });
       });
 

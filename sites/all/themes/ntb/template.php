@@ -84,7 +84,7 @@ function ntb_menu_link__main_menu($variables) {
     } else {
       unset($element['#below']['#theme_wrappers']);
       $sub_menu = '<ul class="dropdown-menu">' . drupal_render($element['#below']) . '</ul>';
-      $element['#title'] .= ' <i class="fa fa-caret-down" aria-hidden="true"></i>';
+      $element['#title'] .= ' <i class="fa fa-angle-down"></i>';
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
       $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';

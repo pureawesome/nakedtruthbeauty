@@ -203,19 +203,17 @@
     top: 43px;
     width: auto;
     right: 0px;
-    @include background-image(linear-gradient(#b3cdb8, $primary-peach));
     left: auto;
-    border-radius: 0 0 5px 5px;
+    @include sticky_subnav();
   }
 
   .navbar-fixed-top .cart-teaser {
     position: absolute;
     top: 43px;
-    border-radius: 0 0 5px 5px;
     right: 0;
     left: auto;
     width: auto;
-    @include background-image(linear-gradient(#b3cdb8, $primary-peach));
+    @include sticky_subnav();
 
     .empty-shopping-cart {
       text-transform: lowercase;
