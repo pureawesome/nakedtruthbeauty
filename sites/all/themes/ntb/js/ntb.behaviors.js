@@ -10,6 +10,17 @@
       var self = this;
       self.stickyNav();
 
+      $('body').once('nav-script', function () {
+        $('ul.nav li.dropdown').on('mouseover', function () {
+          $(this).addClass('open');
+          $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        });
+        $('ul.nav li.dropdown').on('mouseout', function () {
+          $(this).removeClass('open');
+          $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+      });
+
       $('.navbar-toggle').on('click', function (e) {
         if ($(this).hasClass('collapsed')) {
           Drupal.behaviors.ntb.siblingToggle($('.custom-user-menu'));

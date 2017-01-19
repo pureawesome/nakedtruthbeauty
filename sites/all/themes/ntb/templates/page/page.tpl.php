@@ -121,17 +121,9 @@
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="navbar-1">
-                <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
+                <?php print render($main_menu_output); ?>
 
-                <?php if ($logged_in): ?>
-                  <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'secondary-menu')))); ?>
-                <?php else: ?>
-                  <ul id="secondary-menu" class="links inline clearfix nav navbar-nav secondary-menu">
-                    <li>
-                      <a href="<?php print base_path(); ?>user">Log In</a>
-                    </li>
-                  </ul>
-                <?php endif; ?>
+                <?php print $secondary_menu_output; ?>
               </div><!-- /.navbar-collapse -->
             </div>
           </div> <!-- /.section, /#navigation -->
@@ -146,19 +138,7 @@
           <span class="sr-only">My Account</span>
         </button>
 
-        <?php if ($logged_in): ?>
-          <div class="navbar-default">
-            <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu-top', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'navbar-default', 'secondary-menu')))); ?>
-          </div>
-        <?php else: ?>
-          <div id="secondary-menu-top" class="navbar-default">
-            <ul class="links inline clearfix nav navbar-nav secondary-menu">
-              <li>
-                <a href="<?php print base_path(); ?>user">Log In</a>
-              </li>
-            </ul>
-          </div>
-        <?php endif; ?>
+        <?php print $secondary_menu_top; ?>
 
         <div class="cart">
           <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon">
@@ -217,14 +197,10 @@
     <?php if ($main_menu): ?>
       <div id="navigation"><div class="section container-fluid">
         <nav class="navbar-default">
-          <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix', 'nav', 'navbar-nav')))); ?>
+          <?php print render($main_menu_output); ?>
         </nav>
       </div></div> <!-- /.section, /#navigation -->
     <?php endif; ?>
-
-    <!-- <?php if ($breadcrumb): ?>
-      <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?> -->
 
     <?php print $messages; ?>
 
