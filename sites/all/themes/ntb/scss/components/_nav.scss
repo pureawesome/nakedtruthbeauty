@@ -24,19 +24,31 @@
   .navbar-nav > li > a {
     width: 100%;
     color: #37746e;
+    color: darken($secondary-blue, 15%);
     font-size: 20px;
     padding: 20px 25px;
+    @include animation(all 0.2s ease-in-out);
     @include inline-block;
-  }
-
-  .navbar-nav > .active > a {
-    background: rgba($white, 0.5);
 
     &:hover,
     &:focus {
-      background: rgba($white, 0.5);
+      background: rgba($secondary-blue, 0.5);
     }
   }
+
+  .navbar-nav > .active > a {
+    background: $secondary-blue;
+    color: $white;
+  }
+
+  .navbar-nav > .open > a {
+    &,
+    &:hover,
+    &:focus {
+      background: rgba($secondary-blue, 0.5);
+    }
+  }
+
 
   .navbar-toggle {
     &:hover, &:focus {
@@ -44,6 +56,18 @@
     }
     .icon-bar {
       background-color: $secondary-blue;
+    }
+  }
+}
+
+.dropdown-menu {
+  & > li {
+    & > a {
+      text-align: center;
+
+      &:hover {
+        background: rgba($secondary-blue, 0.5);
+      }
     }
   }
 }
@@ -74,7 +98,6 @@
   &:before {
   }
 }
-
 
 @include breakpoint($screen-sm) {
   #navigation {
@@ -114,25 +137,26 @@
         font-size: 18px;
 
         &:hover {
-          color: #999;
+          color: #333;
         }
       }
+    }
 
-      .navbar-nav > .last > a {
-        padding-right: 0;
-      }
+    .dropdown-menu {
+      @include sticky_subnav();
     }
   }
 
   #secondary-menu,
-  #secondary-menu-top {
+  #secondary-menu-top,
+  .dropdown-menu {
     display: none;
     position: absolute;
     right: 15px;
     top: 50px;
     width: 200px;
-    border-radius: 0 0 5px 5px;
-    @include background-image(linear-gradient(#b3cdb8, $primary-peach));
+    padding: 0;
+    @include sticky_subnav();
 
     li {
       width: 100%;
@@ -153,11 +177,15 @@
     right: 0px;
   }
 }
-
 @include breakpoint($screen-md) {
   .navbar-fixed-top .navbar-collapse .navbar-nav > li > a {
     font-size: 20px;
     padding-left: 15px;
     padding-right: 15px;
   }
+}
+
+#navigation .dropdown-menu {
+  top: 62px;
+  @include background-image(linear-gradient(rgba($secondary-blue, 0.5), #ffcc99));
 }
