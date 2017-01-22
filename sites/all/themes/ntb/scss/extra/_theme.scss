@@ -30,7 +30,7 @@ ol li a {
 }
 
 .container-fluid {
-  // max-width: $bp-large;
+  max-width: $bp-large;
   margin: auto;
 }
 
@@ -39,7 +39,7 @@ ol li a {
 }
 
 #main-wrapper {
-  // margin-top: 50px;
+  margin-top: 50px;
 }
 
 .form-submit {
@@ -50,7 +50,6 @@ ol li a {
   text-transform: lowercase;
   background: $primary-blue;
   margin-bottom: 10px;
-  color: $text-dark;
   @include border-radius(5px);
 
   &:hover {
@@ -132,8 +131,8 @@ ul.primary {
     &:before {
       @include fa-icon();
       color: $secondary-blue;
-      // color: darken($secondary-blue, 15%);
-      // color: $white;
+      color: darken($secondary-blue, 15%);
+      color: $white;
       content: $fa-var-facebook;
       font-size: 36px;
     }
@@ -149,7 +148,6 @@ ul.primary {
     &:hover {
       &:before {
         color: darken($secondary-blue, 15%);
-        color: $primary-blue;
         // color: $white;
       }
     }
@@ -160,12 +158,10 @@ ul.primary {
   padding: 50px 0 30px 0;
   margin-top: 30px;
   text-align: center;
-  color: $secondary-blue;
-  // @include background-image(linear-gradient($primary-blue, $pink));
+  @include background-image(linear-gradient($primary-blue, $pink));
 
   a {
     color: #333;
-    color: $secondary-blue;
 
     &:hover {
       color: darken($secondary-blue, 15%);
@@ -198,14 +194,13 @@ ul.primary {
     vertical-align: middle;
   }
 
+
   table thead th,
   .field .field-label {
     font-size: 16px;
   }
 }
 
-@include breakpoint($screen-md) {
-  .node-type-page .content .pane-node-body {
-    @include column-count(2);
-  }
+.node-type-page .count .pane-node-body {
+  @include column-count(2);
 }
