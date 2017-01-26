@@ -5,6 +5,7 @@
  */
 function ntb_preprocess_page(&$vars) {
   drupal_add_library('ntb', 'bootstrap');
+  drupal_add_library('ntb', 'ntb');
 
   // Get the entire main menu tree
   $vars['main_menu_output'] = menu_tree_output(menu_tree_all_data('main-menu'));
@@ -114,6 +115,16 @@ function ntb_library() {
     'version' => '3.3.6',
     'js' => array(
       libraries_get_path('bootstrap') . '/js/bootstrap.min.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+  $libraries['ntb'] = array(
+    'title' => 'NTB Behaviors',
+    'version' => '1.0',
+    'js' => array(
+      drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
