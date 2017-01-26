@@ -87,9 +87,22 @@
       display: block;
     }
 
-    .slider-image,
-    .content {
+    // .slider-image,
+    // .content {
+    //   height: 350px;
+    // }
+    .slider-image {
       height: 350px;
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      p {
+        text-align: center;
+      }
     }
 
     .flexslider {
