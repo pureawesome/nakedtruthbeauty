@@ -120,7 +120,7 @@ function site_products_library() {
     'title' => 'NTB products',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'site_products') . '/js/site_products.js' => array(
+      drupal_get_path('module', 'site_products') . '/js/site_products.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
@@ -130,7 +130,7 @@ function site_products_library() {
     'title' => 'NTB Shop',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'site_products') . '/js/site_shop.js' => array(
+      drupal_get_path('module', 'site_products') . '/js/site_shop.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
