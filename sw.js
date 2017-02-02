@@ -4,7 +4,15 @@ var urlsToCache = [
   '/sites/all/themes/ntb/logo.png',
   '/shop',
   '/about',
-  '/ingredients'
+  '/ingredients',
+  '/sites/all/themes/ntb/fonts/quicksand-regular-webfont.woff2',
+  '/sites/all/themes/ntb/fonts/fontawesome-webfont.woff2?v=4.6.3',
+  '/sites/all/themes/ntb/fonts/have_heart_one-webfont.woff2',
+  '/sites/all/themes/ntb/fonts/quicksand-bold-webfont.woff2',
+  '/misc/jquery.once.js?v=1.2',
+  '/misc/drupal.js',
+  '/misc/ajax.js?v=7.53',
+  '/misc/progress.js?v=7.53'
   // '/styles/main.css',
   // '/script/main.js'
 ];
