@@ -10,13 +10,14 @@ var urlsToCache = [
   '/misc/drupal.js',
   '/misc/ajax.js?v=7.53',
   '/misc/progress.js?v=7.53',
-  // '/sites/all/modules/custom/features/site_products/js/site_shop.min.js?v=1.0',
+  '/sites/all/modules/custom/features/site_products/js/site_shop.min.js?v=1.0',
   '/sites/all/modules/custom/features/site_search/js/site_search.min.js?v=1',
   '/sites/all/libraries/bootstrap/js/bootstrap.min.js?v=3.3.6',
   '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.0',
   '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
-  '/sites/all/modules/contrib/google_analytics/googleanalytics.js'
-  // '/sites/all/modules/custom/features/site_products/js/site_products.min.js?v=1.0'
+  '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
+  '/sites/all/modules/custom/features/site_products/js/site_products.min.js?v=1.0',
+  '/sites/all/modules/contrib/dc_ajax_add_cart/js/dc_ajax_add_cart_html.js',
 ];
 
 self.addEventListener('install', function (event) {

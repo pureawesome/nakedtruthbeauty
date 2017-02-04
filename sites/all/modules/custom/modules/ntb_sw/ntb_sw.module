@@ -1,22 +1,9 @@
 <?php
 
 /**
- * Implements hook_page_attachments_alter().
+ * @file
+ * Module file for ntv service worker.
  */
-// function ntb_sw_preprocess_page(&$variables) {
-  // xdebug_break();
-// // function ntb_sw_page_attachments_alter(&$attachments) {
-//   $attachments['#attached']['library'][] = 'sw_dcp/serviceworker';
-//   $manifest = array(
-//     '#type' => 'html_tag',
-//     '#tag' => 'link',
-//     '#attributes' => array(
-//       'rel' => 'manifest',
-//       'href' => '/manifest.json',
-//     ),
-//   );
-//   $attachments['#attached']['html_head'][] = [$manifest, 'manifest'];
-// }
 
 /**
  * Implements hook_preprocess_page().

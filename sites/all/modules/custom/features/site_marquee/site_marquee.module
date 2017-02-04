@@ -52,7 +52,7 @@ function site_marquee_library() {
     'title' => 'NTB Marquees',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'site_marquee') . '/js/site_marquee.js' => array(
+      drupal_get_path('module', 'site_marquee') . '/js/site_marquee.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
