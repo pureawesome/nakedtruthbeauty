@@ -33,14 +33,8 @@ function ntb_sw_library() {
     'title' => 'NTB Service Worker',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'ntb_sw') . '/js/ntb_sw.js' => array(
-        // 'defer' => TRUE,
-        // 'scope' => 'footer',
-      ),
+      drupal_get_path('module', 'ntb_sw') . '/js/ntb_sw.js' => array(),
     ),
-    // 'css' => array(
-    //   drupal_get_path('module', 'ntb_signup') . '/css/ntb_signup.css' => array(),
-    // ),
   );
   return $libraries;
 }
