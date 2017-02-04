@@ -124,7 +124,7 @@ function ntb_library() {
     'title' => 'NTB Behaviors',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.js' => array(
+      drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),

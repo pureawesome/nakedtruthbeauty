@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Module file for ntv service worker.
+ */
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function ntb_sw_preprocess_page(&$vars) {
+  drupal_add_library('ntb_sw', 'sw');
+
+  $manifest = array(
+    '#type' => 'html_tag',
+    '#tag' => 'link',
+    '#attributes' => array(
+      'rel' => 'manifest',
+      'href' => '/manifest.json',
+    ),
+  );
+  drupal_add_html_head($manifest, 'manifest');
+}
+
+/**
+ * Implements hook_library().
+ */
+function ntb_sw_library() {
+  $libraries['sw'] = array(
+    'title' => 'NTB Service Worker',
+    'version' => '1.0',
+    'js' => array(
+      drupal_get_path('module', 'ntb_sw') . '/js/ntb_sw.min.js' => array(),
+    ),
+  );
+  return $libraries;
+}
