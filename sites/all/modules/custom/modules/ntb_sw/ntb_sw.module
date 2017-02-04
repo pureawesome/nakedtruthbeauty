@@ -10,6 +10,16 @@
  */
 function ntb_sw_preprocess_page(&$vars) {
   drupal_add_library('ntb_sw', 'sw');
+
+  $manifest = array(
+    '#type' => 'html_tag',
+    '#tag' => 'link',
+    '#attributes' => array(
+      'rel' => 'manifest',
+      'href' => '/manifest.json',
+    ),
+  );
+  drupal_add_html_head($manifest, 'manifest');
 }
 
 /**
