@@ -4,7 +4,8 @@
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
-  drupal_add_js(libraries_get_path('bootstrap') . '/js/bootstrap.min.js');
+  drupal_add_library('ntb', 'bootstrap');
+  drupal_add_library('ntb', 'ntb');
 
   // Get the entire main menu tree
   $vars['main_menu_output'] = menu_tree_output(menu_tree_all_data('main-menu'));
@@ -60,10 +61,16 @@ function ntb_preprocess_page(&$vars) {
   }
 }
 
+/**
+ * Implements THEMENAME_menu_tree__MENU_NAME()().
+ */
 function ntb_menu_tree__main_menu($variables) {
   return '<ul class="links inline clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
 }
 
+/**
+ * Implements THEMENAME_menu_link__MENU_NAME()().
+ */
 function ntb_menu_link__main_menu($variables) {
   $element = $variables['element'];
   $sub_menu = '';
@@ -96,4 +103,32 @@ function ntb_menu_link__main_menu($variables) {
   }
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}
+
+/**
+ * Implements hook_library().
+ */
+function ntb_library() {
+  $libraries['bootstrap'] = array(
+    'title' => 'Bootstrap JS',
+    'website' => 'http://getbootstrap.com/',
+    'version' => '3.3.6',
+    'js' => array(
+      libraries_get_path('bootstrap') . '/js/bootstrap.min.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+  $libraries['ntb'] = array(
+    'title' => 'NTB Behaviors',
+    'version' => '1.0',
+    'js' => array(
+      drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+  return $libraries;
 }

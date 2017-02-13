@@ -120,7 +120,7 @@ function site_products_library() {
     'title' => 'NTB products',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'site_products') . '/js/site_products.js' => array(
+      drupal_get_path('module', 'site_products') . '/js/site_products.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
@@ -130,7 +130,7 @@ function site_products_library() {
     'title' => 'NTB Shop',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'site_products') . '/js/site_shop.js' => array(
+      drupal_get_path('module', 'site_products') . '/js/site_shop.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
@@ -175,6 +175,27 @@ function site_products_preprocess_node(&$vars) {
       array_push($ingredient_list, $link);
     }
 
+    $products = taxonomy_select_nodes($vars['field_product_type'][LANGUAGE_NONE][0]['tid']);
+    $product_links = [
+      'items' => [],
+      'title' => '',
+      'type' => 'ul',
+      'attributes' => [
+        'class' => ['inline'],
+      ],
+    ];
+
+    foreach ($products as $product) {
+      $node = node_load($product);
+      $link_title = $node->title;
+      $uri = drupal_get_path_alias('node/' . $product);
+      $link = [$link_title, $uri];
+      $thumb_url = image_style_url('thumbnail', $node->field_primary_image[LANGUAGE_NONE][0]['uri']);
+      $link = '<a href=/' . $uri . '><img src=' . $thumb_url . ' title=' . $node->title . ' alt=' . $node->title . ' /></a>';
+      array_push($product_links['items'], $link);
+    }
+
+    $vars['product_type_list'] = theme_item_list($product_links);
     $vars['scientific_ingredients'] = implode(', ', $ingredient_list);
   }
 }
