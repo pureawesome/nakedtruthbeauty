@@ -4,8 +4,11 @@
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
-  drupal_add_library('ntb', 'bootstrap');
+  $js_check = "<script>document.documentElement.className = 'js';</script>";
+  drupal_add_html_head($js_check);
+  // drupal_add_library('ntb', 'modernizr');
   drupal_add_library('ntb', 'ntb');
+
 
   // Get the entire main menu tree
   $vars['main_menu_output'] = menu_tree_output(menu_tree_all_data('main-menu'));
@@ -109,26 +112,63 @@ function ntb_menu_link__main_menu($variables) {
  * Implements hook_library().
  */
 function ntb_library() {
-  $libraries['bootstrap'] = array(
-    'title' => 'Bootstrap JS',
-    'website' => 'http://getbootstrap.com/',
+  $libraries['bootstrap_tabs'] = array(
+    'title' => 'Bootstrap Tabs',
     'version' => '3.3.6',
     'js' => array(
-      libraries_get_path('bootstrap') . '/js/bootstrap.min.js' => array(
+      libraries_get_path('bootstrap') . '/js/lib/tab.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
     ),
   );
+
+  $libraries['bootstrap_dropdown'] = array(
+    'title' => 'Bootstrap ',
+    'version' => '3.3.6',
+    'js' => array(
+      libraries_get_path('bootstrap') . '/js/lib/dropdown.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+
+  $libraries['bootstrap_collapse'] = array(
+    'title' => 'Bootstrap ',
+    'version' => '3.3.6',
+    'js' => array(
+      libraries_get_path('bootstrap') . '/js/lib/collapse.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+
   $libraries['ntb'] = array(
     'title' => 'NTB Behaviors',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => array(
+      drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+    'dependencies' => [
+      ['ntb', 'bootstrap_collapse'],
+    ],
+  );
+
+  $libraries['modernizr'] = array(
+    'title' => 'Modernizr ',
+    'version' => '2.3.8',
+    'js' => array(
+      libraries_get_path('modernizr') . '/modernizr-2.8.3.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
     ),
   );
+
   return $libraries;
 }

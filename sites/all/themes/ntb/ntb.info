@@ -4,6 +4,7 @@ description = Theme for Naked Truth Beauty site
 version = 1.0
 core = 7.x
 
+regions[alert] = Alert
 regions[header] = Header
 regions[highlighted] = Highlighted
 regions[help] = Help

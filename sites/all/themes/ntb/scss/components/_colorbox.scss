@@ -1,0 +1,134 @@
+#colorbox, #cboxOverlay {
+  z-index: 9999;
+}
+
+#cboxOverlay {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+#cboxOverlay, .add-to-cart-overlay {
+  background: linear-gradient(rgba($primary-blue, 0.9),rgba($primary-peach, 0.9));
+}
+
+#cboxContent {
+
+  // @include justify-content(center);
+  // @include align-items(center);
+}
+
+#cboxLoadedContent {
+  background: rgba(#fff, 1);
+  margin: auto;
+  width: auto;
+  padding: 15px;
+  max-width: 80%;
+  height: auto !important;
+  @include display-flex();
+  @include flex-direction(column);
+  @include border-radius(10px);
+
+  .title {
+    text-align: center;
+    margin-top: 0;
+  }
+}
+
+#cboxClose {
+  // @include buttons();
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-indent: -9999px;
+  &:after {
+    content: '\f0a8';
+    @include fa-icon();
+  }
+}
+
+.ajax-shopping-cart-wrapper {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  display: none;
+}
+
+.cart-teaser,
+.cart-teaser .title {
+  display: block;
+  position: relative;
+}
+
+.cart-teaser {
+  width: auto;
+  padding: 20px;
+  background: #fff;
+
+  .title {
+    margin-top: 0;
+  }
+
+  th {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  td {
+    padding: 0 20px;
+    font-size: 18px;
+  }
+
+  tbody {
+    margin-bottom: 15px;
+    border-top: 1px solid #000;
+  }
+
+  .remove-from-cart {
+    font-size: 16px;
+  }
+
+  .ajax-shopping-cart-more-info {
+    margin-top: 15px;
+
+    & > div {
+      display: block;
+      float: none;
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+  .dc-ajax-add-cart-checkout-cart {
+    color: #000;
+  }
+}
+
+.overlay {
+  background: linear-gradient(rgba($primary-blue, 0.9),rgba($primary-peach, 0.9));
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    i {
+      font-size: 36px;
+      color: $primary-peach;
+    }
+  }
+}

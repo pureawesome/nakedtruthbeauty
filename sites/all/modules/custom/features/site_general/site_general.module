@@ -38,3 +38,21 @@ function site_general_preprocess_node(&$vars) {
     $vars['image'] = theme('image_style', $img_array);
   }
 }
+
+/**
+ * Implements hook_library().
+ */
+function site_general_library() {
+  $libraries['colorbox'] = array(
+    'title' => 'NTB Colorbox',
+    'website' => 'https://github.com/jackmoore/colorbox',
+    'version' => '1.6.4',
+    'js' => array(
+      libraries_get_path('colorbox') . '/jquery.colorbox-min.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+  return $libraries;
+}
