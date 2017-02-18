@@ -38,6 +38,12 @@
  *   empty.
  */
 ?>
+<div class="overlay">
+  <div class="close">
+    <i class="fa fa-times" aria-hidden="true"></i>
+    <span class="sr-only">Close</span>
+  </div>
+</div>
 <div class="cart-teaser">
   <?php if ($order && $quantity != 0) : ?>
     <h2 class="title"><?php print t('Shopping cart'); ?></h2>
@@ -69,7 +75,7 @@
         <div class="ajax-shopping-cart-shipping"><?php print $shipping['service'] . ' ' . $shipping['price']; ?></div>
       <?php endif; ?>
       <div class="ajax-shopping-cart-total"><?php print t('Total:') . ' ' . $product_price_total; ?></div>
-      <div class="ajax-shopping-cart-checkout form-submit"><?php print $checkout_url; ?></div>
+      <div class="ajax-shopping-cart-checkout"><?php print $checkout_url; ?></div>
     </div>
   <?php elseif ($quantity == 0 || !$order) : ?>
     <div class="empty-shopping-cart"><?php print $configuration['empty_cart_message']; ?></div>
