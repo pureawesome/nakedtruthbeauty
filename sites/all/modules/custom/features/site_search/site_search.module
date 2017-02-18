@@ -26,6 +26,9 @@ function site_search_library() {
         'scope' => 'footer',
       ),
     ),
+    'dependencies' => [
+      ['site_general', 'colorbox'],
+    ],
   );
   return $libraries;
 }
