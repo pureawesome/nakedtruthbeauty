@@ -50,6 +50,7 @@ ol li a {
   text-transform: lowercase;
   background: $primary-blue;
   margin-bottom: 10px;
+  color: $text-dark;
   @include border-radius(5px);
 
   &:hover {

@@ -10,6 +10,7 @@
 function dc_ajax_enhancements_preprocess_page(&$vars) {
   $block = module_invoke('dc_ajax_add_cart', 'block_view', 'ajax_shopping_cart');
   $vars['cart'] = $block;
+  drupal_add_library('dc_ajax_enhancements', 'cart');
 }
 
 /**
@@ -66,4 +67,25 @@ function dc_ajax_enhancements_preprocess_dc_ajax_shopping_cart(&$variables) {
       'html' => $variables['checkout_link']['html'],
     ));
   }
+}
+
+/**
+ * Implements hook_library().
+ */
+function dc_ajax_enhancements_library() {
+  $libraries['cart'] = [
+    'title' => 'Site Cart',
+    'version' => '1',
+    'js' => array(
+      drupal_get_path('module', 'dc_ajax_enhancements') . '/js/dc_ajax_enhancements.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+    // 'dependencies' => [
+    //   ['site_general', 'colorbox'],
+    // ],
+  ];
+
+  return $libraries;
 }

@@ -97,7 +97,7 @@
                       </button>
 
                       <div class="cart">
-                        <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon">
+                        <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon cart-toggle">
                           <i class="fa fa-shopping-cart"></i>
                           <span class="sr-only">Cart</span>
                         </a>

@@ -40,7 +40,7 @@
         }
 
         if ($item.hasClass('search-toggle')) {
-          self.searchToggle($item);
+          // self.searchToggle($item);
         }
 
         if ($item.hasClass('user-icon')) {
@@ -94,7 +94,9 @@
     },
 
     searchToggle: function (icon) {
-      $(icon).toggleClass('active').next('.navbar-search').slideToggle();
+      // $(icon).toggleClass('active').next('.navbar-search').slideToggle();
+      var $html = $(icon).toggleClass('active').next('.navbar-search');
+      // $.colorbox({html: $html[0].innerHTML, width: '100%', height: '100%', fixed: true});
     },
 
     userNavToggle: function (icon) {
@@ -104,7 +106,8 @@
     },
 
     cartToggle: function (icon) {
-      $(icon).toggleClass('active').next().find('.cart-teaser').slideToggle();
+      var $html = $(icon).toggleClass('active').next().fadeIn();
+      // $.colorbox({html: $html[0].innerHTML, width: '100%', height: '100%', fixed: true});
     }
   };
 })(jQuery);

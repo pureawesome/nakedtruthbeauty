@@ -158,7 +158,8 @@ function site_products_preprocess_node(&$vars) {
       'style_name' => 'square_500x500',
       'path' => $image_uri,
     );
-    $vars['image'] = theme('image_style', $img_array);
+    $image = theme('image_style', $img_array);
+    $vars['image'] = l($image, 'node/' . $vars['nid'], array('html' => TRUE));
 
     $vars['product_category'] = $vars['elements']['product:field_product_type'][0]['#title'];
     $vars['price'] = $vars['content']['product:commerce_price'][0]['#markup'];
