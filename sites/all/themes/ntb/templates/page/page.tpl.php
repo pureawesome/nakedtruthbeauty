@@ -73,177 +73,177 @@
  */
 ?>
 
-  <div id="page-wrapper">
-    <div id="page">
-      <div id="header">
-        <div class="section clearfix container-fluid">
+<div id="page-wrapper">
+  <div id="page">
+    <div id="header">
+      <div class="section clearfix container-fluid">
 
-          <?php if ($page['alert']): ?>
-            <div class="row">
-              <div class="alert-strip">
-                <?php print render($page['alert']); ?>
-              </div>
-            </div>
-          <?php endif; ?>
-
+        <?php if ($page['alert']): ?>
           <div class="row">
-            <nav class="navbar navbar-default">
-              <?php if ($main_menu || $secondary_menu): ?>
-                <div class="section container-fluid">
-                  <div class="icon-menu-fixed custom-user-menu">
-                    <button class="user-icon fa-icon" data-menu="secondary-menu">
-                      <i class="fa fa-user"></i>
-                      <span class="sr-only">My Account</span>
-                    </button>
+            <div class="alert-strip">
+              <?php print render($page['alert']); ?>
+            </div>
+          </div>
+        <?php endif; ?>
 
-                    <div class="cart">
-                      <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon cart-toggle">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span class="sr-only">Cart</span>
-                      </a>
-                      <?php if (isset($cart)): ?>
-                        <?php print render($cart['content']); ?>
-                      <?php endif; ?>
-                    </div>
+        <div class="row">
+          <nav class="navbar navbar-default">
+            <?php if ($main_menu || $secondary_menu): ?>
+              <div class="section container-fluid">
+                <div class="icon-menu-fixed custom-user-menu">
+                  <button class="user-icon fa-icon" data-menu="secondary-menu">
+                    <i class="fa fa-user"></i>
+                    <span class="sr-only">My Account</span>
+                  </button>
 
-                    <div class="search-block">
-                      <button class="search-toggle fa-icon">
-                        <i class="fa fa-search"></i>
-                        <span class="sr-only">Search Toggle</span>
-                      </button>
-                      <div class="search-container">
-                        <div class="overlay">
-                          <div id="btn-search-close" class="close btn--search-close">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                            <span class="sr-only">Close</span>
-                          </div>
-                        </div>
-                        <form class="navbar-form navbar-left pull-right navbar-search search-form search__form" role="search">
-                          <div class="form-group">
-                            <input class="search__input" name="search" type="search" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                            <span class="search__info">Hit enter to search or ESC to close</span>
-                          </div>
-                          <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                        <div class="search__related">
-                					<div class="search__suggestion">
-                						<h3>May We Suggest?</h3>
-                						<p>#drone #funny #catgif #broken #lost #hilarious #good #red #blue #nono #why #yes #yesyes #aliens #green</p>
-                					</div>
-                					<div class="search__suggestion">
-                						<h3>Is It This?</h3>
-                						<p>#good #red #hilarious #blue #nono #why #yes #yesyes #aliens #green #drone #funny #catgif #broken #lost</p>
-                					</div>
-                					<div class="search__suggestion">
-                						<h3>Needle, Where Art Thou?</h3>
-                						<p>#broken #lost #good #red #funny #hilarious #catgif #blue #nono #why #yes #yesyes #aliens #green #drone</p>
-                					</div>
-                				</div>
-                      </div>
-
-                    </div>
-                  </div><!-- end custom-user-menu -->
-
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1" aria-expanded="false">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="h3 mobile-logo" href="<?php print $front_page; ?>">naked<span>truth</span></a>
+                  <div class="cart">
+                    <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon cart-toggle">
+                      <i class="fa fa-shopping-cart"></i>
+                      <span class="sr-only">Cart</span>
+                    </a>
+                    <?php if (isset($cart)): ?>
+                      <?php print render($cart['content']); ?>
+                    <?php endif; ?>
                   </div>
 
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="navbar-1">
-                    <?php print render($main_menu_output); ?>
+                  <div class="search-block">
+                    <button class="search-toggle fa-icon">
+                      <i class="fa fa-search"></i>
+                      <span class="sr-only">Search Toggle</span>
+                    </button>
+                    <div class="search-container">
+                      <div class="overlay">
+                        <div id="btn-search-close" class="close btn--search-close">
+                          <i class="fa fa-times" aria-hidden="true"></i>
+                          <span class="sr-only">Close</span>
+                        </div>
+                      </div>
+                      <form class="navbar-form navbar-left pull-right navbar-search search-form search__form" role="search">
+                        <div class="form-group">
+                          <input class="search__input" name="search" type="search" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                          <span class="search__info">Hit enter to search or ESC to close</span>
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                      </form>
+                      <div class="search__related">
+              					<div class="search__suggestion">
+              						<h3>May We Suggest?</h3>
+              						<p>#drone #funny #catgif #broken #lost #hilarious #good #red #blue #nono #why #yes #yesyes #aliens #green</p>
+              					</div>
+              					<div class="search__suggestion">
+              						<h3>Is It This?</h3>
+              						<p>#good #red #hilarious #blue #nono #why #yes #yesyes #aliens #green #drone #funny #catgif #broken #lost</p>
+              					</div>
+              					<div class="search__suggestion">
+              						<h3>Needle, Where Art Thou?</h3>
+              						<p>#broken #lost #good #red #funny #hilarious #catgif #blue #nono #why #yes #yesyes #aliens #green #drone</p>
+              					</div>
+              				</div>
+                    </div>
 
-                    <?php print $secondary_menu_output; ?>
-                  </div><!-- /.navbar-collapse -->
-                </div><!-- /.section, /#navigation -->
-              <?php endif; ?>
-            </nav>
-          </div>
+                  </div>
+                </div><!-- end custom-user-menu -->
 
-          <?php if ($logo): ?>
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-            </a>
-          <?php endif; ?>
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="h3 mobile-logo" href="<?php print $front_page; ?>">naked<span>truth</span></a>
+                </div>
 
-          <?php if ($site_name || $site_slogan): ?>
-            <div id="name-and-slogan">
-              <?php if ($site_name): ?>
-                <?php if ($title): ?>
-                  <div id="site-name"><strong>
-                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-                  </strong></div>
-                <?php else: /* Use h1 when the content title is empty */ ?>
-                  <h1 id="site-name">
-                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-                  </h1>
-                <?php endif; ?>
-              <?php endif; ?>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-1">
+                  <?php print render($main_menu_output); ?>
 
-              <?php if ($site_slogan): ?>
-                <div id="site-slogan"><?php print $site_slogan; ?></div>
-              <?php endif; ?>
-            </div> <!-- /#name-and-slogan -->
-          <?php endif; ?>
-
-          <?php print render($page['header']); ?>
+                  <?php print $secondary_menu_output; ?>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.section, /#navigation -->
+            <?php endif; ?>
+          </nav>
         </div>
-      </div> <!-- /.section, /#header -->
 
-    <?php print render($page['marquee']); ?>
+        <?php if ($logo): ?>
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          </a>
+        <?php endif; ?>
 
-    <?php print $messages; ?>
+        <?php if ($site_name || $site_slogan): ?>
+          <div id="name-and-slogan">
+            <?php if ($site_name): ?>
+              <?php if ($title): ?>
+                <div id="site-name"><strong>
+                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                </strong></div>
+              <?php else: /* Use h1 when the content title is empty */ ?>
+                <h1 id="site-name">
+                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                </h1>
+              <?php endif; ?>
+            <?php endif; ?>
 
-    <div id="main-wrapper"><div id="main" class="clearfix">
+            <?php if ($site_slogan): ?>
+              <div id="site-slogan"><?php print $site_slogan; ?></div>
+            <?php endif; ?>
+          </div> <!-- /#name-and-slogan -->
+        <?php endif; ?>
 
-      <div id="content" class="column"><div class="section">
-        <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-        <a id="main-content"></a>
+        <?php print render($page['header']); ?>
+      </div>
+    </div> <!-- /.section, /#header -->
 
-        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-        <?php print render($page['help']); ?>
-        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+  <?php print render($page['marquee']); ?>
 
-        <div class="container-fluid">
-          <div class="row">
-            <?php print render($title_prefix); ?>
-            <?php if ($title): ?><h1 class="title col-sm-12" id="page-title"><?php print $title; ?></h1><?php endif; ?>
-            <?php print render($title_suffix); ?>
-          </div>
+  <?php print $messages; ?>
 
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="row">
-                <?php print render($page['content']); ?>
-              </div>
+  <div id="main-wrapper"><div id="main" class="clearfix">
+
+    <div id="content" class="column"><div class="section">
+      <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+      <a id="main-content"></a>
+
+      <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+      <?php print render($page['help']); ?>
+      <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+
+      <div class="container-fluid">
+        <div class="row">
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?><h1 class="title col-sm-12" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+          <?php print render($title_suffix); ?>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="row">
+              <?php print render($page['content']); ?>
             </div>
           </div>
         </div>
+      </div>
 
-        <?php print $feed_icons; ?>
-      </div></div> <!-- /.section, /#content -->
+      <?php print $feed_icons; ?>
+    </div></div> <!-- /.section, /#content -->
 
-      <?php if ($page['sidebar_first']): ?>
-        <div id="sidebar-first" class="column sidebar"><div class="section">
-          <?php print render($page['sidebar_first']); ?>
-        </div></div> <!-- /.section, /#sidebar-first -->
-      <?php endif; ?>
+    <?php if ($page['sidebar_first']): ?>
+      <div id="sidebar-first" class="column sidebar"><div class="section">
+        <?php print render($page['sidebar_first']); ?>
+      </div></div> <!-- /.section, /#sidebar-first -->
+    <?php endif; ?>
 
-      <?php if ($page['sidebar_second']): ?>
-        <div id="sidebar-second" class="column sidebar"><div class="section">
-          <?php print render($page['sidebar_second']); ?>
-        </div></div> <!-- /.section, /#sidebar-second -->
-      <?php endif; ?>
+    <?php if ($page['sidebar_second']): ?>
+      <div id="sidebar-second" class="column sidebar"><div class="section">
+        <?php print render($page['sidebar_second']); ?>
+      </div></div> <!-- /.section, /#sidebar-second -->
+    <?php endif; ?>
 
-    </div></div> <!-- /#main, /#main-wrapper -->
+  </div></div> <!-- /#main, /#main-wrapper -->
 
-    <div id="footer"><div class="section container-fluid">
-      <?php print render($page['footer']); ?>
-    </div></div> <!-- /.section, /#footer -->
+  <div id="footer"><div class="section container-fluid">
+    <?php print render($page['footer']); ?>
+  </div></div> <!-- /.section, /#footer -->
 
-  </div></div> <!-- /#page, /#page-wrapper -->
+</div></div> <!-- /#page, /#page-wrapper -->
