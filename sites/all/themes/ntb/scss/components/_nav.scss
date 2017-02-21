@@ -26,6 +26,7 @@
     width: 100%;
     color: #37746e;
     color: $secondary-blue;
+    color: darken($secondary-blue, 15%);
     font-size: 20px;
     padding: 20px 25px;
     @include animation(all 0.2s ease-in-out);
@@ -41,7 +42,8 @@
   .navbar-nav > .active > a {
     // background: $secondary-blue;
     // color: $white;
-    color: $primary-blue;
+    // color: $primary-blue;
+    color: $text-dark;
     background: transparent;
   }
 
@@ -111,6 +113,7 @@
 
   .navbar-default .navbar-nav > li > a {
     padding: 10px 15px;
+    color: $secondary-blue;
   }
 
   .navbar-default .navbar-nav.inline {

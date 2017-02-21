@@ -77,6 +77,7 @@
     <div id="page">
       <div id="header">
         <div class="section clearfix container-fluid">
+
           <?php if ($page['alert']): ?>
             <div class="row">
               <div class="alert-strip">
@@ -88,115 +89,81 @@
           <div class="row">
             <nav class="navbar navbar-default">
               <?php if ($main_menu || $secondary_menu): ?>
-                <div>
-                  <div class="section container-fluid">
-                    <div class="icon-menu-fixed custom-user-menu">
-                      <button class="user-icon fa-icon" data-menu="secondary-menu">
-                        <i class="fa fa-user"></i>
-                        <span class="sr-only">My Account</span>
-                      </button>
+                <div class="section container-fluid">
+                  <div class="icon-menu-fixed custom-user-menu">
+                    <button class="user-icon fa-icon" data-menu="secondary-menu">
+                      <i class="fa fa-user"></i>
+                      <span class="sr-only">My Account</span>
+                    </button>
 
-                      <div class="cart">
-                        <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon cart-toggle">
-                          <i class="fa fa-shopping-cart"></i>
-                          <span class="sr-only">Cart</span>
-                        </a>
-                        <?php if (isset($cart)): ?>
-                          <?php print render($cart['content']); ?>
-                        <?php endif; ?>
-                      </div>
-
-                      <div class="search-block">
-                        <button class="search-toggle fa-icon">
-                          <i class="fa fa-search"></i>
-                          <span class="sr-only">Search Toggle</span>
-                        </button>
-                        <div class="search-container">
-                          <div class="overlay">
-                            <div id="btn-search-close" class="close btn--search-close">
-                              <i class="fa fa-times" aria-hidden="true"></i>
-                              <span class="sr-only">Close</span>
-                            </div>
-                          </div>
-                          <form class="navbar-form navbar-left pull-right navbar-search search-form search__form" role="search">
-                            <div class="form-group">
-                              <input class="search__input" name="search" type="search" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                              <span class="search__info">Hit enter to search or ESC to close</span>
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                          </form>
-                          <div class="search__related">
-                  					<div class="search__suggestion">
-                  						<h3>May We Suggest?</h3>
-                  						<p>#drone #funny #catgif #broken #lost #hilarious #good #red #blue #nono #why #yes #yesyes #aliens #green</p>
-                  					</div>
-                  					<div class="search__suggestion">
-                  						<h3>Is It This?</h3>
-                  						<p>#good #red #hilarious #blue #nono #why #yes #yesyes #aliens #green #drone #funny #catgif #broken #lost</p>
-                  					</div>
-                  					<div class="search__suggestion">
-                  						<h3>Needle, Where Art Thou?</h3>
-                  						<p>#broken #lost #good #red #funny #hilarious #catgif #blue #nono #why #yes #yesyes #aliens #green #drone</p>
-                  					</div>
-                  				</div>
-                        </div>
-
-                      </div>
-                    </div><!-- end custom-user-menu -->
-
-                    <div class="navbar-header">
-                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
-                      <a class="h3 mobile-logo" href="<?php print $front_page; ?>">naked<span>truth</span></a>
+                    <div class="cart">
+                      <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon cart-toggle">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="sr-only">Cart</span>
+                      </a>
+                      <?php if (isset($cart)): ?>
+                        <?php print render($cart['content']); ?>
+                      <?php endif; ?>
                     </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="navbar-1">
-                      <?php print render($main_menu_output); ?>
+                    <div class="search-block">
+                      <button class="search-toggle fa-icon">
+                        <i class="fa fa-search"></i>
+                        <span class="sr-only">Search Toggle</span>
+                      </button>
+                      <div class="search-container">
+                        <div class="overlay">
+                          <div id="btn-search-close" class="close btn--search-close">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                            <span class="sr-only">Close</span>
+                          </div>
+                        </div>
+                        <form class="navbar-form navbar-left pull-right navbar-search search-form search__form" role="search">
+                          <div class="form-group">
+                            <input class="search__input" name="search" type="search" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                            <span class="search__info">Hit enter to search or ESC to close</span>
+                          </div>
+                          <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                        <div class="search__related">
+                					<div class="search__suggestion">
+                						<h3>May We Suggest?</h3>
+                						<p>#drone #funny #catgif #broken #lost #hilarious #good #red #blue #nono #why #yes #yesyes #aliens #green</p>
+                					</div>
+                					<div class="search__suggestion">
+                						<h3>Is It This?</h3>
+                						<p>#good #red #hilarious #blue #nono #why #yes #yesyes #aliens #green #drone #funny #catgif #broken #lost</p>
+                					</div>
+                					<div class="search__suggestion">
+                						<h3>Needle, Where Art Thou?</h3>
+                						<p>#broken #lost #good #red #funny #hilarious #catgif #blue #nono #why #yes #yesyes #aliens #green #drone</p>
+                					</div>
+                				</div>
+                      </div>
 
-                      <?php print $secondary_menu_output; ?>
-                    </div><!-- /.navbar-collapse -->
+                    </div>
+                  </div><!-- end custom-user-menu -->
+
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="h3 mobile-logo" href="<?php print $front_page; ?>">naked<span>truth</span></a>
                   </div>
-                </div> <!-- /.section, /#navigation -->
+
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="navbar-1">
+                    <?php print render($main_menu_output); ?>
+
+                    <?php print $secondary_menu_output; ?>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.section, /#navigation -->
               <?php endif; ?>
             </nav>
           </div>
-
-          <!-- <div class="icon-menu custom-user-menu">
-            <button class="user-icon fa-icon" data-menu="secondary-menu-top">
-              <i class="fa fa-user"></i>
-              <span class="sr-only">My Account</span>
-            </button>
-
-            <?php print $secondary_menu_top; ?>
-
-            <div class="cart">
-              <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon">
-                <i class="fa fa-shopping-cart"></i>
-                <span class="sr-only">Cart</span>
-              </a>
-              <?php if (isset($cart)): ?>
-                <?php print render($cart['content']); ?>
-              <?php endif; ?>
-            </div>
-
-            <div class="search-block">
-              <button class="search-toggle fa-icon">
-                <i class="fa fa-search"></i>
-                <span class="sr-only">Search Toggle</span>
-              </button>
-              <form class="navbar-form navbar-left pull-right search-form navbar-search" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default sr-only">Submit</button>
-              </form>
-            </div>
-          </div> -->
 
           <?php if ($logo): ?>
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
@@ -225,17 +192,8 @@
           <?php endif; ?>
 
           <?php print render($page['header']); ?>
-
         </div>
       </div> <!-- /.section, /#header -->
-
-    <!-- <?php if ($main_menu): ?>
-      <div id="navigation"><div class="section container-fluid">
-        <nav class="navbar-default">
-          <?php print render($main_menu_output); ?>
-        </nav>
-      </div></div>  /.section, /#navigation
-    <?php endif; ?> -->
 
     <?php print render($page['marquee']); ?>
 

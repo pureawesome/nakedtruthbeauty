@@ -4,11 +4,8 @@
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
-  $js_check = "<script>document.documentElement.className = 'js';</script>";
-  drupal_add_html_head($js_check);
-  // drupal_add_library('ntb', 'modernizr');
+  drupal_add_library('ntb', 'modernizr');
   drupal_add_library('ntb', 'ntb');
-
 
   // Get the entire main menu tree
   $vars['main_menu_output'] = menu_tree_output(menu_tree_all_data('main-menu'));
@@ -31,15 +28,6 @@ function ntb_preprocess_page(&$vars) {
       ),
       'heading' => array(),
     ));
-
-    $vars['secondary_menu_top'] = theme_links(array(
-      'links' => $links,
-      'attributes' => array(
-        'id' => 'secondary-menu-top',
-        'class' => $secondary_classes,
-      ),
-      'heading' => array(),
-    ));
   }
   else {
     $vars['secondary_menu_output'] = theme(
@@ -47,16 +35,6 @@ function ntb_preprocess_page(&$vars) {
         'links' => $vars['secondary_menu'],
         'attributes' => array(
           'id' => 'secondary-menu',
-          'class' => $secondary_classes,
-        ),
-      )
-    );
-
-    $vars['secondary_menu_top'] = theme(
-      'links__system_secondary_menu', array(
-        'links' => $vars['secondary_menu'],
-        'attributes' => array(
-          'id' => 'secondary-menu-top',
           'class' => $secondary_classes,
         ),
       )
@@ -156,6 +134,7 @@ function ntb_library() {
     ),
     'dependencies' => [
       ['ntb', 'bootstrap_collapse'],
+      ['ntb', 'bootstrap_dropdown'],
     ],
   );
 
