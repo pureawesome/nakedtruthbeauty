@@ -103,7 +103,7 @@
     color: $secondary-blue;
   }
 
-  .navbar-default .navbar-nav.inline {
+  .navbar-default .navbar-nav.inline:first-of-type {
     margin-left: -15px;
   }
 

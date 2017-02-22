@@ -92,7 +92,6 @@
       hide($content['links']);
     ?>
 
-
     <div class="row">
       <div class="panel-panel panel-col col-xs-offset-2 col-xs-8 col-sm-4 col-sm-offset-0 ">
         <?php print render($content['field_product_images']); ?>
@@ -106,7 +105,6 @@
           <?php print render($content['product:commerce_price']); ?>
           <?php print render($content['field_product']); ?>
         </div>
-
 
         <div class='product-body'>
           <!-- Other colors list -->

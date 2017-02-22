@@ -91,10 +91,6 @@
             <?php if ($main_menu || $secondary_menu): ?>
               <div class="section container-fluid">
                 <div class="icon-menu-fixed custom-user-menu">
-                  <button class="user-icon fa-icon" data-menu="secondary-menu">
-                    <i class="fa fa-user"></i>
-                    <span class="sr-only">My Account</span>
-                  </button>
 
                   <div class="cart">
                     <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon cart-toggle">
@@ -106,42 +102,10 @@
                     <?php endif; ?>
                   </div>
 
-                  <div class="search-block">
-                    <button class="search-toggle fa-icon">
-                      <i class="fa fa-search"></i>
-                      <span class="sr-only">Search Toggle</span>
-                    </button>
-                    <div class="search-container">
-                      <div class="overlay">
-                        <div id="btn-search-close" class="close btn--search-close">
-                          <i class="fa fa-times" aria-hidden="true"></i>
-                          <span class="sr-only">Close</span>
-                        </div>
-                      </div>
-                      <form class="navbar-form navbar-left pull-right navbar-search search-form search__form" role="search">
-                        <div class="form-group">
-                          <input class="search__input" name="search" type="search" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                          <span class="search__info">Hit enter to search or ESC to close</span>
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                      </form>
-                      <div class="search__related">
-              					<div class="search__suggestion">
-              						<h3>May We Suggest?</h3>
-              						<p>#drone #funny #catgif #broken #lost #hilarious #good #red #blue #nono #why #yes #yesyes #aliens #green</p>
-              					</div>
-              					<div class="search__suggestion">
-              						<h3>Is It This?</h3>
-              						<p>#good #red #hilarious #blue #nono #why #yes #yesyes #aliens #green #drone #funny #catgif #broken #lost</p>
-              					</div>
-              					<div class="search__suggestion">
-              						<h3>Needle, Where Art Thou?</h3>
-              						<p>#broken #lost #good #red #funny #hilarious #catgif #blue #nono #why #yes #yesyes #aliens #green #drone</p>
-              					</div>
-              				</div>
-                    </div>
+                  <?php if (isset($search)): ?>
+                    <?php print render($search); ?>
+                  <?php endif; ?>
 
-                  </div>
                 </div><!-- end custom-user-menu -->
 
                 <div class="navbar-header">
@@ -157,6 +121,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-1">
                   <?php print render($main_menu_output); ?>
+<!--
+                  <button class="user-icon fa-icon" data-menu="secondary-menu">
+                    <i class="fa fa-user"></i>
+                    <span class="sr-only">My Account</span>
+                  </button> -->
 
                   <?php print $secondary_menu_output; ?>
                 </div><!-- /.navbar-collapse -->

@@ -1,6 +1,6 @@
 /**
  * @file
- * Javascript for site_products module.
+ * Javascript for site_search module.
  */
 (function ($) {
   'use strict';
