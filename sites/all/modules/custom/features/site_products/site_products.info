@@ -3,7 +3,6 @@ core = 7.x
 package = Features
 version = 7.x-1.0
 dependencies[] = better_exposed_filters
-dependencies[] = cloud_zoom
 dependencies[] = commerce_cart
 dependencies[] = commerce_customer
 dependencies[] = easyzoom
