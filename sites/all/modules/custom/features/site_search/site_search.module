@@ -21,14 +21,11 @@ function site_search_library() {
     'title' => 'Site Search',
     'version' => '1',
     'js' => array(
-      drupal_get_path('module', 'site_search') . '/js/site_search.js' => array(
+      drupal_get_path('module', 'site_search') . '/js/site_search.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
     ),
-    // 'dependencies' => [
-    //   ['site_general', 'colorbox'],
-    // ],
   );
   return $libraries;
 }

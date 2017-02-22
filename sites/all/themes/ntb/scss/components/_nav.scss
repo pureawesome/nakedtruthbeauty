@@ -47,7 +47,7 @@
     &,
     &:hover,
     &:focus {
-      background: #fff;
+      background: rgba($secondary-blue, 0.5);
     }
   }
 
@@ -62,17 +62,14 @@
   }
 }
 
-// .dropdown-menu {
-//   & > li {
-//     & > a {
-//       text-align: center;
-//
-//       &:hover {
-//         background: rgba($secondary-blue, 0.5);
-//       }
-//     }
-//   }
-// }
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    background: transparent;
+    color: $text-dark;
+  }
+}
 
 .navbar-nav > li > a {
   text-align: center;
@@ -82,6 +79,7 @@
 .navbar-toggle {
   border: 0;
   position: absolute;
+  margin-left: 15px;
 }
 
 .nav>li>a:hover,
@@ -93,6 +91,14 @@
   display: none;
 }
 
+.dropdown-menu {
+  text-align: center;
+
+  .navbar-default .navbar-nav .open & > li > a {
+    color: darken($secondary-blue, 15%);
+  }
+}
+
 @include breakpoint($screen-sm) {
   #navigation {
     display: block;
@@ -101,6 +107,19 @@
   .navbar-default .navbar-nav > li > a {
     padding: 10px 15px;
     color: $secondary-blue;
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  .navbar-default .navbar-nav > .open > a {
+    &,
+    &:hover,
+    &:focus {
+      color: $primary-blue;
+      background: #fff;
+    }
   }
 
   .navbar-default .navbar-nav.inline:first-of-type {
@@ -122,34 +141,16 @@
       background: $white;
     }
   }
-
-  // .dropdown-menu {
-  //   display: none;
-  //   position: absolute;
-  //   right: 15px;
-  //   top: 50px;
-  //   width: 200px;
-  //   padding: 0;
-  //
-  //   li {
-  //     width: 100%;
-  //     display: block;
-  //
-  //     a {
-  //       font-size: 16px;
-  //       line-height: 1;
-  //       padding: 14px;
-  //     }
-  //   }
-  // }
+  .navbar-default .navbar-nav > li > a {
+    &:hover,
+    &:focus {
+      color: $primary-blue;
+    }
+  }
 }
 
 @include breakpoint($screen-md) {
   .mobile-logo {
     display: none;
   }
-}
-
-#navigation .dropdown-menu {
-  // top: 62px;
 }
