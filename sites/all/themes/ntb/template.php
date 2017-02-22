@@ -109,7 +109,7 @@ function ntb_library() {
     'title' => 'Bootstrap Tabs',
     'version' => '3.3.6',
     'js' => array(
-      libraries_get_path('bootstrap') . '/js/lib/tab.js' => array(
+      libraries_get_path('bootstrap') . '/js/lib/tab.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
@@ -120,7 +120,7 @@ function ntb_library() {
     'title' => 'Bootstrap ',
     'version' => '3.3.6',
     'js' => array(
-      libraries_get_path('bootstrap') . '/js/lib/dropdown.js' => array(
+      libraries_get_path('bootstrap') . '/js/lib/dropdown.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
@@ -131,7 +131,7 @@ function ntb_library() {
     'title' => 'Bootstrap ',
     'version' => '3.3.6',
     'js' => array(
-      libraries_get_path('bootstrap') . '/js/lib/collapse.js' => array(
+      libraries_get_path('bootstrap') . '/js/lib/collapse.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
@@ -142,7 +142,7 @@ function ntb_library() {
     'title' => 'NTB Behaviors',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.js' => array(
+      drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),

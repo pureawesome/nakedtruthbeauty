@@ -17,7 +17,6 @@
       var $openCtrl = $('.cart-toggle');
       var $closeCtrl = $('#btn-cart-close');
       var $cartContainer = $('.cart-container');
-      // var $inputSearch = $searchContainer.find('.search__input');
 
       $openCtrl.on('click', function (e) {
         e.preventDefault();

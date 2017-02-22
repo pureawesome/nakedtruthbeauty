@@ -77,14 +77,11 @@ function dc_ajax_enhancements_library() {
     'title' => 'Site Cart',
     'version' => '1',
     'js' => array(
-      drupal_get_path('module', 'dc_ajax_enhancements') . '/js/dc_ajax_enhancements.js' => array(
+      drupal_get_path('module', 'dc_ajax_enhancements') . '/js/dc_ajax_enhancements.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
     ),
-    // 'dependencies' => [
-    //   ['site_general', 'colorbox'],
-    // ],
   ];
 
   return $libraries;
