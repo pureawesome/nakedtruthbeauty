@@ -10,6 +10,7 @@
 function dc_ajax_enhancements_preprocess_page(&$vars) {
   $block = module_invoke('dc_ajax_add_cart', 'block_view', 'ajax_shopping_cart');
   $vars['cart'] = $block;
+  drupal_add_library('dc_ajax_enhancements', 'cart');
 }
 
 /**
@@ -48,4 +49,40 @@ function dc_ajax_enhancements_preprocess_dc_ajax_add_to_cart_message(&$vars) {
     'path' => $image_uri,
   );
   $vars['product_image'] = theme('image_style', $img_array);
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function dc_ajax_enhancements_preprocess_dc_ajax_shopping_cart(&$variables) {
+  if ($variables['order']) {
+    $variables['checkout_link']['attributes']['class'][] = 'form-submit';
+    $variables['checkout_link']['attributes']['class'][] = 'btn';
+    $variables['checkout_link']['attributes']['class'][] = 'checkout';
+
+    $variables['checkout_url'] = l($variables['checkout_link']['text'], $variables['checkout_link']['path'], array(
+      'attributes' => $variables['checkout_link']['attributes'],
+      'query' => $variables['checkout_link']['query'],
+      'fragment' => $variables['checkout_link']['fragment'],
+      'html' => $variables['checkout_link']['html'],
+    ));
+  }
+}
+
+/**
+ * Implements hook_library().
+ */
+function dc_ajax_enhancements_library() {
+  $libraries['cart'] = [
+    'title' => 'Site Cart',
+    'version' => '1',
+    'js' => array(
+      drupal_get_path('module', 'dc_ajax_enhancements') . '/js/dc_ajax_enhancements.min.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  ];
+
+  return $libraries;
 }

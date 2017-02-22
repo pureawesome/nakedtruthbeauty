@@ -1,0 +1,19 @@
+.overlay {
+  background: linear-gradient(rgba($primary-blue, 0.9),rgba($primary-peach, 0.9));
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    i {
+      font-size: 36px;
+      color: $primary-peach;
+    }
+  }
+}
