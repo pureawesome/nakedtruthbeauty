@@ -169,37 +169,53 @@ function site_products_preprocess_node(&$vars) {
   }
 
   if ($vars['type'] == 'product_display' && $vars['view_mode'] == 'full') {
-    $ingredients = $vars['field_product_ingredients'];
-    $ingredient_list = array();
+    $product_id = $vars['field_product'][0]['product_id'];
+    $product = commerce_product_load($product_id);
 
-    foreach ($ingredients as $ingredient) {
-      $entity = $ingredient['entity'];
-      $name = field_get_items('node', $entity, 'field_ingredient_scientific_name');
-      $link = l($name[0]['value'], 'node/' . $entity->nid, array('attributes' => array('target' => '_blank')));
-      array_push($ingredient_list, $link);
+    if ($product->type == 'test_bundle') {
+      xdebug_break();
+
+      foreach ($product->field_product_types['und'] as $product_types) {
+        $vars['product_type_list'] = theme('item_list', $product_links);
+        $nodes = taxonomy_select_nodes($product_types['tid']);
+        foreach ($nodes as $nid) {
+          $node = node_load($nid);
+        }
+      }
     }
+    else {
+      $ingredients = $vars['field_product_ingredients'];
+      $ingredient_list = array();
 
-    $products = taxonomy_select_nodes($vars['field_product_type'][LANGUAGE_NONE][0]['tid']);
-    $product_links = [
-      'items' => [],
-      'title' => '',
-      'type' => 'ul',
-      'attributes' => [
-        'class' => ['inline'],
-      ],
-    ];
+      foreach ($ingredients as $ingredient) {
+        $entity = $ingredient['entity'];
+        $name = field_get_items('node', $entity, 'field_ingredient_scientific_name');
+        $link = l($name[0]['value'], 'node/' . $entity->nid, array('attributes' => array('target' => '_blank')));
+        array_push($ingredient_list, $link);
+      }
 
-    foreach ($products as $product) {
-      $node = node_load($product);
-      $link_title = $node->title;
-      $uri = drupal_get_path_alias('node/' . $product);
-      $link = [$link_title, $uri];
-      $thumb_url = image_style_url('thumbnail', $node->field_primary_image[LANGUAGE_NONE][0]['uri']);
-      $link = '<a href=/' . $uri . '><img src=' . $thumb_url . ' title=' . $node->title . ' alt=' . $node->title . ' /></a>';
-      array_push($product_links['items'], $link);
+      $products = taxonomy_select_nodes($vars['field_product_type'][LANGUAGE_NONE][0]['tid']);
+      $product_links = [
+        'items' => [],
+        'title' => '',
+        'type' => 'ul',
+        'attributes' => [
+          'class' => ['inline'],
+        ],
+      ];
+
+      foreach ($products as $product) {
+        $node = node_load($product);
+        $link_title = $node->title;
+        $uri = drupal_get_path_alias('node/' . $product);
+        $link = [$link_title, $uri];
+        $thumb_url = image_style_url('thumbnail', $node->field_primary_image[LANGUAGE_NONE][0]['uri']);
+        $link = '<a href=/' . $uri . '><img src=' . $thumb_url . ' title=' . $node->title . ' alt=' . $node->title . ' /></a>';
+        array_push($product_links['items'], $link);
+      }
+
+      $vars['product_type_list'] = theme('item_list', $product_links);
+      $vars['scientific_ingredients'] = implode(', ', $ingredient_list);
     }
-
-    $vars['product_type_list'] = theme_item_list($product_links);
-    $vars['scientific_ingredients'] = implode(', ', $ingredient_list);
   }
 }
