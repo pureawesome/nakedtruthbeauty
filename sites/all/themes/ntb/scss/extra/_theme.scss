@@ -199,9 +199,3 @@ ul.primary {
     font-size: 16px;
   }
 }
-
-@include breakpoint($screen-md) {
-  .node-type-page .content .pane-node-body {
-    @include column-count(2);
-  }
-}
