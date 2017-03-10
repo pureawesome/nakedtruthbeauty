@@ -109,6 +109,7 @@
         <div class='product-body'>
           <!-- Other colors list -->
           <?php if ($product_type_list): ?>
+            <?php dpm($product_type_list); ?>
             <?php print render($product_type_list); ?>
           <?php endif; ?>
 
