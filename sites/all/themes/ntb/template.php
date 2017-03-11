@@ -27,7 +27,7 @@ function ntb_preprocess_page(&$vars) {
     'links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'secondary-menu',
   ];
 
-  $secondary_dropdown = ['dropdown-menu'];
+  $secondary_dropdown = ['dropdown-menu', 'dropdown-menu-right'];
 
   if (!$vars['logged_in']) {
     $links[] = array(
@@ -70,6 +70,7 @@ function ntb_preprocess_page(&$vars) {
         'attributes' => array(
           'id' => 'secondary-dropdown',
           'class' => $secondary_dropdown,
+          'aria-labelledby' => 'userMenu',
         ),
       )
     );

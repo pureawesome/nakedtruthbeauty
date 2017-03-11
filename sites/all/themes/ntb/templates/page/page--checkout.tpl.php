@@ -92,7 +92,7 @@
               <div class="section container-fluid">
                 <ul class="nav icon-menu-fixed custom-user-menu inline navbar-nav inline">
                   <li class="dropdown user-dropdown">
-                    <button class="user-toggle fa-icon">
+                    <button class="user-toggle fa-icon dropdown-toggle" type="button" data-toggle="dropdown" id="userMenu" aria-haspopup="true" aria-expanded="false">
                       <i class="fa fa-user"></i>
                       <span class="sr-only">User Menu Toggle</span>
                     </button>
