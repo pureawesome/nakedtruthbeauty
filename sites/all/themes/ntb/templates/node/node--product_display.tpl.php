@@ -90,10 +90,7 @@
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
-      // print render($content);
-      // dpm($content);
     ?>
-
 
     <div class="row">
       <div class="panel-panel panel-col col-xs-offset-2 col-xs-8 col-sm-4 col-sm-offset-0 ">
@@ -109,8 +106,12 @@
           <?php print render($content['field_product']); ?>
         </div>
 
-
         <div class='product-body'>
+          <!-- Other colors list -->
+          <?php if ($product_type_list): ?>
+            <?php print render($product_type_list); ?>
+          <?php endif; ?>
+
           <!-- Nav tabs -->
           <ul class="nav" role="tablist">
             <li class="product active"><a href="#body" aria-controls="body" role="tab" data-toggle="tab">Product</a></li>

@@ -1,5 +1,7 @@
-.navbar-fixed-top {
-  margin-top: 0;
+.navbar-default {
+  background-color: $white;
+  border: none;
+  margin-bottom: 0;
 
   .navbar-collapse {
     max-height: 100%;
@@ -9,11 +11,10 @@
       height: 100vh;
     }
   }
-}
 
-.navbar-default {
-  background-color: $white;
-  border: none;
+  .navbar-nav {
+    float: left;
+  }
 
   .navbar-nav.inline {
     @include inline-block();
@@ -24,6 +25,7 @@
   .navbar-nav > li > a {
     width: 100%;
     color: #37746e;
+    color: $secondary-blue;
     color: darken($secondary-blue, 15%);
     font-size: 20px;
     padding: 20px 25px;
@@ -32,13 +34,18 @@
 
     &:hover,
     &:focus {
-      background: rgba($secondary-blue, 0.5);
+      color: $primary-blue;
+    }
+
+    &.cart-icon {
+      padding: 0;
+      font-size: 26px;
     }
   }
 
   .navbar-nav > .active > a {
-    background: $secondary-blue;
-    color: $white;
+    color: $text-dark;
+    background: transparent;
   }
 
   .navbar-nav > .open > a {
@@ -60,15 +67,12 @@
   }
 }
 
-.dropdown-menu {
-  & > li {
-    & > a {
-      text-align: center;
-
-      &:hover {
-        background: rgba($secondary-blue, 0.5);
-      }
-    }
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    background: transparent;
+    color: $text-dark;
   }
 }
 
@@ -80,9 +84,7 @@
 .navbar-toggle {
   border: 0;
   position: absolute;
-  margin: 0 auto;
-  left: 10px;
-  top: 10px;
+  margin-left: 15px;
 }
 
 .nav>li>a:hover,
@@ -94,14 +96,55 @@
   display: none;
 }
 
-#secondary-menu .last {
-  &:before {
+.dropdown-menu {
+  text-align: center;
+  border-radius: 0;
+  border: 1px solid lighten($primary-blue, 15%);
+
+  .navbar-default .navbar-nav .open & > li > a {
+    color: darken($secondary-blue, 15%);
   }
+
+  & > li > a:hover,
+  & > li > a:focus {
+    background: $white;
+    color: $primary-blue;
+  }
+}
+
+.custom-user-menu .user-dropdown {
+  display: none;
 }
 
 @include breakpoint($screen-sm) {
   #navigation {
     display: block;
+  }
+
+  .custom-user-menu .user-dropdown {
+    display: block;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    padding: 10px 15px;
+    color: $secondary-blue;
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  .navbar-default .navbar-nav > .open > a {
+    &,
+    &:hover,
+    &:focus {
+      color: $primary-blue;
+      background: #fff;
+    }
+  }
+
+  .navbar-default .navbar-nav.inline:first-of-type {
+    margin-left: -15px;
   }
 
   .navbar-nav {
@@ -114,78 +157,27 @@
 
   .navbar-default {
     text-align: center;
-  }
-
-  .navbar-fixed-top {
-    margin-top: -50px;
-    height: 50px;
-    @include background-image(linear-gradient($primary-blue, #b3cdb8));
-    @include transition(all 0.3s ease-out);
-
-    &.visible {
-      margin-top: 0;
-    }
 
     .navbar-collapse {
-      @include background-image(none);
-      float: left;
-      display: inline-block !important;
-      width: auto;
-
-      .navbar-nav > li > a {
-        padding: 14px 10px;
-        font-size: 18px;
-
-        &:hover {
-          color: #333;
-        }
-      }
+      background: $white;
     }
-
-    .dropdown-menu {
-      @include sticky_subnav();
+  }
+  .navbar-default .navbar-nav > li > a {
+    &:hover,
+    &:focus {
+      color: $primary-blue;
     }
   }
 
-  #secondary-menu,
-  #secondary-menu-top,
-  .dropdown-menu {
+  #secondary-menu {
     display: none;
-    position: absolute;
-    right: 15px;
-    top: 50px;
-    width: 200px;
-    padding: 0;
-    @include sticky_subnav();
-
-    li {
-      width: 100%;
-      display: block;
-
-      a {
-        font-size: 16px;
-        line-height: 1;
-        padding: 14px;
-      }
-    }
-  }
-
-  #secondary-menu-top {
-    @include background-image(linear-gradient($primary-blue, lighten($primary-blue, 25%)));
-    top: 36px;
-    border-radius: 5px 0 5px 5px;
-    right: 0px;
   }
 }
+
 @include breakpoint($screen-md) {
-  .navbar-fixed-top .navbar-collapse .navbar-nav > li > a {
-    font-size: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
+  .mobile-logo {
+    display: none;
   }
-}
 
-#navigation .dropdown-menu {
-  top: 62px;
-  @include background-image(linear-gradient(rgba($secondary-blue, 0.5), #ffcc99));
+
 }

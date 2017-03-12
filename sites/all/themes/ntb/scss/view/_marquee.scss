@@ -16,16 +16,17 @@
     display: none;
   }
 
-  .slider {
-    @include display-flex();
-    @include flex-direction(column);
-  }
-
   .slider-image {
-    height: 225px;
     background-size: cover;
     background-position: center center;
     display: block;
+
+    &:after {
+      padding-top: 40%;
+      display: block;
+      content: "";
+      width: 100%;
+    }
   }
 
   .flexslider {
@@ -33,28 +34,8 @@
     margin-bottom: 15px;
   }
 
-  .title {
-    text-align: center;
-    font-size: 56px;
-    margin-top: 0;
-    font-family: 'have_heart_oneregular', sans-serif;
-    line-height: 1;
-  }
-
-  .content {
-    padding: 20px 15px;
-  }
-
-  .marquee-body {
-    font-size: 18px;
-    text-align: center;
-    line-height: 1
-  }
-
   .flex-control-nav {
     width: auto;
-    bottom: 0;
-    top: 235px;
     right: 0;
   }
 
@@ -83,62 +64,12 @@
   }
 }
 @include breakpoint($screen-xs) {
-  .view-marquee {
-    .slider-image {
-      height: 300px;
-    }
-  }
 }
 
 @include breakpoint($screen-sm) {
   .view-marquee {
     .flexslider:hover .flex-direction-nav a {
       display: block;
-    }
-
-    .slider {
-      @include align-content(center);
-      @include justify-content(center);
-    }
-
-    .content {
-      max-height: 400px;
-    }
-
-    .slider-image,
-    .slider {
-      height: 400px;
-    }
-
-    .slider-image {
-      position: absolute;
-    }
-
-    .flexslider {
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
-
-    .flex-control-nav {
-      top: 410px;
-    }
-
-    .title {
-      font-size: 84px;
-      margin: 0 15px ;
-      padding-top: 0;
-    }
-
-    .marquee-body {
-      padding: 30px 30px 0;
-      text-align: left;
-    }
-
-    .slider-wrapper {
-      height: 100%;
-      @include display-flex;
-      @include flex-direction(column);
-      @include justify-content(center);
     }
   }
 }

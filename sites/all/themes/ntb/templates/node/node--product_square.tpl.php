@@ -13,7 +13,6 @@
 
   <div class="title">
     <div class="title-inner">
-
         <h3>
           <?php if (isset($title)): ?>
             <?php print l($title, $node_url, array('html' => TRUE)); ?>
