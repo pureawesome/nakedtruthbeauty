@@ -23,9 +23,11 @@ function ntb_preprocess_page(&$vars) {
   // Custom split templates.
   $vars['search'] = theme('search');
 
-  $secondary_classes = array(
+  $secondary_classes = [
     'links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'secondary-menu',
-  );
+  ];
+
+  $secondary_dropdown = ['dropdown-menu', 'dropdown-menu-right'];
 
   if (!$vars['logged_in']) {
     $links[] = array(
@@ -41,6 +43,15 @@ function ntb_preprocess_page(&$vars) {
       ),
       'heading' => array(),
     ));
+
+    $vars['secondary_menu_dropdown'] = theme_links(array(
+      'links' => $links,
+      'attributes' => array(
+        'id' => 'secondary-menu-dropdown',
+        'class' => $secondary_dropdown,
+      ),
+      'heading' => array(),
+    ));
   }
   else {
     $vars['secondary_menu_output'] = theme(
@@ -49,6 +60,17 @@ function ntb_preprocess_page(&$vars) {
         'attributes' => array(
           'id' => 'secondary-menu',
           'class' => $secondary_classes,
+        ),
+      )
+    );
+
+    $vars['secondary_menu_dropdown'] = theme(
+      'links__system_secondary_menu', array(
+        'links' => $vars['secondary_menu'],
+        'attributes' => array(
+          'id' => 'secondary-dropdown',
+          'class' => $secondary_dropdown,
+          'aria-labelledby' => 'userMenu',
         ),
       )
     );
