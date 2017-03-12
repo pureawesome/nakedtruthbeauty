@@ -90,9 +90,18 @@
           <nav class="navbar navbar-default">
             <?php if ($main_menu || $secondary_menu): ?>
               <div class="section container-fluid">
-                <div class="icon-menu-fixed custom-user-menu">
+                <ul class="nav icon-menu-fixed custom-user-menu inline navbar-nav inline">
+                  <li class="dropdown user-dropdown">
+                    <button class="user-toggle fa-icon dropdown-toggle" type="button" data-toggle="dropdown" id="userMenu" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-user"></i>
+                      <span class="sr-only">User Menu Toggle</span>
+                    </button>
+                    <?php if (isset($secondary_menu_dropdown)): ?>
+                      <?php print render($secondary_menu_dropdown); ?>
+                    <?php endif; ?>
+                  </li>
 
-                  <div class="cart">
+                  <li class="cart">
                     <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon cart-toggle">
                       <i class="fa fa-shopping-cart"></i>
                       <span class="sr-only">Cart</span>
@@ -100,13 +109,11 @@
                     <?php if (isset($cart)): ?>
                       <?php print render($cart['content']); ?>
                     <?php endif; ?>
-                  </div>
-
+                  </li>
                   <?php if (isset($search)): ?>
                     <?php print render($search); ?>
                   <?php endif; ?>
-
-                </div><!-- end custom-user-menu -->
+                </ul><!-- end custom-user-menu -->
 
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1" aria-expanded="false">
@@ -121,11 +128,6 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-1">
                   <?php print render($main_menu_output); ?>
-<!--
-                  <button class="user-icon fa-icon" data-menu="secondary-menu">
-                    <i class="fa fa-user"></i>
-                    <span class="sr-only">My Account</span>
-                  </button> -->
 
                   <?php print $secondary_menu_output; ?>
                 </div><!-- /.navbar-collapse -->

@@ -1,4 +1,4 @@
-<div class="search-block">
+<li class="search-block">
   <button class="search-toggle fa-icon">
     <i class="fa fa-search"></i>
     <span class="sr-only">Search Toggle</span>
@@ -32,4 +32,4 @@
       </div>
     </div>
   </div>
-</div>
+</li>
