@@ -29,3 +29,39 @@ function site_search_library() {
   );
   return $libraries;
 }
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function site_search_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['search'] = array(
+    'label' => t('Search'),
+    'custom settings' => FALSE,
+  );
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function site_search_preprocess_node(&$vars) {
+  if ($vars['view_mode'] == 'search') {
+    $vars['theme_hook_suggestions'][] = 'node__search';
+
+    if (isset($vars['field_primary_image'])) {
+      $image_uri = $vars['field_primary_image'][0]['uri'];
+      $img_array = array(
+        'style_name' => 'square_200x200',
+        'path' => $image_uri,
+      );
+      $image = theme('image_style', $img_array);
+      $vars['image'] = l($image, 'node/' . $vars['nid'], array('html' => TRUE));
+    }
+
+    if (isset($vars['body'])) {
+      $body = $vars['body'][0];
+      $vars['body'] = text_summary($body['value'], $body['format'], 200);
+    }
+
+    $vars['classes_array'][] = 'search-result';
+  }
+}
