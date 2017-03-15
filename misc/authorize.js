@@ -1,1 +1,27 @@
-!function(e){Drupal.behaviors.authorizeFileTransferForm={attach:function(t){e("#edit-connection-settings-authorize-filetransfer-default").change(function(){e(".filetransfer").hide().filter(".filetransfer-"+e(this).val()).show()}),e(".filetransfer").hide().filter(".filetransfer-"+e("#edit-connection-settings-authorize-filetransfer-default").val()).show(),e(".connection-settings-update-filetransfer-default-wrapper").length>0&&e(".connection-settings-update-filetransfer-default-wrapper").css("float","none"),e("#edit-submit-connection").hide(),e("#edit-submit-process").show()}}}(jQuery);
+
+/**
+ * @file
+ * Conditionally hide or show the appropriate settings and saved defaults
+ * on the file transfer connection settings form used by authorize.php.
+ */
+
+(function ($) {
+
+Drupal.behaviors.authorizeFileTransferForm = {
+  attach: function(context) {
+    $('#edit-connection-settings-authorize-filetransfer-default').change(function() {
+      $('.filetransfer').hide().filter('.filetransfer-' + $(this).val()).show();
+    });
+    $('.filetransfer').hide().filter('.filetransfer-' + $('#edit-connection-settings-authorize-filetransfer-default').val()).show();
+
+    // Removes the float on the select box (used for non-JS interface).
+    if ($('.connection-settings-update-filetransfer-default-wrapper').length > 0) {
+      $('.connection-settings-update-filetransfer-default-wrapper').css('float', 'none');
+    }
+    // Hides the submit button for non-js users.
+    $('#edit-submit-connection').hide();
+    $('#edit-submit-process').show();
+  }
+};
+
+})(jQuery);
