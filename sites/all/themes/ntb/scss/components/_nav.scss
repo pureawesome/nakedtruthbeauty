@@ -48,15 +48,6 @@
     background: transparent;
   }
 
-  .navbar-nav > .open > a {
-    &,
-    &:hover,
-    &:focus {
-      background: rgba($secondary-blue, 0.5);
-    }
-  }
-
-
   .navbar-toggle {
     &:hover, &:focus {
       background-color: rgba($primary-blue, 0.5);
@@ -73,6 +64,14 @@
   &:focus {
     background: transparent;
     color: $text-dark;
+  }
+}
+
+.navbar-default .navbar-nav > .open > a {
+  &,
+  &:hover,
+  &:focus {
+    background-color: rgba($primary-blue, 0.5);
   }
 }
 
@@ -142,6 +141,23 @@
       background: #fff;
     }
   }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: $secondary-blue;
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  .navbar-default .navbar-nav > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+  }
+
 
   .navbar-default .navbar-nav.inline:first-of-type {
     margin-left: -15px;

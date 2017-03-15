@@ -13,6 +13,12 @@
   top: 7px;
   right: 15px;
   position: absolute;
+  width: auto;
+  margin: 0;
+
+  li {
+    display: inline-block;
+  }
 }
 
 .mobile-logo {
@@ -80,7 +86,7 @@
   }
 
   .icon-menu-fixed {
-    top: 7px;
+    top: 3px;
   }
 
   .user-icon {

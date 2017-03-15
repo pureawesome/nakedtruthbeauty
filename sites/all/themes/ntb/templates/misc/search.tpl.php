@@ -20,15 +20,11 @@
     <div class="search__related">
       <div class="search__suggestion">
         <h3>Looking for Products?</h3>
-        <p>eye | lid | lip & check</p>
+        <p>bath | highlight | lid | lip &amp; cheek</p>
       </div>
       <div class="search__suggestion">
         <h3>Ingredient Questions?</h3>
-        <p>lavender | shea butter |</p>
-      </div>
-      <div class="search__suggestion">
-        <h3>Needle, Where Art Thou?</h3>
-        <p>#broken #lost #good #red #funny #hilarious #catgif #blue #nono #why #yes #yesyes #aliens #green #drone</p>
+        <p>See the full list <a href="https://nakedtruthbeauty.com/ingredients">here</a></p>
       </div>
     </div>
   </div>
