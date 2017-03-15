@@ -1,1 +1,32 @@
-!function(e){Drupal.behaviors.textarea={attach:function(t,a){e(".form-textarea-wrapper.resizable",t).once("textarea",function(){function t(t){return i=u.height()-t.pageY,u.css("opacity",.25),e(document).mousemove(a).mouseup(n),!1}function a(e){return u.height(Math.max(32,i+e.pageY)+"px"),!1}function n(t){e(document).unbind("mousemove",a).unbind("mouseup",n),u.css("opacity",1)}var i=null,u=e(this).addClass("resizable-textarea").find("textarea"),o=e('<div class="grippie"></div>').mousedown(t);o.insertAfter(u)})}}}(jQuery);
+(function ($) {
+
+Drupal.behaviors.textarea = {
+  attach: function (context, settings) {
+    $('.form-textarea-wrapper.resizable', context).once('textarea', function () {
+      var staticOffset = null;
+      var textarea = $(this).addClass('resizable-textarea').find('textarea');
+      var grippie = $('<div class="grippie"></div>').mousedown(startDrag);
+
+      grippie.insertAfter(textarea);
+
+      function startDrag(e) {
+        staticOffset = textarea.height() - e.pageY;
+        textarea.css('opacity', 0.25);
+        $(document).mousemove(performDrag).mouseup(endDrag);
+        return false;
+      }
+
+      function performDrag(e) {
+        textarea.height(Math.max(32, staticOffset + e.pageY) + 'px');
+        return false;
+      }
+
+      function endDrag(e) {
+        $(document).unbind('mousemove', performDrag).unbind('mouseup', endDrag);
+        textarea.css('opacity', 1);
+      }
+    });
+  }
+};
+
+})(jQuery);
