@@ -90,7 +90,7 @@
           <nav class="navbar navbar-default">
             <?php if ($main_menu || $secondary_menu): ?>
               <div class="section container-fluid">
-                <ul class="nav icon-menu-fixed custom-user-menu inline navbar-nav inline">
+                <ul class="nav icon-menu-fixed custom-user-menu navbar-nav">
                   <li class="dropdown user-dropdown">
                     <button class="user-toggle fa-icon dropdown-toggle" type="button" data-toggle="dropdown" id="userMenu" aria-haspopup="true" aria-expanded="false">
                       <i class="fa fa-user"></i>
