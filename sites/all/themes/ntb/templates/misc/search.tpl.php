@@ -20,7 +20,12 @@
     <div class="search__related">
       <div class="search__suggestion">
         <h3>Looking for Products?</h3>
-        <p>bath | highlight | lid | lip &amp; cheek</p>
+        <p>
+          <a href="https://nakedtruthbeauty.com/shop/bath">bath</a> |
+          <a href="https://nakedtruthbeauty.com/shop/beam">beam highlight</a> |
+          <a href="https://nakedtruthbeauty.com/shop/lid">lid</a> |
+          <a href="https://nakedtruthbeauty.com/shop/lip-cheek">lip &amp; cheek</a>
+        </p>
       </div>
       <div class="search__suggestion">
         <h3>Ingredient Questions?</h3>
