@@ -142,7 +142,7 @@
             // CACHE or FALLBACK
             return caches.match(request)
               .then(function (response) {
-                response || caches.match('/offline')
+                return response || caches.match('/offline');
               });
           })
       );
