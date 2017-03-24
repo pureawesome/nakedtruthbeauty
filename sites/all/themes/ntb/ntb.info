@@ -15,7 +15,7 @@ regions[sidebar_second] = Right sidebar
 regions[footer] = Footer
 
 ; Custom Stylesheets
-stylesheets[all][] = css/ntb.css
+;stylesheets[all][] = css/ntb.css
 
 ; Custom JavaScript
 ;scripts[] = js/ntb.behaviors.js

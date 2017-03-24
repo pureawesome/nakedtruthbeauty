@@ -161,12 +161,19 @@ function ntb_library() {
   );
 
   $libraries['ntb'] = array(
-    'title' => 'NTB Behaviors',
+    'title' => 'NTB',
     'version' => '1.0',
     'js' => array(
       drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
+      ),
+    ),
+    'css' => array(
+      drupal_get_path('theme', 'ntb') . '/css/ntb.css' => array(
+        'group' => CSS_THEME,
+        'every_page' => TRUE,
+        'preprocess' => FALSE,
       ),
     ),
     'dependencies' => [
