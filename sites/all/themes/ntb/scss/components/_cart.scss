@@ -25,6 +25,10 @@
   	width: 100%;
   	height: 100vh;
   }
+
+  &.cart--open {
+    z-index: 2000;
+  }
 }
 
 .btn--cart-close {
@@ -33,6 +37,7 @@
 	top: 1.25em;
 	right: 1.25em;
 	display: none;
+  cursor: pointer;
 
   .js & {
     display: block;
