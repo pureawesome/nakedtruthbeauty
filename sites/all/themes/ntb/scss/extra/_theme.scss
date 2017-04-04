@@ -6,14 +6,14 @@ img {
 
 .flex-direction-nav a {
   &:before {
-    content: '\f0a8';
+    content: $fa-var-arrow-circle-left;
     @include fa-icon();
     font-size: 40px;
     color: rgba($secondary-blue, 0.8);
   }
 
   &.flex-next:before {
-    content: '\f0a9';
+    content: $fa-var-arrow-circle-right;
   }
 }
 
