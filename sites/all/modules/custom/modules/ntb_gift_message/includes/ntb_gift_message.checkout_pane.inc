@@ -9,6 +9,7 @@
  * Implements base_settings_form().
  */
 function ntb_gift_message_pane_settings_form($checkout_pane) {
+  // TODO: does this matter?
   $form['ntb_gift_message_field'] = array(
     '#type' => 'textfield',
     '#title' => t('Gift Message'),
@@ -41,14 +42,6 @@ function ntb_gift_message_pane_checkout_form($form, $form_state, $checkout_pane,
       ],
     ],
   ];
-
-  // $checkout_form['ntb_gift_message_pane_field_display'] = array(
-  //   '#markup' => variable_get('ntb_gift_message_pane_field', ''),
-  // );
-  // $checkout_form['ntb_gift_message_pane_field2'] = array(
-  //   '#type' => 'textfield',
-  //   '#title' => t('My Module Pane Field 2'),
-  // );
   return $checkout_form;
 }
 
