@@ -20,19 +20,18 @@ function site_marquee_entity_info_alter(&$entity_info) {
  * Implements hook_preprocess_node().
  */
 function site_marquee_preprocess_node(&$vars) {
-
-  if ($vars['view_mode'] == 'slider') {
+  if ($vars['type'] == 'marquee' && $vars['view_mode'] == 'slider') {
     $vars['theme_hook_suggestions'][] = 'node__slider';
     $image_url = $vars['field_marquee_image'][0]['uri'];
     $vars['image'] = image_style_url('marquee_large', $image_url);
     $vars['link'] = $vars['field_marquee_link'][0]['value'];
 
-    if (!empty($vars['field_marquee_hex'])) {
-      $index = 0;
-      foreach ($vars['field_marquee_hex'] as $key => $value) {
-        $vars['hex' . $key] = $value['value'];
-      }
-    }
+    // if (!empty($vars['field_marquee_hex'])) {
+    //   $index = 0;
+    //   foreach ($vars['field_marquee_hex'] as $key => $value) {
+    //     $vars['hex' . $key] = $value['value'];
+    //   }
+    // }
   }
 }
 
@@ -53,7 +52,7 @@ function site_marquee_library() {
     'title' => 'NTB Marquees',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'site_marquee') . '/js/site_marquee.js' => array(
+      drupal_get_path('module', 'site_marquee') . '/js/site_marquee.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),

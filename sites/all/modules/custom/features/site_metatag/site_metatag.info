@@ -10,3 +10,4 @@ features[metatag][] = global:frontpage
 features[metatag][] = node
 features[metatag][] = taxonomy_term
 features[metatag][] = user
+features[metatag][] = node:product_display

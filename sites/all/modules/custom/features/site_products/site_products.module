@@ -86,6 +86,11 @@ function site_products_entity_info_alter(&$entity_info) {
     'label' => t('Add to Cart'),
     'custom settings' => FALSE,
   );
+
+  $entity_info['node']['view modes']['product_square'] = array(
+    'label' => t('Product Square'),
+    'custom settings' => FALSE,
+  );
 }
 
 /**
@@ -93,6 +98,7 @@ function site_products_entity_info_alter(&$entity_info) {
  */
 function site_products_preprocess_views_view(&$vars) {
   if ($vars['view']->name == 'shop') {
+    $vars['classes_array'][] = 'row';
     drupal_add_library('site_products', 'site_shop');
   }
 }
@@ -114,22 +120,86 @@ function site_products_library() {
     'title' => 'NTB products',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'site_products') . '/js/site_products.js' => array(
+      drupal_get_path('module', 'site_products') . '/js/site_products.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
     ),
+    'dependencies' => [
+      ['ntb', 'bootstrap_tabs'],
+    ],
   );
   $libraries['site_shop'] = array(
     'title' => 'NTB Shop',
     'version' => '1.0',
     'js' => array(
-      libraries_get_path('jquery-match-height') . '/dist/jquery.matchHeight-min.js' => array(),
-      drupal_get_path('module', 'site_products') . '/js/site_shop.js' => array(
+      drupal_get_path('module', 'site_products') . '/js/site_shop.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
     ),
   );
   return $libraries;
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function site_products_preprocess_node(&$vars) {
+  if ($vars['type'] == 'product_display' && $vars['view_mode'] == 'product_square') {
+
+    $vars['theme_hook_suggestions'][] = 'node__product_square';
+    $node = $vars['node'];
+    $type = $node->type;
+
+    $image_uri = $vars['field_primary_image'][0]['uri'];
+
+    $img_array = array(
+      'style_name' => 'square_500x500',
+      'path' => $image_uri,
+    );
+    $image = theme('image_style', $img_array);
+    $vars['image'] = l($image, 'node/' . $vars['nid'], array('html' => TRUE));
+
+    $vars['product_category'] = $vars['elements']['product:field_product_type'][0]['#title'];
+    $vars['price'] = $vars['content']['product:commerce_price'][0]['#markup'];
+    $vars['cart'] = $vars['elements']['field_product'];
+
+    $vars['cart_link'] = 'commerce/add-to-cart/' . $vars['field_product'][0]['product_id'];
+  }
+
+  if ($vars['type'] == 'product_display' && $vars['view_mode'] == 'full') {
+    $ingredients = $vars['field_product_ingredients'];
+    $ingredient_list = array();
+
+    foreach ($ingredients as $ingredient) {
+      $entity = $ingredient['entity'];
+      $name = field_get_items('node', $entity, 'field_ingredient_scientific_name');
+      $link = l($name[0]['value'], 'node/' . $entity->nid, array('attributes' => array('target' => '_blank')));
+      array_push($ingredient_list, $link);
+    }
+
+    $products = taxonomy_select_nodes($vars['field_product_type'][LANGUAGE_NONE][0]['tid']);
+    $product_links = [
+      'items' => [],
+      'title' => '',
+      'type' => 'ul',
+      'attributes' => [
+        'class' => ['inline'],
+      ],
+    ];
+
+    foreach ($products as $product) {
+      $node = node_load($product);
+      $link_title = $node->title;
+      $uri = drupal_get_path_alias('node/' . $product);
+      $link = [$link_title, $uri];
+      $thumb_url = image_style_url('thumbnail', $node->field_primary_image[LANGUAGE_NONE][0]['uri']);
+      $link = '<a href=/' . $uri . '><img src=' . $thumb_url . ' title=' . $node->title . ' alt=' . $node->title . ' /></a>';
+      array_push($product_links['items'], $link);
+    }
+
+    $vars['product_type_list'] = theme_item_list($product_links);
+    $vars['scientific_ingredients'] = implode(', ', $ingredient_list);
+  }
 }

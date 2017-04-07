@@ -13,6 +13,7 @@ function site_metatag_metatag_export_default() {
   // Exported Metatag config instance: global.
   $config['global'] = array(
     'instance' => 'global',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[current-page:title] | [current-page:pager][site:name]',
@@ -511,6 +512,19 @@ function site_metatag_metatag_export_default() {
       ),
       'og:image' => array(
         'value' => '[user:picture:url]',
+      ),
+    ),
+  );
+
+  // Exported Metatag config instance: node:product_display.
+  $config['node:product_display'] = array(
+    'instance' => 'node:product_display',
+    'config' => array(
+      'og:image' => array(
+        'value' => '[node:field_primary_image]',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '[node:field_primary_image]',
       ),
     ),
   );

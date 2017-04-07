@@ -9,9 +9,9 @@
     attach: function (context, settings) {
       var self = this;
 
-      self.fadeInProducts();
-
       $('body', context).once('ajax', function () {
+        self.fadeInProducts();
+
         $('.view-product-type-taxonomy a').on('click', function (e) {
           e.preventDefault();
 
@@ -28,23 +28,15 @@
         };
       });
 
-      $('.view-shop').once('same-columns', function () {
-        setTimeout(function () {
-          self.resizeColumns();
-        }, 400);
-      });
-
-      $('body').once('ajax-fades', function () {
-        $(document).ajaxStart(function (event, request, settings) {
-          $('.view-shop .views-row').fadeTo(200, 0);
-        });
-        $(document).ajaxSuccess(function (event, request, settings) {
+      $(document).ajaxSuccess(function (event, request, settings) {
+        if (request.responseText.indexOf('view-shop') !== -1) {
+          Drupal.attachBehaviors('.view-shop');
           self.fadeInProducts();
-        });
+        }
       });
     },
 
-    activeMenu: function() {
+    activeMenu: function () {
       var url_array = window.location.pathname.split('/').filter(function (i) {
         return i.length > 0;
       });
@@ -55,10 +47,6 @@
           $(this).addClass('active');
         }
       });
-    },
-
-    resizeColumns: function () {
-      $('.view-shop .views-row').matchHeight();
     },
 
     fadeInProducts: function () {

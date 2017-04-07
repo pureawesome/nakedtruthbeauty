@@ -1,40 +1,41 @@
+@include keyframes(spin) {
+  0% {
+    @include transform( rotate(0) );
+  }
+  100% {
+    @include transform( rotate(360deg) );
+  }
+}
+
 .view-marquee {
+  .fa-spinner:before {
+    @include animation(spin 2s infinite linear);
+  }
+
   .flexslider:hover .flex-direction-nav a {
     display: none;
   }
 
   .slider-image {
-    height: 225px;
     background-size: cover;
     background-position: center center;
     display: block;
+
+    &:after {
+      padding-top: 40%;
+      display: block;
+      content: "";
+      width: 100%;
+    }
   }
 
   .flexslider {
     border: 0;
-    margin-bottom: 15px;
-  }
-
-  .title {
-    text-align: center;
-    font-size: 56px;
-    margin-top: 0;
-    font-family: 'have_heart_oneregular', sans-serif;
-  }
-
-  .content {
-    padding: 20px 15px;
-  }
-
-  .marquee-body {
-    font-size: 18px;
-    text-align: center;
+    margin: 22px 0 15px;
   }
 
   .flex-control-nav {
     width: auto;
-    bottom: 0;
-    top: 235px;
     right: 0;
   }
 
@@ -63,47 +64,12 @@
   }
 }
 @include breakpoint($screen-xs) {
-  .view-marquee .slider-image {
-    height: 300px;
-  }
 }
 
 @include breakpoint($screen-sm) {
   .view-marquee {
     .flexslider:hover .flex-direction-nav a {
       display: block;
-    }
-
-    .slider-image,
-    .content {
-      height: 350px;
-    }
-
-    .flexslider {
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
-
-    .flex-control-nav {
-      top: 360px;
-    }
-
-    .title {
-      font-size: 84px;
-      margin: 0 15px ;
-      padding-top: 0;
-    }
-
-    .marquee-body {
-      padding: 30px 30px 0;
-      text-align: left;
-    }
-
-    .slider-wrapper {
-      height: 100%;
-      @include display-flex;
-      @include flex-direction(column);
-      @include justify-content(center);
     }
   }
 }

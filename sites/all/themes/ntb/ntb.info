@@ -4,9 +4,11 @@ description = Theme for Naked Truth Beauty site
 version = 1.0
 core = 7.x
 
+regions[alert] = Alert
 regions[header] = Header
 regions[highlighted] = Highlighted
 regions[help] = Help
+regions[marquee] = Marquee
 regions[content] = Content
 regions[sidebar_first] = Left sidebar
 regions[sidebar_second] = Right sidebar
@@ -16,7 +18,7 @@ regions[footer] = Footer
 stylesheets[all][] = css/ntb.css
 
 ; Custom JavaScript
-scripts[] = js/ntb.behaviors.js
+;scripts[] = js/ntb.behaviors.js
 
 ; Panels Layouts
 plugins[panels][layouts] = layouts

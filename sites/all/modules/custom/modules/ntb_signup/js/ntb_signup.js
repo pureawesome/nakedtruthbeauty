@@ -91,7 +91,6 @@
       }
       else if (response === 'success') {
         msg = Drupal.settings.ntb_signup.postmessage;
-        msg += Drupal.settings.ntb_signup.code;
       }
 
       var $text = $('.ntb-signup-form-wrapper');

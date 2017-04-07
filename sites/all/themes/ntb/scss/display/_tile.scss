@@ -1,16 +1,24 @@
 .tile {
   position: relative;
-  margin-bottom: 15px;
-  max-width: 100%;
+  padding-top: 15px;
+  border-bottom: 0.5px solid $border-light;
+  padding-bottom: 15px;
 
   a {
+    text-align: center;
+  }
+
+  h3 {
+    margin-top: 11px;
     text-align: center;
   }
 }
 
 @include breakpoint($screen-xs) {
   .tile {
-    @include inline-block;
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
 
     .img,
     .title {
@@ -19,68 +27,68 @@
     }
 
     .img {
-      width: 30%;
+      @include flex(1);
     }
     .title {
-      position: absolute;
-      width: 70%;
-      height: 100%;
+      @include flex(2);
 
       a {
         text-align: left;
       }
+    }
 
-      h3 {
-        // padding: 0 15px;
-        @include vertical-align();
-      }
+    h3 {
+      margin-top: 0;
+      padding-left: 15px;
+      text-align: left;
+    }
+  }
+
+  .tile.product_display {
+
+    .add-to-cart-block,
+    .add-to-cart-block .form-submit,
+    .price,
+    .field-name-field-product {
+      width: auto;
+      margin-bottom: 0;
+      @include inline-block();
+    }
+
+    h3 {
+      text-align: center;
     }
   }
 }
 
 @include breakpoint($screen-sm) {
   .tile {
-    .img,
+    height: 100%;
+    @include flex-direction(column);
+
     .title {
-      width: 100%;
-      display: block;
-      position: relative;
+      @include flex(1);
     }
 
     .title a {
       text-align: center;
     }
+
+
+    h3 {
+      text-align: center;
+    }
+  }
+
+  .tile.product_display {
+    .price {
+      display: block;
+    }
   }
 }
 
 @include breakpoint($screen-md) {
-  .tile {
-    .title {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
 
-      background: rgba($secondary-blue, 0.5);
-      opacity: 0;
-      @include transition(opacity 0.5s ease-in-out);
-
-
-      a {
-        text-align: center;
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-
-    &:hover {
-      .title {
-        opacity: 1;
-      }
-    }
-  }
 }
 
 @include breakpoint($screen-lg) {

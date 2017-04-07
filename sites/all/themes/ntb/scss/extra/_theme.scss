@@ -30,7 +30,7 @@ ol li a {
 }
 
 .container-fluid {
-  max-width: $bp-large;
+  // max-width: $bp-large;
   margin: auto;
 }
 
@@ -39,7 +39,7 @@ ol li a {
 }
 
 #main-wrapper {
-  margin-top: 50px;
+  // margin-top: 50px;
 }
 
 .form-submit {
@@ -50,7 +50,7 @@ ol li a {
   text-transform: lowercase;
   background: $primary-blue;
   margin-bottom: 10px;
-  // @include background-image(linear-gradient(white, $primary-blue));
+  color: $text-dark;
   @include border-radius(5px);
 
   &:hover {
@@ -96,13 +96,10 @@ table thead th,
   padding: 0 15px;
 }
 
-// #footer {
-//   width: 100%;
-//   height: 60px;
-//   position: absolute;
-//   bottom: 0;
-// }
-//
+.ajax-progress .message {
+  display: none;
+}
+
 ul.primary {
   border: 0;
 
@@ -135,6 +132,8 @@ ul.primary {
     &:before {
       @include fa-icon();
       color: $secondary-blue;
+      // color: darken($secondary-blue, 15%);
+      // color: $white;
       content: $fa-var-facebook;
       font-size: 36px;
     }
@@ -150,21 +149,35 @@ ul.primary {
     &:hover {
       &:before {
         color: darken($secondary-blue, 15%);
+        color: $primary-blue;
+        // color: $white;
       }
     }
   }
 }
 
 #footer {
-  margin-top: 50px;
+  padding: 50px 0 30px 0;
+  margin-top: 30px;
+  text-align: center;
+  color: $secondary-blue;
+  // @include background-image(linear-gradient($primary-blue, $pink));
+
+  a {
+    color: #333;
+    color: $secondary-blue;
+
+    &:hover {
+      color: darken($secondary-blue, 15%);
+    }
+  }
 }
 
 .line-break {
   display: block;
   width: 100%;
   height: 2px;
-  // background: $secondary-blue;
-  @include background-image(linear-gradient(left, #fff,$primary-blue,  #fff));
+  @include background-image(linear-gradient(left, #fff, $primary-blue,  #fff));
   border-radius: 1px;
   margin: 45px 0;
 }
@@ -184,7 +197,6 @@ ul.primary {
     width: auto;
     vertical-align: middle;
   }
-
 
   table thead th,
   .field .field-label {

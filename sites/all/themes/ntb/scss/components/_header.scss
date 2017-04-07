@@ -1,15 +1,11 @@
-#header {
-  display: none;
-}
-
 #logo {
   margin: auto;
   width: 500px;
   max-width: 100%;
-  display: block;
+  display: none;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
   padding: 20px 30px;
 }
 
@@ -18,6 +14,12 @@
   top: 7px;
   right: 15px;
   position: absolute;
+  width: auto;
+  margin: 0;
+
+  li {
+    display: inline-block;
+  }
 }
 
 .mobile-logo {
@@ -47,17 +49,17 @@
   }
 
   &:hover {
-    color: #37746e;
+    color: $primary-blue;
   }
 }
 
-.search-block {
+.search-block,
+.cart {
   @include inline-block();
 }
 
-
 .user-icon,
-.cart,
+.cart-icon,
 .search-toggle {
   display: block;
   position: relative;
@@ -68,41 +70,13 @@
   display: none;
 }
 
-.navbar-form.navbar-search {
-  display: none;
-  width: 100%;
-  border: 0;
-  margin: 0;
-  position: fixed;
-  background: white;
-  top: 50px;
-  left: 0;
-  background: rgba(white, 0.6);
-
-  .form-group {
-    margin-bottom: 0;
-  }
-
-  .form-control {
-    border: 1px solid $secondary-blue;
-
-    &:focus {
-      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($secondary-blue, 0.6));
-    }
-  }
-
-  .btn {
-    display: none;
-  }
-}
-
 @include breakpoint($screen-sm) {
-  #header {
+  #logo {
     display: block;
   }
 
   .mobile-logo {
-    color: #fff;
+    display: none;
   }
 
   .fa-icon {
@@ -113,7 +87,7 @@
   }
 
   .icon-menu-fixed {
-    top: 7px;
+    top: 3px;
   }
 
   .user-icon {
@@ -126,33 +100,10 @@
     right: 15px;
   }
 
-  .navbar-form.navbar-search {
-    position: absolute;
-    padding: 5px;
-  }
-
   .icon-menu .fa-icon.active {
     @include background-image(linear-gradient($secondary-blue, $primary-blue));
     color: $white;
     border-radius:5px 5px 0 0;
-  }
-
-  .navbar-fixed-top .navbar-form.navbar-search {
-    top: 43px;
-    width: auto;
-    right: 0px;
-    @include background-image(linear-gradient(#b3cdb8, $primary-peach));
-    left: auto;
-    border-radius: 0 0 5px 5px;
-  }
-
-  .icon-menu .navbar-form.navbar-search {
-    top: 36px;
-    width: auto;
-    right: 0px;
-    @include background-image(linear-gradient($primary-blue, lighten($primary-blue, 25%)));
-    left: auto;
-    border-radius: 5px;
   }
 
   .search-block {

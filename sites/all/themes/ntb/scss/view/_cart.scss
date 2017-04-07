@@ -1,98 +1,90 @@
-div.messages.commerce-add-to-cart-confirmation {
-  // width: 500px;
+/* Add to Cart popup styling */
+.add-cart-message-wrapper {
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 80%;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: none;
+  text-transform: lowercase;
+  color: #333;
+  top: 60px;
+  max-height: calc(100vh - 70px);
+  //
+  @include display-flex();
+  @include flex-direction(column);
 
-  .message-inner .added-product-title,
-  .view-confirm-message-product-display .view-content .views-field-commerce-total .field-content {
-    color: $primary-blue;
+  .product-quantity,
+  .product-total-incl-tax {
+    display: none;
+  }
+
+  .product-image {
+    max-width: 150px;
+    margin: 0 auto;
+  }
+
+  @include breakpoint($screen-sm) {
+    max-width: 400px;
+
+    .product-image {
+      max-width: 250px;
+    }
   }
 }
 
-div.messages.commerce-add-to-cart-confirmation .view-confirm-message-product-display .view-content {
-  float: left;
+.add-to-cart-close {
+  right: 0;
+  margin-right: -10px;
+  position: absolute;
 }
 
-div.messages.commerce-add-to-cart-confirmation {
-  margin-left: -30% !important;
-  top: 50px;
+.new-item-details {
+  @include flex-shrink(1);
+  overflow: hidden;
+
+  & > div {
+    margin-right: 15px;
+    display: block;
+    text-align: center;
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+
+
+.added-product-message {
   text-align: center;
-  width: 60%;
+}
 
-  .message-inner {
+.option-button-wrapper {
+  margin-top: 20px;
+  text-align: center;
 
-    .added-product-title,
-    .button-wrapper,
-    .view-content {
-      width: 100%;
-      position: relative;
-      float: left;
-      font-weight: normal;
-    }
+  a {
+    color: #000;
 
-    .button-wrapper {
-      background: lighten($primary-blue, 20%);
-      padding: 15px 15px 5px 15px;
-
-      .button {
-        @include buttons();
-        width: 100%;
-
-        a, span {
-          font-weight: normal;
-          width: 100%;
-        }
-      }
-
-      .button.checkout {
-        background: $primary-blue;
-
-        &:hover {
-          background: $secondary-blue;
-        }
-      }
-    }
-
-    .view-content {
-      .views-field-commerce-product {
-        font-size: 20px;
-        margin-bottom: 15px;
-        color: $secondary-blue;
-      }
-
-      .field {
-        text-align: center;
-
-        .views-label {
-          font-weight: normal;
-          text-transform: uppercase;
-        }
-      }
-
-    }
-
-    @include breakpoint($screen-sm) {
-      .button-wrapper {
-        float: right;
-        width: auto;
-        max-width: 35%;
-        background: none;
-
-        .button {
-          margin: 10px 0;
-
-          a, span {
-            padding: 6px 0;
-          }
-        }
-      }
-
-      .view-content {
-        width: auto;
-        float: left;
-      }
-
-      .view-confirm-message-product-display {
-        clear: none;
-      }
+    &:hover {
     }
   }
+
+  .form-submit {
+    @include inline-block();
+    width: 100%;
+  }
+
+  @include breakpoint($screen-xs) {
+    .form-submit {
+      width: auto;
+    }
+  }
+}
+
+.new-item-details,
+.option-button-wrapper {
+  float: none;
 }

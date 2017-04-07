@@ -28,10 +28,13 @@
 }
 
 .view-shop {
-  .views-row {
-    border-bottom: 0.5px solid $border-light;
-    margin-bottom: 15px;
+  .view-content {
+    width: 100%;
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
   }
+
   .title {
     text-align: center;
   }
@@ -55,5 +58,4 @@
 
   @include breakpoint($screen-lg) {
   }
-
 }

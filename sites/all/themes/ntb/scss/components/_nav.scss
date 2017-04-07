@@ -1,5 +1,7 @@
-.navbar-fixed-top {
-  margin-top: 0;
+.navbar-default {
+  background-color: $white;
+  border: none;
+  margin-bottom: 0;
 
   .navbar-collapse {
     max-height: 100%;
@@ -9,27 +11,41 @@
       height: 100vh;
     }
   }
-}
 
-.navbar-default {
-  background-color: $white;
-  border: none;
+  .navbar-nav {
+    float: left;
+  }
+
+  .navbar-nav.inline {
+    @include inline-block();
+    width: 100%;
+    margin: auto;
+  }
 
   .navbar-nav > li > a {
     width: 100%;
     color: #37746e;
+    color: $secondary-blue;
+    color: darken($secondary-blue, 15%);
     font-size: 20px;
     padding: 20px 25px;
+    @include animation(all 0.2s ease-in-out);
     @include inline-block;
-  }
-
-  .navbar-nav > .active > a {
-    background: rgba($white, 0.5);
 
     &:hover,
     &:focus {
-      background: rgba($white, 0.5);
+      color: $primary-blue;
     }
+
+    &.cart-icon {
+      padding: 0;
+      font-size: 26px;
+    }
+  }
+
+  .navbar-nav > .active > a {
+    color: $text-dark;
+    background: transparent;
   }
 
   .navbar-toggle {
@@ -42,6 +58,23 @@
   }
 }
 
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    background: transparent;
+    color: $text-dark;
+  }
+}
+
+.navbar-default .navbar-nav > .open > a {
+  &,
+  &:hover,
+  &:focus {
+    background-color: rgba($primary-blue, 0.5);
+  }
+}
+
 .navbar-nav > li > a {
   text-align: center;
   text-transform: lowercase;
@@ -50,9 +83,7 @@
 .navbar-toggle {
   border: 0;
   position: absolute;
-  margin: 0 auto;
-  left: 10px;
-  top: 10px;
+  margin-left: 15px;
 }
 
 .nav>li>a:hover,
@@ -64,93 +95,105 @@
   display: none;
 }
 
-#secondary-menu .last {
-  &:before {
+.dropdown-menu {
+  text-align: center;
+  border-radius: 0;
+  border: 1px solid lighten($primary-blue, 15%);
+
+  .navbar-default .navbar-nav .open & > li > a {
+    color: darken($secondary-blue, 15%);
+  }
+
+  & > li > a:hover,
+  & > li > a:focus {
+    background: $white;
+    color: $primary-blue;
   }
 }
 
+.custom-user-menu .user-dropdown {
+  display: none;
+}
 
 @include breakpoint($screen-sm) {
   #navigation {
     display: block;
+  }
 
-    #main-menu {
-      @include inline-block;
+  .custom-user-menu .user-dropdown {
+    display: block;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    padding: 10px 15px;
+    color: $secondary-blue;
+
+    &:hover {
+      color: $primary-blue;
     }
+  }
+
+  .navbar-default .navbar-nav > .open > a {
+    &,
+    &:hover,
+    &:focus {
+      color: $primary-blue;
+      background: #fff;
+    }
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: $secondary-blue;
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  .navbar-default .navbar-nav > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+  }
+
+
+  .navbar-default .navbar-nav.inline:first-of-type {
+    margin-left: -15px;
   }
 
   .navbar-nav {
     float: none;
   }
 
+  .navbar-default .navbar-nav.inline {
+    width: auto;
+  }
+
   .navbar-default {
     text-align: center;
-  }
-
-  .navbar-fixed-top {
-    margin-top: -50px;
-    height: 50px;
-    @include background-image(linear-gradient($primary-blue, #b3cdb8));
-    @include transition(all 0.3s ease-out);
-
-    &.visible {
-      margin-top: 0;
-    }
 
     .navbar-collapse {
-      @include background-image(none);
-      float: left;
-      display: inline-block !important;
-      width: auto;
-
-      .navbar-nav > li > a {
-        padding: 14px 10px;
-        font-size: 18px;
-
-        &:hover {
-          color: #999;
-          // @include background-image(radial-gradient(5px, 10px, $primary-peach, transparent));
-        }
-      }
-
-      .navbar-nav > .last > a {
-        padding-right: 0;
-      }
+      background: $white;
+    }
+  }
+  .navbar-default .navbar-nav > li > a {
+    &:hover,
+    &:focus {
+      color: $primary-blue;
     }
   }
 
-  #secondary-menu,
-  #secondary-menu-top {
+  #secondary-menu {
     display: none;
-    position: absolute;
-    right: 15px;
-    top: 50px;
-    width: 200px;
-    border-radius: 0 0 5px 5px;
-    @include background-image(linear-gradient(#b3cdb8, $primary-peach));
-
-    li {
-      width: 100%;
-      display: block;
-
-      a {
-        padding: 14px;
-      }
-    }
-  }
-
-  #secondary-menu-top {
-    @include background-image(linear-gradient($primary-blue, lighten($primary-blue, 25%)));
-    top: 36px;
-    border-radius: 5px 0 5px 5px;
-    right: 0px;
   }
 }
 
 @include breakpoint($screen-md) {
-  .navbar-fixed-top .navbar-collapse .navbar-nav > li > a {
-    font-size: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
+  .mobile-logo {
+    display: none;
   }
+
+
 }
