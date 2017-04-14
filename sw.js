@@ -57,7 +57,6 @@ function updateStaticCache() {
 function stashInCache(cacheName, request, response) {
   caches.open(cacheName)
     .then(function (cache) {
-      console.log('stash in cache');
       cache.put(request, response);
     });
 }
