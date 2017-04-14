@@ -1,0 +1,6 @@
+name = site_picture
+core = 7.x
+package = Features
+dependencies[] = image
+features[features_api][] = api:2
+features[image][] = marquee_mobile

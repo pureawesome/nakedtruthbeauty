@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ntb_picture feature.
+ */
+
+include_once 'site_picture.features.inc';
