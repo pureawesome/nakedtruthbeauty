@@ -1,9 +1,13 @@
 .line {
   display: block;
   padding-bottom: 15px;
+  @include display-flex();
+  @include flex-direction(column);
+  @include align-items(center);
+  @include align-content(center);
 
   .img,
-  .title {
+  .content {
     display: block;
     text-align: center;
   }
@@ -24,7 +28,8 @@
 @include breakpoint($screen-sm) {
   .line {
     float: left;
-    height: 200px;
+    // height: 200px;
+    @include flex-direction(row);
 
     .img {
       width: 100px;
@@ -32,7 +37,7 @@
       margin-right: 10px;
     }
 
-    .title {
+    .content {
       text-align: left;
       width: calc(100% - 110px);
       height: auto;
@@ -42,7 +47,7 @@
     }
 
     .img,
-    .title {
+    .content {
       @include inline-block;
       float: left;
     }
