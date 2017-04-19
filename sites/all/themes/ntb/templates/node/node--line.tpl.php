@@ -10,15 +10,17 @@
       <?php print render($image); ?>
     </div>
   <?php endif; ?>
-  <div class="title">
-    <h3>
-      <?php if (isset($title)): ?>
-        <?php print l($title, $node_url, array('html' => FALSE)); ?>
-      <?php endif; ?>
-    </h3>
-  </div>
   <div class="content">
-    <?php print render($text); ?>
-    <span class="read-more"><?php print l(t('Read More'), $node_url); ?></span>
+    <div class="title">
+      <h3>
+        <?php if (isset($title)): ?>
+          <?php print l($title, $node_url, array('html' => FALSE)); ?>
+        <?php endif; ?>
+      </h3>
+    </div>
+    <div class="description">
+      <?php print render($text); ?>
+      <span class="read-more"><?php print l(t('Read More'), $node_url); ?></span>
+    </div>
   </div>
 </div>
