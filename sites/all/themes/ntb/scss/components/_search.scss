@@ -1,9 +1,9 @@
 /* Layout for search container */
 .search-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	@include display-flex();
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
 	text-align: center;
 	background: rgba(18, 23, 56, 0.9);
 
@@ -19,6 +19,10 @@
       @include sr-only();
     }
   }
+
+	&.search--open {
+		z-index: 2000;
+	}
 }
 
 .btn--search-close {
@@ -49,7 +53,7 @@
 	border: 0;
 	background: transparent;
 	border-radius: 0;
-	-webkit-appearance: none;
+	@include appearance(none);
 
   &:focus {
     outline: none;
@@ -133,62 +137,65 @@
 .js .search-container {
 	pointer-events: none;
 	opacity: 0;
-	transition: opacity 0.5s;
-	z-index: -1;
+	@include transition-property(opacity);
+	@include transition-duration(0.5s);
 }
 
 .js .search--open {
 	pointer-events: auto;
 	opacity: 1;
-	z-index: 100;
+	// z-index: 100;
 }
 
 .search--open::before,
 .search--open::after {
-	transform: translate3d(0, 0, 0);
+	@include translate3d(0, 0, 0);
 }
 
 /* Close button */
 .btn--search-close {
 	opacity: 0;
-	transform: scale3d(0.8, 0.8, 1);
-	transition: opacity 0.5s, transform 0.5s;
+	@include scale3d(0.8, 0.8, 1);
 	cursor: pointer;
+	@include transition-property(opacity, transform);
+	@include transition-duration(0.5s, 0.5s);
 
 	.search--open & {
 		opacity: 1;
-		transform: scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 }
 
 /* Search form with input and description */
 .js .search__form {
 	opacity: 0;
-	transform: scale3d(0.8, 0.8, 1);
-	transition: opacity 0.5s, transform 0.5s;
+	@include scale3d(0.8, 0.8, 1);
+	@include transition-property(opacity, transform);
+	@include transition-duration(0.5s, 0.5s);
 }
 
 .js .search--open .search__form {
 	opacity: 1;
-	transform: scale3d(1, 1, 1);
+	@include scale3d(1, 1, 1);
 }
 
 .search__suggestion {
 	opacity: 0;
-	transform: translate3d(0, -30px, 0);
-	transition: opacity 0.5s, transform 0.5s;
+	@include translate3d(0, -30px, 0);
+	@include transition-property(opacity, transform);
+	@include transition-duration(0.5s, 0.5s);
 	pointer-events: auto;
 
 	.search--open & {
 		opacity: 1;
-		transform: translate3d(0, 0, 0);
+		@include translate3d(0, 0, 0);
 
 		&:nth-child(2) {
-			transition-delay: 0.1s;
+			@include transition-delay(0.1s);
 		}
 
 		&:nth-child(3) {
-			transition-delay: 0.2s;
+			@include transition-delay(0.2s);
 		}
 	}
 }
