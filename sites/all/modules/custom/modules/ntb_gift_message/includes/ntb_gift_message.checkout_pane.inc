@@ -5,18 +5,18 @@
  * Code for the naked truth beauty signup gift message pane.
  */
 
-/**
- * Implements base_settings_form().
- */
-function ntb_gift_message_pane_settings_form($checkout_pane) {
-  // TODO: does this matter?
-  $form['ntb_gift_message_field'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Gift Message'),
-    '#default_value' => variable_get('ntb_gift_message_field', ''),
-  );
-  return $form;
-}
+// /**
+//  * Implements base_settings_form().
+//  */
+// function ntb_gift_message_pane_settings_form($checkout_pane) {
+//   // TODO: does this matter?
+//   $form['ntb_gift_message_field'] = array(
+//     '#type' => 'textfield',
+//     '#title' => t('Gift Message'),
+//     '#default_value' => variable_get('ntb_gift_message_field', ''),
+//   );
+//   return $form;
+// }
 
 /**
  * Implements base_checkout_form()
