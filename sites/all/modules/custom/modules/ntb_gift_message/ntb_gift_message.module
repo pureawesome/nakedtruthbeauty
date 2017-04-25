@@ -27,10 +27,7 @@ function ntb_gift_message_entity_view_alter(&$build, $type) {
     $order = $build['#entity'];
 
     if (!empty($order->data['ntb_gift_message'])) {
-      $invoice = $order->data['ntb_gift_message']['und'][0]['ntb_gift_message_pane_invoice'] ? t('Yes') : t('No');
       $gift = $order->data['ntb_gift_message']['und'][0]['ntb_gift_message_pane_gift'] ? t('Yes') : t('No');
-      $markup = t('<div class="field-label">@invoice:</div>', array('@invoice' => 'Remove Invoice'));
-      $markup .= '<div class="field-items">' . $invoice . '</div>';
       $markup .= t('<div class="field-label">@gift:</div>', array('@gift' => 'Send gift message'));
       $markup .= '<div class="field-items">' . $gift . '</div>';
       $markup .= t('<div class="field-label">@message:</div>', array('@message' => 'Gift Message'));

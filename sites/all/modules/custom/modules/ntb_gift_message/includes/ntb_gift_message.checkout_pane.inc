@@ -5,31 +5,14 @@
  * Code for the naked truth beauty signup gift message pane.
  */
 
-// /**
-//  * Implements base_settings_form().
-//  */
-// function ntb_gift_message_pane_settings_form($checkout_pane) {
-//   // TODO: does this matter?
-//   $form['ntb_gift_message_field'] = array(
-//     '#type' => 'textfield',
-//     '#title' => t('Gift Message'),
-//     '#default_value' => variable_get('ntb_gift_message_field', ''),
-//   );
-//   return $form;
-// }
-
 /**
  * Implements base_checkout_form()
  */
 function ntb_gift_message_pane_checkout_form($form, $form_state, $checkout_pane, $order) {
-  $checkout_form['ntb_gift_message_pane_invoice'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Do not send invoice.'),
-    '#default_value' => isset($order->data['ntb_gift_message']) ? $order->data['ntb_gift_message'][LANGUAGE_NONE][0]['ntb_gift_message_pane_invoice'] : 0,
-  ];
   $checkout_form['ntb_gift_message_pane_gift'] = [
     '#type' => 'checkbox',
     '#title' => t('Add a gift message.'),
+    '#description' => t('The price will be removed from the invoice.'),
     '#default_value' => isset($order->data['ntb_gift_message']) ? $order->data['ntb_gift_message'][LANGUAGE_NONE][0]['ntb_gift_message_pane_gift'] : 0,
   ];
   $checkout_form['ntb_gift_message_pane_message'] = [
@@ -65,7 +48,7 @@ function ntb_gift_message_pane_checkout_form_submit($form, &$form_state, $checko
   if (!isset($form[$checkout_pane['pane_id']])) {
     return;
   }
-  $values = ['ntb_gift_message_pane_invoice', 'ntb_gift_message_pane_gift', 'ntb_gift_message_pane_message'];
+  $values = ['ntb_gift_message_pane_gift', 'ntb_gift_message_pane_message'];
   foreach ($values as $value) {
     $order->data['ntb_gift_message'][LANGUAGE_NONE][0][$value] = $form_state['values']['ntb_gift_message'][$value];
   }
@@ -75,12 +58,6 @@ function ntb_gift_message_pane_checkout_form_submit($form, &$form_state, $checko
  * Implements base_review().
  */
 function ntb_gift_message_pane_review($form, $form_state, $checkout_pane, $order) {
-  $content['gift_invoice'] = array(
-    '#type' => 'item',
-    '#title' => t('Send Invoice:'),
-    '#markup' => $order->data['ntb_gift_message']['und'][0]['ntb_gift_message_pane_invoice'] ? t('Yes') : t('No'),
-  );
-
   $content['gift_status'] = array(
     '#type' => 'item',
     '#title' => t('Is gift?:'),
