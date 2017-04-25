@@ -9,7 +9,6 @@
     attach: function (context, settings) {
       var self = this;
       self.cartInit();
-
     },
 
     cartInit: function () {
@@ -23,21 +22,24 @@
         self.openCart($cartContainer);
       });
       $closeCtrl.on('click', function () {
-        self.closeCart($cartContainer);
-      });
-      $('document').on('keyup', function (e) {
-        if (e.keyCode === 27) {
-          self.closeSearch();
-        }
+        self.closeCart();
       });
     },
 
     openCart: function ($cartContainer) {
       $cartContainer.addClass('cart--open');
+      $(document).on('keyup', Drupal.behaviors.dc_ajax_enhancements.escCloseCart);
     },
 
-    closeCart: function ($cartContainer) {
-      $cartContainer.removeClass('cart--open');
+    closeCart: function () {
+      $('.cart-container.cart--open').removeClass('cart--open');
+      $(document).off('keyup', Drupal.behaviors.dc_ajax_enhancements.escCloseCart);
+    },
+
+    escCloseCart: function (event) {
+      if (event.keyCode === 27) {
+        Drupal.behaviors.dc_ajax_enhancements.closeCart();
+      }
     }
   };
 })(jQuery);
