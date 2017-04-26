@@ -32,7 +32,7 @@
       form += '<div class="errors"></div>';
       form += '<div class="input-group">';
       form += '<input type="email" title="Please, provide an e-mail" placeholder="Email" class="form-control form-text">';
-      form += '<span class="input-group-btn"><button class="btn form-submit button">Submit</button></div>';
+      form += '<span class="input-group-btn"><button class="btn form-submit button" type="submit">Submit</button></span>';
       form += '</div>';
       form += '</div>';
       form += '</div>';
@@ -85,14 +85,7 @@
     },
 
     submit_response: function (response) {
-      var msg = '';
-      if (response === '23000') {
-        msg = Drupal.settings.ntb_signup.alreadymessage;
-      }
-      else if (response === 'success') {
-        msg = Drupal.settings.ntb_signup.postmessage;
-      }
-
+      var msg = response;
       var $text = $('.ntb-signup-form-wrapper');
 
       $text.fadeOut(function () {
