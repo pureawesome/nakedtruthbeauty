@@ -10,7 +10,7 @@
  */
 function ntb_gift_message_commerce_checkout_pane_info() {
   $panes['ntb_gift_message'] = array(
-    'title' => t('Gift Options'),
+    'title' => t('Is this a gift?'),
     'page' => 'checkout',
     'weight' => 10,
     'file' => 'includes/ntb_gift_message.checkout_pane.inc',
