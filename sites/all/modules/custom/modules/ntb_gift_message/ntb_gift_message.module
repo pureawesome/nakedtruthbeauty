@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Code for the naked truth beauty signup gift message feature.
+ */
+
+/**
+ * Implements hook_commerce_checkout_pane_info().
+ */
+function ntb_gift_message_commerce_checkout_pane_info() {
+  $panes['ntb_gift_message'] = array(
+    'title' => t('Is this a gift?'),
+    'page' => 'checkout',
+    'weight' => 10,
+    'file' => 'includes/ntb_gift_message.checkout_pane.inc',
+    'base' => 'ntb_gift_message_pane',
+  );
+  return $panes;
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function ntb_gift_message_entity_view_alter(&$build, $type) {
+  if ($type == 'commerce_order') {
+    $order = $build['#entity'];
+
+    if (!empty($order->data['ntb_gift_message'])) {
+      $gift = $order->data['ntb_gift_message']['und'][0]['ntb_gift_message_pane_gift'] ? t('Yes') : t('No');
+      $markup .= t('<div class="field-label">@gift:</div>', array('@gift' => 'Send gift message'));
+      $markup .= '<div class="field-items">' . $gift . '</div>';
+      $markup .= t('<div class="field-label">@message:</div>', array('@message' => 'Gift Message'));
+      $markup .= '<div class="field-items">' . check_plain($order->data['ntb_gift_message']['und'][0]['ntb_gift_message_pane_message']);
+      $markup .= '<br /> order: #' . $order->order_number . '</div>';
+
+      $build['gift'] = array(
+        '#prefix' => '<div class="field field-label-above">',
+        '#suffix' => '</div>',
+        '#type' => 'markup',
+        '#markup' => $markup,
+      );
+    }
+
+  }
+}

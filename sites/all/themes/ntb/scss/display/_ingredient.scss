@@ -4,3 +4,8 @@
     margin-bottom: 15px;
   }
 }
+
+.view-ingredients .view-content {
+  @include display-flex();
+  @include flex-wrap(wrap);
+}

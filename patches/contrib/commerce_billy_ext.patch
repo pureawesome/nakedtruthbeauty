@@ -1,0 +1,11 @@
+--- a/sites/all/modules/contrib/commerce_billy/modules/commerce_billy_pdf/commerce_billy_pdf.module
++++ b/sites/all/modules/contrib/commerce_billy/modules/commerce_billy_pdf/commerce_billy_pdf.module
+@@ -141,7 +141,7 @@ function commerce_billy_pdf_preprocess_entity(&$variables) {
+  */
+ function commerce_billy_pdf($order) {
+   $html = commerce_billy_pdf_html($order);
+-  $filename = preg_replace('/[^a-z0-9]/', '_', drupal_strtolower('invoice_' . $order->order_number));
++  $filename = preg_replace('/[^a-z0-9]/', '_', drupal_strtolower('invoice_' . $order->order_number)) . '.pdf';
+
+   try {
+     commerce_billy_pdf_output($html, $filename);

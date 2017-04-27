@@ -1,0 +1,5 @@
+name = naked truth beauty gift message
+core = 7.x
+package = Modules
+version = 7.x-1.0
+dependencies[] = commerce
