@@ -12,12 +12,23 @@
   }
 }
 
-.page-checkout .button-operator {
-  text-align: center;
-  width: 100%;
-  margin-bottom: 10px;
-  @include inline-block();
+.page-checkout {
+  .button-operator {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    @include inline-block();
+  }
+
+  legend {
+    margin-bottom: 0;
+  }
+
+  fieldset {
+    margin-bottom: 22px;
+  }
 }
+
 
 .checkout-review {
   width: 100%;
