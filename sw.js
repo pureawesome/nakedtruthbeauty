@@ -45,7 +45,7 @@ function updateStaticCache() {
         '/sites/all/libraries/bootstrap/js/lib/dropdown.min.js?v=3.3.6',
         '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
-        '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.0',
+        '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.1',
         '/sites/all/themes/ntb/css/ntb.css?v=1.0',
         '/sites/all/themes/ntb/logo.png',
         '/offline',

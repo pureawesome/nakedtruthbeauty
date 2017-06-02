@@ -161,7 +161,7 @@ function ntb_library() {
 
   $libraries['ntb'] = array(
     'title' => 'NTB',
-    'version' => '1.0',
+    'version' => '1.1',
     'js' => array(
       drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => array(
         'defer' => TRUE,
