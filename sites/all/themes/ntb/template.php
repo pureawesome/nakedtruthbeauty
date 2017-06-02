@@ -14,7 +14,6 @@ function ntb_theme() {
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
-  drupal_add_library('ntb', 'modernizr');
   drupal_add_library('ntb', 'ntb');
 
   // Get the entire main menu tree.
@@ -179,6 +178,7 @@ function ntb_library() {
     'dependencies' => [
       ['ntb', 'bootstrap_collapse'],
       ['ntb', 'bootstrap_dropdown'],
+      ['ntb', 'modernizr'],
     ],
   );
 

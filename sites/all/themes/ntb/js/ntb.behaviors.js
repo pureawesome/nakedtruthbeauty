@@ -21,6 +21,13 @@
           });
         }
       });
+
+      if (!Modernizr.touch) {
+        $('a.dropdown-toggle').on('click', function (e) {
+          var url = $(this).attr('href');
+          window.location.href = url;
+        });
+      }
     }
   };
 })(jQuery);
