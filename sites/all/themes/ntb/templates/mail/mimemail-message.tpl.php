@@ -53,7 +53,7 @@
       <tr>
         <td>
           <div id="footer">
-            © 2016 Naked Truth Beauty | <a href="http://facebook.com/ntbeauty">Facebook</a> | <a href="http://twitter.com/nkdtruthbeauty">Twitter</a> | <a href="http://instagram.com/nakedtruthbeauty">Instagram</a>
+            © 2017 Naked Truth Beauty | <a href="http://facebook.com/ntbeauty">Facebook</a> | <a href="http://twitter.com/nkdtruthbeauty">Twitter</a> | <a href="http://instagram.com/nakedtruthbeauty">Instagram</a>
           </div>
         </td>
       </tr>
