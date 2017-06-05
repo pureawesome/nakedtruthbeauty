@@ -1,5 +1,3 @@
-diff --git a/sites/all/modules/contrib/commerce_coupon/commerce_coupon.module b/sites/all/modules/contrib/commerce_coupon/commerce_coupon.module
-index 50d9bb2..a81eb99 100644
 --- a/sites/all/modules/contrib/commerce_coupon/commerce_coupon.module
 +++ b/sites/all/modules/contrib/commerce_coupon/commerce_coupon.module
 @@ -2115,9 +2115,10 @@ function commerce_coupon_form_commerce_checkout_form_alter(&$form, &$form_state)

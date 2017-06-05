@@ -1,0 +1,13 @@
+name = Braintree (Drop-in UI)
+description = Integrates Braintree Drop-in UI for on-site credit card payment.
+package = Commerce (contrib)
+core = 7.x
+dependencies[] = commerce_braintree
+
+
+; Information added by Drupal.org packaging script on 2017-04-03
+version = "7.x-2.0-rc1"
+core = "7.x"
+project = "commerce_braintree"
+datestamp = "1491253496"
+
