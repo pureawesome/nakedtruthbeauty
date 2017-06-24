@@ -1,3 +1,7 @@
+.search-container-wrapper {
+  width: auto;
+}
+
 /* Layout for search container */
 .search-container {
 	@include display-flex();
@@ -99,9 +103,15 @@
 }
 
 .search__related {
-	display: flex;
+	@include display-flex();
 	width: 75%;
 	pointer-events: none;
+	right: 100%;
+	position: relative;
+
+	.search--open & {
+		right: auto;
+	}
 }
 
 .search__suggestion {
@@ -184,6 +194,7 @@
 	@include translate3d(0, -30px, 0);
 	@include transition-property(opacity, transform);
 	@include transition-duration(0.5s, 0.5s);
+	@include transition-delay(0.1s);
 	pointer-events: auto;
 
 	.search--open & {
@@ -191,11 +202,11 @@
 		@include translate3d(0, 0, 0);
 
 		&:nth-child(2) {
-			@include transition-delay(0.1s);
+			@include transition-delay(0.2s);
 		}
 
 		&:nth-child(3) {
-			@include transition-delay(0.2s);
+			@include transition-delay(0.3s);
 		}
 	}
 }
