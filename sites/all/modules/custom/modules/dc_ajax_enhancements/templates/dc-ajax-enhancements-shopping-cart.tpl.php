@@ -72,9 +72,6 @@
         </tbody>
       </table>
       <div class="ajax-shopping-cart-more-info clearfix">
-        <?php if (!empty($shipping)) : ?>
-          <div class="ajax-shopping-cart-shipping"><?php print $shipping['service'] . ' ' . $shipping['price']; ?></div>
-        <?php endif; ?>
         <div class="ajax-shopping-cart-total"><?php print t('Total:') . ' ' . $product_price_total; ?></div>
         <div class="ajax-shopping-cart-checkout"><?php print $checkout_url; ?></div>
       </div>
