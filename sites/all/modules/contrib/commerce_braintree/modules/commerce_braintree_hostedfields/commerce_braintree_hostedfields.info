@@ -4,9 +4,9 @@ package = Commerce (contrib)
 core = 7.x
 dependencies[] = commerce_braintree
 
-; Information added by Drupal.org packaging script on 2017-04-03
-version = "7.x-2.0-rc1"
+; Information added by Drupal.org packaging script on 2017-06-21
+version = "7.x-2.0-rc2"
 core = "7.x"
 project = "commerce_braintree"
-datestamp = "1491253496"
+datestamp = "1498079344"
 
