@@ -1,0 +1,112 @@
+<?php
+
+/**
+ * @file
+ * Module file for ntb top 3.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function ntb_top_block_info() {
+  $blocks['ntb_top'] = array(
+    'info' => t('NTB top 3'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function ntb_top_block_configure($delta = '') {
+  if ($delta == 'ntb_top') {
+    $form = [];
+    $type = 'product_display';
+    $query = [];
+
+    $query = db_select('node', 'n')
+      ->fields('n')
+      ->condition('type', $type)
+      ->condition('status', 1)
+      ->execute()
+      ->fetchAll();
+
+    foreach ($query as $value) {
+      $options[$value->nid] = $value->title;
+    }
+    xdebug_break();
+
+    $form['ntb_top_one'] = [
+      '#type' => 'select',
+      '#title' => t('NTB Top One'),
+      '#options' => $options,
+      '#default_value' => variable_get('ntb_top_one', NULL),
+    ];
+
+    $form['ntb_top_two'] = [
+      '#type' => 'select',
+      '#title' => t('NTB Top Two'),
+      '#options' => $options,
+      '#default_value' => variable_get('ntb_top_two', NULL),
+    ];
+
+    $form['ntb_top_three'] = [
+      '#type' => 'select',
+      '#title' => t('NTB Top Three'),
+      '#options' => $options,
+      '#default_value' => variable_get('ntb_top_three', NULL),
+    ];
+  }
+
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function ntb_top_block_save($delta = '', $edit = array()) {
+  if ($delta == 'ntb_top') {
+    xdebug_break();
+    $tops = ['ntb_top_three', 'ntb_top_two', 'ntb_top_one'];
+
+    foreach ($tops as $top) {
+      variable_set($top, $edit[$top]);
+    }
+  }
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ntb_top_block_view($delta = '') {
+  $block = [];
+
+  switch ($delta) {
+    case 'ntb_top':
+      $block['content'] = ntb_top_build_display();
+      break;
+  }
+
+  return $block;
+}
+
+function ntb_top_build_display() {
+  $fields = ['ntb_top_three', 'ntb_top_two', 'ntb_top_one'];
+  $nids = [];
+
+  foreach ($fields as $field) {
+    $nids[] = variable_get($field, NULL);
+  }
+
+  $nodes = node_load_multiple($nids);
+
+  $node_displays = [];
+  foreach ($nodes as $node) {
+    $node_displays[] = render(node_view($node, 'product_square', NULL));
+  }
+
+  $output = theme('item_list', ['items' => $node_displays, 'attributes' => ['class' => 'ntb-top-three']]);
+
+  return $output;
+}
