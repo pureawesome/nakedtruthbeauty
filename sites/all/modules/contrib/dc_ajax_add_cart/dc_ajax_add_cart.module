@@ -199,22 +199,8 @@ function dc_ajax_add_cart_form_alter(&$form, &$form_state, $form_id) {
  * @ingroup callbacks
  */
 function dc_ajax_add_cart_ajax_cart_form(&$form, &$form_state) {
-  $form_errors = form_get_errors();
-
   // AJAX commands array.
   $commands = array();
-
-  if (!empty($form_errors)) {
-    // Show Drupal status message without page refresh.
-    // @see https://www.drupal.org/node/1271004#comment-7205478
-    $commands[] = ajax_command_remove('div.messages');
-    $commands[] = ajax_command_before('#main-content', theme('status_messages'));
-
-    return array(
-      '#type' => 'ajax',
-      '#commands' => $commands,
-    );
-  }
 
   // Get the current status of commerce cart.
   $commerce_cart = dc_ajax_add_cart_get_commerce_cart_details();
@@ -245,8 +231,8 @@ function dc_ajax_add_cart_ajax_cart_form(&$form, &$form_state) {
     // Display add to cart message.
     if (variable_get(DC_AJAX_ADD_CART_DISPLAY_POPUP, 'display_popup_message') == 'display_popup_message') {
       // Gather information to display product information in popup message.
-      $last_line_item = $form_state['line_item'];
-      $last_line_item_product = commerce_product_load($form_state['values']['product_id']);
+      $last_line_item = dc_ajax_add_cart_get_last_line_item_wrapper($line_items);
+      $last_line_item_product = commerce_product_load($last_line_item->commerce_product[LANGUAGE_NONE][0]['product_id']);
       $last_line_item_quantity = $form_state['values']['quantity'];
 
       $content = theme('dc_ajax_add_to_cart_message', array(
@@ -256,15 +242,25 @@ function dc_ajax_add_cart_ajax_cart_form(&$form, &$form_state) {
       ));
       $commands[] = ajax_command_prepend('body', $content);
     }
-
-    // Clear status messages if any.
-    $commands[] = ajax_command_remove('div.messages');
-
-    return array(
-      '#type' => 'ajax',
-      '#commands' => $commands,
-    );
   }
+
+  // Clear status messages if any.
+  $commands[] = ajax_command_remove('div.messages');
+
+  // Show Drupal status message without page refresh.
+  // @see https://www.drupal.org/node/1271004#comment-7205478
+  // We are checking the textual status messages so that we can save double
+  // calling of drupal_get_messages().
+  $messages = theme('status_messages');
+
+  if (!empty($messages)) {
+    $commands[] = ajax_command_before('#main-content', $messages);
+  }
+
+  return array(
+    '#type' => 'ajax',
+    '#commands' => $commands,
+  );
 }
 
 /**
@@ -336,12 +332,9 @@ function dc_ajax_add_cart_block_view($delta = '') {
           'total' => $total,
         ));
         $block['content'] .= '</div>';
-
-        drupal_add_library('system', 'drupal.ajax', TRUE);
       }
 
-      drupal_add_css(drupal_get_path('module', 'dc_ajax_add_cart') . '/css/dc_ajax_add_cart.css');
-      drupal_add_js(drupal_get_path('module', 'dc_ajax_add_cart') . '/js/dc_ajax_add_cart_html.js');
+      drupal_add_library('dc_ajax_add_cart', 'base', TRUE);
 
       break;
 
@@ -368,7 +361,7 @@ function dc_ajax_add_cart_block_view($delta = '') {
       ));
       $block['content'] .= '</div>';
 
-      drupal_add_css(drupal_get_path('module', 'dc_ajax_add_cart') . '/css/dc_ajax_add_cart.css');
+      drupal_add_library('dc_ajax_add_cart', 'base', TRUE);
 
       break;
   }
@@ -460,8 +453,7 @@ function template_preprocess_dc_ajax_shopping_cart(&$variables) {
       'title' => t('Remove from cart'),
     ));
 
-    // Default currency array.
-    $currency = commerce_currency_load(commerce_default_currency());
+    $currency = dc_ajax_add_cart_currency_load();
 
     // Output arrays.
     $line_item_list = array();
@@ -477,9 +469,8 @@ function template_preprocess_dc_ajax_shopping_cart(&$variables) {
 
       // If the line item is a product.
       if (property_exists($line_item, 'commerce_product')) {
-        $product = commerce_product_load($line_item->commerce_product[LANGUAGE_NONE][0]['product_id']);
-        $products[$product->product_id] = $product;
-        $product_prices[$product->product_id] = commerce_currency_format($line_item->commerce_unit_price[LANGUAGE_NONE][0]['amount'], $currency['code']);
+        $products[$line_item->line_item_id] = commerce_product_load($line_item->commerce_product[LANGUAGE_NONE][0]['product_id']);
+        $product_prices[$line_item->line_item_id] = commerce_currency_format($line_item->commerce_unit_price[LANGUAGE_NONE][0]['amount'], $currency['code']);
       }
       // If line item is shipping service.
       elseif (property_exists($line_item, 'commerce_shipping_service')) {
@@ -562,7 +553,7 @@ function template_preprocess_dc_ajax_shopping_cart(&$variables) {
           'field_classes' => 'name',
         );
         $variables['products_list']['row'][$line_item->line_item_id]['price'] = array(
-          'data' => $product_prices[$product->product_id],
+          'data' => $product_prices[$line_item->line_item_id],
           'field_classes' => 'price',
         );
         $variables['products_list']['row'][$line_item->line_item_id]['remove'] = array(
@@ -615,8 +606,7 @@ function template_preprocess_dc_ajax_shopping_cart(&$variables) {
  *     in the site.
  */
 function template_preprocess_dc_ajax_shopping_cart_teaser(&$variables) {
-  // Default currency array.
-  $currency = commerce_currency_load(commerce_default_currency());
+  $currency = dc_ajax_add_cart_currency_load();
   $image_cart_icon_path = drupal_get_path('module', 'dc_ajax_add_cart') . '/images/shopping-cart.png';
 
   $variables['total_amount'] = commerce_currency_format($variables['total']['amount'], $currency['code']);
@@ -643,13 +633,12 @@ function template_preprocess_dc_ajax_shopping_cart_teaser(&$variables) {
  *     in the site.
  */
 function template_preprocess_dc_ajax_add_to_cart_message(&$variables) {
-  // Default currency array.
-  $currency = commerce_currency_load(commerce_default_currency());
+  $currency = dc_ajax_add_cart_currency_load();
 
-  $product_price = commerce_product_calculate_sell_price($variables['product']);
+  $product_price = $variables['line_item']->commerce_unit_price[LANGUAGE_NONE][0]['amount'];
 
-  $variables['product_per_unit_price'] = commerce_currency_format($product_price['amount'], $currency['code']);
-  $variables['product_price_total'] = commerce_currency_format($variables['quantity'] * $product_price['amount'], $currency['code']);
+  $variables['product_per_unit_price'] = commerce_currency_format($product_price, $currency['code']);
+  $variables['product_price_total'] = commerce_currency_format($variables['quantity'] * $product_price, $currency['code']);
 
   // Create new theme variables related to configuration.
   $variables['configuration']['success_message'] = check_plain(variable_get(DC_AJAX_ADD_CART_SUCCESS_MESSAGE, t('Item successfully added to cart')));
@@ -824,4 +813,103 @@ function dc_ajax_add_cart_command_html($selector, $html) {
     'selector' => $selector,
     'data' => $html,
   );
+}
+
+/**
+ * Implements hook_variable_info().
+ */
+function dc_ajax_add_cart_variable_info($options) {
+  $variables[DC_AJAX_ADD_CART_EMPTY_CART_MESSAGE] = array(
+    'type' => 'string',
+    'title' => t('Empty cart message', array(), $options),
+    'default' => 'Shopping cart is empty',
+    'localize' => TRUE,
+  );
+
+  $variables[DC_AJAX_ADD_CART_EMPTY_CART_TEASER_MESSAGE] = array(
+    'type' => 'string',
+    'title' => t('Empty cart teaser message', array(), $options),
+    'default' => 'Empty',
+    'localize' => TRUE,
+  );
+
+  $variables[DC_AJAX_ADD_CART_SUCCESS_MESSAGE] = array(
+    'type' => 'string',
+    'title' => t('Cart success message', array(), $options),
+    'default' => 'Item successfully added to cart',
+    'localize' => TRUE,
+  );
+
+  $variables[DC_AJAX_ADD_CART_POPUP_CHECKOUT] = array(
+    'type' => 'string',
+    'title' => t('Go to checkout Label', array(), $options),
+    'default' => 'Go to checkout',
+    'localize' => TRUE,
+  );
+
+  $variables[DC_AJAX_ADD_CART_POPUP_CONTINUE_SHOPPING] = array(
+    'type' => 'string',
+    'title' => t('Continue shopping Label', array(), $options),
+    'default' => 'Continue shopping',
+    'localize' => TRUE,
+  );
+
+  return $variables;
+}
+
+/**
+ * Returns the default/user-based currency.
+ *
+ * @return array
+ *   Commerce currency info array.
+ *
+ * @see https://www.drupal.org/node/2846386
+ */
+function dc_ajax_add_cart_currency_load() {
+  if (module_exists('commerce_multicurrency')) {
+    return commerce_currency_load(commerce_multicurrency_get_user_currency_code());
+  }
+  else {
+    return commerce_currency_load(commerce_default_currency());
+  }
+}
+
+/**
+ * Returns the last line item that was added to cart.
+ *
+ * @param object $line_items_wrapper
+ *   Entity list wrapper of line items.
+ *
+ * @return object
+ *   The last line item.
+ */
+function dc_ajax_add_cart_get_last_line_item_wrapper($line_items_wrapper) {
+  return array_reduce($line_items_wrapper->value(), function($c, $i) {
+    return $i;
+  });
+}
+
+/**
+ * Implements hook_library().
+ */
+function dc_ajax_add_cart_library() {
+  $module_path = drupal_get_path('module', 'dc_ajax_add_cart');
+
+  $libraries['base'] = array(
+    'title' => 'Drupal Commerce Ajax Add Cart',
+    'version' => '1.0.0',
+    'js' => array(
+      $module_path . '/js/dc_ajax_add_cart_html.js' => array(
+        'group' => JS_DEFAULT,
+      ),
+    ),
+    'css' => array(
+      $module_path . '/css/dc_ajax_add_cart.css' => array(),
+    ),
+    'dependencies' => array(
+      array('system', 'drupal.ajax'),
+    ),
+  );
+
+  return $libraries;
 }
