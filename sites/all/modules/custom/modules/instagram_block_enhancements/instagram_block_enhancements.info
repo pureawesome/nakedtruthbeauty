@@ -1,0 +1,5 @@
+name = Instagram block enhancements
+core = 7.x
+package = Modules
+version = 7.x-1.0
+dependencies[] = instagram_block

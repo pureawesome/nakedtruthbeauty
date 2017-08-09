@@ -21,6 +21,10 @@
           });
         }
       });
+      
+      $('.lazy-img').each(function () {
+        self.loadImg(this);
+      });
 
       if (!Modernizr.touch) {
         $('a.dropdown-toggle').on('click', function (e) {
@@ -28,6 +32,27 @@
           window.location.href = url;
         });
       }
-    }
+    },
+    
+    /**
+      * Lazy Load Image
+      *
+      * @param object img
+      *   The img to load
+      *
+      * @return undefined
+      *    loads the image and resets the img data
+      */
+    loadImg: function (img) {
+      if ($(img).attr('data-src') !== undefined) {
+        var src = $(img).attr("data-src");
+        var preload_image = new Image();
+        preload_image.src = src;
+        preload_image.onload = function () {
+          $(img).removeClass('fa fa-spin fa-spinner fa-2x');
+          $(img).attr("src", src);
+        }
+      }
+    },
   };
 })(jQuery);
