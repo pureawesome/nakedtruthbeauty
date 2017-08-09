@@ -44,7 +44,6 @@
       *    loads the image and resets the img data
       */
     loadImg: function (img) {
-      // console.log(img);
       if ($(img).attr('data-src') !== undefined) {
         var src = $(img).attr("data-src");
         var preload_image = new Image();
