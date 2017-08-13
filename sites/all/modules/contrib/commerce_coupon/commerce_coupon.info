@@ -17,9 +17,9 @@ files[] = includes/views/handlers/commerce_coupon_handler_area_cart_form.inc
 files[] = commerce_coupon.info.inc
 files[] = commerce_coupon.test
 
-; Information added by Drupal.org packaging script on 2017-05-31
-version = "7.x-2.0-rc4"
+; Information added by Drupal.org packaging script on 2017-07-10
+version = "7.x-2.0"
 core = "7.x"
 project = "commerce_coupon"
-datestamp = "1496218145"
+datestamp = "1499723046"
 

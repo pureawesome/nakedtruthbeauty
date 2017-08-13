@@ -4,9 +4,9 @@ core = 7.x
 
 dependencies[] = commerce_coupon
 dependencies[] = date_popup
-; Information added by Drupal.org packaging script on 2017-05-31
-version = "7.x-2.0-rc4"
+; Information added by Drupal.org packaging script on 2017-07-10
+version = "7.x-2.0"
 core = "7.x"
 project = "commerce_coupon"
-datestamp = "1496218145"
+datestamp = "1499723046"
 

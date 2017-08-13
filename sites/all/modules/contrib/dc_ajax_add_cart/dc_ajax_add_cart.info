@@ -7,9 +7,9 @@ dependencies[] = commerce_cart
 package = Commerce (contrib)
 files[] = tests/dc_ajax_add_cart_ui.test
 
-; Information added by Drupal.org packaging script on 2015-09-28
-version = "7.x-2.1"
+; Information added by Drupal.org packaging script on 2017-07-12
+version = "7.x-2.11"
 core = "7.x"
 project = "dc_ajax_add_cart"
-datestamp = "1443442141"
+datestamp = "1499840045"
 

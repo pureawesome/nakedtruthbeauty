@@ -198,3 +198,24 @@ ul.primary {
     font-size: 16px;
   }
 }
+
+.item-list .tile .title {
+  font-weight: normal;
+  text-align: center;
+}
+
+ul.ntb-top-three {
+  @include display-flex();
+  @include flex-direction(column);
+
+  @include breakpoint($nav-break) {
+    @include flex-direction(row);
+  }
+
+  &,
+  & > li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
