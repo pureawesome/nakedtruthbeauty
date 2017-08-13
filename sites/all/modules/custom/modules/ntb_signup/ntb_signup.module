@@ -39,8 +39,6 @@ function ntb_signup_library() {
         'data' => array(
           'ntb_signup' => array(
             'premessage' => $pre['value'],
-            'postmessage' => $post['value'],
-            'alreadymessage' => $already['value'],
             'cookie' => 'ntb_signup',
           ),
         ),
@@ -138,21 +136,26 @@ function ntb_signup_rules_event_info() {
  */
 function ntb_signup_submit_email() {
   if ($email = $_POST['email']) {
-    try {
+    $signup = db_select('signup_emails', 'se')
+      ->fields('se')
+      ->condition('email', $email)
+      ->execute()
+      ->fetchAssoc();
+
+    if ($signup) {
+      $response = variable_get('signup_alreadymessage', t('Looks like that email has already been submitted. Please check your email for a copy of the code.'));
+    }
+    else {
       $signup = db_insert('signup_emails')
         ->fields(array(
           'email' => $email,
           'created' => REQUEST_TIME,
         ))
         ->execute();
-      $response = 'success';
+      $response = variable_get('signup_postmessage', t('Thanks for signing up! Here is your code.'));
       rules_invoke_event('signup_event', $email);
     }
-    catch (Exception $e) {
-      $response = $e->getCode();
-    }
-    finally {
-      drupal_json_output($response);
-    }
+
+    drupal_json_output($response['value']);
   }
 }

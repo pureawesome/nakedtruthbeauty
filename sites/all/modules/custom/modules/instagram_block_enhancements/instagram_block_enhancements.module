@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Code for the ajax add to cart enhancements.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function instagram_block_enhancements_theme() {
+  return [
+    'instagram_block_image' => [
+      'variables' => [
+        'height' => NULL,
+        'width' => NULL,
+        'src' => NULL,
+        'href' => NULL,
+        'post' => NULL,
+      ],
+      'template' => 'templates/instagram-block-image-enhancements',
+    ],
+  ];
+}

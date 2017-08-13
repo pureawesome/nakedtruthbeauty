@@ -6,14 +6,14 @@ img {
 
 .flex-direction-nav a {
   &:before {
-    content: '\f0a8';
+    content: $fa-var-arrow-circle-left;
     @include fa-icon();
     font-size: 40px;
     color: rgba($secondary-blue, 0.8);
   }
 
   &.flex-next:before {
-    content: '\f0a9';
+    content: $fa-var-arrow-circle-right;
   }
 }
 
@@ -29,17 +29,13 @@ ol li a {
   word-break: break-all;
 }
 
-.container-fluid {
-  // max-width: $bp-large;
+.region-content {
+  max-width: $bp-large;
   margin: auto;
-}
 
-.container-fluid.full {
-  max-width: 100%;
-}
-
-#main-wrapper {
-  // margin-top: 50px;
+  .front & {
+    max-width: 100%;
+  }
 }
 
 .form-submit {
@@ -161,7 +157,6 @@ ul.primary {
   margin-top: 30px;
   text-align: center;
   color: $secondary-blue;
-  // @include background-image(linear-gradient($primary-blue, $pink));
 
   a {
     color: #333;
@@ -201,5 +196,26 @@ ul.primary {
   table thead th,
   .field .field-label {
     font-size: 16px;
+  }
+}
+
+.item-list .tile .title {
+  font-weight: normal;
+  text-align: center;
+}
+
+ul.ntb-top-three {
+  @include display-flex();
+  @include flex-direction(column);
+
+  @include breakpoint($nav-break) {
+    @include flex-direction(row);
+  }
+
+  &,
+  & > li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 }

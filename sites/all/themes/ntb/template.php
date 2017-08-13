@@ -14,7 +14,6 @@ function ntb_theme() {
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
-  drupal_add_library('ntb', 'modernizr');
   drupal_add_library('ntb', 'ntb');
 
   // Get the entire main menu tree.
@@ -161,17 +160,25 @@ function ntb_library() {
   );
 
   $libraries['ntb'] = array(
-    'title' => 'NTB Behaviors',
-    'version' => '1.0',
+    'title' => 'NTB',
+    'version' => '1.2',
     'js' => array(
       drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
     ),
+    'css' => array(
+      drupal_get_path('theme', 'ntb') . '/css/ntb.css' => array(
+        'group' => CSS_THEME,
+        'every_page' => TRUE,
+        'preprocess' => FALSE,
+      ),
+    ),
     'dependencies' => [
       ['ntb', 'bootstrap_collapse'],
       ['ntb', 'bootstrap_dropdown'],
+      ['ntb', 'modernizr'],
     ],
   );
 

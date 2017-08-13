@@ -26,24 +26,29 @@
         self.openSearch($searchContainer, $inputSearch);
       });
       $closeCtrl.on('click', function () {
-        self.closeSearch($searchContainer, $inputSearch);
-      });
-      $('document').on('keyup', function (e) {
-        if (e.keyCode === 27) {
-          self.closeSearch();
-        }
+        self.closeSearch();
       });
     },
 
     openSearch: function ($searchContainer, $inputSearch) {
       $searchContainer.addClass('search--open');
       $inputSearch.focus();
+      $(document).on('keyup', Drupal.behaviors.site_search.escCloseSearch);
     },
 
-    closeSearch: function ($searchContainer, $inputSearch) {
-      $searchContainer.removeClass('search--open');
-      $inputSearch.blur();
-      $inputSearch.value = '';
+    closeSearch: function () {
+      var $searchContainerOpen = $('.search-container.search--open');
+      var $input = $searchContainerOpen.find('.search_enhancements_form .form-autocomplete');
+      $input.blur();
+      $input.val('');
+      $searchContainerOpen.removeClass('search--open');
+      $(document).off('keyup', Drupal.behaviors.site_search.escCloseSearch);
+    },
+
+    escCloseSearch: function (event) {
+      if (event.keyCode === 27) {
+        Drupal.behaviors.site_search.closeSearch();
+      }
     },
 
     searchSubmit: function () {
