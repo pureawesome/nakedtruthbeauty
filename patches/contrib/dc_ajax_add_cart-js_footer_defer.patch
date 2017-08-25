@@ -1,0 +1,13 @@
+diff --git a/sites/all/modules/contrib/dc_ajax_add_cart/dc_ajax_add_cart.module b/sites/all/modules/contrib/dc_ajax_add_cart/dc_ajax_add_cart.module
+index 00eaa24..440db0b 100644
+--- a/sites/all/modules/contrib/dc_ajax_add_cart/dc_ajax_add_cart.module
++++ b/sites/all/modules/contrib/dc_ajax_add_cart/dc_ajax_add_cart.module
+@@ -901,6 +901,8 @@ function dc_ajax_add_cart_library() {
+     'js' => array(
+       $module_path . '/js/dc_ajax_add_cart_html.js' => array(
+         'group' => JS_DEFAULT,
++        'defer' => TRUE,
++        'scope' => 'footer',
+       ),
+     ),
+     'css' => array(
