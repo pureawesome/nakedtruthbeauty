@@ -14,6 +14,19 @@ function ntb_theme() {
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
+  $ntb_css = drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.01';
+  $preload_css = array(
+    '#type' => 'markup',
+    '#markup' => '<link rel="preload" href="/' . $ntb_css . '" as="style" onload="this.rel=\'stylesheet\'">',
+  );
+
+  $noscript_css = array(
+    '#type' => 'markup',
+    '#markup' => '<noscript><link rel="stylesheet" href="/' . $ntb_css . '"></noscript>',
+  );
+
+  drupal_add_html_head($preload_css, 'preload_css');
+  drupal_add_html_head($noscript_css, 'noscript_css');
   drupal_add_library('ntb', 'ntb');
 
   // Get the entire main menu tree.
@@ -159,6 +172,23 @@ function ntb_library() {
     ),
   );
 
+  $libraries['loadcss'] = array(
+    'title' => 'loadCSS',
+    'version' => '1.3.1',
+    'js' => array(
+      libraries_get_path('node_modules') . '/fg-loadcss/src/loadCSS.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+      libraries_get_path('node_modules') . '/fg-loadcss/src/cssrelpreload.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+
+  $critical_css = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/critical/ntb_critical.css');
+
   $libraries['ntb'] = array(
     'title' => 'NTB',
     'version' => '1.2',
@@ -169,16 +199,18 @@ function ntb_library() {
       ),
     ),
     'css' => array(
-      drupal_get_path('theme', 'ntb') . '/css/ntb.css' => array(
+      $critical_css => array(
         'group' => CSS_THEME,
         'every_page' => TRUE,
         'preprocess' => FALSE,
+        'type' => 'inline',
       ),
     ),
     'dependencies' => [
       ['ntb', 'bootstrap_collapse'],
       ['ntb', 'bootstrap_dropdown'],
       ['ntb', 'modernizr'],
+      ['ntb', 'loadcss'],
     ],
   );
 
@@ -194,4 +226,15 @@ function ntb_library() {
   );
 
   return $libraries;
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function ntb_js_alter(&$javascript) {
+  foreach ($javascript as $key => &$script) {
+    if ($script['scope'] == 'header') {
+      $script['scope'] = 'footer';
+    }
+  }
 }
