@@ -235,6 +235,7 @@ function ntb_js_alter(&$javascript) {
   foreach ($javascript as $key => &$script) {
     if ($script['scope'] == 'header') {
       $script['scope'] = 'footer';
+      $script['defer'] = TRUE;
     }
   }
 }
