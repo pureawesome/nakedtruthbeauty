@@ -6,7 +6,7 @@
   'use strict';
 
   Drupal.behaviors.ntb = {
-    attach: function (context) {
+    attach: function (context, settings) {
       var self = this;
 
       $('body').once('nav-script', function () {
@@ -25,6 +25,8 @@
       $('.lazy-img').each(function () {
         self.loadImg(this);
       });
+
+      loadCSS(settings.ntb_css.path);
 
       if (!Modernizr.touch) {
         $('a.dropdown-toggle').on('click', function (e) {

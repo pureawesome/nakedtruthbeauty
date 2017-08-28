@@ -6,3 +6,8 @@
 @import 'breakpoint';
 
 @import '../components/nav';
+
+.search-container,
+.cart-container {
+  opacity: 0;
+}
