@@ -15,18 +15,22 @@ function ntb_theme() {
  */
 function ntb_preprocess_page(&$vars) {
   $ntb_css = drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.01';
-  $preload_css = array(
-    '#type' => 'markup',
-    '#markup' => '<link rel="preload" href="/' . $ntb_css . '" as="style" onload="this.rel=\'stylesheet\'">',
+
+  $noscript = array(
+    '#theme' => 'html_tag',
+    '#tag' => 'link',
+    '#attributes' => array(
+      'href' => '/' . $ntb_css,
+    ),
   );
 
-  $noscript_css = array(
-    '#type' => 'markup',
-    '#markup' => '<noscript><link rel="stylesheet" href="/' . $ntb_css . '"></noscript>',
+  $noscript_wrapper = array(
+    '#theme' => 'html_tag',
+    '#tag' => 'noscript',
+    '#value' => drupal_render($noscript),
   );
 
-  drupal_add_html_head($preload_css, 'preload_css');
-  drupal_add_html_head($noscript_css, 'noscript_css');
+  drupal_add_html_head($noscript_wrapper, 'noscript');
   drupal_add_library('ntb', 'ntb');
 
   // Get the entire main menu tree.
@@ -197,12 +201,19 @@ function ntb_library() {
         'defer' => TRUE,
         'scope' => 'footer',
       ),
+      array(
+        'data' => array(
+          'ntb_css' => array(
+            'path' => drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.01',
+          ),
+        ),
+        'type' => 'setting',
+      ),
     ),
     'css' => array(
       $critical_css => array(
         'group' => CSS_THEME,
         'every_page' => TRUE,
-        'preprocess' => FALSE,
         'type' => 'inline',
       ),
     ),
@@ -235,7 +246,6 @@ function ntb_js_alter(&$javascript) {
   foreach ($javascript as $key => &$script) {
     if ($script['scope'] == 'header') {
       $script['scope'] = 'footer';
-      $script['defer'] = TRUE;
     }
   }
 }
