@@ -34,7 +34,7 @@ function ntb_preprocess_page(&$vars) {
 
   $preload_fonts = [
     'quicksand-regular-webfont.woff2',
-    'fontawesome-webfont.woff2?v4.6.3',
+    'fontawesome-webfont.woff2?v=4.6.3',
     'quicksand-bold-webfont.woff2',
     'have_heart_one-webfont.woff2',
   ];
