@@ -31,7 +31,7 @@ p, h3{ orphans: 3; widows: 3; }
 html{ font-size: 10px; -webkit-tap-highlight-color: transparent; }
 body{ font-family: quicksand, quicksand, helvetica, arial, sans-serif; font-size: 16px; line-height: 1.42857143; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); }
 input, button{ font-family: inherit; font-size: inherit; line-height: inherit; }
-a{ color: rgb(80, 168, 159); text-decoration: none; }
+a{ color: rgb(60, 127, 120); text-decoration: none; }
 img{ vertical-align: middle; }
 .sr-only{ position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; overflow: hidden; clip: rect(0px 0px 0px 0px); border: 0px; }
  h3, .h3{ font-family: inherit; font-weight: 500; line-height: 1.1; color: inherit; }
@@ -126,9 +126,9 @@ input[type="search"]{ -webkit-appearance: none; }
 #logo{ margin: 10px auto 5px; width: 500px; max-width: 100%; display: none; text-align: center; padding: 20px 30px; }
 .icon-menu-fixed{ top: 7px; right: 15px; position: absolute; width: auto; margin: 0px; }
 .icon-menu-fixed li{ display: inline-block; }
-.mobile-logo{ line-height: 50px; color: rgb(145, 205, 197); margin: 0px auto; width: 100%; text-align: center; display: inline-block; vertical-align: middle; }
-.mobile-logo span{ color: rgb(80, 168, 159); }
-.fa-icon{ font-size: 26px; background-image: none; border: 0px; color: rgb(80, 168, 159); line-height: 1; padding: 0px; display: inline-block; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.mobile-logo{ line-height: 50px; color: rgb(74, 163, 152); margin: 0px auto; width: 100%; text-align: center; display: inline-block; vertical-align: middle; }
+.mobile-logo span{ color: rgb(60, 127, 120); }
+.fa-icon{ font-size: 26px; background-image: none; border: 0px; color: rgb(60, 127, 120); line-height: 1; padding: 0px; display: inline-block; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
 .fa-icon i{ padding: 5px; }
 .search-block, .cart{ display: inline-block; vertical-align: middle; }
  .cart-icon, .search-toggle{ display: block; position: relative; float: right; }
@@ -142,16 +142,16 @@ input[type="search"]{ -webkit-appearance: none; }
 .navbar-default .navbar-collapse{ max-height: 100%; background-size: 100%; background-image: linear-gradient(rgb(145, 205, 197), rgb(255, 204, 153)); }
 .navbar-default .navbar-nav{ float: left; }
 .navbar-default .navbar-nav.inline{ display: inline-block; vertical-align: middle; width: 100%; margin: auto; }
-.navbar-default .navbar-nav > li > a{ width: 100%; color: rgb(55, 116, 110); font-size: 20px; padding: 20px 25px; -webkit-animation: all 0.2s ease-in-out; display: inline-block; vertical-align: middle; }
+.navbar-default .navbar-nav > li > a{ width: 100%; color: rgb(36, 75, 71); font-size: 20px; padding: 20px 25px; -webkit-animation: all 0.2s ease-in-out; display: inline-block; vertical-align: middle; }
 .navbar-default .navbar-nav > li > a.cart-icon{ padding: 0px; font-size: 26px; }
-.navbar-default .navbar-toggle .icon-bar{ background-color: rgb(80, 168, 159); }
+.navbar-default .navbar-toggle .icon-bar{ background-color: rgb(60, 127, 120); }
 .navbar-nav > li > a{ text-align: center; text-transform: lowercase; }
 .navbar-toggle{ border: 0px; position: absolute; margin-left: 15px; }
 .dropdown-menu{ text-align: center; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border: 1px solid rgb(198, 229, 225); }
 .custom-user-menu .user-dropdown{ display: none; }
 @media (min-width: 768px){
 .custom-user-menu .user-dropdown{ display: block; }
-.navbar-default .navbar-nav > li > a{ padding: 10px 15px; color: rgb(80, 168, 159); }
+.navbar-default .navbar-nav > li > a{ padding: 10px 15px; color: rgb(60, 127, 120); }
 .navbar-default .navbar-nav.inline:first-of-type{ margin-left: -15px; }
 .navbar-nav{ float: none; }
 .navbar-default .navbar-nav.inline{ width: auto; }
