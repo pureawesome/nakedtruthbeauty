@@ -31,6 +31,26 @@ function ntb_preprocess_page(&$vars) {
   );
 
   drupal_add_html_head($noscript_wrapper, 'noscript');
+
+  $preload_fonts = [
+    'quicksand-regular-webfont.woff2',
+    'fontawesome-webfont.woff2?v4.6.3',
+    'quicksand-bold-webfont.woff2',
+    'have_heart_one-webfont.woff2',
+  ];
+
+  $theme_path = drupal_get_path('theme', 'ntb');
+
+  foreach ($preload_fonts as $font) {
+    $attributes = [
+      'rel' => 'preload',
+      'href' => '/' . $theme_path . '/fonts/' . $font,
+      'as' => 'font',
+      'crossorigin' => 'anonymous',
+    ];
+    drupal_add_html_head_link($attributes);
+  }
+
   drupal_add_library('ntb', 'ntb');
 
   // Get the entire main menu tree.
