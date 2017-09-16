@@ -16,7 +16,7 @@
           setTimeout(function () {
             self.buildForm();
             self.triggerOverlay();
-          }, 5000);
+          }, 15000);
         }
       });
     },
