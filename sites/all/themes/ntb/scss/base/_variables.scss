@@ -1,5 +1,7 @@
 $primary-blue: #91cdc5;
+// $primary-blue:
 $secondary-blue: #50a89f;
+$secondary-blue: darken($secondary-blue, 12%);
 $primary-peach: #ffcc99;
 $pink: #fbbc9b;
 // $teal: #93ccc5;
@@ -8,6 +10,8 @@ $border-light: #eee;
 $text-dark: #333;
 
 $brand-primary: $secondary-blue;
+// $link-color: darken($secondary-blue, 12%);
+$link-color: $secondary-blue;
 $font-family-sans-serif: quicksand, 'quicksand', helvetica, arial, sans-serif;
 $font-family-serif: 'have_heart_oneregular', Georgia, "Times New Roman", Times, serif;
 $bp-large: 1200px;

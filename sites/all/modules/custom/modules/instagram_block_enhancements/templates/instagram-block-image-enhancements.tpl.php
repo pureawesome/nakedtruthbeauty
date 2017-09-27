@@ -13,4 +13,5 @@
 ?>
 <a class="group" target="_blank" data-instagram-rel="1" href="<?php print $href ?>" rel="noopener">
   <img class="lazy-img" alt="<?php print $post->caption->text; ?>" style="float: left; margin: 0 5px 5px 0px; width: <?php print $width ?>px; height: <?php print $height ?>px;" src="<?php print $loading ?>" data-src="<?php print $src ?>">
+  <span class="sr-only"><?php print $post->caption->text; ?></span>
 </a>
