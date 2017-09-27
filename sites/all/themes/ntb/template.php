@@ -114,14 +114,14 @@ function ntb_preprocess_page(&$vars) {
 }
 
 /**
- * Implements THEMENAME_menu_tree__MENU_NAME()().
+ * Implements THEMENAME_menu_tree__MENU_NAME().
  */
 function ntb_menu_tree__main_menu($variables) {
   return '<ul class="links inline clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
 }
 
 /**
- * Implements THEMENAME_menu_link__MENU_NAME()().
+ * Implements THEMENAME_menu_link__MENU_NAME().
  */
 function ntb_menu_link__main_menu($variables) {
   $element = $variables['element'];
@@ -224,7 +224,7 @@ function ntb_library() {
       array(
         'data' => array(
           'ntb_css' => array(
-            'path' => drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.01',
+            'path' => drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.02',
           ),
         ),
         'type' => 'setting',
