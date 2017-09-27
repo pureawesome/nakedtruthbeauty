@@ -159,6 +159,7 @@ ul.primary {
   color: $secondary-blue;
 
   a {
+    color: #333;
     color: $secondary-blue;
 
     &:hover {
@@ -217,12 +218,4 @@ ul.ntb-top-three {
     padding: 0;
     list-style: none;
   }
-}
-
-.color-primary {
-  color: $primary-blue;
-}
-
-.color-secondary {
-  color: $secondary-blue;
 }

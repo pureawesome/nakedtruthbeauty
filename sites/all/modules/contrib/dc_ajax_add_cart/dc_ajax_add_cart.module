@@ -901,8 +901,6 @@ function dc_ajax_add_cart_library() {
     'js' => array(
       $module_path . '/js/dc_ajax_add_cart_html.js' => array(
         'group' => JS_DEFAULT,
-        'defer' => TRUE,
-        'scope' => 'footer',
       ),
     ),
     'css' => array(
