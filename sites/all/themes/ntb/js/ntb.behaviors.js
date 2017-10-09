@@ -26,9 +26,9 @@
         self.loadImg(this);
       });
 
-      if (document.cookie.indexOf('ntb_css=' + settings.ntb_css.version) === -1) {
+      if (document.cookie.indexOf('STYXKEY_ntb_css=' + settings.ntb_css.version) === -1) {
         loadCSS(settings.ntb_css.path);
-        document.cookie = 'ntb_css=' + settings.ntb_css.version + ';expires=Thu, 18 Dec 2020 12:00:00 UTC';
+        document.cookie = 'STYXKEY_ntb_css=' + settings.ntb_css.version + ';expires=Thu, 18 Dec 2020 12:00:00 UTC';
       }
 
       if (!Modernizr.touch) {
