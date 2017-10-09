@@ -1,5 +1,7 @@
 <?php
 
+define('CSS_VERSION', '1.02');
+
 /**
  * Implements hook_theme().
  */
@@ -14,12 +16,14 @@ function ntb_theme() {
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
-  $ntb_css = drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.02';
+  $ntb_css = drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION;
 
   $noscript = array(
     '#theme' => 'html_tag',
     '#tag' => 'link',
     '#attributes' => array(
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
       'href' => '/' . $ntb_css,
     ),
   );
@@ -31,6 +35,10 @@ function ntb_preprocess_page(&$vars) {
   );
 
   drupal_add_html_head($noscript_wrapper, 'noscript');
+
+  if ($_COOKIE['ntb_css'] === CSS_VERSION) {
+    drupal_add_html_head_link($noscript['#attributes'], 'ntb_css');
+  }
 
   $preload_fonts = [
     'quicksand-regular-webfont.woff2',
@@ -224,7 +232,8 @@ function ntb_library() {
       array(
         'data' => array(
           'ntb_css' => array(
-            'path' => '/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.02',
+            'path' => '/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION,
+            'version' => CSS_VERSION,
           ),
         ),
         'type' => 'setting',
