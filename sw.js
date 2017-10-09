@@ -1,7 +1,7 @@
 'use strict';
 
 // Credit: filament -> adactio
-var version = 'v0.9::';
+var version = 'v1.0::';
 var staticCacheName = version + 'static';
 var pagesCacheName = version + 'pages';
 var imagesCacheName = version + 'images';
@@ -45,8 +45,8 @@ function updateStaticCache() {
         '/sites/all/libraries/bootstrap/js/lib/dropdown.min.js?v=3.3.6',
         '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
-        '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.1',
-        '/sites/all/themes/ntb/css/ntb.css?v=1.0',
+        '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.2',
+        '/sites/all/themes/ntb/css/ntb.css?v=1.02',
         '/sites/all/themes/ntb/logo.png',
         '/offline',
         '/'
