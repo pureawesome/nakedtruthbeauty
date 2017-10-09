@@ -37,7 +37,7 @@ function ntb_preprocess_page(&$vars) {
   drupal_add_html_head($noscript_wrapper, 'noscript');
 
   if (isset($_COOKIE['STYXKEY_ntb_css']) && $_COOKIE['STYXKEY_ntb_css'] === CSS_VERSION) {
-    drupal_add_html_head_link($noscript['#attributes'], 'ntb_css');
+    drupal_add_css('/' . $ntb_css, array('group' => CSS_THEME, 'preprocess' => 'false'));
   }
 
   $preload_fonts = [
