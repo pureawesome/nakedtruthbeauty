@@ -35,7 +35,8 @@ function ntb_preprocess_page(&$vars) {
   );
 
   drupal_add_html_head($noscript_wrapper, 'noscript');
-
+  print_r($_COOKIE);
+  print_r($_COOKIE['ntb_css']);
   if (isset($_COOKIE['ntb_css']) && $_COOKIE['ntb_css'] === CSS_VERSION) {
     drupal_add_html_head_link($noscript['#attributes'], 'ntb_css');
   }
