@@ -216,7 +216,17 @@ function ntb_library() {
   return $libraries;
 }
 
+/**
+ * Implements hook_preprcess_html().
+ */
 function ntb_preprocess_html(&$vars) {
   $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/critical/ntb_critical.css');
   $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
+}
+
+/**
+ * Implements hook_html_head_alter().
+ */
+function ntb_html_head_alter(&$head_elements) {
+  unset($head_elements['system_meta_content_type']);
 }
