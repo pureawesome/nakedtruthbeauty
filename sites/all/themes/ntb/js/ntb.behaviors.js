@@ -26,11 +26,6 @@
         self.loadImg(this);
       });
 
-      if (settings.loadCSS) {
-        loadCSS(settings.ntb_css.path);
-        document.cookie = 'STYXKEY_ntb_css=' + settings.ntb_css.version + ';expires=Thu, 18 Dec 2020 12:00:00 UTC';
-      }
-
       if (!Modernizr.touch) {
         $('a.dropdown-toggle').on('click', function (e) {
           var url = $(this).attr('href');
