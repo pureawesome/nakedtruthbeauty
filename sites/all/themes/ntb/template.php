@@ -39,6 +39,9 @@ function ntb_preprocess_page(&$vars) {
   if (isset($_COOKIE['STYXKEY_ntb_css']) && $_COOKIE['STYXKEY_ntb_css'] === CSS_VERSION) {
     drupal_add_css('/' . $ntb_css, array('group' => CSS_THEME, 'preprocess' => 'false'));
   }
+  else {
+    drupal_add_js(array('loadCSS' => 1), 'setting');
+  }
 
   $preload_fonts = [
     'quicksand-regular-webfont.woff2',
