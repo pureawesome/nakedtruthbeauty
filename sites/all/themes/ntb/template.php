@@ -38,7 +38,7 @@ function ntb_preprocess_page(&$vars) {
 
   if (isset($_COOKIE['STYXKEY_ntb_css']) && $_COOKIE['STYXKEY_ntb_css'] === CSS_VERSION) {
     watchdog('load_css', 'has cookie');
-    drupal_add_css('/' . $ntb_css, array('preprocess' => 'false'));
+    drupal_add_css('/' . $ntb_css, array('group' => CSS_THEME, 'preprocess' => 'false'));
   }
   else {
     watchdog('load_css', 'does not have cookie');
