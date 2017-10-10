@@ -1,5 +1,7 @@
 <?php
 
+define('CSS_VERSION', '1.02');
+
 /**
  * Implements hook_theme().
  */
@@ -14,6 +16,25 @@ function ntb_theme() {
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
+  $ntb_css = drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION;
+
+  $noscript = array(
+    '#theme' => 'html_tag',
+    '#tag' => 'link',
+    '#attributes' => array(
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'href' => '/' . $ntb_css,
+    ),
+  );
+
+  $noscript_wrapper = array(
+    '#theme' => 'html_tag',
+    '#tag' => 'noscript',
+    '#value' => drupal_render($noscript),
+  );
+
+  drupal_add_html_head($noscript_wrapper, 'noscript');
 
   $preload_fonts = [
     'quicksand-regular-webfont.woff2',
@@ -179,6 +200,20 @@ function ntb_library() {
     ),
   );
 
+  $libraries['loadcss'] = array(
+    'title' => 'loadCSS',
+    'version' => '1.3.1',
+    'js' => array(
+      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/src/loadCSS.min.js') => array(
+        'type' => 'inline',
+      ),
+      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/src/cssrelpreload.min.js') => array(
+        'type' => 'inline',
+      ),
+    ),
+  );
+
+
   $libraries['ntb'] = array(
     'title' => 'NTB',
     'version' => '1.2',
@@ -187,18 +222,15 @@ function ntb_library() {
         'defer' => TRUE,
         'scope' => 'footer',
       ),
-    ),
-    'css' => array(
-      drupal_get_path('theme', 'ntb') . '/css/ntb.css' => array(
-        'group' => CSS_THEME,
-        'every_page' => TRUE,
-        'preprocess' => false,
+      'loadCSS("' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION . '");' => array(
+        'type' => 'inline',
       ),
     ),
     'dependencies' => [
       ['ntb', 'bootstrap_collapse'],
       ['ntb', 'bootstrap_dropdown'],
       ['ntb', 'modernizr'],
+      ['ntb', 'loadcss'],
     ],
   );
 
@@ -229,4 +261,15 @@ function ntb_preprocess_html(&$vars) {
  */
 function ntb_html_head_alter(&$head_elements) {
   unset($head_elements['system_meta_content_type']);
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function ntb_js_alter(&$javascript) {
+  foreach ($javascript as $key => &$script) {
+    if ($script['scope'] == 'header' && $script['type'] != 'inline') {
+      $script['scope'] = 'footer';
+    }
+  }
 }

@@ -48,7 +48,7 @@ function ntb_signup_library() {
     'css' => array(
       drupal_get_path('module', 'ntb_signup') . '/css/ntb_signup.min.css' => array(
         'type' => 'file',
-        'media' => 'screen',
+        'media' => 'all',
       ),
     ),
   );
