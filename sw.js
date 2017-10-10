@@ -1,7 +1,7 @@
 'use strict';
 
 // Credit: filament -> adactio
-var version = 'v1.0::';
+var version = 'v1.01::';
 var staticCacheName = version + 'static';
 var pagesCacheName = version + 'pages';
 var imagesCacheName = version + 'images';
@@ -27,26 +27,24 @@ function updateStaticCache() {
         '/sites/all/themes/ntb/fonts/have_heart_one-webfont.woff2',
         '/sites/all/themes/ntb/fonts/quicksand-bold-webfont.woff2',
         '/sites/all/modules/custom/features/site_products/js/site_shop.min.js?v=1.0',
-        '/sites/all/modules/custom/features/site_search/js/site_search.min.js?v=1',
+        '/sites/all/modules/custom/features/site_search/js/site_search.min.js?v=1.0',
         '/sites/all/modules/custom/features/site_products/js/site_products.min.js?v=1.0',
-        '/sites/all/modules/contrib/dc_ajax_add_cart/js/dc_ajax_add_cart_html.js',
-        '/sites/all/modules/custom/modules/dc_ajax_enhancements/js/dc_ajax_enhancements.min.js?v=1',
-        '/sites/all/modules/contrib/flexslider/assets/js/flexslider.load.js',
-        '/sites/all/libraries/flexslider/jquery.flexslider-min.js'
+        '/sites/all/modules/contrib/dc_ajax_add_cart/js/dc_ajax_add_cart_html.js?v=1.0.0',
+        '/sites/all/modules/custom/modules/dc_ajax_enhancements/js/dc_ajax_enhancements.min.js?v=1.0',
+        '/sites/all/modules/custom/modules/ntb_signup/js/ntb_signup.min.js?v=1.1'
       ].concat(offlinePages));
       // These items must be cached for the Service Worker to complete installation
       return cache.addAll([
         '/misc/jquery.once.js?v=1.2',
         '/misc/drupal.js',
-        '/misc/ajax.js',
-        '/misc/progress.js',
+        '/misc/ajax.js?v=7.56',
+        '/misc/progress.js?v=7.56',
         '/sites/all/libraries/modernizr/modernizr-2.8.3.min.js?v=2.3.8',
         '/sites/all/libraries/bootstrap/js/lib/collapse.min.js?v=3.3.6',
         '/sites/all/libraries/bootstrap/js/lib/dropdown.min.js?v=3.3.6',
         '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
         '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.2',
-        '/sites/all/themes/ntb/css/ntb.css?v=1.02',
         '/sites/all/themes/ntb/logo.png',
         '/offline',
         '/'
