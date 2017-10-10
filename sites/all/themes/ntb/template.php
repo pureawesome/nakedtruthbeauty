@@ -37,9 +37,11 @@ function ntb_preprocess_page(&$vars) {
   drupal_add_html_head($noscript_wrapper, 'noscript');
 
   if (isset($_COOKIE['STYXKEY_ntb_css']) && $_COOKIE['STYXKEY_ntb_css'] === CSS_VERSION) {
-    drupal_add_css('/' . $ntb_css, array('group' => CSS_THEME, 'preprocess' => 'false'));
+    watchdog('load_css', 'has cookie');
+    drupal_add_css('/' . $ntb_css, array('preprocess' => 'false'));
   }
   else {
+    watchdog('load_css', 'does not have cookie');
     drupal_add_js(array('loadCSS' => 1), 'setting');
   }
 
