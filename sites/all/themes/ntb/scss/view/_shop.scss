@@ -28,6 +28,10 @@
 }
 
 .view-shop {
+  .js & .views-row {
+    opacity: 0;
+  }
+
   .view-content {
     width: 100%;
     display: flex;
