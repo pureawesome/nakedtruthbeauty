@@ -5,7 +5,7 @@
 
   .navbar-collapse {
     max-height: 100%;
-    @include background-image(linear-gradient($primary-blue, $primary-peach));
+    background: linear-gradient($primary-blue, $primary-peach);
 
     &.in {
       height: 100vh;
@@ -17,7 +17,7 @@
   }
 
   .navbar-nav.inline {
-    @include inline-block();
+    display: inline-block;
     width: 100%;
     margin: auto;
   }
@@ -27,8 +27,8 @@
     color: $secondary-blue;
     font-size: 20px;
     padding: 20px 25px;
-    @include animation(all 0.2s ease-in-out);
-    @include inline-block;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
 
     &:hover,
     &:focus {

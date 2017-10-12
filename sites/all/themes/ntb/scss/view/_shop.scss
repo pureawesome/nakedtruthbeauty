@@ -11,7 +11,7 @@
 
   @include breakpoint($screen-xs) {
     .views-row {
-      @include inline-block();
+      display: inline-block;
       text-transform: lowercase;
       font-size: 20px;
       margin: 0 25px;
@@ -30,9 +30,9 @@
 .view-shop {
   .view-content {
     width: 100%;
-    @include display-flex;
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .title {

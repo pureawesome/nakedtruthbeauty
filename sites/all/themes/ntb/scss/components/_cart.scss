@@ -5,10 +5,10 @@
 
 /* Layout for cart container */
 .cart-container {
-  @include display-flex();
-	@include flex-direction(column);
-	@include justify-content(center);
-	@include align-items(center);
+  display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 	background: rgba(18, 23, 56, 0.9);
 
@@ -139,8 +139,8 @@
 .js .cart-container {
 	pointer-events: none;
 	opacity: 0;
-  @include transition-property(opacity);
-  @include transition-duration(0.5s);
+  transform: transition-property(opacity);
+  transform: transition-duration(0.5s);
 }
 
 .js .cart--open {
@@ -150,51 +150,51 @@
 
 .cart--open::before,
 .cart--open::after {
-	@include translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 
 /* Close button */
 .btn--cart-close {
 	opacity: 0;
-	@include scale3d(0.8, 0.8, 1);
-  @include transition-property(opacity, transform);
-	@include transition-duration(0.5s, 0.5s);
+	transform: scale3d(0.8, 0.8, 1);
+  transform: transition-property(opacity, transform);
+	transform: transition-duration(0.5s, 0.5s);
 
 	.cart--open & {
 		opacity: 1;
-		@include scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
 	}
 }
 
 /* cart form with input and description */
 .js .cart__form {
 	opacity: 0;
-  @include scale3d(0.8, 0.8, 1);
-	@include transition-property(opacity, transform);
-	@include transition-duration(0.5s, 0.5s);
+  transform: scale3d(0.8, 0.8, 1);
+	transform: transition-property(opacity, transform);
+	transform: transition-duration(0.5s, 0.5s);
 }
 
 .js .cart--open .cart__form {
 	opacity: 1;
-	@include scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
 }
 
 .cart__suggestion {
 	opacity: 0;
-  @include translate3d(0, -30px, 0);
-	@include transition-property(opacity, transform);
-	@include transition-duration(0.5s, 0.5s);
+  transform: translate3d(0, -30px, 0);
+	transform: transition-property(opacity, transform);
+	transform: transition-duration(0.5s, 0.5s);
 
 	.cart--open & {
 		opacity: 1;
-		@include translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
 
 		&:nth-child(2) {
-			@include transition-delay(0.1s);
+			transform: transition-delay(0.1s);
 		}
 
 		&:nth-child(3) {
-			@include transition-delay(0.2s);
+			transform: transition-delay(0.2s);
 		}
 	}
 }
@@ -267,17 +267,17 @@
 		font-size: 3vw;
 		float: none;
 		opacity: 0;
-		@include translate3d(0, -30px, 0);
-    @include transition-property(opacity, transform);
-    @include transition-duration(0.5s, 0.5s);
+		transform: translate3d(0, -30px, 0);
+    transform: transition-property(opacity, transform);
+    transform: transition-duration(0.5s, 0.5s);
 
 		.cart--open & {
 			opacity: 1;
-			@include translate3d(0, 0, 0);
-			@include transition-delay(0.1s);;
+			transform: translate3d(0, 0, 0);
+			transform: transition-delay(0.1s);;
 
 			&:nth-child(2) {
-				@include transition-delay(0.3s);
+				transform: transition-delay(0.3s);
 			}
 		}
 	}

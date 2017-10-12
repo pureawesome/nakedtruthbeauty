@@ -6,6 +6,6 @@
 }
 
 .view-ingredients .view-content {
-  @include display-flex();
-  @include flex-wrap(wrap);
+  display: flex;
+  flex-wrap: wrap;
 }

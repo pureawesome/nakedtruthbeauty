@@ -29,7 +29,7 @@
   margin: 0 auto;
   width: 100%;
   text-align: center;
-  @include inline-block;
+  display: inline-block;
 
   span {
     color: $secondary-blue;
@@ -43,7 +43,7 @@
   color: $secondary-blue;
   line-height: 1;
   padding: 0;
-  @include inline-block();
+  display: inline-block;
 
   i {
     padding: 5px;
@@ -56,7 +56,7 @@
 
 .search-block,
 .cart {
-  @include inline-block();
+  display: inline-block;
 }
 
 .user-icon,
@@ -102,7 +102,7 @@
   }
 
   .icon-menu .fa-icon.active {
-    @include background-image(linear-gradient($secondary-blue, $primary-blue));
+    background: linear-gradient($secondary-blue, $primary-blue);
     color: $white;
     border-radius:5px 5px 0 0;
   }

@@ -4,10 +4,10 @@
 
 /* Layout for search container */
 .search-container {
-	@include display-flex();
-	@include flex-direction(column);
-	@include justify-content(center);
-	@include align-items(center);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 	background: rgba(18, 23, 56, 0.9);
 
@@ -57,7 +57,7 @@
 	border: 0;
 	background: transparent;
 	border-radius: 0;
-	@include appearance(none);
+	appearance: none;
 
   &:focus {
     outline: none;
@@ -103,7 +103,7 @@
 }
 
 .search__related {
-	@include display-flex();
+	display: flex;
 	width: 75%;
 	pointer-events: none;
 	right: 100%;
@@ -147,8 +147,8 @@
 .js .search-container {
 	pointer-events: none;
 	opacity: 0;
-	@include transition-property(opacity);
-	@include transition-duration(0.5s);
+	transition-property: opacity;
+	transition-duration:0.5s;
 }
 
 .js .search--open {
@@ -159,54 +159,54 @@
 
 .search--open::before,
 .search--open::after {
-	@include translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 
 /* Close button */
 .btn--search-close {
 	opacity: 0;
-	@include scale3d(0.8, 0.8, 1);
+	transform: scale3d(0.8, 0.8, 1);
 	cursor: pointer;
-	@include transition-property(opacity, transform);
-	@include transition-duration(0.5s, 0.5s);
+	transform: transition-property(opacity, transform);
+	transform: transition-duration(0.5s, 0.5s);
 
 	.search--open & {
 		opacity: 1;
-		@include scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
 	}
 }
 
 /* Search form with input and description */
 .js .search__form {
 	opacity: 0;
-	@include scale3d(0.8, 0.8, 1);
-	@include transition-property(opacity, transform);
-	@include transition-duration(0.5s, 0.5s);
+	transform: scale3d(0.8, 0.8, 1);
+	transform: transition-property(opacity, transform);
+	transform: transition-duration(0.5s, 0.5s);
 }
 
 .js .search--open .search__form {
 	opacity: 1;
-	@include scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
 }
 
 .search__suggestion {
 	opacity: 0;
-	@include translate3d(0, -30px, 0);
-	@include transition-property(opacity, transform);
-	@include transition-duration(0.5s, 0.5s);
-	@include transition-delay(0.1s);
+	transform: translate3d(0, -30px, 0);
+	transform: transition-property(opacity, transform);
+	transform: transition-duration(0.5s, 0.5s);
+	transform: transition-delay(0.1s);
 	pointer-events: auto;
 
 	.search--open & {
 		opacity: 1;
-		@include translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
 
 		&:nth-child(2) {
-			@include transition-delay(0.2s);
+			transform: transition-delay(0.2s);
 		}
 
 		&:nth-child(3) {
-			@include transition-delay(0.3s);
+			transform: transition-delay(0.3s);
 		}
 	}
 }
@@ -237,8 +237,8 @@
 	margin-bottom: 15px;
 
 	.content {
-		@include display-flex();
-		@include flex-direction(row);
+		display: flex;
+		flex-direction: row;
 	}
 
 	h2 {
@@ -248,8 +248,8 @@
 	.img {
 		max-width: 100px;
 		min-width: 80px;
-		@include display-flex();
-		@include align-items(center);
+		display: flex;
+		align-items: center;
 	}
 
 	.body {

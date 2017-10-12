@@ -6,7 +6,7 @@
   }
 
   .field-name-field-tags .field-item {
-    @include inline-block();
+    display: inline-block;
     margin-right: 15px;
   }
 }

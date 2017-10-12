@@ -17,7 +17,7 @@
     text-align: center;
     width: 100%;
     margin-bottom: 10px;
-    @include inline-block();
+    display: inline-block;
   }
 
   legend {
@@ -78,7 +78,7 @@ table.checkout-review .pane-data-full {
   width: 100%;
   text-transform: lowercase;
   text-align: center;
-  @include inline-block();
+  display: inline-block;
 }
 
 ul.commerce-checkout-progress {
