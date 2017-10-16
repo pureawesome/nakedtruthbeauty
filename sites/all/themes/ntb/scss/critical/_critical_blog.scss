@@ -9,6 +9,7 @@ html{ font-family: sans-serif; }
 body{ margin: 0px; }
  nav{ display: block; }
 a{ background-color: transparent; }
+ strong{ font-weight: bold; }
 h1{ font-size: 2em; margin: 0.67em 0px; }
 img{ border: 0px; }
 button, input{ color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; }
@@ -30,7 +31,7 @@ h2, h3{ page-break-after: avoid; }
 }
 *{ box-sizing: border-box; }
 html{ font-size: 10px; -webkit-tap-highlight-color: transparent; }
-body{ font-family: quicksand, quicksand, helvetica, arial, sans-serif; font-size: 16px; line-height: 1.42857143; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); }
+body{ font-family: quicksand, quicksand, Verdana, Tahoma, sans-serif; font-size: 16px; line-height: 1.42857143; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); }
 input, button{ font-family: inherit; font-size: inherit; line-height: inherit; }
 a{ color: rgb(60, 127, 120); text-decoration: none; }
 img{ vertical-align: middle; }
