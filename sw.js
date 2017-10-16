@@ -45,7 +45,7 @@ function updateStaticCache() {
         '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
         '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.2',
-        '/sites/all/themes/ntb/css/ntb.css?v=1.03',
+        '/sites/all/themes/ntb/css/ntb.css?v=1.04',
         '/sites/all/themes/ntb/logo.png',
         '/offline',
         '/'
