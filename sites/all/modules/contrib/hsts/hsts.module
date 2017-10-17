@@ -26,6 +26,12 @@ function hsts_init() {
       $hsts_header .= ';includeSubDomains';
     }
 
+    if (variable_get('hsts_preload', FALSE)) {
+
+      // Include preload
+      $hsts_header .= ';preload';
+    }
+
     // Add the header
     drupal_add_http_header('Strict-Transport-Security', $hsts_header);
   }
