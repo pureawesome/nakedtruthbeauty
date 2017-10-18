@@ -51,6 +51,13 @@ function hsts_admin_settings_form() {
     '#default_value' => variable_get('hsts_subdomains', FALSE),
   );
 
+  $form['hsts_preload'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Preload'),
+    '#description' => t('The preload directive allows your domain to be submitted for inclusion by browsers at <a href="https://hstspreload.appspot.com/">hstspreload.appspot.com</a>. Do not enable preload unless you are sure you want all sites on your domain to be HTTPS-only for the long term.'),
+    '#default_value' => variable_get('hsts_preload', FALSE),
+  );
+
   return system_settings_form($form);
 }
 
