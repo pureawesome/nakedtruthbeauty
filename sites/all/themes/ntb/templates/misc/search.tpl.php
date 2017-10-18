@@ -11,7 +11,7 @@
           <span class="sr-only">Close</span>
         </div>
       </div>
-      <form class="pull-right navbar-search search-form search__form" role="search">
+      <form class="navbar-form navbar-left pull-right navbar-search search-form search__form" role="search">
         <div class="form-group">
           <input class="search__input" name="search" type="search" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" aria-label="Search">
           <span class="search__info">Hit enter to search or ESC to close</span>
