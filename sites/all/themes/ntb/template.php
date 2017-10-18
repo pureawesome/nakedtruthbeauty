@@ -16,7 +16,7 @@ function ntb_theme() {
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
-  $ntb_css = drupal_get_path('theme', 'ntb') . '/css/compressed/ntb.css?v=' . CSS_VERSION;
+  $ntb_css = drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION;
 
   $noscript = array(
     '#theme' => 'html_tag',
@@ -222,7 +222,7 @@ function ntb_library() {
         'defer' => TRUE,
         'scope' => 'footer',
       ),
-      'loadCSS("/' . drupal_get_path('theme', 'ntb') . '/css/compressed/ntb.css?v=' . CSS_VERSION . '");' => array(
+      'loadCSS("/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION . '");' => array(
         'type' => 'inline',
       ),
     ),
@@ -252,7 +252,7 @@ function ntb_library() {
  * Implements hook_preprcess_html().
  */
 function ntb_preprocess_html(&$vars) {
-  $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/compressed/ntb_critical.css');
+  $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/ntb_critical.css');
   $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
 }
 

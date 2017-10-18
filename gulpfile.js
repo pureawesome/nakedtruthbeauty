@@ -14,7 +14,7 @@ gulp.task('critical', function () {
     shop: 'https://nakedtruthbeauty.com/shop/',
     ingredients: 'https://nakedtruthbeauty.com/ingredients/',
     blog: 'https://nakedtruthbeauty.com/blog/'
-  }
+  };
 
   var cssPath = 'sites/all/themes/ntb/css/ntb.css';
 
@@ -27,7 +27,7 @@ gulp.task('critical', function () {
 
 gulp.task('minify-crit', function () {
   var css = [
-    'sites/all/themes/ntb/css/critical/ntb_critical.css',
+    'sites/all/themes/ntb/css/ntb_critical.css',
     'sites/all/themes/ntb/css/ntb.css'
   ];
 
@@ -44,7 +44,7 @@ gulp.task('minify-crit', function () {
         console.log(details.name + ': ' + details.stats.originalSize);
         console.log(details.name + ': ' + details.stats.minifiedSize);
       }))
-      .pipe(gulp.dest('sites/all/themes/ntb/css/compressed/'));
+      .pipe(gulp.dest('sites/all/themes/ntb/css/'));
   });
 });
 
