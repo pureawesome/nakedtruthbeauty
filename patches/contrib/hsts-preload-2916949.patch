@@ -1,8 +1,8 @@
 diff --git a/hsts.admin.inc b/hsts.admin.inc
-index 5b82ce2..6f96891 100644
+index 98d055e..6bfe607 100644
 --- a/hsts.admin.inc
 +++ b/hsts.admin.inc
-@@ -37,6 +37,13 @@ function hsts_admin_settings_form() {
+@@ -51,6 +51,13 @@ function hsts_admin_settings_form() {
      '#default_value' => variable_get('hsts_subdomains', FALSE),
    );
 
@@ -17,10 +17,10 @@ index 5b82ce2..6f96891 100644
  }
 
 diff --git a/hsts.module b/hsts.module
-index a6ff7a6..a127950 100644
+index cd142c7..e8be54b 100644
 --- a/hsts.module
 +++ b/hsts.module
-@@ -26,6 +26,12 @@ function hsts_init() {
+@@ -27,6 +27,12 @@ function hsts_init() {
        $hsts_header .= ';includeSubDomains';
      }
 
@@ -30,6 +30,5 @@ index a6ff7a6..a127950 100644
 +      $hsts_header .= ';preload';
 +    }
 +
-     // Add the header
      drupal_add_http_header('Strict-Transport-Security', $hsts_header);
    }
