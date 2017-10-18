@@ -20,7 +20,7 @@ diff --git a/hsts.module b/hsts.module
 index cd142c7..e8be54b 100644
 --- a/hsts.module
 +++ b/hsts.module
-@@ -27,6 +27,12 @@ function hsts_init() {
+@@ -27,5 +27,11 @@ function hsts_init() {
        $hsts_header .= ';includeSubDomains';
      }
 
