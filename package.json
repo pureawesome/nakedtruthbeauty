@@ -1,0 +1,19 @@
+{
+  "name": "nakedtruthbeauty.dev",
+  "version": "1.0.0",
+  "description": "CONTENTS OF THIS FILE ---------------------",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "criticalcss": "^2.1.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "crit": "gulp critical",
+    "min": "gulp minify-crit"
+  },
+  "author": "",
+  "license": "ISC"
+}
