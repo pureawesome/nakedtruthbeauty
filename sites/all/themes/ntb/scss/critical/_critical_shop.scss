@@ -250,7 +250,7 @@ input[type="search"]{ -webkit-appearance: none; }
 @media (min-width: 768px){
 .view-product-type-taxonomy .views-row{ display: block; text-align: center; margin: 10px 0px; }
 }
-.js .view-shop .views-row{ opacity: 0; }
+.js .view-shop .views-row{ opacity: 1; }
 .view-shop .view-content{ width: 100%; display: -webkit-flex; -webkit-flex-flow: row wrap; }
 .view-shop .title{ text-align: center; }
 @media (min-width: 480px){
