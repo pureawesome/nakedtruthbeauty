@@ -4,9 +4,9 @@ core = 7.x
 package = Security
 files[] = hsts.module
 configure = admin/config/security/hsts
-; Information added by Drupal.org packaging script on 2015-06-17
-version = "7.x-1.2"
+; Information added by Drupal.org packaging script on 2017-03-13
+version = "7.x-1.2+9-dev"
 core = "7.x"
 project = "hsts"
-datestamp = "1434549181"
+datestamp = "1489447686"
 

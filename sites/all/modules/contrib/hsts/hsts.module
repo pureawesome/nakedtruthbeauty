@@ -15,8 +15,9 @@
  * Sets the header in all requests to include the HSTS max-age value
  */
 function hsts_init() {
+  global $is_https;
   // Set the header to include the HSTS data
-  if (variable_get('hsts_enabled', FALSE) == 1) {
+  if (TRUE == variable_get('hsts_enabled', FALSE) and (variable_get('hsts_https_only', TRUE) or $is_https)) {
 
     // Add the max age header
     $hsts_header = 'max-age=' . check_plain(variable_get('hsts_max_age', 500));
@@ -26,13 +27,6 @@ function hsts_init() {
       $hsts_header .= ';includeSubDomains';
     }
 
-    if (variable_get('hsts_preload', FALSE)) {
-
-      // Include preload
-      $hsts_header .= ';preload';
-    }
-
-    // Add the header
     drupal_add_http_header('Strict-Transport-Security', $hsts_header);
   }
 }
@@ -77,4 +71,22 @@ function hsts_menu() {
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function hsts_requirements($phase) {
+  $requirements = array();
+
+  if ($phase == 'runtime') {
+    $hsts_https_only = variable_get('hsts_https_only', FALSE);
+    $requirements['hsts_https_only'] = array(
+      'title' => t('HTTP Strict Transport Security header restriction only to HTTPS'),
+      'value' => $hsts_https_only ? t('Enabled') : t('Disabled'),
+      'severity' => $hsts_https_only ? REQUIREMENT_OK : REQUIREMENT_WARNING,
+    );
+  }
+
+  return $requirements;
 }
