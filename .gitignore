@@ -12,3 +12,4 @@ sites/all/themes/ntb/.sass-cache
 .sass-cache
 
 node_modules
+vendor
