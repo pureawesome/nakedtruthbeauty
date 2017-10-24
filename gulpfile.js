@@ -1,23 +1,15 @@
 'use strict';
 
 var gulp = require('gulp');
-var postcss = require('gulp-postcss');
-var sass = require('gulp-sass');
+var criticalcss = require('criticalcss');
+var fs = require('fs');
+var cleanCSS = require('gulp-clean-css');
 
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
+var postcss = require('gulp-postcss');
+var sass = require('gulp-sass');
 
-// var uglify = require('gulp-uglify');
-// var pump = require('pump');
-var criticalcss = require("criticalcss");
-var fs = require('fs');
-var purge = require('gulp-css-purge')
-
-var request = require('request');
-var path = require( 'path' );
-var criticalcss = require("criticalcss");
-var fs = require('fs');
-var tmpDir = require('os').tmpdir();
 
 gulp.task('css', function () {
   var processors = [
@@ -30,8 +22,8 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./sites/all/themes/ntb/css/', {overwrite: true}));
 });
 
+
 gulp.task('critical', function () {
-  // criticalcss -u https://nakedtruthbeauty.com -f css/ntb.css -o scss/critical/_critical.scss
   var criticals = {
     home: 'https://nakedtruthbeauty.com/',
     about: 'https://nakedtruthbeauty.com/about/',
@@ -39,7 +31,7 @@ gulp.task('critical', function () {
     shop: 'https://nakedtruthbeauty.com/shop/',
     ingredients: 'https://nakedtruthbeauty.com/ingredients/',
     blog: 'https://nakedtruthbeauty.com/blog/'
-  }
+  };
 
   var cssPath = 'sites/all/themes/ntb/css/ntb.css';
 
@@ -50,16 +42,27 @@ gulp.task('critical', function () {
   }
 });
 
-gulp.task('critical_comp', function () {
-  var processors = [
-    autoprefixer,
-    cssnano
+gulp.task('minify-crit', function () {
+  var css = [
+    'sites/all/themes/ntb/css/ntb_critical.css',
+    'sites/all/themes/ntb/css/ntb.css'
   ];
-  return gulp.src('./sites/all/themes/ntb/scss/critical/critical.scss')
-    .pipe(sass().on('error', sass.logError))
-    // .pipe(purge())
-    .pipe(postcss(processors))
-    .pipe(gulp.dest('./sites/all/themes/ntb/css/', {overwrite: true}));
+
+  css.forEach(function (css_file) {
+    return gulp.src(css_file)
+      .pipe(cleanCSS({
+        debug: true,
+        level: {
+          2: {
+            all: true
+          }
+        }
+      }, function (details) {
+        console.log(details.name + ': ' + details.stats.originalSize);
+        console.log(details.name + ': ' + details.stats.minifiedSize);
+      }))
+      .pipe(gulp.dest('sites/all/themes/ntb/css/'));
+  });
 });
 
 function generateCriticalCSS(cssPath, key, value) {

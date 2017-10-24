@@ -10,14 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
-    "criticalcss": "^2.1.0",
-    "gulp": "^3.9.1",
     "node-sass": "^4.5.3"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.5",
+    "autoprefixer": "^7.1.6",
     "breakpoint-sass": "^2.7.1",
+    "criticalcss": "^2.1.0",
     "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
     "gulp-css-purge": "^1.0.27",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
