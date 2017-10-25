@@ -41,7 +41,7 @@ gulp.task('critical', function () {
   }
 });
 
-gulp.task('minify-crit', function () {
+gulp.task('minify', function () {
   var css = [
     'sites/all/themes/ntb/css/ntb_critical.css',
     'sites/all/themes/ntb/css/ntb.css'

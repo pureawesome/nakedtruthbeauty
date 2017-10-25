@@ -41,7 +41,7 @@
 
   .flex-control-paging li a {
     background: $primary-blue;
-    @include box-shadow(none);
+    box-shadow: none;
 
     &.flex-active {
       background: $primary-peach;

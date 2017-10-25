@@ -169,9 +169,20 @@ function ntb_menu_link__main_menu($variables) {
 function ntb_library() {
   $libraries['bootstrap_tabs'] = array(
     'title' => 'Bootstrap Tabs',
-    'version' => '3.3.6',
+    'version' => '4.0.0-beta.2',
     'js' => array(
-      libraries_get_path('bootstrap') . '/js/lib/tab.min.js' => array(
+      libraries_get_path('bootstrap') . '/js/dist/tab.min.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+
+  $libraries['bootstrap_tooltip'] = array(
+    'title' => 'Bootstrap ',
+    'version' => '4.0.0-beta.2',
+    'js' => array(
+      libraries_get_path('bootstrap') . '/js/dist/tooltip.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
@@ -180,20 +191,23 @@ function ntb_library() {
 
   $libraries['bootstrap_dropdown'] = array(
     'title' => 'Bootstrap ',
-    'version' => '3.3.6',
+    'version' => '4.0.0-beta.2',
     'js' => array(
-      libraries_get_path('bootstrap') . '/js/lib/dropdown.min.js' => array(
+      libraries_get_path('bootstrap') . '/js/dist/dropdown.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
     ),
+    'dependencies' => [
+      ['ntb', 'boostrap_tooltip'],
+    ],
   );
 
   $libraries['bootstrap_collapse'] = array(
     'title' => 'Bootstrap ',
-    'version' => '3.3.6',
+    'version' => '4.0.0-beta.2',
     'js' => array(
-      libraries_get_path('bootstrap') . '/js/lib/collapse.min.js' => array(
+      libraries_get_path('bootstrap') . '/js/dist/collapse.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
@@ -227,8 +241,8 @@ function ntb_library() {
       ),
     ),
     'dependencies' => [
-      ['ntb', 'bootstrap_collapse'],
-      ['ntb', 'bootstrap_dropdown'],
+      // ['ntb', 'bootstrap_collapse'],
+      // ['ntb', 'bootstrap_dropdown'],
       ['ntb', 'modernizr'],
       ['ntb', 'loadcss'],
     ],

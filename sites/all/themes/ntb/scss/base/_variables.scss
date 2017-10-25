@@ -24,6 +24,8 @@ $table-border-color: $primary-blue;
 $table-bg-accent: lighten($primary-blue, 30%);
 $table-bg-hover: lighten($primary-blue, 20%);
 
+$link-hover-color: darken($link-color, 15%);
+
 // Extra small screen / phone
 //** Deprecated `$screen-xs` as of v3.0.1
 // $screen-xs:                  480px !default;

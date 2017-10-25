@@ -17,6 +17,17 @@ img {
   }
 }
 
+.panel-col,
+.row,
+.region {
+  min-width: 100%;
+}
+
+.alert-strip,
+.navbar-default {
+  min-width: 100%;
+}
+
 #page-title {
   text-align: center;
 }
