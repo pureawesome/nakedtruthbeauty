@@ -8,7 +8,7 @@ img {
   &:before {
     content: $fa-var-arrow-circle-left;
     @include fa-icon();
-    font-size: 40px;
+    font-size: 2.5rem;
     color: rgba($secondary-blue, 0.8);
   }
 
@@ -90,7 +90,7 @@ table thead th,
 .field .field-label {
   font-weight: normal;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 #user-pass-reset,
@@ -142,7 +142,7 @@ ul.primary {
       // color: darken($secondary-blue, 15%);
       // color: $white;
       content: $fa-var-facebook;
-      font-size: 36px;
+      font-size: 2.25rem;
     }
 
     &.tw:before {
@@ -205,7 +205,7 @@ ul.primary {
 
   table thead th,
   .field .field-label {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 

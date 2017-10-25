@@ -25,7 +25,7 @@
   .navbar-nav > li > a {
     width: 100%;
     color: $secondary-blue;
-    font-size: 20px;
+    font-size: 1.25rem;
     padding: 20px 25px;
     transition: all 0.2s ease-in-out;
     display: inline-block;
@@ -37,7 +37,7 @@
 
     &.cart-icon {
       padding: 0;
-      font-size: 26px;
+      font-size: 1.625rem;
     }
   }
 
@@ -84,10 +84,10 @@
   margin-left: 15px;
 }
 
-.nav>li>a:hover,
-.nav>li>a:focus {
-  background: lighten($primary-blue, 20%);
-}
+// .nav>li>a:hover,
+// .nav>li>a:focus {
+//   background: lighten($primary-blue, 20%);
+// }
 
 #navigation {
   display: none;

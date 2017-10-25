@@ -236,10 +236,13 @@ function ntb_library() {
         'defer' => TRUE,
         'scope' => 'footer',
       ),
-      'loadCSS("/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION . '");' => array(
-        'type' => 'inline',
-      ),
+      // 'loadCSS("/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION . '");' => array(
+      //   'type' => 'inline',
+      // ),
     ),
+    'css' => [
+      drupal_get_path('theme', 'ntb') . '/css/ntb.css' => [],
+    ],
     'dependencies' => [
       // ['ntb', 'bootstrap_collapse'],
       // ['ntb', 'bootstrap_dropdown'],

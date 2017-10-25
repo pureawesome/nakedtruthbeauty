@@ -27,7 +27,7 @@
 }
 
 .btn--cart-close {
-	font-size: 2em;
+	font-size: 2rem;
 	position: absolute;
 	top: 1.25em;
 	right: 1.25em;
@@ -115,7 +115,7 @@
 	}
 
 	h3 {
-		font-size: 1.35em;
+		font-size: 1.35rem;
 		margin: 0;
 
 		&::before {
@@ -126,7 +126,7 @@
 	}
 
 	p {
-		font-size: 1.15em;
+		font-size: 1.15rem;
 		line-height: 1.4;
 		margin: 0.75em 0 0 0;
 	}
@@ -204,7 +204,7 @@
 		margin: 5em 0 1em;
 	}
 	.btn--cart-close {
-		font-size: 1.25em;
+		font-size: 1.25rem;
 		top: 1.5em;
 		right: 1.5em;
 	}
@@ -236,14 +236,14 @@
 	}
 
   th {
-    font-size: 10px;
+    font-size: 0.925rem;
     text-align: center;
 		border: none;
   }
 
   td {
     padding: 10px;
-    font-size: 26px;
+    font-size: 1.625rem;
   }
 
   tbody {
@@ -251,7 +251,7 @@
   }
 
   .remove-from-cart {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .dc-ajax-add-cart-checkout-cart {
