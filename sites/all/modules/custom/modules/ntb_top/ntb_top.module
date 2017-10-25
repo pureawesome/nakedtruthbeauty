@@ -35,7 +35,6 @@ function ntb_top_block_configure($delta = '') {
     foreach ($query as $value) {
       $options[$value->nid] = $value->title;
     }
-    xdebug_break();
 
     $form['ntb_top_one'] = [
       '#type' => 'select',
@@ -67,7 +66,6 @@ function ntb_top_block_configure($delta = '') {
  */
 function ntb_top_block_save($delta = '', $edit = array()) {
   if ($delta == 'ntb_top') {
-    xdebug_break();
     $tops = ['ntb_top_three', 'ntb_top_two', 'ntb_top_one'];
 
     foreach ($tops as $top) {

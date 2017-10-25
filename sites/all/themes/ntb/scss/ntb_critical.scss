@@ -1,0 +1,18 @@
+@import 'critical/critical_home';
+@import 'critical/critical_shop';
+@import 'critical/critical_cart';
+@import 'critical/critical_ingredients';
+@import 'critical/critical_about';
+@import 'critical/critical_blog';
+
+@import 'base/variables';
+@import 'base/mixins';
+@import 'compass';
+@import 'breakpoint';
+
+@import 'components/nav';
+
+.search-container,
+.cart-container {
+  opacity: 0;
+}
