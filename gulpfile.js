@@ -21,6 +21,9 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./sites/all/themes/ntb/css/', {overwrite: true}));
 });
 
+gulp.task('watch_css', function () {
+  gulp.watch('./sites/all/themes/ntb/scss/ntb.scss', ['css']);
+});
 
 gulp.task('critical', function () {
   var criticals = {

@@ -89,7 +89,26 @@
         <div class="row">
           <nav class="navbar navbar-default">
             <?php if ($main_menu || $secondary_menu): ?>
-              <div class="section container-fluid">
+
+
+<!--
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="h3 mobile-logo" href="<?php print $front_page; ?>">naked<span>truth</span></a>
+                </div> -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-wrapper" id="navbar-1">
+                  <?php print render($main_menu_output); ?>
+
+                  <?php print $secondary_menu_output; ?>
+                </div><!-- /.navbar-collapse -->
+
                 <ul class="nav icon-menu-fixed custom-user-menu navbar-nav">
                   <li class="dropdown user-dropdown">
                     <button class="user-toggle fa-icon dropdown-toggle" type="button" data-toggle="dropdown" id="userMenu" aria-haspopup="true" aria-expanded="false">
@@ -97,7 +116,7 @@
                       <span class="sr-only">User Menu Toggle</span>
                     </button>
                     <?php if (isset($secondary_menu_dropdown)): ?>
-                      <?php print render($secondary_menu_dropdown); ?>
+                      <!-- <?php print render($secondary_menu_dropdown); ?> -->
                     <?php endif; ?>
                   </li>
 
@@ -115,23 +134,6 @@
                   <?php endif; ?>
                 </ul><!-- end custom-user-menu -->
 
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="h3 mobile-logo" href="<?php print $front_page; ?>">naked<span>truth</span></a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="navbar-1">
-                  <?php print render($main_menu_output); ?>
-
-                  <?php print $secondary_menu_output; ?>
-                </div><!-- /.navbar-collapse -->
-              </div><!-- /.section, /#navigation -->
             <?php endif; ?>
           </nav>
         </div>

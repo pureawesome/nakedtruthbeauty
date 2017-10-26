@@ -121,7 +121,7 @@ function ntb_preprocess_page(&$vars) {
  * Implements THEMENAME_menu_tree__MENU_NAME().
  */
 function ntb_menu_tree__main_menu($variables) {
-  return '<ul class="links inline clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
+  return '<ul class="links clearfix nav navbar-nav primary-nav">' . $variables['tree'] . '<li class="more hidden"><a href="#">More</a><ul></ul></li></ul>';
 }
 
 /**
@@ -214,6 +214,17 @@ function ntb_library() {
     ),
   );
 
+  $libraries['throttle.debounce'] = array(
+    'title' => 'Throttle Debounce',
+    'version' => '1.1',
+    'js' => array(
+      libraries_get_path('jquery-throttle-debounce') . '/jquery.ba-throttle-debounce.min.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+
   $libraries['loadcss'] = array(
     'title' => 'loadCSS',
     'version' => '1.3.1',
@@ -248,6 +259,7 @@ function ntb_library() {
       // ['ntb', 'bootstrap_dropdown'],
       ['ntb', 'modernizr'],
       ['ntb', 'loadcss'],
+      ['ntb', 'throttle.debounce'],
     ],
   );
 
@@ -270,7 +282,8 @@ function ntb_library() {
  */
 function ntb_preprocess_html(&$vars) {
   $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/ntb_critical.css');
-  $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
+  // $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
+  $vars['critical'] = '';
 }
 
 /**
