@@ -1,12 +1,12 @@
 #logo {
   margin: auto;
+  max-width: 75%;
   width: 500px;
-  max-width: 100%;
-  // display: none;
+  display: block;
   text-align: center;
   margin-bottom: 5px;
   margin-top: 10px;
-  padding: 20px 30px;
+  padding: 0;
 }
 
 .icon-menu-fixed,
@@ -19,25 +19,6 @@
 
   li {
     display: inline-block;
-  }
-}
-
-.custom-user-menu {
-  display: flex;
-  flex-direction: row;
-}
-
-.mobile-logo {
-  line-height: 50px;
-  color: $primary-blue;
-  color: darken($primary-blue, 22%);
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
-  display: inline-block;
-
-  span {
-    color: $secondary-blue;
   }
 }
 
@@ -79,10 +60,6 @@
 // @include breakpoint($screen-sm) {
   #logo {
     display: block;
-  }
-
-  .mobile-logo {
-    display: none;
   }
 
   .fa-icon {

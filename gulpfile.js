@@ -46,8 +46,8 @@ gulp.task('critical', function () {
 
 gulp.task('minify', function () {
   var css = [
-    'sites/all/themes/ntb/css/ntb_critical.css',
-    'sites/all/themes/ntb/css/ntb.css'
+    // 'sites/all/themes/ntb/css/ntb.css',
+    'sites/all/themes/ntb/css/ntb_critical.css'
   ];
 
   css.forEach(function (css_file) {

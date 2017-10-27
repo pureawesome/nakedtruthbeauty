@@ -143,7 +143,7 @@
   transform: transition-duration(0.5s);
 }
 
-.js .cart--open {
+.js .cart-container.cart--open {
 	pointer-events: auto;
 	opacity: 1;
 }

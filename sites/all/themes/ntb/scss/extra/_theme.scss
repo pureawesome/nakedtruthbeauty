@@ -236,3 +236,8 @@ ul.ntb-top-three {
 .color-secondary {
   color: $secondary-blue;
 }
+
+#logo svg {
+  max-width: 100%;
+  height: auto;
+}
