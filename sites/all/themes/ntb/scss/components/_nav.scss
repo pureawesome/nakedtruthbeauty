@@ -187,11 +187,3 @@
     display: none;
   }
 }
-
-@include breakpoint($screen-md) {
-  .mobile-logo {
-    display: none;
-  }
-
-
-}
