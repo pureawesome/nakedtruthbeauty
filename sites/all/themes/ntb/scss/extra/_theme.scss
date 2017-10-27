@@ -20,8 +20,11 @@ img {
 
 
 .alert-strip,
-.navbar-default {
+.navbar-default,
+.panel-col,
+ .region-content {
   min-width: 100%;
+  grid-column: 12 span;
 }
 
 #page-title {
