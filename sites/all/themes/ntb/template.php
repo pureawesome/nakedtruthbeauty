@@ -121,7 +121,7 @@ function ntb_preprocess_page(&$vars) {
  * Implements THEMENAME_menu_tree__MENU_NAME().
  */
 function ntb_menu_tree__main_menu($variables) {
-  return '<ul class="links clearfix nav navbar-nav primary-nav">' . $variables['tree'] . '<li class="more hidden"><a href="#">More</a><ul></ul></li></ul>';
+  return '<ul class="links clearfix nav navbar-nav primary-nav">' . $variables['tree'] . '<li class="more hidden dropdown"><a href="#">More</a><ul class="dropdown-menu"></ul></li></ul>';
 }
 
 /**
@@ -149,7 +149,6 @@ function ntb_menu_link__main_menu($variables) {
     else {
       unset($element['#below']['#theme_wrappers']);
       $sub_menu = '<ul class="dropdown-menu">' . drupal_render($element['#below']) . '</ul>';
-      $element['#title'] .= ' <i class="fa fa-angle-down"></i>';
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
       $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';

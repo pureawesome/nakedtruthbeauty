@@ -17,16 +17,6 @@ img {
   }
 }
 
-
-
-.alert-strip,
-.navbar-default,
-.panel-col,
- .region-content {
-  min-width: 100%;
-  grid-column: 12 span;
-}
-
 #page-title {
   text-align: center;
 }
@@ -65,7 +55,10 @@ ol li a {
 }
 
 a {
+  color: $link-color;
+
   &:hover {
+    color: $link-color-hover;
     text-decoration: none;
   }
 }
@@ -240,4 +233,8 @@ ul.ntb-top-three {
 #logo svg {
   max-width: 100%;
   height: auto;
+}
+
+p {
+  font-size: 1.2rem;
 }

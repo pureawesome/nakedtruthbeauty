@@ -3,14 +3,14 @@
   border: none;
   margin-bottom: 0;
 
-  .navbar-collapse {
-    max-height: 100%;
-    background: linear-gradient($primary-blue, $primary-peach);
-
-    &.in {
-      height: 100vh;
-    }
-  }
+  // .navbar-collapse {
+  //   max-height: 100%;
+  //   background: linear-gradient($primary-blue, $primary-peach);
+  //
+  //   &.in {
+  //     height: 100vh;
+  //   }
+  // }
   //
   // .navbar-nav {
   //   float: left;
@@ -24,7 +24,7 @@
 
   .navbar-nav > li > a {
     width: 100%;
-    color: $secondary-blue;
+    color: $link-color;
     font-size: 1.25rem;
     padding: 20px 25px;
     transition: all 0.2s ease-in-out;
@@ -32,7 +32,7 @@
 
     &:hover,
     &:focus {
-      color: $primary-blue;
+      color: $link-color-hover;
     }
 
     &.cart-icon {
@@ -98,6 +98,10 @@ ul.navbar-nav > li {
   margin: 0;
 }
 
+ul.navbar-nav > li.hidden {
+  display: none;
+}
+
 .navbar-nav > li > ul {
   display: none;
 }
@@ -117,7 +121,7 @@ nav {
 }
 
 nav .custom-user-menu {
-  flex: 0;
+  // flex: 0;
   align-items: center;
   margin-right: 15px;
 }
@@ -144,6 +148,13 @@ nav .nav-wrapper {
   text-align: center;
   border-radius: 0;
   border: 1px solid lighten($primary-blue, 15%);
+  padding: 0 1rem;
+  position: absolute;
+  background: #fff;
+
+  & > li.leaf {
+    list-style: none;
+  }
 
   .navbar-default .navbar-nav .open & > li > a {
     color: darken($secondary-blue, 15%);
@@ -152,7 +163,7 @@ nav .nav-wrapper {
   & > li > a:hover,
   & > li > a:focus {
     background: $white;
-    color: $primary-blue;
+    color: $link-color-hover;
   }
 }
 
@@ -171,10 +182,10 @@ nav .nav-wrapper {
 
   .navbar-default .navbar-nav > li > a {
     padding: 10px 15px;
-    color: $secondary-blue;
+    color: $link-color;
 
     &:hover {
-      color: $primary-blue;
+      color: $link-color-hover;
     }
   }
 
@@ -182,16 +193,16 @@ nav .nav-wrapper {
     &,
     &:hover,
     &:focus {
-      color: $primary-blue;
+      color: $link-color-hover;
       background: #fff;
     }
   }
 
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: $secondary-blue;
+    color: $link-color;
 
     &:hover {
-      color: $primary-blue;
+      color: $link-color-hover;
     }
   }
 
@@ -230,7 +241,7 @@ nav .nav-wrapper {
   .navbar-default .navbar-nav > li > a {
     &:hover,
     &:focus {
-      color: $primary-blue;
+      color: $link-color-hover;
     }
   }
 
