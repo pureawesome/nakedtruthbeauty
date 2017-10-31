@@ -20,20 +20,27 @@
 }
 
 .node-type-article .content {
+  .links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-    .links {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+  .links {
+    float: right;
+    width: 100%;
+
+    li {
+      @include buttons();
     }
+  }
+}
 
+.pane-blog-related {
+  padding-top: 20px;
 
-    .links {
-      float: right;
-      width: 100%;
-
-      li {
-        @include buttons();
-      }
-    }
+  .pane-title {
+    @include flag();
+    margin-top: -7px;
+  }
 }
