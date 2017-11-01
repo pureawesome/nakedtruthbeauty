@@ -62,7 +62,7 @@
 }
 
 @include breakpoint($screen-sm) {
-  .tile {
+  .tile:not(.article) {
     height: 100%;
     @include flex-direction(column);
 
@@ -84,6 +84,13 @@
     .price {
       display: block;
     }
+  }
+
+  .tile.article {
+    .img {
+      max-width: 150px;
+    }
+
   }
 }
 
