@@ -112,7 +112,7 @@ function site_general_default_page_manager_handlers() {
   $handler->conf = array(
     'title' => 'article',
     'no_blocks' => 0,
-    'pipeline' => 'standard',
+    'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
     'css_id' => '',
@@ -756,6 +756,27 @@ function site_general_default_page_manager_pages() {
   $pane->uuid = 'f0e27d82-4fbf-4efb-8235-0f3393ca9b9d';
   $display->content['new-f0e27d82-4fbf-4efb-8235-0f3393ca9b9d'] = $pane;
   $display->panels['top'][0] = 'new-f0e27d82-4fbf-4efb-8235-0f3393ca9b9d';
+  $pane = new stdClass();
+  $pane->pid = 'new-9c247171-5876-4851-adca-87092b001248';
+  $pane->panel = 'upper-middle';
+  $pane->type = 'block';
+  $pane->subtype = 'ntb_signup-ntb_signup_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'call to action',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array();
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '9c247171-5876-4851-adca-87092b001248';
+  $display->content['new-9c247171-5876-4851-adca-87092b001248'] = $pane;
+  $display->panels['upper-middle'][0] = 'new-9c247171-5876-4851-adca-87092b001248';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
