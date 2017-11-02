@@ -22,7 +22,7 @@
     </div>
   <?php endif; ?>
 
-  <div class="container-fluid content"<?php print $content_attributes; ?>>
+  <!-- <div class="container-fluid content"<?php print $content_attributes; ?>> -->
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
@@ -38,7 +38,7 @@
         <?php print render($content['body']); ?>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 
   <?php print render($content['links']); ?>
 

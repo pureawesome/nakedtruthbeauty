@@ -80,19 +80,25 @@ body {
 
 //GRID STYLEZ
 @supports(display: grid) {
-  .row {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-gap: 20px;
-      margin: 0;
+  .row,
+  .view-content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+    margin: 0;
+    grid-column: 12 span;
   }
 
-  #main .row {
+  #main .container-fluid,
+  #footer .container-fluid {
     max-width: 1200px;
     margin: auto;
+    padding: 0 15px;
   }
 
-  .col-sm-12, .col-sm-8, .col-sm-2, .col-sm-4, .col-sm-3 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5,
+  .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-12,
+  .col-sm-11, .col-sm-12 {
     width: auto;
     grid-column: span 12;
   }
@@ -137,6 +143,27 @@ body {
     }
 
     .col-sm-12 {
+      grid-column: span 12;
+    }
+
+    .col-sm-6.col-sm-offset-3 {
+      grid-column: 4 / 10;
+    }
+
+    .col-sm-10.col-sm-offset-1 {
+      grid-column: 2 / 12;
+    }
+
+    .view-taxonomy-term .views-row {
+      grid-column: 3 / 11;
+    }
+
+    .view-product-type-taxonomy .views-row {
+      grid-column: span 12;
+      margin: 0;
+    }
+
+    .view-empty {
       grid-column: span 12;
     }
 

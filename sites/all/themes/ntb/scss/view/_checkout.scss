@@ -134,3 +134,18 @@ ul.commerce-checkout-progress {
     margin-bottom: 10px;
   }
 }
+
+
+@supports(display: grid) {
+  .commerce-line-item-views-form {
+    grid-column: span 12;
+
+    table {
+      width: 100%;
+    }
+  }
+
+  .view-commerce-cart-summary table {
+    grid-column: span 12;
+  }
+}

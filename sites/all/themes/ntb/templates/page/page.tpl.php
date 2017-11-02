@@ -101,7 +101,7 @@
                     <span class="sr-only">User Menu Toggle</span>
                   </button>
                   <?php if (isset($secondary_menu_dropdown)): ?>
-                    <!-- <?php print render($secondary_menu_dropdown); ?> -->
+                    <?php print render($secondary_menu_dropdown); ?>
                   <?php endif; ?>
                 </li>
 
@@ -173,9 +173,7 @@
           <?php print render($title_suffix); ?>
         </div>
 
-        <div class="row">
-          <?php print render($page['content']); ?>
-        </div>
+        <?php print render($page['content']); ?>
       </div>
 
       <?php print $feed_icons; ?>
