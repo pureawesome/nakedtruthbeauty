@@ -14,6 +14,13 @@
   }
 }
 
+.tile.article {
+  .img {
+    max-width: 150px;
+    margin: auto;
+  }
+}
+
 @include breakpoint($screen-xs) {
   .tile {
     @include display-flex();
@@ -45,7 +52,6 @@
   }
 
   .tile.product_display {
-
     .add-to-cart-block,
     .add-to-cart-block .form-submit,
     .price,
@@ -58,6 +64,10 @@
     h3 {
       text-align: center;
     }
+  }
+
+  .tile.article {
+    flex-direction: row;
   }
 }
 
@@ -84,13 +94,6 @@
     .price {
       display: block;
     }
-  }
-
-  .tile.article {
-    .img {
-      max-width: 150px;
-    }
-
   }
 }
 
