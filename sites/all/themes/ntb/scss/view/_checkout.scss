@@ -1,5 +1,6 @@
 .checkout-buttons .checkout-cancel,
 .checkout-buttons .checkout-back,
+.checkout-buttons .checkout-continue,
 #commerce-braintree-tr-redirect-form > div > a {
   background: #91cdc5;
   color: #000;
@@ -145,7 +146,100 @@ ul.commerce-checkout-progress {
     }
   }
 
-  .view-commerce-cart-summary table {
+  .view-commerce-cart-summary .view-content > table {
     grid-column: span 12;
+    min-width: 100%;
   }
 }
+
+.page-checkout {
+  .form-type-select,
+  .form-type-textfield,
+  .braintree-form .form-item {
+    display: block;
+    padding: 10px;
+    border: 1px solid $primary-blue;
+    margin: 1rem 0;
+    border-radius: 3px;
+
+   & > label {
+      display: block;
+      float: left;
+      margin-top: -1.25rem;
+      height: 1.125rem;
+      padding: 0 5px;
+      font-size: 0.875rem;
+      overflow: hidden;
+      background: $white;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="time"],
+    input[type="url"],
+    input[type="password"],
+    textarea,
+    select {
+      width: 100%;
+      display: block;
+      outline: none;
+      border: none;
+      font-size: 1rem;
+      padding: 0.3125rem;
+      height: 1.625rem;
+      background: rgba($primary-blue, 0.25);
+    }
+  }
+
+  .braintree-hosted-field {
+    border: 0;
+    background: rgba($primary-blue, 0.25);
+  }
+
+  .braintree-form #edit-commerce-payment-payment-details-braintree-cc-expiration .form-type-item,
+  .braintree-form #edit-payment-details-braintree-cc-expiration .form-type-item,
+  .braintree-form #edit-expiration .form-type-item {
+    padding: 0.3125rem;
+    margin: 1rem 0;
+  }
+
+  tr.odd .form-item, tr.even .form-item {
+    white-space: normal;
+  }
+
+  tr.odd, tr.even, legend {
+    border: 0;
+  }
+
+  tr.pane-title {
+    background: $secondary-blue;
+    color: $white;
+  }
+
+  fieldset:not(.checkout-buttons) {
+    border: 1px solid $primary-blue;
+    padding: 1rem;
+
+  legend {
+      background: $white;
+      padding: 0 5px;
+      width: auto;
+    }
+  }
+
+  @include breakpoint($screen-sm) {
+    .braintree-form .commerce-month-year-divider {
+      margin: auto 0.5rem;
+    }
+  }
+}
+
+// .checkout-review {
+//   .pane-data {
+//     padding-left: 1rem;
+//   }
+// }

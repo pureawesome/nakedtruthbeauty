@@ -174,7 +174,7 @@ ul.primary {
   display: block;
   width: 100%;
   height: 2px;
-  background-image: linear-gradient(left, #fff, $primary-blue,  #fff);
+  background-image: linear-gradient(to right, #fff, $primary-blue,  #fff);
   border-radius: 1px;
   margin: 45px 0;
 }
@@ -206,7 +206,7 @@ ul.primary {
   text-align: center;
 }
 
-ul.ntb-top-three {
+ul.ntb-top {
   display: flex;
   flex-direction: column;
 
@@ -214,11 +214,32 @@ ul.ntb-top-three {
     flex-direction: row;
   }
 
+  @supports(display:grid) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 2rem;
+    margin: 0;
+    grid-column: 12 span;
+  }
+
   &,
   & > li {
     margin: 0;
     padding: 0;
     list-style: none;
+    .tile {
+
+    }
+    border-bottom: 0;
+
+    @supports(display:grid) {
+      &.ntb-top-three li {
+        grid-column: 4 span;
+      }
+      &.ntb-top-four li {
+        grid-column: 3 span;
+      }
+    }
   }
 }
 
@@ -236,7 +257,7 @@ ul.ntb-top-three {
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
 }
 
 .form-submit {

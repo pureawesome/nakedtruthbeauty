@@ -76,6 +76,12 @@ body {
   }
 }
 
+#main .container-fluid,
+#footer .container-fluid {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
 
 
 //GRID STYLEZ
@@ -84,16 +90,9 @@ body {
   .view-content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 3rem;
     margin: 0;
     grid-column: 12 span;
-  }
-
-  #main .container-fluid,
-  #footer .container-fluid {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 15px;
   }
 
   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5,
@@ -168,4 +167,10 @@ body {
     }
 
   }
+}
+
+.panel-pane {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
 }
