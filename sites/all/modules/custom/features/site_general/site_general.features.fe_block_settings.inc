@@ -21,12 +21,6 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'ntb' => array(
         'region' => 'footer',
         'status' => 1,
@@ -53,12 +47,6 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -85,12 +73,6 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -117,12 +99,6 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'ntb' => array(
         'region' => 'footer',
         'status' => 1,
@@ -149,12 +125,6 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -181,12 +151,6 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -201,6 +165,58 @@ function site_general_default_fe_block_settings() {
       ),
     ),
     'title' => '@nakedtruthbeauty',
+    'visibility' => 0,
+  );
+
+  $export['ntb_top-ntb_top_3'] = array(
+    'cache' => 1,
+    'custom' => 0,
+    'delta' => 'ntb_top_3',
+    'module' => 'ntb_top',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ntb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ntb',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['ntb_top-ntb_top_4'] = array(
+    'cache' => 1,
+    'custom' => 0,
+    'delta' => 'ntb_top_4',
+    'module' => 'ntb_top',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ntb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ntb',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
     'visibility' => 0,
   );
 
