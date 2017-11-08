@@ -56,14 +56,28 @@ body {
   width: 16.66666667%;
 }
 
+.col-sm-6 {
+  width: 50%;
+}
+
+.three-item .view-content .views-row,
 .col-sm-4 {
   width: 33.33333333%;
 }
 
+.four-item .view-content .views-row,
 .col-sm-3 {
   width: 25%;
 }
 
+.view-id-ingredients .view-content {
+  display: flex;
+  flex-wrap: wrap;
+
+  .views-row {
+    margin-bottom: 30px;
+  }
+}
 
 .alert-strip,
 .navbar-default,
@@ -77,6 +91,42 @@ body {
 }
 
 
+.panel-col {
+  @supports(display: grid) {
+    grid-column: 12 span;
+  }
+}
+
+#main .container-fluid,
+#footer .container-fluid {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.row,
+.view-content {
+  display: block;
+  clear: both;
+  float: left;
+}
+
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5,
+.col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10,
+.col-sm-11, .col-sm-12,
+.four-item .view-content .views-row,
+.three-item .view-content .views-row, {
+  display: inline-block;
+  float: left;
+  padding: 0 1rem;
+}
+
+.panel-pane {
+  display: block;
+  clear: both;
+  float: left;
+  width: 100%;
+}
 
 //GRID STYLEZ
 @supports(display: grid) {
@@ -84,36 +134,32 @@ body {
   .view-content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 3rem;
     margin: 0;
     grid-column: 12 span;
   }
 
-  #main .container-fluid,
-  #footer .container-fluid {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 15px;
-  }
-
   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5,
-  .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-12,
-  .col-sm-11, .col-sm-12 {
+  .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10,
+  .col-sm-11, .col-sm-12,
+  .four-item .view-content .views-row,
+  .three-item .view-content .views-row, {
     width: auto;
     grid-column: span 12;
+    padding: 0;
   }
 
-  @media (min-width: 768px) {
-
-
+  @include breakpoint($screen-sm) {
     .col-sm-2 {
       grid-column: span 2;
     }
 
+    .four-item .view-content .views-row,
     .col-sm-3 {
       grid-column: span 3;
     }
 
+    .three-item .view-content .views-row,
     .col-sm-4 {
       grid-column: span 4;
     }
@@ -168,4 +214,20 @@ body {
     }
 
   }
+}
+
+.panel-pane {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
+}
+
+h3.pane-title {
+  @include flag();
+}
+
+h2.pane-title {
+  font-size: 2.5em;
+  text-align:center;
+  display: block;
 }

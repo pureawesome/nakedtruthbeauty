@@ -1,7 +1,7 @@
 <div class="panel-display clearfix" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <?php if ($content['full-width']): ?>
     <!-- <div class="container-fluid"> -->
-      <div class="row">
+      <div class="row full-width">
         <div class="panel-panel panel-col">
           <div class="inside"><?php print $content['full-width']; ?></div>
         </div>
