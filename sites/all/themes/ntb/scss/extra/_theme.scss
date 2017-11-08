@@ -4,6 +4,10 @@ img {
   height: auto;
 }
 
+.field-name-body img {
+
+}
+
 .flex-direction-nav a {
   &:before {
     content: $fa-var-arrow-circle-left;
@@ -19,6 +23,7 @@ img {
 
 #page-title {
   text-align: center;
+  width: 100%;
 }
 
 ul.inline li {
