@@ -87,37 +87,38 @@
         <?php endif; ?>
 
         <div class="row">
-          <nav class="navbar navbar-default">
+          <nav class="navbar">
             <?php if ($main_menu || $secondary_menu): ?>
               <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse nav-wrapper" id="navbar-1">
+              <div class="nav-wrapper nav-primary-wrapper" id="navbar-1">
                 <?php print render($main_menu_output); ?>
               </div><!-- /.navbar-collapse -->
+              <div class="nav-wrapper nav-secondary-wrapper" id="navbar-2">
+                <ul class="nav icon-menu-fixed custom-user-menu navbar-nav">
+                  <li class="dropdown user-dropdown">
+                    <button class="user-toggle fa-icon dropdown-toggle" type="button" data-toggle="dropdown" id="userMenu" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-user"></i>
+                      <span class="sr-only">User Menu Toggle</span>
+                    </button>
+                    <?php if (isset($secondary_menu_dropdown)): ?>
+                      <?php print render($secondary_menu_dropdown); ?>
+                    <?php endif; ?>
+                  </li>
 
-              <ul class="nav icon-menu-fixed custom-user-menu navbar-nav">
-                <li class="dropdown user-dropdown">
-                  <button class="user-toggle fa-icon dropdown-toggle" type="button" data-toggle="dropdown" id="userMenu" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user"></i>
-                    <span class="sr-only">User Menu Toggle</span>
-                  </button>
-                  <?php if (isset($secondary_menu_dropdown)): ?>
-                    <?php print render($secondary_menu_dropdown); ?>
+                  <li class="cart">
+                    <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon cart-toggle">
+                      <i class="fa fa-shopping-cart"></i>
+                      <span class="sr-only">Cart</span>
+                    </a>
+                    <?php if (isset($cart)): ?>
+                      <?php print render($cart['content']); ?>
+                    <?php endif; ?>
+                  </li>
+                  <?php if (isset($search)): ?>
+                    <?php print render($search); ?>
                   <?php endif; ?>
-                </li>
-
-                <li class="cart">
-                  <a href="<?php print base_path(); ?>cart" class="cart-icon fa-icon cart-toggle">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span class="sr-only">Cart</span>
-                  </a>
-                  <?php if (isset($cart)): ?>
-                    <?php print render($cart['content']); ?>
-                  <?php endif; ?>
-                </li>
-                <?php if (isset($search)): ?>
-                  <?php print render($search); ?>
-                <?php endif; ?>
-              </ul><!-- end custom-user-menu -->
+                </ul><!-- end custom-user-menu -->
+              </div>
             <?php endif; ?>
           </nav>
         </div>

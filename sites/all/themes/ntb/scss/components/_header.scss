@@ -95,11 +95,3 @@
   }
 // }
 //
-.dropdown > a::after {
-  @include fa-icon();
-  content: $fa-var-angle-down;
-}
-
-.dropdown > a:hover::after {
-  content: $fa-var-angle-up;
-}
