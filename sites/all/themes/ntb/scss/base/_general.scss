@@ -113,7 +113,6 @@ p {
 .view-content {
   display: block;
   clear: both;
-  float: left;
 }
 
 .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5,
@@ -139,7 +138,7 @@ p {
   .view-content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 3rem;
+    grid-gap: 2rem;
     margin: 0;
     grid-column: 12 span;
   }
