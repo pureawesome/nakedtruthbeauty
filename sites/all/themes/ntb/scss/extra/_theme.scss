@@ -237,3 +237,21 @@ ul.ntb-top-three {
   border: 0;
   /* overflow: visible; */
 }
+
+.block-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+#block-menu-menu-footer-menu {
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+li {
+    list-style: none;
+    display: inline-block;
+  }
+}
