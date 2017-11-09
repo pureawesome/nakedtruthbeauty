@@ -12,32 +12,6 @@ function site_general_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-footer_menu'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'machine_name' => 'footer_menu',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'ntb' => array(
-        'region' => 'footer',
-        'status' => 1,
-        'theme' => 'ntb',
-        'weight' => -20,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['block-line_break'] = array(
     'cache' => -1,
     'custom' => 0,
