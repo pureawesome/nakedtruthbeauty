@@ -209,11 +209,11 @@ p {
     .view-taxonomy-term .views-row {
       grid-column: 3 / 11;
     }
-
-    .view-product-type-taxonomy .views-row {
-      grid-column: span 12;
-      margin: 0;
-    }
+    //
+    // .view-product-type-taxonomy .views-row {
+    //   grid-column: span 12;
+    //   margin: 0;
+    // }
 
     .view-empty {
       grid-column: span 12;
