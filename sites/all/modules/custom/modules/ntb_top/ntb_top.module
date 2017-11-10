@@ -119,7 +119,8 @@ function ntb_top_build_display($num) {
 
   $node_displays = [];
   foreach ($nodes as $node) {
-    $node_displays[] = render(node_view($node, 'product_square', NULL));
+    $node_view = node_view($node, 'product_square', NULL);
+    $node_displays[] = render($node_view);
   }
   $class = ['ntb-top'];
   $class[] = $num == 3 ? 'ntb-top-three' : 'ntb-top-four';
