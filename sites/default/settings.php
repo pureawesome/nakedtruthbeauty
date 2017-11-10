@@ -638,20 +638,21 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
   );
 }
 
+if (defined('PANTHEON_ENVIRONMENT') && PANTHEON_ENVIRONMENT == 'lando') {
+  $databases['default']['default'] = array(
+    'driver' => 'mysql',
+    'database' => getenv('DB_NAME'),
+    'username' => getenv('DB_USER'),
+    'password' => getenv('DB_PASSWORD'),
+    'host' => getenv('DB_HOST'),
+    'prefix' => '',
+    'collation' => 'utf8_general_ci',
+  );
+}
+
 
 if (defined('PANTHEON_ENVIRONMENT')) {
-  if (PANTHEON_ENVIRONMENT == 'lando') {
-    $databases['default']['default'] = array(
-      'driver' => 'mysql',
-      'database' => getenv('DB_NAME'),
-      'username' => getenv('DB_USER'),
-      'password' => getenv('DB_PASSWORD'),
-      'host' => getenv('DB_HOST'),
-      'prefix' => '',
-      'collation' => 'utf8_general_ci',
-    );
-  }
-  else if (PANTHEON_ENVIRONMENT == 'dev') {
+  if (PANTHEON_ENVIRONMENT == 'dev') {
     $domain = 'sandbox.nakedtruthbeauty.com';
   }
   else if (PANTHEON_ENVIRONMENT == 'test') {
