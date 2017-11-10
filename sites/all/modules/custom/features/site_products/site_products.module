@@ -119,15 +119,15 @@ function site_products_library() {
   $libraries['site_products'] = array(
     'title' => 'NTB products',
     'version' => '1.0',
-    'js' => array(
-      drupal_get_path('module', 'site_products') . '/js/site_products.min.js' => array(
-        'defer' => TRUE,
-        'scope' => 'footer',
-      ),
-    ),
-    'dependencies' => [
-      ['ntb', 'bootstrap_tabs'],
-    ],
+    // 'js' => array(
+    //   drupal_get_path('module', 'site_products') . '/js/site_products.min.js' => array(
+    //     'defer' => TRUE,
+    //     'scope' => 'footer',
+    //   ),
+    // ),
+    // 'dependencies' => [
+    //   ['ntb', 'bootstrap_tabs'],
+    // ],
   );
   $libraries['site_shop'] = array(
     'title' => 'NTB Shop',

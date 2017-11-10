@@ -185,6 +185,15 @@ function site_general_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'blog_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 100,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -228,6 +237,16 @@ function site_general_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'blog_teaser' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'square_500x500',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'image',
@@ -279,6 +298,12 @@ function site_general_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Enter a comma-separated list of words to describe your content.',
     'display' => array(
+      'blog_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',

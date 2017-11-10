@@ -1,5 +1,0 @@
-Node criticalcss
-
-run from theme root
-
-criticalcss -u https://nakedtruthbeauty.com -f css/ntb.css -o scss/critical/_critical.scss

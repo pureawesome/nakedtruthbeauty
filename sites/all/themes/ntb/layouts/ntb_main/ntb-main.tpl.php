@@ -1,86 +1,81 @@
 <div class="panel-display clearfix" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+
   <?php if ($content['full-width']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="panel-panel panel-col">
-          <div class="inside"><?php print $content['full-width']; ?></div>
-        </div>
+    <div class="row full-width">
+      <div class="panel-panel panel-col">
+        <?php print $content['full-width']; ?>
       </div>
     </div>
-  <?php endif ?>
+  <?php endif; ?>
 
   <?php if ($content['top']): ?>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="panel-panel panel-col">
-          <div class="inside"><?php print $content['top']; ?></div>
-        </div>
+    <div class="row">
+      <div class="panel-panel panel-col">
+        <?php print $content['top']; ?>
       </div>
     </div>
-  <?php endif ?>
+  <?php endif; ?>
 
-  <div class="container-fluid">
+  <?php if ($content['upper-left'] || $content['upper-middle'] || $content['upper-right']): ?>
     <div class="row">
       <div class="panel-panel panel-col col-sm-4">
-        <div class="inside"><?php print $content['upper-left']; ?></div>
+        <?php print $content['upper-left']; ?>
       </div>
 
       <div class="panel-panel panel-col col-sm-4">
-        <div class="inside"><?php print $content['upper-middle']; ?></div>
+        <?php print $content['upper-middle']; ?>
       </div>
 
       <div class="panel-panel panel-col col-sm-4">
-        <div class="inside"><?php print $content['upper-right']; ?></div>
+        <?php print $content['upper-right']; ?>
       </div>
     </div>
-  </div>
+  <?php endif; ?>
 
-  <div class="container-fluid">
+  <?php if ($content['middle-left'] || $content['middle-right']): ?>
     <div class="row">
       <div class="panel-panel panel-col col-sm-6">
-        <div class="inside"><?php print $content['middle-left']; ?></div>
+        <?php print $content['middle-left']; ?>
       </div>
 
       <div class="panel-panel panel-col col-sm-6">
-        <div class="inside"><?php print $content['middle-right']; ?></div>
+        <?php print $content['middle-right']; ?>
       </div>
     </div>
-  </div>
+  <?php endif; ?>
 
-  <div class="container-fluid">
+  <?php if ($content['lower-left'] || $content['lower-middle'] || $content['lower-right']): ?>
     <div class="row">
       <div class="panel-panel panel-col col-sm-2">
-        <div class="inside"><?php print $content['lower-left']; ?></div>
+        <?php print $content['lower-left']; ?>
       </div>
 
       <div class="panel-panel panel-col col-sm-8">
-        <div class="inside"><?php print $content['lower-middle']; ?></div>
+        <?php print $content['lower-middle']; ?>
       </div>
 
       <div class="panel-panel panel-col col-sm-2">
-        <div class="inside"><?php print $content['lower-right']; ?></div>
+        <?php print $content['lower-right']; ?>
       </div>
     </div>
-  </div>
+  <?php endif; ?>
 
-  <div class="container-fluid">
+  <?php if ($content['bottom-left'] || $content['bottom-right']): ?>
     <div class="row">
       <div class="panel-panel panel-col col-sm-3">
-        <div class="inside"><?php print $content['bottom-left']; ?></div>
+        <?php print $content['bottom-left']; ?>
       </div>
 
       <div class="panel-panel panel-col col-sm-9">
-        <div class="inside"><?php print $content['bottom-right']; ?></div>
+        <?php print $content['bottom-right']; ?>
       </div>
     </div>
-  </div>
+  <?php endif; ?>
 
 
   <?php if ($content['bottom']): ?>
-    <div class="container-fluid">
-      <div class="panel-panel panel-col">
-        <div class="inside"><?php print $content['bottom']; ?></div>
-      </div>
+    <div class="panel-panel panel-col col-sm-12">
+      <?php print $content['bottom']; ?>
     </div>
-  <?php endif ?>
+  <?php endif; ?>
 </div>

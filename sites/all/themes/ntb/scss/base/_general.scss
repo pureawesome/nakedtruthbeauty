@@ -1,0 +1,262 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family-sans-serif;
+}
+
+.container-fluid {
+  width: 100%;
+  // max-width: 1200px;
+}
+
+.search-container,
+.cart-container {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.h1,h1{font-size:2.5rem}
+.h2,h2{font-size:2.125rem}
+.h3,h3{font-size:1.75rem}
+.h4,h4{font-size:1.25rem}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  font-family: $font-family-serif;
+}
+
+p {
+  font-family: $font-family-sans-serif;
+}
+
+.panel-col,
+.row,
+.region {
+  width: 100%;
+}
+
+.row {
+  // margin-left: -15px;
+  // margin-right: -15px;
+  display: block;
+}
+
+.col-sm-12, .col-sm-8, .col-sm-2, .col-sm-4, .col-sm-3 {
+  display: block;
+  float: left;
+}
+
+.col-sm-8 {
+  width: 66.66666667%;
+}
+
+.col-sm-2 {
+  width: 16.66666667%;
+}
+
+.col-sm-6 {
+  width: 50%;
+}
+
+.three-item .view-content .views-row,
+.col-sm-4 {
+  width: 33.33333333%;
+}
+
+.four-item .view-content .views-row,
+.col-sm-3 {
+  width: 25%;
+}
+
+
+
+.alert-strip,
+.navbar-default,
+.panel-col,
+.region-content {
+  min-width: 100%;
+
+  @supports(display: grid) {
+    grid-column: 12 span;
+  }
+}
+
+
+.panel-col {
+  @supports(display: grid) {
+    grid-column: 12 span;
+  }
+}
+
+#main .container-fluid,
+#footer .container-fluid {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.row,
+.view-content {
+  display: block;
+  clear: both;
+}
+
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5,
+.col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10,
+.col-sm-11, .col-sm-12,
+.four-item .view-content .views-row,
+.three-item .view-content .views-row, {
+  display: inline-block;
+  float: left;
+  padding: 0 1rem;
+}
+
+.panel-pane {
+  display: block;
+  clear: both;
+  float: left;
+  width: 100%;
+}
+
+//GRID STYLEZ
+@supports(display: grid) {
+  .row,
+  .view-content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    // grid-gap: 2rem;
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    margin: 0;
+    grid-column: 12 span;
+  }
+
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5,
+  .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10,
+  .col-sm-11, .col-sm-12,
+  .four-item .view-content .views-row,
+  .three-item .view-content .views-row, {
+    width: auto;
+    grid-column: span 12;
+    padding: 0;
+  }
+
+  @include breakpoint($screen-sm) {
+    .col-sm-2 {
+      grid-column: span 2;
+    }
+
+    .four-item .view-content .views-row,
+    .col-sm-3 {
+      grid-column: span 3;
+    }
+
+    .three-item .view-content .views-row,
+    .col-sm-4 {
+      grid-column: span 4;
+    }
+
+    .col-sm-5 {
+      grid-column: span 5;
+    }
+
+    .col-sm-6 {
+      grid-column: span 6;
+    }
+
+    .col-sm-8 {
+      grid-column: span 8;
+    }
+
+    .col-sm-9 {
+      grid-column: span 9;
+    }
+
+    .col-sm-10 {
+      grid-column: span 10;
+    }
+
+    .col-sm-11 {
+      grid-column: span 11;
+    }
+
+    .col-sm-12 {
+      grid-column: span 12;
+    }
+
+    .col-sm-6.col-sm-offset-3 {
+      grid-column: 4 / 10;
+    }
+
+    .col-sm-10.col-sm-offset-1 {
+      grid-column: 2 / 12;
+    }
+
+    .view-taxonomy-term .views-row {
+      grid-column: 3 / 11;
+    }
+
+    // .view-product-type-taxonomy .views-row {
+    //   grid-column: span 12;
+    //   margin: 0;
+    // }
+
+    .view-empty {
+      grid-column: span 12;
+    }
+
+  }
+}
+
+.panel-pane {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
+}
+
+h3.pane-title {
+  @include flag();
+}
+
+h2.pane-title {
+  font-size: 2.5em;
+  text-align:center;
+  display: block;
+}
+
+.view-blog-related .views-row {
+  width: 100%;
+
+  @include breakpoint($screen-xs) {
+    .img {
+      max-width: 100px;
+    }
+  }
+
+
+  @include breakpoint($screen-sm) {
+    width: 33%;
+
+    .img {
+      max-width: none;
+    }
+  }
+
+  @supports(display:grid) {
+    width: auto;
+    grid-column: span 12;
+
+    @include breakpoint($screen-sm) {
+      grid-column: span 4;
+    }
+  }
+
+
+}

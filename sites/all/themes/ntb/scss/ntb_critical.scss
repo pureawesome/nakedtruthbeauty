@@ -5,11 +5,10 @@
 @import 'critical/critical_about';
 @import 'critical/critical_blog';
 
+@import 'fontawesome/fontawesome';
+@import 'node_modules/breakpoint-sass/stylesheets/breakpoint';
 @import 'base/variables';
 @import 'base/mixins';
-@import 'compass';
-@import 'breakpoint';
-
 @import 'components/nav';
 
 .search-container,

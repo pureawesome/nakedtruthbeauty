@@ -1,12 +1,11 @@
 .view-blog {
   .views-row {
-    border-bottom: 0.5px solid $border-light;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
+    width: 100%;
+    grid-column: 12 span;
   }
 
   .field-name-field-tags .field-item {
-    @include inline-block();
+    display: inline-block;
     margin-right: 15px;
   }
 }
