@@ -281,8 +281,8 @@ function ntb_library() {
  */
 function ntb_preprocess_html(&$vars) {
   $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/ntb_critical.css');
-  // $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
-  $vars['critical'] = '';
+  $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
+  // $vars['critical'] = '';
 }
 
 /**
