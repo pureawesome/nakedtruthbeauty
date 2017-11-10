@@ -5,7 +5,8 @@
 @import 'critical/critical_about';
 @import 'critical/critical_blog';
 
-@import 'fontawesome/fontawesome';
+@import 'fontawesome/variables';
+@import 'fontawesome/mixins';
 @import 'node_modules/breakpoint-sass/stylesheets/breakpoint';
 @import 'base/variables';
 @import 'base/mixins';
