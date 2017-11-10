@@ -45,7 +45,6 @@
   }
 
   .tile.product_display {
-
     .add-to-cart-block,
     .add-to-cart-block .form-submit,
     .price,
@@ -56,6 +55,7 @@
     }
 
     h3 {
+      padding-left: 0;
       text-align: center;
     }
   }

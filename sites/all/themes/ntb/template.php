@@ -40,7 +40,7 @@ function ntb_preprocess_page(&$vars) {
     'quicksand-regular-webfont.woff2',
     'fontawesome-webfont.woff2?v=4.6.3',
     'quicksand-bold-webfont.woff2',
-    'have_heart_one-webfont.woff2',
+    // 'have_heart_one-webfont.woff2',
   ];
 
   $theme_path = drupal_get_path('theme', 'ntb');

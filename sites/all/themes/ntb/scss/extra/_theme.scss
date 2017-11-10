@@ -269,3 +269,21 @@ p {
   padding: 0 0.5rem;
   cursor: pointer;
 }
+
+.block-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+#block-menu-menu-footer-menu {
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+li {
+    list-style: none;
+    display: inline-block;
+  }
+}
