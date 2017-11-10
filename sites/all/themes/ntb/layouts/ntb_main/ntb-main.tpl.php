@@ -60,6 +60,22 @@
     </div>
   <?php endif; ?>
 
+  <?php if ($content['lower-bottom-left'] || $content['lower-bottom-middle'] || $content['lower-bottom-right']): ?>
+    <div class="row">
+      <div class="panel-panel panel-col col-sm-1">
+        <?php print $content['lower-bottom-left']; ?>
+      </div>
+
+      <div class="panel-panel panel-col col-sm-10">
+        <?php print $content['lower-bottom-middle']; ?>
+      </div>
+
+      <div class="panel-panel panel-col col-sm-1">
+        <?php print $content['lower-bottom-right']; ?>
+      </div>
+    </div>
+  <?php endif; ?>
+
   <?php if ($content['bottom-left'] || $content['bottom-right']): ?>
     <div class="row">
       <div class="panel-panel panel-col col-sm-3">
