@@ -139,8 +139,8 @@
 .js .cart-container {
 	pointer-events: none;
 	opacity: 0;
-  transform: transition-property(opacity);
-  transform: transition-duration(0.5s);
+  transition-property: opacity;
+  transition-duration: 0.5s;
 }
 
 .js .cart-container.cart--open {

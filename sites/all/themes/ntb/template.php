@@ -1,6 +1,6 @@
 <?php
 
-define('CSS_VERSION', '1.04');
+define('CSS_VERSION', '1.05');
 
 /**
  * Implements hook_theme().
@@ -67,7 +67,7 @@ function ntb_preprocess_page(&$vars) {
     'links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'secondary-menu',
   ];
 
-  $secondary_dropdown = ['dropdown-menu', 'dropdown-menu-right'];
+  $secondary_dropdown = ['dropdown-menu', 'dropdown-menu-right', 'nav'];
 
   if (!$vars['logged_in']) {
     $links[] = array(
@@ -250,9 +250,9 @@ function ntb_library() {
         'type' => 'inline',
       ),
     ),
-    'css' => [
-      drupal_get_path('theme', 'ntb') . '/css/ntb.css' => [],
-    ],
+    // 'css' => [
+    //   drupal_get_path('theme', 'ntb') . '/css/ntb.css' => [],
+    // ],
     'dependencies' => [
       // ['ntb', 'bootstrap_collapse'],
       // ['ntb', 'bootstrap_dropdown'],
@@ -281,8 +281,8 @@ function ntb_library() {
  */
 function ntb_preprocess_html(&$vars) {
   $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/ntb_critical.css');
-  // $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
-  $vars['critical'] = '';
+  $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
+  // $vars['critical'] = '';
 }
 
 /**

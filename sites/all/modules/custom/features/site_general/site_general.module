@@ -44,14 +44,17 @@ function site_general_preprocess_node(&$vars) {
 
   if ($vars['view_mode'] == 'blog_teaser') {
     $vars['theme_hook_suggestions'][] = 'node__blog_teaser';
-    $image_uri = $vars['field_primary_image'][0]['uri'];
 
-    $img_array = array(
-      'style_name' => 'square_500x500',
-      'path' => $image_uri,
-    );
+    if (!empty($vars['field_primary_image'])) {
+      $image_uri = $vars['field_primary_image'][0]['uri'];
 
-    $vars['image'] = theme('image_style', $img_array);
+      $img_array = array(
+        'style_name' => 'square_500x500',
+        'path' => $image_uri,
+      );
+
+      $vars['image'] = theme('image_style', $img_array);
+    }
   }
 }
 

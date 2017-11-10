@@ -27,12 +27,12 @@ gulp.task('watch_css', function () {
 
 gulp.task('critical', function () {
   var criticals = {
-    home: 'https://nakedtruthbeauty.com/',
-    about: 'https://nakedtruthbeauty.com/about/',
-    cart: 'https://nakedtruthbeauty.com/cart/',
-    shop: 'https://nakedtruthbeauty.com/shop/',
-    ingredients: 'https://nakedtruthbeauty.com/ingredients/',
-    blog: 'https://nakedtruthbeauty.com/blog/'
+    home: 'https://staging.nakedtruthbeauty.com/',
+    about: 'https://staging.nakedtruthbeauty.com/about/',
+    cart: 'https://staging.nakedtruthbeauty.com/cart/',
+    shop: 'https://staging.nakedtruthbeauty.com/shop/',
+    ingredients: 'https://staging.nakedtruthbeauty.com/ingredients/',
+    blog: 'https://staging.nakedtruthbeauty.com/blog/'
   };
 
   var cssPath = 'sites/all/themes/ntb/css/ntb.css';
@@ -42,6 +42,17 @@ gulp.task('critical', function () {
       generateCriticalCSS(cssPath, key, criticals[key]);
     }
   }
+});
+
+gulp.task('crit-css', function () {
+  var processors = [
+    autoprefixer,
+    cssnano
+  ];
+  return gulp.src('./sites/all/themes/ntb/scss/ntb_critical.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(processors))
+    .pipe(gulp.dest('./sites/all/themes/ntb/css/', {overwrite: true}));
 });
 
 gulp.task('minify', function () {

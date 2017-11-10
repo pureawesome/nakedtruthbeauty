@@ -12,21 +12,7 @@ nav {
     grid-column: 12 span;
   }
 
-  a {
-    width: 100%;
-    color: $link-color;
-    font-size: 1.25rem;
-    padding: 10px 15px;
-    transition: all 0.2s ease-in-out;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 300;
 
-    &:hover,
-    &:focus {
-      color: $link-color-hover;
-    }
-  }
 
   & > .active > a {
     color: $text-dark;
@@ -40,6 +26,24 @@ nav {
 
 .nav-secondary-wrapper {
   flex: 0 0 auto;
+  margin-right: 15px;
+}
+
+.primary-nav > li > a,
+.dropdown-menu > li > a {
+  width: 100%;
+  color: $link-color;
+  font-size: 1.25rem;
+  padding: 10px 15px;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 300;
+
+  &:hover,
+  &:focus {
+    color: $link-color-hover;
+  }
 }
 
 .navbar-nav {
@@ -95,6 +99,11 @@ nav {
     background: $white;
     color: $link-color-hover;
   }
+
+  nav & > li > a {
+    font-size: 14px;
+    padding: 5px;
+  }
 }
 
 .dropdown {
@@ -114,9 +123,9 @@ nav {
   display: block;
 }
 
-.custom-user-menu .user-dropdown {
-  display: block;
-}
+// .custom-user-menu .user-dropdown {
+//   display: block;
+// }
 
 // nav .navbar-nav > li > a {
 //   padding: 10px 15px;
