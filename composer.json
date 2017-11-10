@@ -1,5 +1,6 @@
 {
     "require": {
-        "pantheon-systems/terminus": "^1.6"
+        "pantheon-systems/terminus": "^1.6",
+        "drush/drush": "^8.1"
     }
 }
