@@ -8,7 +8,7 @@
   <div class="title">
     <h3>
       <?php if (isset($title)): ?>
-        <?php print l($title, $node_url, array('html' => FALSE)); ?>
+        <?php print l($title, $node_url, array('html' => TRUE)); ?>
       <?php endif; ?>
     </h3>
   </div>

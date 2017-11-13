@@ -57,7 +57,7 @@ gulp.task('crit-css', function () {
 
 gulp.task('minify', function () {
   var css = [
-    // 'sites/all/themes/ntb/css/ntb.css',
+    'sites/all/themes/ntb/css/ntb.css',
     'sites/all/themes/ntb/css/ntb_critical.css'
   ];
 
