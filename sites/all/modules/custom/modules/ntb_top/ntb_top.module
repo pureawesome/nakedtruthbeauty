@@ -123,7 +123,7 @@ function ntb_top_build_display($num) {
     $node_displays[] = render($node_view);
   }
   $class = ['ntb-top'];
-  $class[] = $num == 3 ? 'ntb-top-three' : 'ntb-top-four';
+  $class[] = $num == 3 ? 'three-item' : 'four-item';
   $output = theme('item_list', ['items' => $node_displays, 'attributes' => ['class' => $class]]);
 
   return $output;
