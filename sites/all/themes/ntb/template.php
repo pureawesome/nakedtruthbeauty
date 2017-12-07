@@ -18,6 +18,19 @@ function ntb_theme() {
 function ntb_preprocess_page(&$vars) {
   $ntb_css = drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION;
 
+  $preload = [
+    '#theme' => 'html_tag',
+    '#tag' => 'link',
+    '#attributes' => array(
+      'rel' => 'preload',
+      'as' => 'style',
+      'href' => '/' . $ntb_css,
+      'onload' => "this.onload=null;this.rel='stylesheet'",
+    ),
+  ];
+
+  drupal_add_html_head($preload, 'preloadcss');
+
   $noscript = array(
     '#theme' => 'html_tag',
     '#tag' => 'link',
@@ -33,8 +46,6 @@ function ntb_preprocess_page(&$vars) {
     '#tag' => 'noscript',
     '#value' => drupal_render($noscript),
   );
-
-  drupal_add_html_head($noscript_wrapper, 'noscript');
 
   $preload_fonts = [
     'quicksand-regular-webfont.woff2',
@@ -202,12 +213,9 @@ function ntb_library() {
 
   $libraries['loadcss'] = array(
     'title' => 'loadCSS',
-    'version' => '1.3.1',
+    'version' => '2.0.1',
     'js' => array(
-      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/src/loadCSS.min.js') => array(
-        'type' => 'inline',
-      ),
-      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/src/cssrelpreload.min.js') => array(
+      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/src/cssrelpreload.js') => array(
         'type' => 'inline',
       ),
     ),
@@ -222,9 +230,9 @@ function ntb_library() {
         'defer' => TRUE,
         'scope' => 'footer',
       ),
-      'loadCSS("/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION . '");' => array(
-        'type' => 'inline',
-      ),
+      // 'loadCSS("/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION . '");' => array(
+      //   'type' => 'inline',
+      // ),
     ),
     'dependencies' => [
       ['ntb', 'bootstrap_collapse'],
