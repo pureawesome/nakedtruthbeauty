@@ -217,4 +217,10 @@
     <?php print render($page['footer']); ?>
   </div></div> <!-- /.section, /#footer -->
 
+  <?php if ($page['sr_only']): ?>
+    <div id="sr-only">
+      <?php print render($page['sr_only']); ?>
+    </div>
+  <?php endif; ?>
+
 </div></div> <!-- /#page, /#page-wrapper -->
