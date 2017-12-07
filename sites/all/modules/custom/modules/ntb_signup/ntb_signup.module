@@ -11,49 +11,38 @@
 include_once 'ntb_signup.features.inc';
 
 /**
- * Implements hook_block_info().
+ * Implements hook_preprocess_page().
  */
-function ntb_signup_block_info() {
-  $blocks['ntb_signup_block'] = [
-    'info' => t('NTB Signup CTA'),
-  ];
-
-  $blocks['ntb_signup_popup'] = [
-    'info' => t('NTB Signup Popup'),
-  ];
-
-  return $blocks;
-}
-
-/**
- * Implements hook_block_view().
- */
-function ntb_signup_block_view($delta = '') {
-  $block = [];
-
-  switch ($delta) {
-    case 'ntb_signup_block':
-      $block['content'] = ntb_signup_block_display();
-      break;
-    case 'ntb_signup_popup':
-      $block['content'] = ntb_signup_popup_display();
-      break;
+function ntb_signup_preprocess_page(&$vars) {
+  if (arg(0) !== 'admin') {
+    drupal_add_library('ntb_signup', 'ntb_signup');
   }
-
-  return $block;
 }
 
 /**
  * Implements hook_library().
  */
 function ntb_signup_library() {
+  $pre = variable_get('signup_premessage', t('Sign up and receive a discount code for your first order!'));
+  $post = variable_get('signup_postmessage', t('Thanks for signing up! Here is your code.'));
+  $already = variable_get('signup_alreadymessage', t('Looks like that email has already been submitted. Please check your email for a copy of the code.'));
+
   $libraries['ntb_signup'] = array(
     'title' => 'NTB Signup',
-    'version' => '1.2',
+    'version' => '1.1',
     'js' => array(
       drupal_get_path('module', 'ntb_signup') . '/js/ntb_signup.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
+      ),
+      array(
+        'data' => array(
+          'ntb_signup' => array(
+            'premessage' => $pre['value'],
+            'cookie' => 'ntb_signup',
+          ),
+        ),
+        'type' => 'setting',
       ),
     ),
     'css' => array(
@@ -92,16 +81,6 @@ function ntb_signup_menu() {
  */
 function ntb_signup_admin() {
   $form = array();
-
-  $block_text = variable_get('signup_block_text', array('value' => '', 'format' => 'filtered_html'));
-  $form['signup']['signup_block_text'] = array(
-    '#type' => 'text_format',
-    '#title' => t('Block Call to Action'),
-    '#default_value' => $block_text['value'],
-    '#description' => t("This message is displayed in teh block to trigger the popup."),
-    '#format' => $block_text['format'],
-    '#required' => TRUE,
-  );
 
   $premessage = variable_get('signup_premessage', array('value' => '', 'format' => 'filtered_html'));
   $form['signup']['signup_premessage'] = array(
@@ -179,32 +158,4 @@ function ntb_signup_submit_email() {
 
     drupal_json_output($response['value']);
   }
-}
-
-function ntb_signup_block_display() {
-  drupal_add_library('ntb_signup', 'ntb_signup');
-  $variable = variable_get('signup_block_text', array('value' => '', 'format' => 'filtered_html'));
-  return $variable['value'];
-}
-
-function ntb_signup_popup_display() {
-  drupal_add_library('ntb_signup', 'ntb_signup');
-  $pre = variable_get('signup_premessage', t('Sign up and receive a discount code for your first order!'));
-
-  $form = '<div class="ntb-signup">';
-    $form .= '<div class="ntb-signup-overlay"></div>';
-    $form .= '<div class="ntb-signup-form">';
-      $form .= '<div class="close"><i class="fa fa-times" aria-hidden="true"></i></div>';
-      $form .= '<div class="ntb-signup-form-wrapper">';
-        $form .= '<div class="title">' . $pre['value'] . '</div>';
-        $form .= '<div class="errors"></div>';
-        $form .= '<div class="input-group">';
-          $form .= '<input type="email" title="Please, provide an e-mail" placeholder="Email" class="form-control form-text">';
-          $form .= '<span class="input-group-btn"><button class="btn form-submit button" type="submit">Submit</button></span>';
-        $form .= '</div>';
-      $form .= '</div>';
-    $form .= '</div>';
-  $form .= '</div>';
-
-  return $form;
 }
