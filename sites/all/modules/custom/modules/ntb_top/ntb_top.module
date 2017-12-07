@@ -9,12 +9,8 @@
  * Implements hook_block_info().
  */
 function ntb_top_block_info() {
-  $blocks['ntb_top_3'] = array(
+  $blocks['ntb_top'] = array(
     'info' => t('NTB top 3'),
-  );
-
-  $blocks['ntb_top_4'] = array(
-    'info' => t('NTB top 4'),
   );
 
   return $blocks;
@@ -24,7 +20,7 @@ function ntb_top_block_info() {
  * Implements hook_block_configure().
  */
 function ntb_top_block_configure($delta = '') {
-  if ($delta == 'ntb_top_3' || $delta == 'ntb_top_4') {
+  if ($delta == 'ntb_top') {
     $form = [];
     $type = 'product_display';
     $query = [];
@@ -60,13 +56,6 @@ function ntb_top_block_configure($delta = '') {
       '#options' => $options,
       '#default_value' => variable_get('ntb_top_three', NULL),
     ];
-
-    $form['ntb_top_four'] = [
-      '#type' => 'select',
-      '#title' => t('NTB Top Four'),
-      '#options' => $options,
-      '#default_value' => variable_get('ntb_top_four', NULL),
-    ];
   }
 
   return $form;
@@ -76,8 +65,8 @@ function ntb_top_block_configure($delta = '') {
  * Implements hook_block_save().
  */
 function ntb_top_block_save($delta = '', $edit = array()) {
-  if ($delta == 'ntb_top_3' || $delta == 'ntb_top_4') {
-    $tops = ['ntb_top_four', 'ntb_top_three', 'ntb_top_two', 'ntb_top_one'];
+  if ($delta == 'ntb_top') {
+    $tops = ['ntb_top_three', 'ntb_top_two', 'ntb_top_one'];
 
     foreach ($tops as $top) {
       variable_set($top, $edit[$top]);
@@ -92,39 +81,30 @@ function ntb_top_block_view($delta = '') {
   $block = [];
 
   switch ($delta) {
-    case 'ntb_top_4':
-      $block['content'] = ntb_top_build_display(4);
-      break;
-    case 'ntb_top_3':
-      $block['content'] = ntb_top_build_display(3);
+    case 'ntb_top':
+      $block['content'] = ntb_top_build_display();
       break;
   }
 
   return $block;
 }
 
-function ntb_top_build_display($num) {
-  $fields = ['ntb_top_three', 'ntb_top_two', 'ntb_top_one', 'ntb_top_four'];
+function ntb_top_build_display() {
+  $fields = ['ntb_top_three', 'ntb_top_two', 'ntb_top_one'];
   $nids = [];
 
   foreach ($fields as $field) {
     $nids[] = variable_get($field, NULL);
   }
 
-  if ($num == 3) {
-    array_pop($nids);
-  }
-
   $nodes = node_load_multiple($nids);
 
   $node_displays = [];
   foreach ($nodes as $node) {
-    $node_view = node_view($node, 'product_square', NULL);
-    $node_displays[] = render($node_view);
+    $node_displays[] = render(node_view($node, 'product_square', NULL));
   }
-  $class = ['ntb-top'];
-  $class[] = $num == 3 ? 'three-item' : 'four-item';
-  $output = theme('item_list', ['items' => $node_displays, 'attributes' => ['class' => $class]]);
+
+  $output = theme('item_list', ['items' => $node_displays, 'attributes' => ['class' => 'ntb-top-three']]);
 
   return $output;
 }

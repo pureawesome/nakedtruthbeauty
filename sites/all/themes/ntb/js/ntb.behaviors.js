@@ -32,8 +32,6 @@
           window.location.href = url;
         });
       }
-
-      $(window).on('resize load', $.throttle(100, self.calcWidth));
     },
 
     /**
@@ -53,52 +51,6 @@
           $(img).attr('src', src);
         };
       }
-    },
-
-    calcWidth: function () {
-      var navwidth = 0;
-      var morewidth = $('.primary-nav .more').outerWidth(true);
-
-      $('.primary-nav > li:not(.more)').each(function () {
-        navwidth += $(this).outerWidth(true);
-      });
-      var availablespace = $('.nav-primary-wrapper').outerWidth(true) - morewidth - 15;
-
-      if (navwidth > availablespace) {
-        var lastItem = $('.primary-nav > li:not(.more)').last();
-        lastItem.attr('data-width', lastItem.outerWidth(true));
-        lastItem.prependTo($('.primary-nav .more ul'));
-        Drupal.behaviors.ntb.calcWidth();
-      }
-      else {
-        var firstMoreElement = $('.primary-nav li.more li').first();
-        if (navwidth + firstMoreElement.data('width') < availablespace) {
-          firstMoreElement.insertBefore($('.primary-nav .more'));
-        }
-
-        var $moreText = $('.primary-nav > .more > a')[0];
-        if ($('.primary-nav > li').length === 1) {
-          $moreText.text = 'menu';
-        }
-        else {
-          $moreText.text = 'more';
-        }
-      }
-
-      if ($('.primary-nav .more li').length > 0) {
-        $('.primary-nav .more').css('display', 'inline-block');
-      }
-      else {
-        $('.primary-nav .more').css('display', 'none');
-      }
-
-      if ($('.primary-nav > li').length === 1) {
-        $('.primary-nav > .more > a').text = 'menu';
-      }
-      else {
-        // $('.primary-nav > li').last().find('a').html = 'more';
-      }
-      // Drupal.behaviors.ntb.calcWidth();
     }
   };
 })(jQuery);

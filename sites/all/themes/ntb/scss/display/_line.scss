@@ -1,10 +1,10 @@
 .line {
   display: block;
   padding-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content:(center);
+  @include display-flex();
+  @include flex-direction(column);
+  @include align-items(center);
+  @include align-content(center);
 
   .img,
   .content {
@@ -22,9 +22,14 @@
 
 @include breakpoint($screen-xs) {
   .line {
+  }
+}
+
+@include breakpoint($screen-sm) {
+  .line {
     float: left;
     // height: 200px;
-    flex-direction: row;
+    @include flex-direction(row);
 
     .img {
       width: 100px;
@@ -43,14 +48,10 @@
 
     .img,
     .content {
-      display: inline-block;
+      @include inline-block;
       float: left;
     }
   }
-}
-
-@include breakpoint($screen-sm) {
-
 }
 
 @include breakpoint($screen-md) {

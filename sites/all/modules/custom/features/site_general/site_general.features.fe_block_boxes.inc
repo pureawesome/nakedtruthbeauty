@@ -11,6 +11,17 @@ function site_general_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Footer menu';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'footer_menu';
+  $fe_block_boxes->body = '<div class="col-sm-12" style="margin-top: 20px">
+<div style="display:inline; float:right">2016 ©&nbsp;naked truth beauty |&nbsp;<a href="/details#contact">Contact Us</a> | <a href="/details#shipping">Shipping Policy</a> | <a href="/details#returns">Return Policy</a> | <a href="/details#privacy">Privacy Policy</a></div>
+</div>
+';
+
+  $export['footer_menu'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'line_break';
   $fe_block_boxes->format = 'raw_html';
   $fe_block_boxes->machine_name = 'line_break';
@@ -23,11 +34,11 @@ function site_general_default_fe_block_boxes() {
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'ntb_mission';
   $fe_block_boxes->body = '<div>
-<p>&nbsp;</p>
-
-<h2 class="rtecenter"><span class="color-secondary">SOCIALLY RESPONSIBLE COSMETICS</span></h2>
+<h2 class="rtecenter"><span style="color:#50a89f">SOCIALLY RESPONSIBLE COSMETICS</span></h2>
 
 <h3 class="rtecenter">good for our bodies, communities, and environment</h3>
+
+<p>&nbsp;</p>
 
 <p>&nbsp;</p>
 </div>

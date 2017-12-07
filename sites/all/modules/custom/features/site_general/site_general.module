@@ -18,10 +18,6 @@ function site_general_entity_info_alter(&$entity_info) {
     'label' => t('Line Teaser'),
     'custom settings' => FALSE,
   );
-  $entity_info['node']['view modes']['blog_teaser'] = array(
-    'label' => t('Blog Teaser'),
-    'custom settings' => FALSE,
-  );
 }
 
 /**
@@ -40,21 +36,6 @@ function site_general_preprocess_node(&$vars) {
       'path' => $image_uri,
     );
     $vars['image'] = theme('image_style', $img_array);
-  }
-
-  if ($vars['view_mode'] == 'blog_teaser') {
-    $vars['theme_hook_suggestions'][] = 'node__blog_teaser';
-
-    if (!empty($vars['field_primary_image'])) {
-      $image_uri = $vars['field_primary_image'][0]['uri'];
-
-      $img_array = array(
-        'style_name' => 'square_500x500',
-        'path' => $image_uri,
-      );
-
-      $vars['image'] = theme('image_style', $img_array);
-    }
   }
 }
 

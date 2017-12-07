@@ -3,7 +3,7 @@
   background: none;
   border: none;
   margin: 0.5%;
-  display: inline-block;
+  @include inline-block();
 }
 
 @include breakpoint($screen-sm) {

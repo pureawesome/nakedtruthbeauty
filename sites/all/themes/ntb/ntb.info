@@ -13,6 +13,7 @@ regions[content] = Content
 regions[sidebar_first] = Left sidebar
 regions[sidebar_second] = Right sidebar
 regions[footer] = Footer
+regions[sr_only] = Screen Reader Only
 
 ; Custom Stylesheets
 ;stylesheets[all][] = css/ntb.css

@@ -14,11 +14,18 @@
   }
 }
 
+.tile.article {
+  .img {
+    max-width: 150px;
+    margin: auto;
+  }
+}
+
 @include breakpoint($screen-xs) {
   .tile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
 
     .img,
     .title {
@@ -27,10 +34,10 @@
     }
 
     .img {
-      flex: 1;
+      @include flex(1);
     }
     .title {
-      flex: 1;
+      @include flex(2);
 
       a {
         text-align: left;
@@ -51,23 +58,26 @@
     .field-name-field-product {
       width: auto;
       margin-bottom: 0;
-      display: inline-block;
+      @include inline-block();
     }
 
     h3 {
-      padding-left: 0;
       text-align: center;
     }
+  }
+
+  .tile.article {
+    flex-direction: row;
   }
 }
 
 @include breakpoint($screen-sm) {
-  .tile {
+  .tile:not(.article) {
     height: 100%;
-    flex-direction: column;
+    @include flex-direction(column);
 
     .title {
-      flex: 1;;
+      @include flex(1);
     }
 
     .title a {

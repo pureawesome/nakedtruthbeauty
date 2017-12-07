@@ -1,6 +1,5 @@
 .view-product-type-taxonomy {
   text-align: center;
-  // border: 1px solid red;
 
   .active {
     color: $link-hover-color;
@@ -8,38 +7,22 @@
 
   .views-row {
     text-align: center;
-
-    @supports(display: grid) {
-      grid-column: span 6;
-      margin: 0;
-    }
   }
 
   @include breakpoint($screen-xs) {
     .views-row {
-      display: inline-block;
+      @include inline-block();
       text-transform: lowercase;
-      font-size: 1.25rem;
+      font-size: 20px;
       margin: 0 25px;
-
-      @supports(display: grid) {
-        grid-column: span 4;
-        margin: 0;
-      }
     }
   }
 
   @include breakpoint($screen-sm) {
-    .view-content {
-      display: flex;
-      flex-direction: column;
-    }
-
     .views-row {
       display: block;
       text-align: center;
       margin: 10px 0;
-      width: 100%;
     }
   }
 }
@@ -49,29 +32,29 @@
     opacity: 0;
   }
 
-  // .view-content {
-  //   width: 100%;
-  //   display: flex;
-  //   flex-direction: row;
-  //   flex-wrap: wrap;
-  // }
+  .view-content {
+    width: 100%;
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+  }
 
   .title {
     text-align: center;
   }
 
   @include breakpoint($screen-xs) {
-    // a {
-    //   text-align: left;
-    //   padding-left: 10px;
-    // }
+    a {
+      text-align: left;
+      padding-left: 10px;
+    }
   }
 
   @include breakpoint($screen-sm) {
-    // a {
-    //   padding-left: 0;
-    //   text-align: center;
-    // }
+    a {
+      padding-left: 0;
+      text-align: center;
+    }
   }
 
   @include breakpoint($screen-md) {

@@ -4,15 +4,11 @@ img {
   height: auto;
 }
 
-.field-name-body img {
-
-}
-
 .flex-direction-nav a {
   &:before {
     content: $fa-var-arrow-circle-left;
     @include fa-icon();
-    font-size: 2.5rem;
+    font-size: 40px;
     color: rgba($secondary-blue, 0.8);
   }
 
@@ -23,7 +19,6 @@ img {
 
 #page-title {
   text-align: center;
-  width: 100%;
 }
 
 ul.inline li {
@@ -52,7 +47,7 @@ ol li a {
   background: $primary-blue;
   margin-bottom: 10px;
   color: $text-dark;
-  border-radius: 5px;
+  @include border-radius(5px);
 
   &:hover {
     background: $secondary-blue;
@@ -60,10 +55,7 @@ ol li a {
 }
 
 a {
-  color: $link-color;
-
   &:hover {
-    color: $link-color-hover;
     text-decoration: none;
   }
 }
@@ -87,7 +79,7 @@ table thead th,
 .field .field-label {
   font-weight: normal;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 12px;
 }
 
 #user-pass-reset,
@@ -117,7 +109,7 @@ ul.primary {
       &:hover {
         background: $secondary-blue;
         color: #000;
-        border-radius: 5px;
+        @include border-radius(5px);
       }
     }
 
@@ -139,7 +131,7 @@ ul.primary {
       // color: darken($secondary-blue, 15%);
       // color: $white;
       content: $fa-var-facebook;
-      font-size: 2.25rem;
+      font-size: 36px;
     }
 
     &.tw:before {
@@ -179,7 +171,7 @@ ul.primary {
   display: block;
   width: 100%;
   height: 2px;
-  background-image: linear-gradient(to right, #fff, $primary-blue,  #fff);
+  @include background-image(linear-gradient(left, #fff, $primary-blue,  #fff));
   border-radius: 1px;
   margin: 45px 0;
 }
@@ -191,7 +183,7 @@ ul.primary {
 
   .form-submit {
     width: auto;
-    display: inline-block;
+    @include inline-block();
   }
 
   .form-inline.form-control {
@@ -202,7 +194,7 @@ ul.primary {
 
   table thead th,
   .field .field-label {
-    font-size: 1rem;
+    font-size: 16px;
   }
 }
 
@@ -211,20 +203,12 @@ ul.primary {
   text-align: center;
 }
 
-ul.ntb-top {
-  display: flex;
-  flex-direction: column;
+ul.ntb-top-three {
+  @include display-flex();
+  @include flex-direction(column);
 
   @include breakpoint($nav-break) {
-    flex-direction: row;
-  }
-
-  @supports(display:grid) {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 2rem;
-    margin: 0;
-    grid-column: 12 span;
+    @include flex-direction(row);
   }
 
   &,
@@ -232,19 +216,6 @@ ul.ntb-top {
     margin: 0;
     padding: 0;
     list-style: none;
-    .tile {
-
-    }
-    border-bottom: 0;
-
-    @supports(display:grid) {
-      &.ntb-top-three li {
-        grid-column: 4 span;
-      }
-      &.ntb-top-four li {
-        grid-column: 3 span;
-      }
-    }
   }
 }
 
@@ -255,35 +226,14 @@ ul.ntb-top {
 .color-secondary {
   color: $secondary-blue;
 }
-
-#logo svg {
-  max-width: 100%;
-  height: auto;
-}
-
-p {
-  font-size: 1.125rem;
-}
-
-.form-submit {
-  padding: 0 0.5rem;
-  cursor: pointer;
-}
-
-.block-menu ul {
+#sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
   padding: 0;
-  margin: 0;
-}
-
-#block-menu-menu-footer-menu {
-ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-li {
-    list-style: none;
-    display: inline-block;
-  }
+  margin: -1px;
+  /* overflow: hidden; */
+  /* clip: rect(0, 0, 0, 0); */
+  border: 0;
+  /* overflow: visible; */
 }

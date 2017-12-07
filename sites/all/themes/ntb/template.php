@@ -1,6 +1,6 @@
 <?php
 
-define('CSS_VERSION', '1.05');
+define('CSS_VERSION', '1.04');
 
 /**
  * Implements hook_theme().
@@ -40,7 +40,7 @@ function ntb_preprocess_page(&$vars) {
     'quicksand-regular-webfont.woff2',
     'fontawesome-webfont.woff2?v=4.6.3',
     'quicksand-bold-webfont.woff2',
-    // 'have_heart_one-webfont.woff2',
+    'have_heart_one-webfont.woff2',
   ];
 
   $theme_path = drupal_get_path('theme', 'ntb');
@@ -67,7 +67,7 @@ function ntb_preprocess_page(&$vars) {
     'links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'secondary-menu',
   ];
 
-  $secondary_dropdown = ['dropdown-menu', 'dropdown-menu-right', 'nav'];
+  $secondary_dropdown = ['dropdown-menu', 'dropdown-menu-right'];
 
   if (!$vars['logged_in']) {
     $links[] = array(
@@ -121,7 +121,7 @@ function ntb_preprocess_page(&$vars) {
  * Implements THEMENAME_menu_tree__MENU_NAME().
  */
 function ntb_menu_tree__main_menu($variables) {
-  return '<ul class="links clearfix nav navbar-nav primary-nav">' . $variables['tree'] . '<li class="more hidden dropdown"><a href="#">More</a><ul class="dropdown-menu"></ul></li></ul>';
+  return '<ul class="links inline clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
 }
 
 /**
@@ -149,6 +149,7 @@ function ntb_menu_link__main_menu($variables) {
     else {
       unset($element['#below']['#theme_wrappers']);
       $sub_menu = '<ul class="dropdown-menu">' . drupal_render($element['#below']) . '</ul>';
+      $element['#title'] .= ' <i class="fa fa-angle-down"></i>';
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
       $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
@@ -168,20 +169,9 @@ function ntb_menu_link__main_menu($variables) {
 function ntb_library() {
   $libraries['bootstrap_tabs'] = array(
     'title' => 'Bootstrap Tabs',
-    'version' => '4.0.0-beta.2',
+    'version' => '3.3.6',
     'js' => array(
-      libraries_get_path('bootstrap') . '/js/dist/tab.min.js' => array(
-        'defer' => TRUE,
-        'scope' => 'footer',
-      ),
-    ),
-  );
-
-  $libraries['bootstrap_tooltip'] = array(
-    'title' => 'Bootstrap ',
-    'version' => '4.0.0-beta.2',
-    'js' => array(
-      libraries_get_path('bootstrap') . '/js/dist/tooltip.min.js' => array(
+      libraries_get_path('bootstrap') . '/js/lib/tab.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
@@ -190,34 +180,20 @@ function ntb_library() {
 
   $libraries['bootstrap_dropdown'] = array(
     'title' => 'Bootstrap ',
-    'version' => '4.0.0-beta.2',
+    'version' => '3.3.6',
     'js' => array(
-      libraries_get_path('bootstrap') . '/js/dist/dropdown.min.js' => array(
+      libraries_get_path('bootstrap') . '/js/lib/dropdown.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
     ),
-    'dependencies' => [
-      ['ntb', 'boostrap_tooltip'],
-    ],
   );
 
   $libraries['bootstrap_collapse'] = array(
     'title' => 'Bootstrap ',
-    'version' => '4.0.0-beta.2',
+    'version' => '3.3.6',
     'js' => array(
-      libraries_get_path('bootstrap') . '/js/dist/collapse.min.js' => array(
-        'defer' => TRUE,
-        'scope' => 'footer',
-      ),
-    ),
-  );
-
-  $libraries['throttle.debounce'] = array(
-    'title' => 'Throttle Debounce',
-    'version' => '1.1',
-    'js' => array(
-      libraries_get_path('jquery-throttle-debounce') . '/jquery.ba-throttle-debounce.min.js' => array(
+      libraries_get_path('bootstrap') . '/js/lib/collapse.min.js' => array(
         'defer' => TRUE,
         'scope' => 'footer',
       ),
@@ -250,15 +226,11 @@ function ntb_library() {
         'type' => 'inline',
       ),
     ),
-    // 'css' => [
-    //   drupal_get_path('theme', 'ntb') . '/css/ntb.css' => [],
-    // ],
     'dependencies' => [
-      // ['ntb', 'bootstrap_collapse'],
-      // ['ntb', 'bootstrap_dropdown'],
+      ['ntb', 'bootstrap_collapse'],
+      ['ntb', 'bootstrap_dropdown'],
       ['ntb', 'modernizr'],
       ['ntb', 'loadcss'],
-      ['ntb', 'throttle.debounce'],
     ],
   );
 
@@ -282,7 +254,6 @@ function ntb_library() {
 function ntb_preprocess_html(&$vars) {
   $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/ntb_critical.css');
   $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
-  // $vars['critical'] = '';
 }
 
 /**

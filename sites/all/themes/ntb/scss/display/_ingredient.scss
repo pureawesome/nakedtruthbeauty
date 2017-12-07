@@ -5,24 +5,7 @@
   }
 }
 
-.view-id-ingredients .view-content {
-  display: flex;
-  flex-wrap: wrap;
-
-  .views-row {
-    margin-bottom: 30px;
-  }
-
-  @supports(display: grid) {
-    display: grid;
-
-    .views-row {
-      margin: 0;
-      grid-column: 12 span;
-
-      @include breakpoint($screen-sm) {
-        grid-column: 6 span;
-      }
-    }
-  }
+.view-ingredients .view-content {
+  @include display-flex();
+  @include flex-wrap(wrap);
 }

@@ -1,15 +1,15 @@
-@keyframes spin  {
+@include keyframes(spin) {
   0% {
-    transform: rotate(0);
+    @include transform( rotate(0) );
   }
   100% {
-    transform:rotate(360deg);
+    @include transform( rotate(360deg) );
   }
 }
 
 .view-marquee {
   .fa-spinner:before {
-  animation: spin 2s infinite linear;
+    @include animation(spin 2s infinite linear);
   }
 
   .flexslider:hover .flex-direction-nav a {
@@ -41,7 +41,7 @@
 
   .flex-control-paging li a {
     background: $primary-blue;
-    box-shadow: none;
+    @include box-shadow(none);
 
     &.flex-active {
       background: $primary-peach;

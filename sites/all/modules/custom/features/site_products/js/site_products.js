@@ -9,16 +9,16 @@
     attach: function (context, settings) {
       var self = this;
 
-      // $('.node-type-product-display').once('tabs', function () {
-      //   self.enableTabs();
-      // });
+      $('.node-type-product-display').once('tabs', function () {
+        self.enableTabs();
+      });
     },
 
-    // enableTabs: function () {
-    //   $('.product-body .nav-tabs a').on('click', function (event) {
-    //     event.preventDefault();
-    //     $(this).tab('show');
-    //   });
-    // }
+    enableTabs: function () {
+      $('.product-body .nav-tabs a').on('click', function (event) {
+        event.preventDefault();
+        $(this).tab('show');
+      });
+    }
   };
 })(jQuery);
