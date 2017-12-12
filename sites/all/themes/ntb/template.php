@@ -41,6 +41,9 @@ function ntb_preprocess_page(&$vars) {
     'fontawesome-webfont.woff2?v=4.6.3',
     'quicksand-bold-webfont.woff2',
     // 'have_heart_one-webfont.woff2',
+    'lato-bold-webfont.woff2',
+    'lato-light-webfont.woff2',
+    'lato-regular-webfont.woff2',
   ];
 
   $theme_path = drupal_get_path('theme', 'ntb');
@@ -121,7 +124,7 @@ function ntb_preprocess_page(&$vars) {
  * Implements THEMENAME_menu_tree__MENU_NAME().
  */
 function ntb_menu_tree__main_menu($variables) {
-  return '<ul class="links clearfix nav navbar-nav primary-nav">' . $variables['tree'] . '<li class="more hidden dropdown"><a href="#">More</a><ul class="dropdown-menu"></ul></li></ul>';
+  return '<ul class="links clearfix nav navbar-nav primary-nav"><li class="more hidden dropdown"><a href="#">More</a><ul class="dropdown-menu">' . $variables['tree'] . '</ul></li></ul>';
 }
 
 /**

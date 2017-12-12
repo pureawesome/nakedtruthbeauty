@@ -24,6 +24,9 @@ function updateStaticCache() {
       cache.addAll([
         '/sites/all/themes/ntb/fonts/quicksand-regular-webfont.woff2',
         '/sites/all/themes/ntb/fonts/fontawesome-webfont.woff2?v=4.6.3',
+        '/sites/all/themes/ntb/fonts/lato-bold-webfont.woff2',
+        '/sites/all/themes/ntb/fonts/lato-light-webfont.woff2',
+        '/sites/all/themes/ntb/fonts/lato-regular-webfont.woff2',
         // '/sites/all/themes/ntb/fonts/have_heart_one-webfont.woff2',
         '/sites/all/themes/ntb/fonts/quicksand-bold-webfont.woff2',
         '/sites/all/modules/custom/features/site_products/js/site_shop.min.js?v=1.0',

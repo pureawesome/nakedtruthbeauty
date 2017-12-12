@@ -25,7 +25,7 @@ gulp.task('watch_css', function () {
   gulp.watch('./sites/all/themes/ntb/scss/ntb.scss', ['css']);
 });
 
-gulp.task('critical', function () {
+gulp.task('critical', ['css'], function () {
   var criticals = {
     home: 'https://staging.nakedtruthbeauty.com/',
     about: 'https://staging.nakedtruthbeauty.com/about/',
@@ -44,7 +44,7 @@ gulp.task('critical', function () {
   }
 });
 
-gulp.task('crit-css', function () {
+gulp.task('crit-css', ['critical'], function () {
   var processors = [
     autoprefixer,
     cssnano
@@ -55,7 +55,7 @@ gulp.task('crit-css', function () {
     .pipe(gulp.dest('./sites/all/themes/ntb/css/', {overwrite: true}));
 });
 
-gulp.task('minify', function () {
+gulp.task('minify', ['crit-css'], function () {
   var css = [
     'sites/all/themes/ntb/css/ntb.css',
     'sites/all/themes/ntb/css/ntb_critical.css'
@@ -77,6 +77,8 @@ gulp.task('minify', function () {
       .pipe(gulp.dest('sites/all/themes/ntb/css/'));
   });
 });
+
+gulp.task('build', ['css', 'critical', 'crit-css', 'minify']);
 
 function generateCriticalCSS(cssPath, key, value) {
   criticalcss.getRules(cssPath, function (err, output) {
