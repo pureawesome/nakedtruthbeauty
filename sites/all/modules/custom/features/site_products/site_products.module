@@ -185,7 +185,7 @@ function site_products_preprocess_node(&$vars) {
       'title' => '',
       'type' => 'ul',
       'attributes' => [
-        'class' => ['inline'],
+        'class' => ['inline', 'related-list'],
       ],
     ];
 

@@ -3,13 +3,13 @@
 .checkout-buttons .checkout-continue,
 #commerce-braintree-tr-redirect-form > div > a {
   background: #91cdc5;
-  color: #000;
+  color: $link-color;
   padding: 2px 6px 3px;
 
   &:hover {
     background: #50a89f;
     text-decoration: none;
-    color: #000;
+    color: $link-color;
   }
 }
 
@@ -113,7 +113,7 @@ ul.commerce-checkout-progress {
   }
 
   .page-cart & li {
-    color: #000;
+    color: $link-color;
   }
 }
 
