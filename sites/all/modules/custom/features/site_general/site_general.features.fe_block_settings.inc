@@ -25,7 +25,7 @@ function site_general_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'ntb',
-        'weight' => 15,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -51,7 +51,7 @@ function site_general_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'ntb',
-        'weight' => 17,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -77,7 +77,7 @@ function site_general_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -27,
+        'weight' => -21,
       ),
       'seven' => array(
         'region' => '',
@@ -103,7 +103,7 @@ function site_general_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'ntb',
-        'weight' => -9,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -129,7 +129,7 @@ function site_general_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'ntb',
-        'weight' => -22,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -139,58 +139,6 @@ function site_general_default_fe_block_settings() {
       ),
     ),
     'title' => '@nakedtruthbeauty',
-    'visibility' => 0,
-  );
-
-  $export['ntb_top-ntb_top_3'] = array(
-    'cache' => 1,
-    'custom' => 0,
-    'delta' => 'ntb_top_3',
-    'module' => 'ntb_top',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'ntb' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'ntb',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['ntb_top-ntb_top_4'] = array(
-    'cache' => 1,
-    'custom' => 0,
-    'delta' => 'ntb_top_4',
-    'module' => 'ntb_top',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'ntb' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'ntb',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
     'visibility' => 0,
   );
 
