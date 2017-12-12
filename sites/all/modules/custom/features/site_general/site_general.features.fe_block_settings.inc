@@ -25,7 +25,7 @@ function site_general_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'ntb',
-        'weight' => 0,
+        'weight' => 15,
       ),
       'seven' => array(
         'region' => '',
@@ -51,7 +51,7 @@ function site_general_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'ntb',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'seven' => array(
         'region' => '',
@@ -77,7 +77,7 @@ function site_general_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -21,
+        'weight' => -27,
       ),
       'seven' => array(
         'region' => '',
@@ -103,7 +103,7 @@ function site_general_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'ntb',
-        'weight' => 0,
+        'weight' => -9,
       ),
       'seven' => array(
         'region' => '',
@@ -129,7 +129,7 @@ function site_general_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'ntb',
-        'weight' => 0,
+        'weight' => -22,
       ),
       'seven' => array(
         'region' => '',
