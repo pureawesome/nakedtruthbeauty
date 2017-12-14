@@ -242,7 +242,7 @@ function ntb_library() {
     'title' => 'loadCSS',
     'version' => '2.0.1',
     'js' => array(
-      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/src/cssrelpreload.js') => array(
+      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/dist/cssrelpreload.min.js') => array(
         'type' => 'inline',
       ),
     ),
