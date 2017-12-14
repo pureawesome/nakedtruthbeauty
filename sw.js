@@ -49,7 +49,7 @@ function updateStaticCache() {
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
         '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.2',
         '/sites/all/themes/ntb/css/ntb.css?v=1.06',
-        '/sites/all/themes/ntb/logo.png',
+        // '/sites/all/themes/ntb/logo.png',
         '/offline',
         '/'
       ]);
