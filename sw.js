@@ -50,7 +50,7 @@ function updateStaticCache() {
       '/sites/all/libraries/modernizr/modernizr-2.8.3.min.js',
       // '/sites/all/libraries/bootstrap/js/lib/collapse.min.js?v=3.3.6',
       // '/sites/all/libraries/bootstrap/js/lib/dropdown.min.js?v=3.3.6',
-      '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.j',
+      '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js',
       '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
       '/sites/all/themes/ntb/js/ntb.behaviors.min.js',
       '/sites/all/themes/ntb/css/ntb.css',
