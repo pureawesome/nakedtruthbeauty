@@ -8,6 +8,6 @@ features[metatag][] = global:403
 features[metatag][] = global:404
 features[metatag][] = global:frontpage
 features[metatag][] = node
+features[metatag][] = node:product_display
 features[metatag][] = taxonomy_term
 features[metatag][] = user
-features[metatag][] = node:product_display

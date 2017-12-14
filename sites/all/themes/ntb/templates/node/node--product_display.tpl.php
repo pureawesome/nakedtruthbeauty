@@ -93,10 +93,10 @@
     ?>
 
     <div class="row">
-      <div class="panel-panel panel-col col-xs-offset-2 col-xs-8 col-sm-4 col-sm-offset-0 ">
+      <div class="panel-panel panel-col col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0 ">
         <?php print render($content['field_product_images']); ?>
       </div>
-      <div class="panel-panel panel-col col-xs-12 col-sm-8">
+      <div class="panel-panel panel-col col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-4">
         <h1 id="product-title">
           <?php print $title; ?>
         </h1>

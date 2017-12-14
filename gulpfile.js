@@ -6,7 +6,7 @@ var fs = require('fs');
 var cleanCSS = require('gulp-clean-css');
 
 
-gulp.task('critical', function () {
+gulp.task('critical', ['css'], function () {
   var criticals = {
     home: 'https://nakedtruthbeauty.com/',
     about: 'https://nakedtruthbeauty.com/about/',
@@ -25,7 +25,22 @@ gulp.task('critical', function () {
   }
 });
 
+<<<<<<< HEAD
 gulp.task('minify-crit', function () {
+=======
+gulp.task('crit-css', ['critical'], function () {
+  var processors = [
+    autoprefixer,
+    cssnano
+  ];
+  return gulp.src('./sites/all/themes/ntb/scss/ntb_critical.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(processors))
+    .pipe(gulp.dest('./sites/all/themes/ntb/css/', {overwrite: true}));
+});
+
+gulp.task('minify', ['crit-css'], function () {
+>>>>>>> issues/43-no-bootstrap
   var css = [
     // 'sites/all/themes/ntb/css/ntb.css',
     'sites/all/themes/ntb/css/ntb_critical.css'
@@ -47,6 +62,8 @@ gulp.task('minify-crit', function () {
       .pipe(gulp.dest('sites/all/themes/ntb/css/'));
   });
 });
+
+gulp.task('build', ['css', 'critical', 'crit-css', 'minify']);
 
 function generateCriticalCSS(cssPath, key, value) {
   criticalcss.getRules(cssPath, function (err, output) {

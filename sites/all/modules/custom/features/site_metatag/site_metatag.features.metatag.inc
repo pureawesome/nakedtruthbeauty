@@ -68,12 +68,6 @@ function site_metatag_metatag_export_default() {
       'shortlink' => array(
         'value' => '[current-page:url:unaliased]',
       ),
-      'publisher' => array(
-        'value' => '',
-      ),
-      'author' => array(
-        'value' => '',
-      ),
       'original-source' => array(
         'value' => '',
       ),
@@ -112,6 +106,108 @@ function site_metatag_metatag_export_default() {
         'value' => '',
       ),
       'expires' => array(
+        'value' => '',
+      ),
+      'theme-color' => array(
+        'value' => '#91cdc5',
+      ),
+      'MobileOptimized' => array(
+        'value' => '',
+      ),
+      'HandheldFriendly' => array(
+        'value' => '',
+      ),
+      'viewport' => array(
+        'value' => '',
+      ),
+      'cleartype' => array(
+        'value' => '',
+      ),
+      'amphtml' => array(
+        'value' => '',
+      ),
+      'alternate_handheld' => array(
+        'value' => '',
+      ),
+      'apple-itunes-app' => array(
+        'value' => '',
+      ),
+      'apple-mobile-web-app-capable' => array(
+        'value' => '',
+      ),
+      'apple-mobile-web-app-status-bar-style' => array(
+        'value' => '',
+      ),
+      'apple-mobile-web-app-title' => array(
+        'value' => '',
+      ),
+      'format-detection' => array(
+        'value' => '',
+      ),
+      'ios-app-link-alternative' => array(
+        'value' => '',
+      ),
+      'android-app-link-alternative' => array(
+        'value' => '',
+      ),
+      'android-manifest' => array(
+        'value' => '',
+      ),
+      'x-ua-compatible' => array(
+        'value' => 'ie=edge',
+      ),
+      'application-name' => array(
+        'value' => '',
+      ),
+      'msapplication-allowDomainApiCalls' => array(
+        'value' => '',
+      ),
+      'msapplication-allowDomainMetaTags' => array(
+        'value' => '',
+      ),
+      'msapplication-badge' => array(
+        'value' => '',
+      ),
+      'msapplication-config' => array(
+        'value' => '',
+      ),
+      'msapplication-navbutton-color' => array(
+        'value' => '',
+      ),
+      'msapplication-notification' => array(
+        'value' => '',
+      ),
+      'msapplication-square150x150logo' => array(
+        'value' => '',
+      ),
+      'msapplication-square310x310logo' => array(
+        'value' => '',
+      ),
+      'msapplication-square70x70logo' => array(
+        'value' => '',
+      ),
+      'msapplication-wide310x150logo' => array(
+        'value' => '',
+      ),
+      'msapplication-starturl' => array(
+        'value' => '',
+      ),
+      'msapplication-task' => array(
+        'value' => '',
+      ),
+      'msapplication-task-separator' => array(
+        'value' => '',
+      ),
+      'msapplication-tilecolor' => array(
+        'value' => '',
+      ),
+      'msapplication-tileimage' => array(
+        'value' => '',
+      ),
+      'msapplication-tooltip' => array(
+        'value' => '',
+      ),
+      'msapplication-window' => array(
         'value' => '',
       ),
       'og:site_name' => array(
@@ -363,6 +459,24 @@ function site_metatag_metatag_export_default() {
       'product:condition' => array(
         'value' => '',
       ),
+      'msvalidate.01' => array(
+        'value' => '',
+      ),
+      'baidu-site-verification' => array(
+        'value' => '',
+      ),
+      'google-site-verification' => array(
+        'value' => '',
+      ),
+      'norton-safeweb-site-verification' => array(
+        'value' => '',
+      ),
+      'p:domain_verify' => array(
+        'value' => '8f6f36dbc459f1b660234927a2a4d366',
+      ),
+      'yandex-verification' => array(
+        'value' => '',
+      ),
     ),
   );
 
@@ -470,6 +584,32 @@ function site_metatag_metatag_export_default() {
     ),
   );
 
+  // Exported Metatag config instance: node:product_display.
+  $config['node:product_display'] = array(
+    'instance' => 'node:product_display',
+    'disabled' => FALSE,
+    'config' => array(
+      'og:type' => array(
+        'value' => 'product',
+      ),
+      'og:image' => array(
+        'value' => '[node:field_primary_image]',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '[node:field_primary_image]',
+      ),
+      'product:price:amount' => array(
+        'value' => '[node:field-product:commerce-price:amount_decimal]',
+      ),
+      'product:price:currency' => array(
+        'value' => 'USD',
+      ),
+      'product:availability' => array(
+        'value' => 'instock',
+      ),
+    ),
+  );
+
   // Exported Metatag config instance: taxonomy_term.
   $config['taxonomy_term'] = array(
     'instance' => 'taxonomy_term',
@@ -512,19 +652,6 @@ function site_metatag_metatag_export_default() {
       ),
       'og:image' => array(
         'value' => '[user:picture:url]',
-      ),
-    ),
-  );
-
-  // Exported Metatag config instance: node:product_display.
-  $config['node:product_display'] = array(
-    'instance' => 'node:product_display',
-    'config' => array(
-      'og:image' => array(
-        'value' => '[node:field_primary_image]',
-      ),
-      'og:image:secure_url' => array(
-        'value' => '[node:field_primary_image]',
       ),
     ),
   );

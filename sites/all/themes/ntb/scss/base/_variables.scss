@@ -9,20 +9,31 @@ $white: #fff;
 $border-light: #eee;
 $text-dark: #333;
 
+$link1: #111F29;
+$link2: #0C1918;
+$link3: #232927;
+
 $brand-primary: $secondary-blue;
 // $link-color: darken($secondary-blue, 12%);
 $link-color: $secondary-blue;
-$font-family-sans-serif: quicksand, 'quicksand', Verdana, Tahoma, sans-serif;
-$font-family-serif: 'have_heart_oneregular', Georgia, "Times New Roman", Times, serif;
+$link-color-hover: $primary-blue;
+
+$link-color: $link3;
+$link-color-hover: $secondary-blue;
+
+$font-family-sans-serif: 'lato', 'Lato', sans-serif;
+$font-family-serif: 'quicksand', Verdana, Tahoma, sans-serif;
 $bp-large: 1200px;
 $nav-break: 768px;
-$font-size-base: 16px;
+$font-size-base: 1rem;
 
 $border-default: 0.5px solid $primary-blue;
 
 $table-border-color: $primary-blue;
 $table-bg-accent: lighten($primary-blue, 30%);
 $table-bg-hover: lighten($primary-blue, 20%);
+
+$link-hover-color: darken($link-color, 15%);
 
 // Extra small screen / phone
 //** Deprecated `$screen-xs` as of v3.0.1
@@ -86,3 +97,29 @@ $screen-lg-desktop:          $screen-lg-min !default;
 $screen-xs-max:              ($screen-sm-min - 1) !default;
 $screen-sm-max:              ($screen-md-min - 1) !default;
 $screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+
+
+
+// 8px = 0.5rem
+// 9px = 0.5625rem
+// 10px = 0.625rem
+// 11px = 0.6875rem
+// 12px = 0.75rem
+// 13px = 0.8125rem
+// 14px = 0.875rem
+// 15px = 0.9375rem
+// 16px = 1rem (base)
+// 18px = 1.125rem
+// 20px = 1.25rem
+// 22px = 1.375rem
+// 24px = 1.5rem
+// 26px = 1.625rem
+// 28px = 1.75rem
+// 30px = 1.875rem
+// 32px = 2rem
+// 34px = 2.125rem
+// 36px = 2.25rem
+// 38px = 2.375rem
+// 40px = 2.5rem

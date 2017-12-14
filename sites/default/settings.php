@@ -155,7 +155,7 @@
  *   These settings are available as of MySQL 5.5.14, and are defaults in
  *   MySQL 5.7.7 and up.
  * - The PHP MySQL driver must support the utf8mb4 charset (libmysqlclient
-     5.5.3 and up, as well as mysqlnd 5.0.9 and up).
+ *     5.5.3 and up, as well as mysqlnd 5.0.9 and up).
  * - The MySQL server must support the utf8mb4 charset (5.5.3 and up).
  *
  * You can optionally set prefixes for some or all database table names
@@ -638,6 +638,19 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
   );
 }
 
+if (defined('PANTHEON_ENVIRONMENT')) {
+  if (PANTHEON_ENVIRONMENT == 'lando') {
+    $databases['default']['default'] = array(
+      'driver' => 'mysql',
+      'database' => getenv('DB_NAME'),
+      'username' => getenv('DB_USER'),
+      'password' => getenv('DB_PASSWORD'),
+      'host' => getenv('DB_HOST'),
+      'prefix' => '',
+      'collation' => 'utf8_general_ci',
+    );
+  }
+}
 
 if (defined('PANTHEON_ENVIRONMENT')) {
   if (PANTHEON_ENVIRONMENT == 'dev') {
@@ -661,7 +674,7 @@ if (defined('PANTHEON_ENVIRONMENT')) {
 }
 
 if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
-  ($_SERVER['HTTPS'] === 'OFF') &&
+  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'OFF') &&
   (php_sapi_name() != "cli")) {
   if (!isset($_SERVER['HTTP_X_SSL']) ||
   (isset($_SERVER['HTTP_X_SSL']) && $_SERVER['HTTP_X_SSL'] != 'ON')) {
