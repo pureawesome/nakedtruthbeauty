@@ -29,11 +29,9 @@ function ntb_sw_library() {
   $libraries['sw'] = array(
     'title' => 'NTB Service Worker',
     'version' => '1.0',
-    'js' => array(
-      drupal_get_path('module', 'ntb_sw') . '/js/ntb_sw.min.js' => array(
-        'type' => 'inline',
-        'scope' => 'footer',
-      ),
+    file_get_contents(drupal_get_path('module', 'ntb_sw') . '/js/ntb_sw.min.js') => array(
+      'type' => 'inline',
+      'scope' => 'footer',
     ),
   );
   return $libraries;
