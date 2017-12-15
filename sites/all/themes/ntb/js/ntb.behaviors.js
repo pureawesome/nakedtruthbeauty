@@ -39,7 +39,7 @@
             $(this).addClass('open');
             $(this).siblings('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
           }
-        });
+        }, {passive: true});
       }
       $(window).on('resize load', $.throttle(100, self.calcWidth));
     },
