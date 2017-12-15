@@ -4,9 +4,9 @@
 $plugin = array(
   'title' => t('NTB Main'),
   'category' => t('NTB'),
-  'icon' => 'ntb-main.png',
+  'icon' => 'ntb_main.png',
   'theme' => 'ntb-main',
-  'css' => 'ntb-main.css',
+  'css' => 'ntb_main.css',
   'regions' => array(
     'full-width' => t('Full Width'),
     'top' => t('Top'),
