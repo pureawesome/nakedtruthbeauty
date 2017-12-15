@@ -103,7 +103,7 @@ function ntb_preprocess_page(&$vars) {
  * Implements THEMENAME_menu_tree__MENU_NAME().
  */
 function ntb_menu_tree__main_menu($variables) {
-  return '<ul class="links clearfix nav navbar-nav primary-nav"><li class="more hidden dropdown"><a href="#">More</a><ul class="dropdown-menu">' . $variables['tree'] . '</ul></li></ul>';
+  return '<ul class="links clearfix nav navbar-nav primary-nav"><li class="more dropdown"><a href="#">Menu</a><ul class="dropdown-menu">' . $variables['tree'] . '</ul></li></ul>';
 }
 
 /**
