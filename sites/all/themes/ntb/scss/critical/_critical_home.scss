@@ -61,13 +61,15 @@ nav{ background-color: rgb(255, 255, 255); border: none; margin-bottom: 0px; dis
  .dropdown-menu > li.leaf{ list-style: none; }
 nav .dropdown-menu > li > a{ font-size: 14px; padding: 5px; }
 .dropdown > a::after{ display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; line-height: 1; font-family: FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; content: ; margin-left: 5px; }
+.custom-user-menu > li{ position: relative; }
+.dropdown-menu-right{ right: 0px; }
 #secondary-menu{ display: none; }
 .overlay{ background-image: linear-gradient(rgba(145, 205, 197, 0.901961), rgba(255, 204, 153, 0.901961)); position: absolute; top: 0px; right: 0px; left: 0px; bottom: 0px; background-position: initial initial; background-repeat: initial initial; }
 .overlay .close{ position: absolute; top: 15px; right: 15px; }
 .overlay .close i{ font-size: 2.25rem; color: rgb(255, 204, 153); }
 .search-container-wrapper{ width: auto; }
-.search-container{ display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-box-pack: center; -webkit-box-align: center; text-align: center; background-color: rgba(18, 23, 56, 0.901961); background-position: initial initial; background-repeat: initial initial; }
-.js .search-container{ position: fixed; z-index: 2; top: 0px; left: 0px; width: 100%; height: 100vh; }
+.search-container{ display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-box-pack: center; -webkit-box-align: center; text-align: center; background-color: rgba(18, 23, 56, 0.901961); position: absolute; top: 36px; right: 0px; background-position: initial initial; background-repeat: initial initial; }
+.js .search-container{ position: fixed; z-index: -1; top: 0px; left: 0px; width: 100%; height: 100vh; }
 .js .search-container .btn{ position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px 0px 0px 0px); border: 0px; }
 .btn--search-close{ font-size: 2rem; position: absolute; top: 1.25em; right: 1.25em; display: none; }
 .js .btn--search-close{ display: block; }
@@ -92,8 +94,8 @@ nav .dropdown-menu > li > a{ font-size: 14px; padding: 5px; }
 .search__suggestion:nth-child(2){ display: none; }
 }
 .ajax-shopping-cart-wrapper{ width: auto; }
-.cart-container{ display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-box-pack: center; -webkit-box-align: center; text-align: center; background-color: rgba(18, 23, 56, 0.901961); background-position: initial initial; background-repeat: initial initial; }
-.js .cart-container{ position: fixed; z-index: 2; top: 0px; left: 0px; width: 100%; height: 100vh; }
+.cart-container{ display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-box-pack: center; -webkit-box-align: center; text-align: center; background-color: rgba(18, 23, 56, 0.901961); position: absolute; top: 36px; right: 0px; background-position: initial initial; background-repeat: initial initial; }
+.js .cart-container{ position: fixed; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100vh; }
 .btn--cart-close{ font-size: 2rem; position: absolute; top: 1.25em; right: 1.25em; display: none; cursor: pointer; }
 .js .btn--cart-close{ display: block; }
 .js .cart-container{ pointer-events: none; opacity: 0; transition: opacity 0.5s; -webkit-transition: opacity 0.5s; }
@@ -101,7 +103,7 @@ nav .dropdown-menu > li > a{ font-size: 14px; padding: 5px; }
 @media screen and (max-width: 40em){
 .btn--cart-close{ font-size: 1.25rem; top: 1.5em; right: 1.5em; }
 }
-.cart-teaser{ color: rgb(51, 51, 51); z-index: 1; min-width: 60%; }
+.cart-teaser{ color: rgb(51, 51, 51); z-index: 10; min-width: 60%; }
 .cart-teaser .empty-shopping-cart{ font-size: 6vw; }
 .view-marquee .flexslider{ border: 0px; margin: 0px 0px 15px; }
 img{ width: auto; max-width: 100%; height: auto; }

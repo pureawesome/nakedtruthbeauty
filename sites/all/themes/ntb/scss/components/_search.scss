@@ -10,10 +10,14 @@
 	align-items: center;
 	text-align: center;
 	background: rgba(18, 23, 56, 0.9);
+  position: absolute;
+  position: absolute;
+	top: 36px;
+	right: 0;
 
   .js & {
     position: fixed;
-  	z-index: 1000;
+  	z-index: -1;
   	top: 0;
   	left: 0;
   	width: 100%;

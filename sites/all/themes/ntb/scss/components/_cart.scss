@@ -11,6 +11,9 @@
 	align-items: center;
 	text-align: center;
 	background: rgba(18, 23, 56, 0.9);
+  position: absolute;
+	top: 36px;
+	right: 0;
 
   .js & {
     position: fixed;
