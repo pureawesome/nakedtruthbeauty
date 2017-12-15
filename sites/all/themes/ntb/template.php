@@ -204,13 +204,13 @@ function ntb_library() {
   $libraries['modernizr'] = [
     'title' => 'Modernizr ',
     'version' => '2.3.8',
-    'js' => array(
+    'js' => [
       libraries_get_path('modernizr') . '/modernizr-2.8.3.min.js' => [
         'defer' => TRUE,
         'scope' => 'footer',
       ],
     ],
-  );
+  ];
 
   return $libraries;
 }
@@ -257,7 +257,7 @@ function ntb_pre_render_styles($elements) {
     if ($value['type'] == 'inline') {
       $crit = [
         '#theme' => 'html_tag',
-        '#tag' => 'link',
+        '#tag' => 'style',
         '#value' => $value['data'],
         '#attributes' => [
           'type' => 'text/css',
