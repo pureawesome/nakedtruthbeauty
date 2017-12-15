@@ -22,8 +22,10 @@
         }
       });
 
-      $('.lazy-img').each(function () {
-        self.loadImg(this);
+      $(window).on('load', function () {
+        $('.lazy-img').each(function () {
+          self.loadImg(this);
+        });
       });
 
       if (Modernizr.touch) {
