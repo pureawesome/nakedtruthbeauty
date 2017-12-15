@@ -638,18 +638,19 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
   );
 }
 
-if (defined('PANTHEON_ENVIRONMENT') && PANTHEON_ENVIRONMENT == 'lando') {
-  $databases['default']['default'] = array(
-    'driver' => 'mysql',
-    'database' => getenv('DB_NAME'),
-    'username' => getenv('DB_USER'),
-    'password' => getenv('DB_PASSWORD'),
-    'host' => getenv('DB_HOST'),
-    'prefix' => '',
-    'collation' => 'utf8_general_ci',
-  );
+if (defined('PANTHEON_ENVIRONMENT')) {
+  if (PANTHEON_ENVIRONMENT == 'lando') {
+    $databases['default']['default'] = array(
+      'driver' => 'mysql',
+      'database' => getenv('DB_NAME'),
+      'username' => getenv('DB_USER'),
+      'password' => getenv('DB_PASSWORD'),
+      'host' => getenv('DB_HOST'),
+      'prefix' => '',
+      'collation' => 'utf8_general_ci',
+    );
+  }
 }
-
 
 if (defined('PANTHEON_ENVIRONMENT')) {
   if (PANTHEON_ENVIRONMENT == 'dev') {
@@ -673,7 +674,7 @@ if (defined('PANTHEON_ENVIRONMENT')) {
 }
 
 if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
-  ($_SERVER['HTTPS'] === 'OFF') &&
+  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'OFF') &&
   (php_sapi_name() != "cli")) {
   if (!isset($_SERVER['HTTP_X_SSL']) ||
   (isset($_SERVER['HTTP_X_SSL']) && $_SERVER['HTTP_X_SSL'] != 'ON')) {
