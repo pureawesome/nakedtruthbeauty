@@ -113,25 +113,27 @@
           <?php endif; ?>
 
           <!-- Nav tabs -->
-          <ul class="nav" role="tablist">
+          <!-- <ul class="nav" role="tablist">
             <li class="product active"><a href="#body" aria-controls="body" role="tab" data-toggle="tab">Product</a></li>
             <li class="use"><a href="#use" aria-controls="use" role="tab" data-toggle="tab">Use</a></li>
             <li class="ingredients"><a href="#ingredients" aria-controls="ingredients" role="tab" data-toggle="tab">Ingredients</a></li>
-          </ul>
+          </ul> -->
 
           <!-- Tab panes -->
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade in active" id="body">
+          <!-- <div class="tab-content"> -->
+            <!-- <div role="tabpanel" class="tab-pane fade in active" id="body"> -->
               <?php print render($content['body']); ?>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="use">
+            <!-- </div>
+            <div role="tabpanel" class="tab-pane fade" id="use"> -->
+            <h3>Use</h3>
               <?php print render($content['field_product_use']); ?>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="ingredients">
+            <!-- </div>
+            <div role="tabpanel" class="tab-pane fade" id="ingredients"> -->
+            <h3>Ingredients</h3>
               <?php print render($scientific_ingredients); ?>
               <?php print render($content['field_product_ingredients_text']); ?>
-            </div>
-          </div>
+            <!-- </div> -->
+          <!-- </div> -->
 
         </div>
 

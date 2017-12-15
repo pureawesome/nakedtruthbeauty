@@ -89,12 +89,8 @@ nav {
   padding: 0 1rem;
   position: absolute;
   background: #fff;
-  display: none;
-  max-width: 50%;
-  min-width: 200px;
 
-  & > li.leaf,
-  & > li.expanded {
+  & > li.leaf {
     list-style: none;
   }
 
@@ -117,8 +113,7 @@ nav {
     margin-left: 5px;
   }
 
-  &.open > a::after,
-  & > a.open::after {
+  & > a:hover::after {
     content: $fa-var-angle-up;
   }
 }

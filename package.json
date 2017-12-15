@@ -2,18 +2,26 @@
   "name": "nakedtruthbeauty.dev",
   "version": "1.0.0",
   "description": "CONTENTS OF THIS FILE ---------------------",
-  "main": "gulpfile.js",
-  "dependencies": {},
-  "devDependencies": {
-    "criticalcss": "^2.1.0",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.0"
-  },
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "crit": "gulp critical",
-    "min": "gulp minify-crit"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "node-sass": "^4.5.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "breakpoint-sass": "^2.7.1",
+    "criticalcss": "^2.1.0",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-css-purge": "^1.0.27",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
+  }
 }

@@ -5,15 +5,34 @@ var criticalcss = require('criticalcss');
 var fs = require('fs');
 var cleanCSS = require('gulp-clean-css');
 
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
+var postcss = require('gulp-postcss');
+var sass = require('gulp-sass');
 
-gulp.task('critical', ['css'], function () {
+gulp.task('css', function () {
+  var processors = [
+    autoprefixer,
+    cssnano
+  ];
+  return gulp.src('./sites/all/themes/ntb/scss/ntb.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(processors))
+    .pipe(gulp.dest('./sites/all/themes/ntb/css/', {overwrite: true}));
+});
+
+gulp.task('watch_css', function () {
+  gulp.watch('./sites/all/themes/ntb/scss/ntb.scss', ['css']);
+});
+
+gulp.task('critical', function () {
   var criticals = {
-    home: 'https://nakedtruthbeauty.com/',
-    about: 'https://nakedtruthbeauty.com/about/',
-    cart: 'https://nakedtruthbeauty.com/cart/',
-    shop: 'https://nakedtruthbeauty.com/shop/',
-    ingredients: 'https://nakedtruthbeauty.com/ingredients/',
-    blog: 'https://nakedtruthbeauty.com/blog/'
+    home: 'https://staging.nakedtruthbeauty.com/',
+    about: 'https://staging.nakedtruthbeauty.com/about/',
+    cart: 'https://staging.nakedtruthbeauty.com/cart/',
+    shop: 'https://staging.nakedtruthbeauty.com/shop/',
+    ingredients: 'https://staging.nakedtruthbeauty.com/ingredients/',
+    blog: 'https://staging.nakedtruthbeauty.com/blog/'
   };
 
   var cssPath = 'sites/all/themes/ntb/css/ntb.css';
@@ -25,10 +44,7 @@ gulp.task('critical', ['css'], function () {
   }
 });
 
-<<<<<<< HEAD
-gulp.task('minify-crit', function () {
-=======
-gulp.task('crit-css', ['critical'], function () {
+gulp.task('crit-css', function () {
   var processors = [
     autoprefixer,
     cssnano
@@ -39,10 +55,9 @@ gulp.task('crit-css', ['critical'], function () {
     .pipe(gulp.dest('./sites/all/themes/ntb/css/', {overwrite: true}));
 });
 
-gulp.task('minify', ['crit-css'], function () {
->>>>>>> issues/43-no-bootstrap
+gulp.task('minify', function () {
   var css = [
-    // 'sites/all/themes/ntb/css/ntb.css',
+    'sites/all/themes/ntb/css/ntb.css',
     'sites/all/themes/ntb/css/ntb_critical.css'
   ];
 
@@ -62,8 +77,6 @@ gulp.task('minify', ['crit-css'], function () {
       .pipe(gulp.dest('sites/all/themes/ntb/css/'));
   });
 });
-
-gulp.task('build', ['css', 'critical', 'crit-css', 'minify']);
 
 function generateCriticalCSS(cssPath, key, value) {
   criticalcss.getRules(cssPath, function (err, output) {

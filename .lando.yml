@@ -1,0 +1,7 @@
+name: naked-truth-beauty
+recipe: pantheon
+config:
+  framework: drupal
+  env: dev
+  site: naked-truth-beauty
+  id: e8e4d62a-8257-4f35-bbaf-d5166bdac494

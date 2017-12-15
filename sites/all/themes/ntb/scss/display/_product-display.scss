@@ -53,7 +53,7 @@
   }
 
   a {
-    color: $link-color;
+    color: #000;
 
     &:hover {
       text-decoration: none;
@@ -67,7 +67,7 @@
 
     &.active {
       a {
-        color: $link-color;
+        color: #000;
       }
     }
 
@@ -93,7 +93,7 @@
     text-align: left;
   }
 
-  .product-body .field {
+  .field {
     margin-bottom: 2rem;
   }
 }

@@ -4,7 +4,7 @@
   .views-field-name {
     text-align:left;
     width: calc(100% - 100px);
-    @include inline-block();
+    display: inline-block;
 
     .field-content {
       @include vertical-align();
@@ -13,34 +13,27 @@
 
   .views-field-picture {
     overflow: hidden;
-    @include border-radius(30px);
-    @include inline-block();
+    border-radius: 30px;
+    display: inline-block;
     width: 60px;
   }
 }
 
 .node-type-article .content {
-  .links {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
 
-  .links {
-    float: right;
-    width: 100%;
-
-    li {
-      @include buttons();
+    .links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
-  }
-}
 
-.pane-blog-related {
-  padding-top: 40px;
 
-  .pane-title {
-    @include flag();
-    margin-top: -1rem;
-  }
+    .links {
+      float: right;
+      width: 100%;
+
+      li {
+        @include buttons();
+      }
+    }
 }
