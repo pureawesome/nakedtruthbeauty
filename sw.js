@@ -58,7 +58,6 @@
   }
 
   function stashInCache(cacheName, request, response) {
-    console.log('stashInCache');
     caches.open(cacheName).then(function (cache) {
       return cache.put(request, response);
     });
@@ -66,7 +65,6 @@
 
   // Limit the number of items in a specified cache.
   function trimCache(cacheName, maxItems) {
-    console.log('trimCache');
     caches.open(cacheName).then(function (cache) {
       cache.keys().then(function (keys) {
         if (keys.length > maxItems) {
@@ -78,7 +76,6 @@
 
   // Remove caches whose name is no longer valid
   function clearOldCaches() {
-    console.log('clearOldCaches');
     return caches.keys().then(function (keys) {
       return Promise.all(keys.filter(function (key) {
         return !cacheList.includes(key);
@@ -89,14 +86,12 @@
   }
 
   self.addEventListener('install', function (event) {
-    console.log('install');
     event.waitUntil(updateStaticCache().then(function () {
       return self.skipWaiting();
     }));
   });
 
   self.addEventListener('activate', function (event) {
-    console.log('activate');
     event.waitUntil(clearOldCaches().then(function () {
       return self.clients.claim();
     }));
