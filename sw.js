@@ -140,8 +140,8 @@
       }).catch(function () {
         // CACHE or FALLBACK
         return caches.match(request).then(function (response) {
-            return response || caches.match('/offline/');
-          });
+          return response || caches.match('/offline/');
+        });
       }));
       return;
     }
@@ -150,13 +150,15 @@
     event.respondWith(caches.match(request).then(function (response) {
       // CACHE
       return response || fetch(request).then(function (response) {
+        var copy;
         // NETWORK
         // If the request is for an image, stash a copy of this image in the images cache
         if (request.headers.get('Accept').includes('image')) {
-          var copy = response.clone();
+          copy = response.clone();
           stashInCache(imagesCacheName, request, copy);
         }
-        else {
+        else if (request.headers.get('Accept').includes('css') || request.headers.get('Accept').includes('javascript')) {
+          copy = response.clone();
           stashInCache(staticCacheName, request, copy);
         }
         return response;
