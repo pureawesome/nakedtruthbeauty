@@ -203,6 +203,27 @@ function site_general_default_page_manager_handlers() {
   $display->content['new-d6f9d076-6509-44e5-98dc-eec9dae3e0ec'] = $pane;
   $display->panels['lower-left'][0] = 'new-d6f9d076-6509-44e5-98dc-eec9dae3e0ec';
   $pane = new stdClass();
+  $pane->pid = 'new-98fd4786-4a8d-42f8-bebd-7d0036c20ffe';
+  $pane->panel = 'lower-middle';
+  $pane->type = 'block';
+  $pane->subtype = 'ntb_blog_meta-ntb_blog_meta';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array();
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '98fd4786-4a8d-42f8-bebd-7d0036c20ffe';
+  $display->content['new-98fd4786-4a8d-42f8-bebd-7d0036c20ffe'] = $pane;
+  $display->panels['lower-middle'][0] = 'new-98fd4786-4a8d-42f8-bebd-7d0036c20ffe';
+  $pane = new stdClass();
   $pane->pid = 'new-480df0aa-1301-46ac-8c6a-c8902eff5c65';
   $pane->panel = 'lower-middle';
   $pane->type = 'node_body';
@@ -221,11 +242,11 @@ function site_general_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '480df0aa-1301-46ac-8c6a-c8902eff5c65';
   $display->content['new-480df0aa-1301-46ac-8c6a-c8902eff5c65'] = $pane;
-  $display->panels['lower-middle'][0] = 'new-480df0aa-1301-46ac-8c6a-c8902eff5c65';
+  $display->panels['lower-middle'][1] = 'new-480df0aa-1301-46ac-8c6a-c8902eff5c65';
   $pane = new stdClass();
   $pane->pid = 'new-2541943f-9143-4389-bff1-e507993a3a0e';
   $pane->panel = 'lower-middle';
@@ -259,11 +280,11 @@ function site_general_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '2541943f-9143-4389-bff1-e507993a3a0e';
   $display->content['new-2541943f-9143-4389-bff1-e507993a3a0e'] = $pane;
-  $display->panels['lower-middle'][1] = 'new-2541943f-9143-4389-bff1-e507993a3a0e';
+  $display->panels['lower-middle'][2] = 'new-2541943f-9143-4389-bff1-e507993a3a0e';
   $pane = new stdClass();
   $pane->pid = 'new-ad18dbfc-2327-4da0-8f46-2c1032841d74';
   $pane->panel = 'lower-right';
