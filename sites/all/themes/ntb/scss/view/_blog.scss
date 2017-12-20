@@ -12,3 +12,93 @@
     margin-right: 15px;
   }
 }
+
+.view-blog-authored {
+  // height: 60px;
+
+  // .views-field-name {
+  //   text-align:left;
+  //   width: calc(100% - 100px);
+  //   display: inline-block;
+  //
+  //   .field-content {
+  //     @include vertical-align();
+  //   }
+  // }
+
+  .views-field-picture {
+    overflow: hidden;
+    border-radius: 30px;
+    display: inline-block;
+    width: 40px;
+  }
+}
+
+.blog-meta {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+
+  li {
+    display: inline-block;
+    font-size: 0.825rem;
+
+    &:after {
+      content: '|';
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    &:last-child:after {
+      content:'';
+    }
+  }
+
+  span {
+    color: #878B8F;
+  }
+
+  @include breakpoint($screen-sm) {
+    li:after {
+      content: '';
+    }
+  }
+
+  .view {
+    display: inline-block;
+  }
+
+  .view-content {
+    display: block;
+  }
+
+  .view-content > div {
+    display: flex;
+    align-items: center;
+  }
+
+  .views-field {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+.node-type-article .content {
+
+    .links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+
+    .links {
+      float: right;
+      width: 100%;
+
+      li {
+        @include buttons();
+      }
+    }
+}

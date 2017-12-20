@@ -291,3 +291,9 @@ li {
     display: inline-block;
   }
 }
+
+ul.clean-list {
+  li {
+    margin: 0;
+  }
+}

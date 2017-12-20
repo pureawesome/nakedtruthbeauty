@@ -14,7 +14,7 @@
   </div>
   <?php if (isset($image)): ?>
     <div class="img">
-      <?php print render($image); ?>
+      <?php print l(render($image), $node_url, array('html' => TRUE)); ?>
     </div>
   <?php endif; ?>
   <div class="content">
