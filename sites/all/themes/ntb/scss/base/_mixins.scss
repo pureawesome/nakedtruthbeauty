@@ -10,41 +10,6 @@
   }
 }
 
-@mixin buttons() {
-  border: 0;
-  background: transparent;
-  text-align: center;
-  width: auto;
-  text-transform: lowercase;
-  background: $primary-blue;
-  margin: 0 10px 5px 0;
-  padding: 2px 5px;
-  display: inline-block;
-  border-radius: 5px;
-  color: $btn-color;
-  font-size: 1rem;
-  padding: 6px;
-
-  &:hover {
-    background: $secondary-blue;
-    color: $btn-color-hover;
-
-    a {
-      color: $btn-color-hover;
-    }
-  }
-
-  a {
-    color: $link-color;
-  }
-
-  @include breakpoint($screen-md) {
-    display: block;
-    width: 100%;
-    margin: 0 0 5px 0;
-  }
-}
-
 @mixin inline-button() {
   border: 0;
   background: transparent;
@@ -52,7 +17,7 @@
   width: auto;
   text-transform: lowercase;
   background: $primary-blue;
-  margin: 0 10px 5px 0;
+  margin: 0 0 5px 0;
   padding: 2px 5px;
   display: inline-block;
   border-radius: 5px;

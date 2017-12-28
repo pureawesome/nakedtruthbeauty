@@ -20,6 +20,19 @@
             $(this).children('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
           });
         }
+        else {
+          $('ul.nav li.dropdown > a').on('touchstart click', function (e) {
+            e.preventDefault();
+            if ($(this).hasClass('open')) {
+              $(this).removeClass('open');
+              $(this).siblings('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+            }
+            else {
+              $(this).addClass('open');
+              $(this).siblings('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+            }
+          });
+        }
       });
 
       $(window).on('load', function () {
@@ -28,19 +41,6 @@
         });
       });
 
-      if (Modernizr.touch) {
-        $('ul.nav li.dropdown > a').on('touchstart click', function (e) {
-          e.preventDefault();
-          if ($(this).hasClass('open')) {
-            $(this).removeClass('open');
-            $(this).siblings('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-          }
-          else {
-            $(this).addClass('open');
-            $(this).siblings('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-          }
-        }, {passive: true});
-      }
       $(window).on('resize load', $.throttle(100, self.calcWidth));
     },
 
@@ -109,7 +109,6 @@
       else {
         $('.primary-nav > li').last().find('a').html = 'more';
       }
-      // Drupal.behaviors.ntb.calcWidth();
     }
   };
 })(jQuery);
