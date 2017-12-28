@@ -12,6 +12,7 @@ $text-dark: #333;
 $link1: #111F29;
 $link2: #0C1918;
 $link3: #232927;
+$link4: #B9E7F5;
 
 $brand-primary: $secondary-blue;
 // $link-color: darken($secondary-blue, 12%);
@@ -20,6 +21,9 @@ $link-color-hover: $primary-blue;
 
 $link-color: $link3;
 $link-color-hover: $secondary-blue;
+
+$btn-color: $link-color;
+$btn-color-hover: $link4;
 
 $font-family-sans-serif: 'lato', 'Lato', sans-serif;
 $font-family-serif: 'quicksand', Verdana, Tahoma, sans-serif;

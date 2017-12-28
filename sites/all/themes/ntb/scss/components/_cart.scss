@@ -160,8 +160,8 @@
 .btn--cart-close {
 	opacity: 0;
 	transform: scale3d(0.8, 0.8, 1);
-  transform: transition-property(opacity, transform);
-	transform: transition-duration(0.5s, 0.5s);
+  transition-property: opacity, transform;
+	transition-duration: 0.5s;
 
 	.cart--open & {
 		opacity: 1;
@@ -173,8 +173,8 @@
 .js .cart__form {
 	opacity: 0;
   transform: scale3d(0.8, 0.8, 1);
-	transform: transition-property(opacity, transform);
-	transform: transition-duration(0.5s, 0.5s);
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
 }
 
 .js .cart--open .cart__form {
@@ -185,19 +185,19 @@
 .cart__suggestion {
 	opacity: 0;
   transform: translate3d(0, -30px, 0);
-	transform: transition-property(opacity, transform);
-	transform: transition-duration(0.5s, 0.5s);
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
 
 	.cart--open & {
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 
 		&:nth-child(2) {
-			transform: transition-delay(0.1s);
+			transition-delay: 0.1s;
 		}
 
 		&:nth-child(3) {
-			transform: transition-delay(0.2s);
+			transition-delay: 0.2s;
 		}
 	}
 }
@@ -246,15 +246,16 @@
 
   td {
     padding: 10px;
-    font-size: 1.625rem;
+    font-size: 1.125rem;
   }
 
   tbody {
     border: 0;
   }
 
-  .remove-from-cart {
-    font-size: 1rem;
+  .remove-from-cart a {
+    // font-size: 1rem;
+    @include inline-button();
   }
 
   .dc-ajax-add-cart-checkout-cart {
@@ -271,16 +272,16 @@
 		float: none;
 		opacity: 0;
 		transform: translate3d(0, -30px, 0);
-    transform: transition-property(opacity, transform);
-    transform: transition-duration(0.5s, 0.5s);
+    transition-property: opacity, transform;
+    transition-duration: 0.5s;
 
 		.cart--open & {
 			opacity: 1;
 			transform: translate3d(0, 0, 0);
-			transform: transition-delay(0.1s);;
+			transition-delay: 0.1s;
 
 			&:nth-child(2) {
-				transform: transition-delay(0.3s);
+				transition-delay: 0.3s;
 			}
 		}
 	}

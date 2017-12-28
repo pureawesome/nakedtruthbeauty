@@ -21,12 +21,16 @@
   padding: 2px 5px;
   display: inline-block;
   border-radius: 5px;
+  color: $btn-color;
+  font-size: 1rem;
+  padding: 6px;
 
   &:hover {
     background: $secondary-blue;
+    color: $btn-color-hover;
 
     a {
-      color: $link-color;
+      color: $btn-color-hover;
     }
   }
 
@@ -50,14 +54,20 @@
   background: $primary-blue;
   margin: 0 10px 5px 0;
   padding: 2px 5px;
-  color: $link-color;
   display: inline-block;
   border-radius: 5px;
+  color: $btn-color;
+  font-size: 1rem;
+  padding: 6px;
 
   &:hover {
-    color: $link-color;
-    text-decoration: none;
     background: $secondary-blue;
+    color: $btn-color-hover;
+    text-decoration: none;
+
+    a {
+      color: $btn-color-hover;
+    }
   }
 }
 
