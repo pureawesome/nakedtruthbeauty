@@ -48,3 +48,9 @@ Thumbs.db
 .sass-cache
 
 /node_modules
+
+# Lando #
+vendor
+config/sync
+.DS_Store
+web/*
