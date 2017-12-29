@@ -36,12 +36,14 @@ body{ font-family: lato, Lato, sans-serif; }
 p{ font-family: lato, Lato, sans-serif; font-weight: lighter; }
 .panel-col, .region, .row{ width: 100%; }
 .row{ display: block; }
-.col-sm-2, .col-sm-3, .col-sm-4, .col-sm-8, .col-sm-12{ display: block; float: left; }
+ .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-6, .col-sm-8, .col-sm-9, .col-sm-12{ display: block; float: left; width: 100%; }
+@media (min-width: 768px){
 .col-sm-8{ width: 66.66666667%; }
 .col-sm-2{ width: 16.66666667%; }
 .col-sm-6{ width: 50%; }
 .col-sm-4{ width: 33.33333333%; }
 .col-sm-3{ width: 25%; }
+}
 .alert-strip, .navbar-default, .panel-col, .region-content{ min-width: 100%; }
  #main .container-fluid{ max-width: 1200px; margin: auto; padding: 0px 1rem; }
 .row, .view-content{ display: block; clear: both; }
@@ -90,9 +92,9 @@ nav .dropdown-menu > li > a{ font-size: 14px; padding: 5px; }
 .search__suggestion h3::before{ content: ⇾; display: inline-block; padding: 0px 0.5em 0px 0px; }
 .search__suggestion p{ font-size: 1.15rem; line-height: 1.4; margin: 0.75em 0px 0px; }
 .js .search-container{ pointer-events: none; opacity: 0; transition: opacity 0.5s; -webkit-transition: opacity 0.5s; }
-.btn--search-close{ opacity: 0; -webkit-transform: scale3d(0.8, 0.8, 1); cursor: pointer; }
-.js .search__form{ opacity: 0; -webkit-transform: scale3d(0.8, 0.8, 1); }
-.search__suggestion{ opacity: 0; -webkit-transform: translate3d(0px, -30px, 0px); pointer-events: auto; }
+.btn--search-close{ opacity: 0; -webkit-transform: scale3d(0.8, 0.8, 1); cursor: pointer; transition: opacity 0.5s, -webkit-transform; -webkit-transition: opacity 0.5s, -webkit-transform; }
+.js .search__form{ opacity: 0; -webkit-transform: scale3d(0.8, 0.8, 1); transition: opacity 0.5s, -webkit-transform; -webkit-transition: opacity 0.5s, -webkit-transform; }
+.search__suggestion{ opacity: 0; -webkit-transform: translate3d(0px, -30px, 0px); transition: opacity 0.5s 0.1s, -webkit-transform; -webkit-transition: opacity 0.5s 0.1s, -webkit-transform; pointer-events: auto; }
 @media screen and (max-width: 40em){
 .search__form{ margin: 5em 0px 1em; }
 .btn--search-close{ font-size: 1.25rem; top: 1.5em; right: 1.5em; }
@@ -106,7 +108,7 @@ nav .dropdown-menu > li > a{ font-size: 14px; padding: 5px; }
 .btn--cart-close{ font-size: 2rem; position: absolute; top: 1.25em; right: 1.25em; display: none; cursor: pointer; }
 .js .btn--cart-close{ display: block; }
 .js .cart-container{ pointer-events: none; opacity: 0; transition: opacity 0.5s; -webkit-transition: opacity 0.5s; }
-.btn--cart-close{ opacity: 0; -webkit-transform: scale3d(0.8, 0.8, 1); }
+.btn--cart-close{ opacity: 0; -webkit-transform: scale3d(0.8, 0.8, 1); transition: opacity 0.5s, -webkit-transform; -webkit-transition: opacity 0.5s, -webkit-transform; }
 @media screen and (max-width: 40em){
 .btn--cart-close{ font-size: 1.25rem; top: 1.5em; right: 1.5em; }
 }
@@ -126,11 +128,11 @@ nav .dropdown-menu > li > a{ font-size: 14px; padding: 5px; }
 .view-id-ingredients .view-content{ display: -webkit-box; }
 .view-id-ingredients .view-content .views-row{ margin-bottom: 30px; }
 img{ width: auto; max-width: 100%; height: auto; }
+a{ color: rgb(60, 127, 120); }
 #page-title{ text-align: center; width: 100%; }
 ul.inline li{ padding: 0px; }
 .region-content{ max-width: 1200px; margin: auto; }
-.btn{ border: 0px; text-align: center; text-transform: lowercase; background-color: rgb(145, 205, 197); color: rgb(51, 51, 51); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; font-size: 1rem; width: auto; margin-bottom: 0px; padding: 6px; background-position: initial initial; background-repeat: initial initial; }
-a{ color: rgb(35, 41, 39); }
+.btn{ border: 0px; text-align: center; width: auto; text-transform: lowercase; background-color: rgb(145, 205, 197); margin: 0px 0px 5px; display: inline-block; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; color: rgb(35, 41, 39); font-size: 1rem; padding: 6px; background-position: initial initial; background-repeat: initial initial; }
 @media (min-width: 768px){
 #main-wrapper{ margin-top: 0px; }
 }

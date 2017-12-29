@@ -37,7 +37,6 @@
         '/sites/all/themes/ntb/fonts/quicksand-bold-webfont.woff2',
         '/sites/all/modules/custom/features/site_products/js/site_shop.min.js',
         '/sites/all/modules/custom/features/site_search/js/site_search.min.js',
-        '/sites/all/modules/custom/features/site_products/js/site_products.min.js',
         '/sites/all/modules/contrib/dc_ajax_add_cart/js/dc_ajax_add_cart_html.js',
         '/sites/all/modules/custom/modules/dc_ajax_enhancements/js/dc_ajax_enhancements.min.js'
       ].concat(offlinePages));

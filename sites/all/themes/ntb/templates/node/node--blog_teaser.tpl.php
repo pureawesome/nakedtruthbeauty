@@ -5,16 +5,16 @@
  */
 ?>
 <div class="blog-teaser <?php print $type; ?>">
-  <div class="title">
-    <h3>
-      <?php if (isset($title)): ?>
+  <?php if (isset($title)): ?>
+    <div class="title">
+      <h3>
         <?php print l($title, $node_url, array('html' => TRUE)); ?>
-      <?php endif; ?>
-    </h3>
-  </div>
+      </h3>
+    </div>
+  <?php endif; ?>
   <?php if (isset($image)): ?>
     <div class="img">
-      <?php print render($image); ?>
+      <?php print l(render($image), $node_url, array('html' => TRUE)); ?>
     </div>
   <?php endif; ?>
   <div class="content">
