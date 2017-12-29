@@ -91,7 +91,9 @@
     <?php print render($page['marquee']); ?>
   <?php endif; ?>
 
-  <?php print $messages; ?>
+  <?php if ($messages): ?>
+    <?php print $messages; ?>
+  <?php endif; ?>
 
   <div id="main-wrapper"><div id="main" class="clearfix">
 

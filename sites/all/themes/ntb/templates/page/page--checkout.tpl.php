@@ -87,19 +87,38 @@
       </div>
     </div> <!-- /.section, /#header -->
 
-  <?php print render($page['marquee']); ?>
+  <?php if ($page['marquee']): ?>
+    <?php print render($page['marquee']); ?>
+  <?php endif; ?>
 
-  <?php print $messages; ?>
+  <?php if ($messages): ?>
+    <?php print $messages; ?>
+  <?php endif; ?>
 
   <div id="main-wrapper"><div id="main" class="clearfix">
 
     <div id="content" class="column"><div class="section">
-      <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+      <?php if ($page['highlighted']): ?>
+        <div id="highlighted">
+          <?php print render($page['highlighted']); ?>
+        </div>
+      <?php endif; ?>
+
       <a id="main-content"></a>
 
-      <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+      <?php if ($tabs): ?>
+        <div class="tabs">
+          <?php print render($tabs); ?>
+        </div>
+      <?php endif; ?>
+
       <?php print render($page['help']); ?>
-      <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+
+      <?php if ($action_links): ?>
+        <ul class="action-links">
+          <?php print render($action_links); ?>
+        </ul>
+      <?php endif; ?>
 
       <div class="container-fluid">
         <div class="row">
@@ -108,11 +127,7 @@
           <?php print render($title_suffix); ?>
         </div>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <?php print render($page['content']); ?>
-          </div>
-        </div>
+        <?php print render($page['content']); ?>
       </div>
 
       <?php print $feed_icons; ?>
