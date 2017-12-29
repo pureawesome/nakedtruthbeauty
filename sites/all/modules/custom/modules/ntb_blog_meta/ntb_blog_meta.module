@@ -1,0 +1,124 @@
+<?php
+
+/**
+ * @file
+ * Module file for ntb blog meta.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function ntb_blog_meta_block_info() {
+  $blocks['ntb_blog_meta'] = array(
+    'info' => t('NTB blog meta'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+// function ntb_blog_meta_block_configure($delta = '') {
+//   if ($delta == 'ntb_blog_meta') {
+//     $form = [];
+//     $type = 'product_display';
+//     $query = [];
+//
+//     $query = db_select('node', 'n')
+//       ->fields('n')
+//       ->condition('type', $type)
+//       ->condition('status', 1)
+//       ->execute()
+//       ->fetchAll();
+//
+//     foreach ($query as $value) {
+//       $options[$value->nid] = $value->title;
+//     }
+//
+//     $form['ntb_blog_meta_one'] = [
+//       '#type' => 'select',
+//       '#title' => t('NTB Top One'),
+//       '#options' => $options,
+//       '#default_value' => variable_get('ntb_blog_meta_one', NULL),
+//     ];
+//
+//     $form['ntb_blog_meta_two'] = [
+//       '#type' => 'select',
+//       '#title' => t('NTB Top Two'),
+//       '#options' => $options,
+//       '#default_value' => variable_get('ntb_blog_meta_two', NULL),
+//     ];
+//
+//     $form['ntb_blog_meta_three'] = [
+//       '#type' => 'select',
+//       '#title' => t('NTB Top Three'),
+//       '#options' => $options,
+//       '#default_value' => variable_get('ntb_blog_meta_three', NULL),
+//     ];
+//
+//     $form['ntb_blog_meta_four'] = [
+//       '#type' => 'select',
+//       '#title' => t('NTB Top Four'),
+//       '#options' => $options,
+//       '#default_value' => variable_get('ntb_blog_meta_four', NULL),
+//     ];
+//   }
+//
+//   return $form;
+// }
+
+/**
+ * Implements hook_block_save().
+ */
+// function ntb_blog_meta_block_save($delta = '', $edit = array()) {
+//   if ($delta == 'ntb_blog_meta') {
+//     $tops = ['ntb_blog_meta_four', 'ntb_blog_meta_three', 'ntb_blog_meta_two', 'ntb_blog_meta_one'];
+//
+//     foreach ($tops as $top) {
+//       variable_set($top, $edit[$top]);
+//     }
+//   }
+// }
+
+/**
+ * Implements hook_block_view().
+ */
+function ntb_blog_meta_block_view($delta = '') {
+  $block = [];
+
+  switch ($delta) {
+    case 'ntb_blog_meta':
+      $block['content'] = ntb_blog_meta_build_display();
+      break;
+  }
+
+  return $block;
+}
+
+function ntb_blog_meta_build_display() {
+  $node = menu_get_object();
+  $items = [];
+  $author = views_embed_view('blog_authored','default',$node->nid);
+  $changed = '<span>Updated:</span> ' . format_date($node->changed, 'custom', 'F j, Y');
+  $aff = 0;
+  if (isset($node->field_uses_affiliate_links)) {
+    $aff = $node->field_uses_affiliate_links[LANGUAGE_NONE][0]['value'];
+  }
+  $affiliates = '<span>Uses affiliate links:</span> ';
+  $affiliates .= ($aff === 1) ? '<i class="fa fa-check-circle"></i>' : '<i class="fa fa-times-circle"></i>';
+  $items[] = $author;
+  $items[] = $changed;
+  $items[] = $affiliates;
+
+  $output = [
+    'items' => $items,
+    'attributes' =>[
+      'class' => [
+        'blog-meta',
+        'clean-list',
+      ],
+    ],
+  ];
+  return theme('item_list', $output);
+}

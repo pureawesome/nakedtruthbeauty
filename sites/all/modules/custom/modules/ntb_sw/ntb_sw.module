@@ -30,8 +30,8 @@ function ntb_sw_library() {
     'title' => 'NTB Service Worker',
     'version' => '1.0',
     'js' => array(
-      drupal_get_path('module', 'ntb_sw') . '/js/ntb_sw.js' => array(
-        'defer' => TRUE,
+      file_get_contents(drupal_get_path('module', 'ntb_sw') . '/js/ntb_sw.min.js') => array(
+        'type' => 'inline',
         'scope' => 'footer',
       ),
     ),

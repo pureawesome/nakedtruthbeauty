@@ -9,11 +9,36 @@
     attach: function (context, settings) {
       var self = this;
       $('body').once('signup-popup', function () {
-        $('.signup-trigger').on('click', function (e) {
-          e.preventDefault();
-          self.triggerOverlay();
-        });
+        var cookie = self.getCookie();
+        Drupal.settings.ntb_signup.cookie_length = 7;
+
+        if (!cookie) {
+          setTimeout(function () {
+            self.buildForm();
+            self.triggerOverlay();
+          }, 15000);
+        }
       });
+    },
+
+    buildForm: function () {
+      var form = '';
+      form += '<div class="ntb-signup">';
+      form += '<div class="ntb-signup-overlay"></div>';
+      form += '<div class="ntb-signup-form">';
+      form += '<div class="close"><i class="fa fa-times" aria-hidden="true"></i></div>';
+      form += '<div class="ntb-signup-form-wrapper">';
+      form += '<div class="title">' + Drupal.settings.ntb_signup.premessage + '</div>';
+      form += '<div class="errors"></div>';
+      form += '<div class="input-group">';
+      form += '<input type="email" title="Please, provide an e-mail" placeholder="Email" class="form-control form-text">';
+      form += '<span class="input-group-btn"><button class="btn form-submit button" type="submit">Submit</button></span>';
+      form += '</div>';
+      form += '</div>';
+      form += '</div>';
+      form += '</div>';
+
+      $('body').append(form);
     },
 
     triggerOverlay: function () {
@@ -44,9 +69,11 @@
           data: {
             email: input
           }
-        }).done(function (resp) {
+        })
+        .done(function (resp) {
           Drupal.behaviors.ntb_signup.submit_response(resp);
-        }).fail(function () {
+        })
+        .fail(function () {
           $('.ntb-signup .errors').html(Drupal.t("We're sorry. We were unable to process your email"));
         });
       }
@@ -54,6 +81,7 @@
 
     close: function () {
       $('.ntb-signup').fadeOut();
+      Drupal.behaviors.ntb_signup.setCookie();
     },
 
     submit_response: function (response) {
@@ -63,6 +91,23 @@
       $text.fadeOut(function () {
         $(this).html(msg);
       }).fadeIn();
+
+      Drupal.settings.ntb_signup.cookie_length = 3650;
+    },
+
+    getCookie: function () {
+      var regex = new RegExp('(?:(?:^|.*;\\s*)' + Drupal.settings.ntb_signup.cookie + '\\s*\\=\\s*([^;]*).*$)|^.*$');
+      return document.cookie.replace(regex, '$1');
+    },
+
+    setCookie: function () {
+      var name = Drupal.settings.ntb_signup.cookie;
+      var value = 1;
+      var days = Drupal.settings.ntb_signup.cookie_length;
+      var d = new Date();
+      d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+      var expires = 'expires=' + d.toUTCString();
+      document.cookie = name + '=' + value + '; ' + expires;
     }
   };
 })(jQuery);

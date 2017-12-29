@@ -5,14 +5,23 @@
 @import 'critical/critical_about';
 @import 'critical/critical_blog';
 
+@import 'fontawesome/variables';
+@import 'fontawesome/mixins';
+@import 'node_modules/breakpoint-sass/stylesheets/breakpoint';
 @import 'base/variables';
 @import 'base/mixins';
-@import 'compass';
-@import 'breakpoint';
-
+@import 'components/header';
 @import 'components/nav';
 
 .search-container,
 .cart-container {
   opacity: 0;
+}
+
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
 }

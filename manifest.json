@@ -5,7 +5,7 @@
   "short_name": "ntb",
   "start_url": "/",
   "scope": "/",
-  "display": "browser",
+  "display": "minimal-ui",
   "orientation": "portrait",
   "background_color": "#91cdc5",
   "theme_color": "#91cdc5",

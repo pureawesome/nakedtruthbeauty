@@ -1,16 +1,16 @@
+@import 'base/reboot';
+
 @import 'fontawesome/fontawesome';
+@import 'node_modules/breakpoint-sass/stylesheets/breakpoint';
 
 @import 'base/fonts';
 @import 'base/variables';
 @import 'base/mixins';
-@import 'bootstrap';
-@import 'compass';
-@import 'breakpoint';
+@import 'base/general';
 
 /* View components */
 @import 'components/header';
 @import 'components/nav';
-@import 'components/blog';
 @import 'components/contact';
 @import 'components/forms';
 @import 'components/colorbox';

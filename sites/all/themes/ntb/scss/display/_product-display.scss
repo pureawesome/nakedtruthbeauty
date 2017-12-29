@@ -18,13 +18,13 @@
 }
 
 .field-name-commerce-price {
-  font-size: 36px;
+  font-size: 2.25rem;
   text-align: center;
 }
 
 .add-to-cart-block {
   border: 0;
-  font-size: 20px;
+  font-size: 1.25rem;
   margin-bottom: 15px;
 
   .form-submit {
@@ -45,15 +45,15 @@
   .field-label {
     text-transform: lowercase;
     text-align: center;
-    @include inline-block();
+    display: inline-block;
 
   }
   .field-item {
-    @include inline-block();
+    display: inline-block;
   }
 
   a {
-    color: #000;
+    color: $link-color;
 
     &:hover {
       text-decoration: none;
@@ -63,11 +63,11 @@
 
 .product-body .nav {
   li {
-    @include inline-block();
+    display: inline-block;
 
     &.active {
       a {
-        color: #000;
+        color: $link-color;
       }
     }
 
@@ -89,27 +89,23 @@
   }
 
 
-  .product-body {
-    text-align: center;
-  }
-
-  .nav {
-    @include inline-block();
-  }
-
-  .tab-content {
+  p {
     text-align: left;
+  }
+
+  .product-body .field {
+    margin-bottom: 2rem;
   }
 }
 
 @include breakpoint($screen-sm) {
   .add-to-cart-block {
     & > div {
-      @include inline-block();
+      display: inline-block;
     }
 
     .form-submit {
-      font-size: 16px;
+      font-size: 1rem;
       width: auto;
       margin-bottom: 0;
     }
@@ -140,7 +136,7 @@
   }
 
   .field-name-commerce-price {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
 }
 

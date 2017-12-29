@@ -4,7 +4,7 @@
 }
 
 .pane-front-tiles {
-  h2 {
+  h3 {
     @include flag();
   }
 
@@ -13,8 +13,7 @@
   }
 }
 
-.front h2.pane-title {
-  @include flag();
+.front h3.pane-title {
   margin-top: 12px;
 }
 
@@ -55,7 +54,7 @@
   .views-row {
     .views-field-title {
       padding: 10px 0;
-      font-size: 18px;
+      font-size: 1.125rem;
       display: block;
     }
   }

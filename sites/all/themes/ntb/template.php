@@ -16,31 +16,13 @@ function ntb_theme() {
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
-  $ntb_css = drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION;
-
-  $noscript = array(
-    '#theme' => 'html_tag',
-    '#tag' => 'link',
-    '#attributes' => array(
-      'rel' => 'stylesheet',
-      'type' => 'text/css',
-      'href' => '/' . $ntb_css,
-    ),
-  );
-
-  $noscript_wrapper = array(
-    '#theme' => 'html_tag',
-    '#tag' => 'noscript',
-    '#value' => drupal_render($noscript),
-  );
-
-  drupal_add_html_head($noscript_wrapper, 'noscript');
-
   $preload_fonts = [
     'quicksand-regular-webfont.woff2',
     'fontawesome-webfont.woff2?v=4.6.3',
     'quicksand-bold-webfont.woff2',
-    'have_heart_one-webfont.woff2',
+    'lato-bold-webfont.woff2',
+    'lato-light-webfont.woff2',
+    'lato-regular-webfont.woff2',
   ];
 
   $theme_path = drupal_get_path('theme', 'ntb');
@@ -67,7 +49,7 @@ function ntb_preprocess_page(&$vars) {
     'links', 'inline', 'clearfix', 'nav', 'navbar-nav', 'secondary-menu',
   ];
 
-  $secondary_dropdown = ['dropdown-menu', 'dropdown-menu-right'];
+  $secondary_dropdown = ['dropdown-menu', 'dropdown-menu-right', 'nav'];
 
   if (!$vars['logged_in']) {
     $links[] = array(
@@ -121,7 +103,7 @@ function ntb_preprocess_page(&$vars) {
  * Implements THEMENAME_menu_tree__MENU_NAME().
  */
 function ntb_menu_tree__main_menu($variables) {
-  return '<ul class="links inline clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
+  return '<ul class="links clearfix nav navbar-nav primary-nav"><li class="more dropdown"><a href="#">Menu</a><ul class="dropdown-menu">' . $variables['tree'] . '</ul></li></ul>';
 }
 
 /**
@@ -149,7 +131,6 @@ function ntb_menu_link__main_menu($variables) {
     else {
       unset($element['#below']['#theme_wrappers']);
       $sub_menu = '<ul class="dropdown-menu">' . drupal_render($element['#below']) . '</ul>';
-      $element['#title'] .= ' <i class="fa fa-angle-down"></i>';
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
       $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
@@ -167,93 +148,71 @@ function ntb_menu_link__main_menu($variables) {
  * Implements hook_library().
  */
 function ntb_library() {
-  $libraries['bootstrap_tabs'] = array(
-    'title' => 'Bootstrap Tabs',
-    'version' => '3.3.6',
-    'js' => array(
-      libraries_get_path('bootstrap') . '/js/lib/tab.min.js' => array(
+  $libraries['throttle.debounce'] = [
+    'title' => 'Throttle Debounce',
+    'version' => '1.1',
+    'js' => [
+      libraries_get_path('jquery-throttle-debounce') . '/jquery.ba-throttle-debounce.min.js' => [
         'defer' => TRUE,
         'scope' => 'footer',
-      ),
-    ),
-  );
+      ],
+    ],
+  ];
 
-  $libraries['bootstrap_dropdown'] = array(
-    'title' => 'Bootstrap ',
-    'version' => '3.3.6',
-    'js' => array(
-      libraries_get_path('bootstrap') . '/js/lib/dropdown.min.js' => array(
-        'defer' => TRUE,
-        'scope' => 'footer',
-      ),
-    ),
-  );
-
-  $libraries['bootstrap_collapse'] = array(
-    'title' => 'Bootstrap ',
-    'version' => '3.3.6',
-    'js' => array(
-      libraries_get_path('bootstrap') . '/js/lib/collapse.min.js' => array(
-        'defer' => TRUE,
-        'scope' => 'footer',
-      ),
-    ),
-  );
-
-  $libraries['loadcss'] = array(
+  $libraries['loadcss'] = [
     'title' => 'loadCSS',
-    'version' => '1.3.1',
-    'js' => array(
-      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/src/loadCSS.min.js') => array(
+    'version' => '2.0.1',
+    'js' => [
+      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/dist/cssrelpreload.min.js') => [
         'type' => 'inline',
-      ),
-      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/src/cssrelpreload.min.js') => array(
-        'type' => 'inline',
-      ),
-    ),
-  );
+      ],
+    ],
+  ];
 
 
-  $libraries['ntb'] = array(
+  $libraries['ntb'] = [
     'title' => 'NTB',
     'version' => '1.2',
-    'js' => array(
-      drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => array(
+    'js' => [
+      drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => [
         'defer' => TRUE,
         'scope' => 'footer',
-      ),
-      'loadCSS("/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION . '");' => array(
+      ],
+    ],
+    'css' => [
+      drupal_get_path('theme', 'ntb') . '/css/ntb.css' => [
+        'weight' => 9999,
+        'preprocess' => FALSE,
+        'every_page' => TRUE,
+        'group' => CSS_THEME,
+      ],
+      file_get_contents(drupal_get_path('theme', 'ntb') . '/css/ntb_critical.css') => [
         'type' => 'inline',
-      ),
-    ),
+        'weight' => -9999,
+        'preprocess' => FALSE,
+        'every_page' => TRUE,
+        'group' => CSS_SYSTEM,
+      ],
+    ],
     'dependencies' => [
-      ['ntb', 'bootstrap_collapse'],
-      ['ntb', 'bootstrap_dropdown'],
       ['ntb', 'modernizr'],
       ['ntb', 'loadcss'],
+      ['ntb', 'throttle.debounce'],
     ],
-  );
+  ];
 
-  $libraries['modernizr'] = array(
+  $libraries['modernizr'] = [
     'title' => 'Modernizr ',
     'version' => '2.3.8',
-    'js' => array(
-      libraries_get_path('modernizr') . '/modernizr-2.8.3.min.js' => array(
+    'js' => [
+      libraries_get_path('modernizr') . '/modernizr-2.8.3.min.js' => [
         'defer' => TRUE,
         'scope' => 'footer',
-      ),
-    ),
-  );
+      ],
+    ],
+  ];
 
   return $libraries;
-}
-
-/**
- * Implements hook_preprcess_html().
- */
-function ntb_preprocess_html(&$vars) {
-  $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/ntb_critical.css');
-  $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
 }
 
 /**
@@ -272,4 +231,72 @@ function ntb_js_alter(&$javascript) {
       $script['scope'] = 'footer';
     }
   }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function ntb_element_info_alter(&$type) {
+  if (!isset($type['styles']['#pre_render'])) {
+    $type['styles']['#pre_render'] = [];
+  }
+  $type['styles']['#pre_render'][] = 'ntb_pre_render_styles';
+}
+
+function ntb_pre_render_styles($elements) {
+  $children = [];
+  foreach ($elements as $key => &$value) {
+    if ($key !== '' && $key[0] === '#') {
+      continue;
+    }
+    $children[$key] = &$value;
+    unset($elements[$key]);
+  }
+
+  foreach ($elements['#items'] as $key => $value) {
+    if ($value['type'] == 'inline') {
+      $crit = [
+        '#theme' => 'html_tag',
+        '#tag' => 'style',
+        '#value' => $value['data'],
+        '#attributes' => [
+          'type' => 'text/css',
+        ],
+      ];
+      $elements[] = $crit;
+      continue;
+    }
+
+    $url = $value['data'];
+    $preload = [
+      '#theme' => 'html_tag',
+      '#tag' => 'link',
+      '#attributes' => [
+        'rel' => 'preload',
+        'as' => 'style',
+        'href' => '/' . $url,
+        'onload' => "this.onload=null;this.rel='stylesheet'",
+      ],
+    ];
+    $elements[] = $preload;
+
+    $noscript = [
+      '#theme' => 'html_tag',
+      '#tag' => 'link',
+      '#attributes' => [
+        'rel' => 'stylesheet',
+        'type' => 'text/css',
+        'href' => '/' . $url,
+      ],
+    ];
+
+    $noscript_wrapper = [
+      '#theme' => 'html_tag',
+      '#tag' => 'noscript',
+      '#value' => render($noscript),
+    ];
+    $elements[] = $noscript_wrapper;
+  }
+
+  return $elements;
 }

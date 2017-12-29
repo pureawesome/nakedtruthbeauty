@@ -4,11 +4,23 @@ img {
   height: auto;
 }
 
+a {
+  color: $secondary-blue;
+
+  &:hover {
+    color: $text-dark;
+  }
+}
+
+.field-name-body img {
+
+}
+
 .flex-direction-nav a {
   &:before {
     content: $fa-var-arrow-circle-left;
     @include fa-icon();
-    font-size: 40px;
+    font-size: 2.5rem;
     color: rgba($secondary-blue, 0.8);
   }
 
@@ -19,6 +31,7 @@ img {
 
 #page-title {
   text-align: center;
+  width: 100%;
 }
 
 ul.inline li {
@@ -38,27 +51,36 @@ ol li a {
   }
 }
 
-.form-submit {
-  border: 0;
-  background: transparent;
-  text-align: center;
-  width: 100%;
-  text-transform: lowercase;
-  background: $primary-blue;
-  margin-bottom: 10px;
-  color: $text-dark;
-  @include border-radius(5px);
-
-  &:hover {
-    background: $secondary-blue;
-  }
+.form-submit, .btn {
+  @include inline-button();
+  // border: 0;
+  // background: transparent;
+  // text-align: center;
+  // width: 100%;
+  // text-transform: lowercase;
+  // background: $primary-blue;
+  // margin-bottom: 10px;
+  // color: $text-dark;
+  // border-radius: 5px;
+  // font-size: 1rem;
+  // width: auto;
+  // margin-bottom: 0;
+  // padding: 6px;
+  //
+  // &:hover {
+  //   background: $secondary-blue;
+  //   color: $white;
+  // }
 }
 
-a {
-  &:hover {
-    text-decoration: none;
-  }
-}
+// a {
+//   color: $link-color;
+//
+//   &:hover {
+//     color: $link-color-hover;
+//     text-decoration: none;
+//   }
+// }
 
 tr.even,
 tr.odd,
@@ -79,7 +101,7 @@ table thead th,
 .field .field-label {
   font-weight: normal;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 #user-pass-reset,
@@ -108,8 +130,8 @@ ul.primary {
 
       &:hover {
         background: $secondary-blue;
-        color: #000;
-        @include border-radius(5px);
+        color: $link-color;
+        border-radius: 5px;
       }
     }
 
@@ -131,7 +153,7 @@ ul.primary {
       // color: darken($secondary-blue, 15%);
       // color: $white;
       content: $fa-var-facebook;
-      font-size: 36px;
+      font-size: 2.25rem;
     }
 
     &.tw:before {
@@ -171,7 +193,7 @@ ul.primary {
   display: block;
   width: 100%;
   height: 2px;
-  @include background-image(linear-gradient(left, #fff, $primary-blue,  #fff));
+  background-image: linear-gradient(to right, #fff, $primary-blue,  #fff);
   border-radius: 1px;
   margin: 45px 0;
 }
@@ -183,7 +205,7 @@ ul.primary {
 
   .form-submit {
     width: auto;
-    @include inline-block();
+    display: inline-block;
   }
 
   .form-inline.form-control {
@@ -194,7 +216,7 @@ ul.primary {
 
   table thead th,
   .field .field-label {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -203,12 +225,20 @@ ul.primary {
   text-align: center;
 }
 
-ul.ntb-top-three {
-  @include display-flex();
-  @include flex-direction(column);
+ul.ntb-top {
+  display: flex;
+  flex-direction: column;
 
   @include breakpoint($nav-break) {
-    @include flex-direction(row);
+    flex-direction: row;
+  }
+
+  @supports(display:grid) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 2rem;
+    margin: 0;
+    grid-column: 12 span;
   }
 
   &,
@@ -216,6 +246,19 @@ ul.ntb-top-three {
     margin: 0;
     padding: 0;
     list-style: none;
+    .tile {
+
+    }
+    border-bottom: 0;
+
+    @supports(display:grid) {
+      &.ntb-top-three li {
+        grid-column: 4 span;
+      }
+      &.ntb-top-four li {
+        grid-column: 3 span;
+      }
+    }
   }
 }
 
@@ -226,14 +269,41 @@ ul.ntb-top-three {
 .color-secondary {
   color: $secondary-blue;
 }
-#sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+
+#logo svg {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+.form-submit {
+  // padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+.block-menu ul {
   padding: 0;
-  margin: -1px;
-  /* overflow: hidden; */
-  /* clip: rect(0, 0, 0, 0); */
-  border: 0;
-  /* overflow: visible; */
+  margin: 0;
+}
+
+#block-menu-menu-footer-menu {
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+li {
+    list-style: none;
+    display: inline-block;
+  }
+}
+
+ul.clean-list {
+  li {
+    margin: 0;
+  }
 }
