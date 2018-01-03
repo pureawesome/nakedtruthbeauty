@@ -102,3 +102,11 @@
       }
     }
 }
+
+.page-blog .col-sm-2.g-st-1 {
+  grid-row: 2;
+
+  @include breakpoint($screen-sm) {
+    grid-row: 1;
+  }
+}
