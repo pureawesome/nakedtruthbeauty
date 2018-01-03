@@ -39,13 +39,19 @@ p {
 
 .panel-col,
 .row,
-.region {
+.region,
+.alert-strip,
+.navbar-default,
+.panel-col,
+.region-content {
   width: 100%;
+
+  @supports(display: grid) {
+    grid-column: 12 span;
+  }
 }
 
 .row {
-  // margin-left: -15px;
-  // margin-right: -15px;
   display: block;
 }
 
@@ -58,26 +64,50 @@ p {
 }
 
 @include breakpoint($screen-sm) {
-  .col-sm-8 {
-    width: 66.66666667%;
+
+  .col-sm-1 {
+    width: 8.33333333%;
   }
 
   .col-sm-2 {
     width: 16.66666667%;
   }
 
-  .col-sm-6 {
-    width: 50%;
+  .col-sm-3 {
+    width: 25%;
   }
 
   .col-sm-4 {
     width: 33.33333333%;
   }
 
-  .col-sm-3 {
-    width: 25%;
+  .col-sm-5 {
+    width: 41.66666667%;
   }
 
+  .col-sm-6 {
+    width: 50%;
+  }
+
+  .col-sm-7 {
+    width: 58.33333333%;
+  }
+
+  .col-sm-8 {
+    width: 66.66666667%;
+  }
+
+  .col-sm-9 {
+    width: 75%;
+  }
+
+  .col-sm-10 {
+    width: 83.33333333%;
+  }
+
+  .col-sm-11 {
+    width:91.66666667%;
+  }
 }
 
 .three-item .views-row,
@@ -88,26 +118,6 @@ p {
 .four-item .views-row,
 .four-item > li {
   width: 25%;
-}
-
-
-
-.alert-strip,
-.navbar-default,
-.panel-col,
-.region-content {
-  min-width: 100%;
-
-  @supports(display: grid) {
-    grid-column: 12 span;
-  }
-}
-
-
-.panel-col {
-  @supports(display: grid) {
-    grid-column: 12 span;
-  }
 }
 
 #main .container-fluid,
@@ -286,6 +296,8 @@ h2.pane-title {
 
 .view-blog-related .views-row {
   width: 100%;
+  display: block;
+  float: left;
 
   @include breakpoint($screen-xs) {
     .img {
