@@ -37,7 +37,7 @@ p{ font-family: lato, Lato, sans-serif; font-weight: lighter; }
  .col-sm-12{ display: block; float: left; width: 100%; }
  #main .container-fluid{ max-width: 1200px; margin: auto; padding: 0px 1rem; }
 .row{ display: block; clear: both; }
- .col-sm-12{ display: inline-block; float: left; padding: 0px 1rem; }
+ .col-sm-12{ display: inline-block; float: left; padding: 0px 1rem; min-height: 1px; }
 .panel-pane{ display: block; clear: both; float: left; width: 100%; }
 .panel-pane{ padding-bottom: 2rem; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); margin-bottom: 2rem; }
 #logo{ margin: 10px auto 5px; max-width: 75%; width: 500px; text-align: center; padding: 0px; }

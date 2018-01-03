@@ -37,7 +37,7 @@ p{ font-family: lato, Lato, sans-serif; font-weight: lighter; }
  .col-sm-12{ display: block; float: left; width: 100%; }
 #footer .container-fluid, #main .container-fluid{ max-width: 1200px; margin: auto; padding: 0px 1rem; }
 .row{ display: block; clear: both; }
- .col-sm-12{ display: inline-block; float: left; padding: 0px 1rem; }
+ .col-sm-12{ display: inline-block; float: left; padding: 0px 1rem; min-height: 1px; }
 #logo{ margin: 10px auto 5px; max-width: 75%; width: 500px; text-align: center; padding: 0px; }
 .fa-icon, .icon-menu-fixed li{ display: inline-block; }
 .fa-icon{ font-size: 1.625rem; background-image: none; border: 0px; color: rgb(60, 127, 120); line-height: 1; padding: 0px; background-position: initial initial; background-repeat: initial initial; }
