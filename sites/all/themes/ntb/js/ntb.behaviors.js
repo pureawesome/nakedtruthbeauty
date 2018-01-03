@@ -87,12 +87,12 @@
           }
         }
 
-        var $moreText = $('.primary-nav > .more > a')[0];
+        var $moreText = $('.primary-nav > .more > a');
         if ($('.primary-nav > li').length === 1) {
-          $moreText.text = 'menu';
+          $moreText.text('menu');
         }
         else {
-          $moreText.text = 'more';
+          $moreText.text('more');
         }
       }
 
