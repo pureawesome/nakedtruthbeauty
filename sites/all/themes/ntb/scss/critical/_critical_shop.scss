@@ -41,7 +41,10 @@ p{ font-family: lato, Lato, sans-serif; font-weight: lighter; }
 .col-sm-4{ width: 33.33333333%; }
 .col-sm-9{ width: 75%; }
 }
+.three-item .views-row{ width: 100%; }
+@media (min-width: 768px){
 .three-item .views-row{ width: 33.33333333%; }
+}
  #main .container-fluid{ max-width: 1200px; margin: auto; padding: 0px 1rem; }
 .row, .view-content{ display: block; clear: both; }
  .col-sm-3, .col-sm-4, .col-sm-9, .col-sm-12, .three-item .views-row{ display: inline-block; float: left; padding: 0px 1rem; min-height: 1px; }
