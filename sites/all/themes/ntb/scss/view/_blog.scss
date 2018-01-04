@@ -34,11 +34,17 @@
   }
 }
 
-.blog-meta {
+.pane-ntb-blog-meta-ntb-blog-meta {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+ul.blog-meta {
   list-style: none;
   display: flex;
   align-items: center;
   flex-wrap:wrap;
+  margin: 0;
 
   li {
     display: inline-block;
