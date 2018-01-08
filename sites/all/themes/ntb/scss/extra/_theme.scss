@@ -295,6 +295,7 @@ ul {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 li {
     list-style: none;
@@ -306,4 +307,18 @@ ul.clean-list {
   li {
     margin: 0;
   }
+}
+
+table {
+  width: 100%;
+}
+
+
+.search-container,
+.cart-container {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
 }

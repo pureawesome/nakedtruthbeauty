@@ -37,7 +37,7 @@ function ntb_blog_meta_build_display() {
   $author = views_embed_view('blog_authored','default',$node->nid);
   $changed = '<span>Updated:</span> ' . format_date($node->changed, 'custom', 'F j, Y');
   $aff = 0;
-  if (isset($node->field_uses_affiliate_links)) {
+  if (isset($node->field_uses_affiliate_links) && !empty($node->field_uses_affiliate_links)) {
     $aff = $node->field_uses_affiliate_links[LANGUAGE_NONE][0]['value'];
   }
   $affiliates = '<span>Uses affiliate links:</span> ';

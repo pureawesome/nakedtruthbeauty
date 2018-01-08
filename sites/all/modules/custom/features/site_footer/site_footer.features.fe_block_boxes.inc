@@ -14,7 +14,7 @@ function site_footer_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Footer Copyright';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'footer_menu';
-  $fe_block_boxes->body = '<div class="rtecenter">2017 ©&nbsp;naked truth beauty</div>
+  $fe_block_boxes->body = '<div class="rtecenter">2018 ©&nbsp;naked truth beauty</div>
 
 ';
 
