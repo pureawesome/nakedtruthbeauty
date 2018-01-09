@@ -11,15 +11,6 @@ body {
   // max-width: 1200px;
 }
 
-.search-container,
-.cart-container {
-  opacity: 0;
-}
-
-.hidden {
-  display: none;
-}
-
 .h1,h1{font-size:2.5rem}
 .h2,h2{font-size:2.125rem}
 .h3,h3{font-size:1.75rem}
@@ -75,6 +66,18 @@ p {
   .col-sm-9 { width: 75%;  }
   .col-sm-10 { width: 83.33333333%;  }
   .col-sm-11 { width:91.66666667%; }
+
+  .col-sm-offset-1 { margin-left: 8.33333333%;  }
+  .col-sm-offset-2 { margin-left: 16.66666667%;  }
+  .col-sm-offset-3 { margin-left: 25%;  }
+  .col-sm-offset-4 { margin-left: 33.33333333%;  }
+  .col-sm-offset-5 { margin-left: 41.66666667%;  }
+  .col-sm-offset-6 { margin-left: 50%;  }
+  .col-sm-offset-7 { margin-left: 58.33333333%;  }
+  .col-sm-offset-8 { margin-left: 66.66666667%;  }
+  .col-sm-offset-9 { margin-left: 75%;  }
+  .col-sm-offset-10 { margin-left: 83.33333333%;  }
+  .col-sm-offset-11 { margin-left: 91.66666667%; }
 }
 
 .three-item .views-row,
@@ -150,7 +153,6 @@ p {
   }
 
   .col-xs-6.col-xs-offset-3 {
-    // @extend .g-st-4;
     grid-column: 4 / span 6;
   }
 
@@ -180,6 +182,10 @@ p {
   .g-xs-st-11, .col-xs-offset-10 { grid-column-start: 11; }
   .g-xs-st-12, .col-xs-offset-11 { grid-column-start: 12; }
 
+  .col-sm-offset-1, .col-sm-offset-2, .col-sm-offset-3, .col-sm-offset-4,
+  .col-sm-offset-5, .col-sm-offset-6, .col-sm-offset-7, .col-sm-offset-8,
+  .col-sm-offset-9, .col-sm-offset-10, .col-sm-offset-11 { margin-left: auto; }
+
   @include breakpoint($screen-sm) {
     .col-sm-1 { grid-column-end: span 1; }
     .col-sm-2 { grid-column-end: span 2; }
@@ -208,23 +214,14 @@ p {
     .g-st-12, .col-sm-offset-11 { grid-column-start: 12; }
 
     .col-sm-6.col-sm-offset-3 {
-      // @extend .g-st-4;
       grid-column: 4 / span 6;
     }
 
     .col-sm-10.col-sm-offset-1 {
-      // @extend .g-st-2;
       grid-column: 2 / span 10;
     }
 
-    // .col-sm-4.col-sm-offset-0 {
-    //   // @extend .g-st-4;
-    //   grid-column: 0 / span 4;
-    // }
-
     .view-taxonomy-term .views-row {
-      // @extend .g-st-3;
-      // @extend .col-sm-8;
       grid-column: 3 / span 8;
     }
 
@@ -240,12 +237,6 @@ p {
         grid-column: 3 span;
       }
     }
-
-
-    // .view-product-type-taxonomy .views-row {
-    //   grid-column: span 12;
-    //   margin: 0;
-    // }
 
     .view-empty {
       grid-column: span 12;

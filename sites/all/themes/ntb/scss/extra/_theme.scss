@@ -295,6 +295,7 @@ ul {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 li {
     list-style: none;
@@ -310,4 +311,28 @@ ul.clean-list {
 
 table {
   width: 100%;
+}
+
+
+.search-container,
+.cart-container {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.fb_iframe_widget[type=button] {
+  -webkit-appearance: none;
+
+  & > span {
+    vertical-align: top !important;
+  }
+}
+
+.service-links {
+  display: block;
+  float: left;
+  height: 20px;
 }
