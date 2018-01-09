@@ -322,3 +322,17 @@ table {
 .hidden {
   display: none;
 }
+
+.fb_iframe_widget[type=button] {
+  -webkit-appearance: none;
+
+  & > span {
+    vertical-align: top !important;
+  }
+}
+
+.service-links {
+  display: block;
+  float: left;
+  height: 20px;
+}
