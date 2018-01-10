@@ -18,14 +18,16 @@ function site_ingredients_preprocess_node(&$vars) {
 
       $vars['text'] = truncate_utf8($body, 150, $wordsafe = TRUE, $add_ellipsis = TRUE, $min_wordsafe_length = 5);
 
-      $vars['image'] = field_view_field('node', $vars['node'], 'field_primary_image',
-        array(
-          'label' => 'hidden',
-          'settings' => array(
-            'image_style' => 'square_200x200',
-          )
-        )
+      $image_arr = $vars['field_primary_image'][0];
+      [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
+      $img_array = array(
+        'style_name' => 'square_200x200',
+        'path' => $image_arr['uri'],
+        'alt' => $image_alt,
+        'title' => $image_title,
       );
+      $image = theme('image_style', $img_array);
+      $vars['image'] = l($image, $vars['node_url'], array('html' => TRUE));
     }
   }
 }
