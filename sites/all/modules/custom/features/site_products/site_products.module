@@ -139,14 +139,18 @@ function site_products_preprocess_node(&$vars) {
     $node = $vars['node'];
     $type = $node->type;
 
-    $image_uri = $vars['field_primary_image'][0]['uri'];
+    $image_arr = $vars['field_primary_image'][0];
+    [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $node->title);
 
     $img_array = array(
       'style_name' => 'square_500x500',
-      'path' => $image_uri,
+      'path' => $image_arr['uri'],
+      'alt' => $image_alt,
+      'title' => $image_title,
     );
+
     $image = theme('image_style', $img_array);
-    $vars['image'] = l($image, 'node/' . $vars['nid'], array('html' => TRUE));
+    $vars['image'] = l($image, $vars['node_url'], array('html' => TRUE));
 
     $vars['product_category'] = $vars['elements']['product:field_product_type'][0]['#title'];
     $vars['price'] = $vars['content']['product:commerce_price'][0]['#markup'];

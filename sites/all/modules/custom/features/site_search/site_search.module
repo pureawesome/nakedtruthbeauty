@@ -48,13 +48,17 @@ function site_search_preprocess_node(&$vars) {
     $vars['theme_hook_suggestions'][] = 'node__search';
 
     if (isset($vars['field_primary_image'])) {
-      $image_uri = $vars['field_primary_image'][0]['uri'];
+      $image_arr = $vars['field_primary_image'][0];
+      [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['node']->title);
+
       $img_array = array(
         'style_name' => 'square_200x200',
-        'path' => $image_uri,
+        'path' => $image_arr['uri'],
+        'alt' => $image_alt,
+        'title' => $image_title,
       );
       $image = theme('image_style', $img_array);
-      $vars['image'] = l($image, 'node/' . $vars['nid'], array('html' => TRUE));
+      $vars['image'] = l($image, $vars['node_url'], array('html' => TRUE));
     }
 
     if (isset($vars['body'])) {
