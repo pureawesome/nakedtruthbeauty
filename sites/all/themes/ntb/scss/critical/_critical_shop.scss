@@ -33,7 +33,6 @@ button{ text-transform: none; }
 html{ font-size: 16px; }
 body{ font-family: lato, Lato, sans-serif; }
 .alert-strip, .col-sm-12, .col-sm-3, .col-sm-4, .col-sm-9, .container-fluid, .panel-col, .region, .region-content, .row, .three-item .views-row{ width: 100%; }
-.cart-container, .js .view-shop .views-row, .search-container{ opacity: 0; }
  h1{ font-size: 2.5rem; }
  h3{ font-size: 1.75rem; }
  h1, h3{ font-weight: 500; line-height: 1.1; color: inherit; font-family: quicksand, Verdana, Tahoma, sans-serif; }
@@ -58,7 +57,7 @@ p{ font-family: lato, Lato, sans-serif; font-weight: lighter; font-size: 1.125re
 nav{ border: none; -webkit-box-direction: normal; -webkit-box-pack: justify; width: 100%; -webkit-box-align: center; }
 .nav-primary-wrapper{ -webkit-box-flex: 1; }
 .nav-secondary-wrapper{ -webkit-box-flex: 0; margin-right: 15px; }
-.dropdown-menu > li > a, .primary-nav > li > a{ width: 100%; color: rgb(35, 41, 39); font-size: 1.25rem; padding: 10px 15px; transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; display: inline-block; text-transform: uppercase; font-weight: 300; }
+.dropdown-menu > li > a, .primary-nav > li > a{ width: 100%; color: rgb(35, 41, 39); font-size: 1.25rem; padding: 10px 15px; transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; display: inline-block; text-transform: lowercase; font-weight: 300; }
 .navbar-nav{ -webkit-box-direction: normal; }
 .cart-container, .search-container{ -webkit-box-orient: vertical; -webkit-box-direction: normal; }
 .navbar-nav.primary-nav{ }
@@ -133,6 +132,7 @@ nav .dropdown-menu > li > a{ font-size: 14px; padding: 5px; }
 .add-to-cart-block > div{ display: inline-block; }
 .add-to-cart-block .form-submit{ font-size: 1rem; width: auto; margin-bottom: 0px; }
 }
+.cart-container, .js .view-shop .views-row, .search-container{ opacity: 0; }
 @media not all, not all{
 .tile .img, .tile .title{ max-width: 100%; text-align: center; width: 100%; }
 .tile{ display: block; }
