@@ -43,6 +43,7 @@ nav {
   &:hover,
   &:focus {
     color: $link-color-hover;
+    text-decoration: none;
   }
 }
 
@@ -105,7 +106,7 @@ nav {
   }
 
   nav & > li > a {
-    font-size: 14px;
+    font-size: 16px;
     padding: 5px;
   }
 }
