@@ -40,11 +40,13 @@ function ntb_blog_meta_build_display() {
   if (isset($node->field_uses_affiliate_links) && !empty($node->field_uses_affiliate_links)) {
     $aff = $node->field_uses_affiliate_links[LANGUAGE_NONE][0]['value'];
   }
-  $affiliates = '<span>Uses affiliate links:</span> ';
-  $affiliates .= ($aff === 1) ? '<i class="fa fa-check-circle"></i>' : '<i class="fa fa-times-circle"></i>';
+
   $items[] = $author;
   $items[] = $changed;
-  $items[] = $affiliates;
+
+  if ($aff === 1) {
+    $items[] = '<span>Uses affiliate links</span>';
+  }
 
   if (module_exists('service_links')) {
     $social = module_invoke('service_links', 'block_view', 'service_links');
