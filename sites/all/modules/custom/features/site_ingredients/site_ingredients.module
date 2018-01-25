@@ -20,13 +20,7 @@ function site_ingredients_preprocess_node(&$vars) {
 
       $image_arr = $vars['field_primary_image'][0];
       [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
-      $img_array = array(
-        'style_name' => 'square_200x200',
-        'path' => $image_arr['uri'],
-        'alt' => $image_alt,
-        'title' => $image_title,
-      );
-      $image = theme('image_style', $img_array);
+      $image = site_general_make_lazy_img('square_500x500', $image_arr['uri'], $image_alt, $image_title);
       $vars['image'] = l($image, $vars['node_url'], array('html' => TRUE));
     }
   }
