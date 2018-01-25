@@ -16,7 +16,7 @@ function site_ingredients_preprocess_node(&$vars) {
 
       $body = $vars['body'][0]['value'];
 
-      $vars['text'] = truncate_utf8($body, 150, $wordsafe = TRUE, $add_ellipsis = TRUE, $min_wordsafe_length = 5);
+      $vars['text'] = truncate_utf8($body, 150, TRUE, TRUE, 10);
 
       $image_arr = $vars['field_primary_image'][0];
       [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
