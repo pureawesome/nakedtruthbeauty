@@ -169,7 +169,7 @@ function ntb_library() {
 
   $libraries['ntb'] = [
     'title' => 'NTB',
-    'version' => '1.2',
+    'version' => '1.3',
     'js' => [
       drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => [
         'defer' => TRUE,
@@ -177,7 +177,7 @@ function ntb_library() {
       ],
     ],
     'css' => [
-      drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.2' => [
+      drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.3' => [
         'weight' => 9999,
         'preprocess' => FALSE,
         'every_page' => TRUE,
@@ -265,23 +265,25 @@ function ntb_pre_render_styles($elements) {
           $elements[] = $crit;
         }
         else {
-          $elements[] = ntb_make_lazy_css_pre('/' . $item['data']);
-          $elements[] = ntb_make_lazy_css_no('/' . $item['data']);
+          [$preload, $noscript_wrapper] = ntb_make_lazy_css('/' . $item['data']);
+          $elements[] = $preload;
+          $elements[] = $noscript_wrapper;
         }
       }
     }
     else {
       $url = file_create_url($value['data']);
       $url = parse_url($url);
-      $elements[] = ntb_make_lazy_css_pre($url['path']);
-      $elements[] = ntb_make_lazy_css_no($url['path']);
+      [$preload, $noscript_wrapper] = ntb_make_lazy_css($url['path']);
+      $elements[] = $preload;
+      $elements[] = $noscript_wrapper;
     }
   }
 
   return $elements;
 }
 
-function ntb_make_lazy_css_pre($url) {
+function ntb_make_lazy_css($url) {
   $preload = [
     '#theme' => 'html_tag',
     '#tag' => 'link',
@@ -292,10 +294,7 @@ function ntb_make_lazy_css_pre($url) {
       'onload' => "this.onload=null;this.rel='stylesheet'",
     ],
   ];
-  return  $preload;
-}
 
-function ntb_make_lazy_css_no($url) {
   $noscript = [
     '#theme' => 'html_tag',
     '#tag' => 'link',
@@ -311,5 +310,6 @@ function ntb_make_lazy_css_no($url) {
     '#tag' => 'noscript',
     '#value' => render($noscript),
   ];
-  return $noscript_wrapper;
+
+  return [$preload, $noscript_wrapper];
 }

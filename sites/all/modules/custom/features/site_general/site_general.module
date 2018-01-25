@@ -35,14 +35,7 @@ function site_general_preprocess_node(&$vars) {
 
     $image_arr = $vars['field_primary_image'][0];
     [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
-
-    $img_array = array(
-      'style_name' => 'square_500x500',
-      'path' => $image_arr['uri'],
-      'alt' => $image_alt,
-      'title' => $image_title,
-    );
-    $vars['image'] = theme('image_style', $img_array);
+    $vars['image'] = site_general_make_lazy_img('square_500x500', $image_arr['uri'], $image_alt, $image_title);
   }
 
   if ($vars['view_mode'] == 'blog_teaser') {
@@ -51,14 +44,7 @@ function site_general_preprocess_node(&$vars) {
     if (!empty($vars['field_primary_image'])) {
       $image_arr = $vars['field_primary_image'][0];
       [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
-
-      $img_array = array(
-        'style_name' => 'square_500x500',
-        'path' => $image_arr['uri'],
-        'alt' => $image_alt,
-        'title' => $image_title,
-      );
-      $vars['image'] = theme('image_style', $img_array);
+      $vars['image'] = site_general_make_lazy_img('square_500x500', $image_arr['uri'], $image_alt, $image_title);
     }
   }
 }
@@ -91,4 +77,20 @@ function site_general_get_alt_title($image, $fallback = '') {
   $alt = !empty($image['alt']) ? $image['alt'] : !empty($image['field_file_image_alt_text']) ? $image['field_file_image_alt_text'] : !empty($fallback) ? $fallback : 'naked truth beauty';
   $title = !empty($image['title']) ? $image['title'] : !empty($image['field_file_image_alt_text']) ? $image['field_file_image_alt_text'] : !empty($fallback) ? $fallback : 'naked truth beauty';
   return [$alt, $title];
+}
+
+function site_general_make_lazy_img($style, $uri, $alt, $title) {
+  $url = image_style_url($style, $uri);
+
+  $image = [
+    'path' => drupal_get_path('theme', 'ntb') . '/images/loading.gif',
+    'alt' => $alt,
+    'title' => $title,
+    'attributes' => [
+      'data-src' => $url,
+      'class' => ['lazy-img'],
+    ],
+  ];
+
+  return theme('image', $image);
 }

@@ -2,7 +2,7 @@
   'use strict';
 
   // Credit: filament -> adactio
-  var version = 'v1.09::';
+  var version = 'v1.07::';
   var staticCacheName = version + 'static';
   var pagesCacheName = 'pages';
   var imagesCacheName = 'images';
@@ -49,8 +49,8 @@
         '/sites/all/libraries/modernizr/modernizr-2.8.3.min.js',
         '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
-        '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.2',
-        '/sites/all/themes/ntb/css/ntb.css?v=1.2',
+        '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.3',
+        '/sites/all/themes/ntb/css/ntb.css?v=1.3',
         '/offline/'
       ]);
     });

@@ -141,15 +141,7 @@ function site_products_preprocess_node(&$vars) {
 
     $image_arr = $vars['field_primary_image'][0];
     [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $node->title);
-
-    $img_array = array(
-      'style_name' => 'square_500x500',
-      'path' => $image_arr['uri'],
-      'alt' => $image_alt,
-      'title' => $image_title,
-    );
-
-    $image = theme('image_style', $img_array);
+    $image = site_general_make_lazy_img('square_500x500', $image_arr['uri'], $image_alt, $image_title);
     $vars['image'] = l($image, $vars['node_url'], array('html' => TRUE));
 
     $vars['product_category'] = $vars['elements']['product:field_product_type'][0]['#title'];
@@ -184,10 +176,9 @@ function site_products_preprocess_node(&$vars) {
       $node = node_load($product);
       $link_title = $node->title;
       $uri = drupal_get_path_alias('node/' . $product);
-      $link = [$link_title, $uri];
-      $thumb_url = image_style_url('thumbnail', $node->field_primary_image[LANGUAGE_NONE][0]['uri']);
-      $link = '<a href=/' . $uri . '><img src=' . $thumb_url . ' title=' . $node->title . ' alt=' . $node->title . ' /></a>';
-      array_push($product_links['items'], $link);
+      $image = site_general_make_lazy_img('thumbnail', $node->field_primary_image[LANGUAGE_NONE][0]['uri'], $node->title, $node->title);
+      $link = l($image, '/' . $uri, array('html' => TRUE));
+      $product_links['items'][] = $link;
     }
 
     $vars['product_type_list'] = theme_item_list($product_links);
