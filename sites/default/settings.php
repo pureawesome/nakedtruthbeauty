@@ -673,17 +673,7 @@ if (defined('PANTHEON_ENVIRONMENT')) {
   $base_url = 'https://'. $domain;
 }
 
-if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
-  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'OFF') &&
-  (php_sapi_name() != "cli")) {
-  if (!isset($_SERVER['HTTP_X_SSL']) ||
-  (isset($_SERVER['HTTP_X_SSL']) && $_SERVER['HTTP_X_SSL'] != 'ON')) {
-    header('HTTP/1.0 301 Moved Permanently');
-    header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    exit();
-  }
-}
-
+// https://pantheon.io/docs/http-to-https/#redirect-to-https-and-the-primary-domain
 if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
   // Redirect to https://$primary_domain in the Live environment
   if ($_ENV['PANTHEON_ENVIRONMENT'] === 'live') {
