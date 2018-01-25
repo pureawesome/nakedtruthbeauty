@@ -673,13 +673,29 @@ if (defined('PANTHEON_ENVIRONMENT')) {
   $base_url = 'https://'. $domain;
 }
 
-if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
-  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'OFF') &&
-  (php_sapi_name() != "cli")) {
-  if (!isset($_SERVER['HTTP_X_SSL']) ||
-  (isset($_SERVER['HTTP_X_SSL']) && $_SERVER['HTTP_X_SSL'] != 'ON')) {
+// https://pantheon.io/docs/http-to-https/#redirect-to-https-and-the-primary-domain
+if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
+  // Redirect to https://$primary_domain in the Live environment
+  if ($_ENV['PANTHEON_ENVIRONMENT'] === 'live') {
+    /** Replace www.example.com with your registered domain name */
+    $primary_domain = 'nakedtruthbeauty.com';
+  }
+  else {
+    // Redirect to HTTPS on every Pantheon environment.
+    $primary_domain = $_SERVER['HTTP_HOST'];
+  }
+
+  if ($_SERVER['HTTP_HOST'] != $primary_domain
+      || !isset($_SERVER['HTTP_USER_AGENT_HTTPS'])
+      || $_SERVER['HTTP_USER_AGENT_HTTPS'] != 'ON' ) {
+
+    # Name transaction "redirect" in New Relic for improved reporting (optional)
+    if (extension_loaded('newrelic')) {
+      newrelic_name_transaction("redirect");
+    }
+
     header('HTTP/1.0 301 Moved Permanently');
-    header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    header('Location: https://'. $primary_domain . $_SERVER['REQUEST_URI']);
     exit();
   }
 }
