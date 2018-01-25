@@ -30,7 +30,7 @@
         </div>
         <div class="search__suggestion">
           <h3>Ingredient Questions?</h3>
-          <p>See the full list <a href="https://nakedtruthbeauty.com/ingredients">here</a></p>
+          <p>See the full list of <a href="https://nakedtruthbeauty.com/ingredients">ingredients</a></p>
         </div>
       </div>
     </div>
