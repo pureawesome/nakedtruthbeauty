@@ -24,16 +24,8 @@ button{ text-transform: none; }
 .fa-times::before{ content: ; }
 .fa-shopping-cart::before{ content: ; }
 .sr-only{ position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px 0px 0px 0px); border: 0px; }
-html{ font-size: 16px; }
-body{ font-family: lato, Lato, sans-serif; }
-.container-fluid{ width: 100%; }
- h1{ font-size: 2.5rem; }
- h3{ font-size: 1.75rem; }
- h1, h3{ font-weight: 500; line-height: 1.1; color: inherit; font-family: quicksand, Verdana, Tahoma, sans-serif; }
-p{ font-family: lato, Lato, sans-serif; font-weight: lighter; }
-.alert-strip, .region, .region-content, .row{ width: 100%; }
+.alert-strip, .container-fluid, .region, .region-content, .row{ width: 100%; }
 .row{ display: block; }
- .col-sm-12{ display: block; float: left; width: 100%; }
 #footer .container-fluid, #main .container-fluid{ max-width: 1200px; margin: auto; padding: 0px 1rem; }
 .row{ display: block; clear: both; }
  .col-sm-12{ display: inline-block; float: left; padding: 0px 1rem; min-height: 1px; }
@@ -108,6 +100,12 @@ ul.commerce-checkout-progress li::after{ display: inline-block; font-style: norm
 ul.commerce-checkout-progress li:last-child::after{ content: ''; }
 ul.commerce-checkout-progress li.visited{ color: rgb(27, 57, 54); }
 .page-cart ul.commerce-checkout-progress li{ color: rgb(35, 41, 39); }
+html{ font-size: 16px; }
+body, p{ font-family: lato, Lato, sans-serif; }
+p{ font-weight: lighter; }
+ h1{ font-size: 2.5rem; }
+ h3{ font-size: 1.75rem; }
+ h1, h3{ font-weight: 500; line-height: 1.1; color: inherit; font-family: quicksand, Verdana, Tahoma, sans-serif; }
 a{ color: rgb(60, 127, 120); }
 #page-title{ text-align: center; width: 100%; margin-bottom: 20px; }
 ul.inline li{ padding: 0px; }

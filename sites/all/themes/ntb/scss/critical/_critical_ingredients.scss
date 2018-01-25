@@ -27,16 +27,8 @@ button{ text-transform: none; }
 .fa-times::before{ content: ; }
 .fa-shopping-cart::before{ content: ; }
 .sr-only{ position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px 0px 0px 0px); border: 0px; }
-html{ font-size: 16px; }
-body{ font-family: lato, Lato, sans-serif; }
-.container-fluid{ width: 100%; }
- h1{ font-size: 2.5rem; }
- h3{ font-size: 1.75rem; }
- h1, h3{ font-weight: 500; line-height: 1.1; color: inherit; font-family: quicksand, Verdana, Tahoma, sans-serif; }
-p{ font-family: lato, Lato, sans-serif; font-weight: lighter; }
-.alert-strip, .panel-col, .region, .region-content, .row{ width: 100%; }
+.alert-strip, .container-fluid, .panel-col, .region, .region-content, .row{ width: 100%; }
 .row{ display: block; }
- .col-sm-6, .col-sm-12{ display: block; float: left; width: 100%; }
 @media (min-width: 768px){
 .col-sm-6{ width: 50%; }
 }
@@ -44,7 +36,6 @@ p{ font-family: lato, Lato, sans-serif; font-weight: lighter; }
 .row, .view-content{ display: block; clear: both; }
  .col-sm-6, .col-sm-12{ display: inline-block; float: left; padding: 0px 1rem; min-height: 1px; }
 .panel-pane{ display: block; clear: both; float: left; width: 100%; }
-.panel-pane{ padding-bottom: 2rem; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); margin-bottom: 2rem; }
 #logo{ margin: 10px auto 20px; max-width: 75%; width: 500px; text-align: center; padding: 0px; }
 .fa-icon, .icon-menu-fixed li{ display: inline-block; }
 .fa-icon{ font-size: 1.625rem; background-image: none; border: 0px; color: rgb(60, 127, 120); line-height: 1; padding: 0px; background-position: initial initial; background-repeat: initial initial; }
@@ -123,8 +114,15 @@ nav .dropdown-menu > li > a{ font-size: 16px; padding: 5px; }
 }
 .view-id-ingredients .view-content{ display: -webkit-box; }
 .view-id-ingredients .view-content .views-row{ margin-bottom: 30px; }
+html{ font-size: 16px; }
+body, p{ font-family: lato, Lato, sans-serif; }
+p{ font-weight: lighter; }
+ h1{ font-size: 2.5rem; }
+ h3{ font-size: 1.75rem; }
+ h1, h3{ font-weight: 500; line-height: 1.1; color: inherit; font-family: quicksand, Verdana, Tahoma, sans-serif; }
 img{ width: auto; max-width: 100%; height: auto; }
 a{ color: rgb(60, 127, 120); }
+.panel-pane{ padding-bottom: 2rem; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); margin-bottom: 2rem; }
 #page-title{ text-align: center; width: 100%; margin-bottom: 20px; }
 ul.inline li{ padding: 0px; }
 .region-content{ max-width: 1200px; margin: auto; }

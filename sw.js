@@ -30,27 +30,27 @@
       // These items won't block the installation of the Service Worker
       cache.addAll([
         '/sites/all/themes/ntb/fonts/quicksand-regular-webfont.woff2',
-        '/sites/all/themes/ntb/fonts/fontawesome-webfont.woff2',
+        '/sites/all/themes/ntb/fonts/fontawesome-webfont.woff2?v=4.6.3',
         '/sites/all/themes/ntb/fonts/lato-bold-webfont.woff2',
         '/sites/all/themes/ntb/fonts/lato-light-webfont.woff2',
         '/sites/all/themes/ntb/fonts/lato-regular-webfont.woff2',
         '/sites/all/themes/ntb/fonts/quicksand-bold-webfont.woff2',
-        '/sites/all/modules/custom/features/site_products/js/site_shop.min.js',
-        '/sites/all/modules/custom/features/site_search/js/site_search.min.js',
-        '/sites/all/modules/contrib/dc_ajax_add_cart/js/dc_ajax_add_cart_html.js',
-        '/sites/all/modules/custom/modules/dc_ajax_enhancements/js/dc_ajax_enhancements.min.js'
+        '/sites/all/modules/custom/features/site_products/js/site_shop.min.js?v=1.0',
+        '/sites/all/modules/custom/features/site_search/js/site_search.min.js?v=1.0',
+        '/sites/all/modules/contrib/dc_ajax_add_cart/js/dc_ajax_add_cart_html.js?v=1.0.0',
+        '/sites/all/modules/custom/modules/dc_ajax_enhancements/js/dc_ajax_enhancements.min.js?v=1.0'
       ].concat(offlinePages));
       // These items must be cached for the Service Worker to complete installation
       return cache.addAll([
-        '/misc/jquery.once.js',
+        '/misc/jquery.once.js?v=1.2',
         '/misc/drupal.js',
-        '/misc/ajax.js',
-        '/misc/progress.js',
+        '/misc/ajax.js?v=7.56',
+        '/misc/progress.js?v=7.56',
         '/sites/all/libraries/modernizr/modernizr-2.8.3.min.js',
-        '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js',
+        '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
-        '/sites/all/themes/ntb/js/ntb.behaviors.min.js',
-        '/sites/all/themes/ntb/css/ntb.css',
+        '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.2',
+        '/sites/all/themes/ntb/css/ntb.css?v=1.2',
         '/offline/'
       ]);
     });

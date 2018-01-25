@@ -1,7 +1,5 @@
 <?php
 
-define('CSS_VERSION', '1.06');
-
 /**
  * Implements hook_theme().
  */
@@ -169,7 +167,6 @@ function ntb_library() {
     ],
   ];
 
-
   $libraries['ntb'] = [
     'title' => 'NTB',
     'version' => '1.2',
@@ -180,7 +177,7 @@ function ntb_library() {
       ],
     ],
     'css' => [
-      drupal_get_path('theme', 'ntb') . '/css/ntb.css' => [
+      drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.2' => [
         'weight' => 9999,
         'preprocess' => FALSE,
         'every_page' => TRUE,
@@ -253,50 +250,66 @@ function ntb_pre_render_styles($elements) {
     unset($elements[$key]);
   }
 
-  foreach ($elements['#items'] as $key => $value) {
-    if ($value['type'] == 'inline') {
-      $crit = [
-        '#theme' => 'html_tag',
-        '#tag' => 'style',
-        '#value' => $value['data'],
-        '#attributes' => [
-          'type' => 'text/css',
-        ],
-      ];
-      $elements[] = $crit;
-      continue;
+  foreach ($elements['#groups'] as $key => $value) {
+    if ($value['preprocess'] == FALSE) {
+      foreach ($value['items'] as $_ => $item) {
+        if ($item['type'] == 'inline') {
+          $crit = [
+            '#theme' => 'html_tag',
+            '#tag' => 'style',
+            '#value' => $item['data'],
+            '#attributes' => [
+              'type' => 'text/css',
+            ],
+          ];
+          $elements[] = $crit;
+        }
+        else {
+          $elements[] = ntb_make_lazy_css_pre('/' . $item['data']);
+          $elements[] = ntb_make_lazy_css_no('/' . $item['data']);
+        }
+      }
     }
-
-    $url = $value['data'];
-    $preload = [
-      '#theme' => 'html_tag',
-      '#tag' => 'link',
-      '#attributes' => [
-        'rel' => 'preload',
-        'as' => 'style',
-        'href' => '/' . $url,
-        'onload' => "this.onload=null;this.rel='stylesheet'",
-      ],
-    ];
-    $elements[] = $preload;
-
-    $noscript = [
-      '#theme' => 'html_tag',
-      '#tag' => 'link',
-      '#attributes' => [
-        'rel' => 'stylesheet',
-        'type' => 'text/css',
-        'href' => '/' . $url,
-      ],
-    ];
-
-    $noscript_wrapper = [
-      '#theme' => 'html_tag',
-      '#tag' => 'noscript',
-      '#value' => render($noscript),
-    ];
-    $elements[] = $noscript_wrapper;
+    else {
+      $url = file_create_url($value['data']);
+      $url = parse_url($url);
+      $elements[] = ntb_make_lazy_css_pre($url['path']);
+      $elements[] = ntb_make_lazy_css_no($url['path']);
+    }
   }
 
   return $elements;
+}
+
+function ntb_make_lazy_css_pre($url) {
+  $preload = [
+    '#theme' => 'html_tag',
+    '#tag' => 'link',
+    '#attributes' => [
+      'rel' => 'preload',
+      'as' => 'style',
+      'href' => $url,
+      'onload' => "this.onload=null;this.rel='stylesheet'",
+    ],
+  ];
+  return  $preload;
+}
+
+function ntb_make_lazy_css_no($url) {
+  $noscript = [
+    '#theme' => 'html_tag',
+    '#tag' => 'link',
+    '#attributes' => [
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'href' => $url,
+    ],
+  ];
+
+  $noscript_wrapper = [
+    '#theme' => 'html_tag',
+    '#tag' => 'noscript',
+    '#value' => render($noscript),
+  ];
+  return $noscript_wrapper;
 }
