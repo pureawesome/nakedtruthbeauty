@@ -109,10 +109,6 @@
 
     enableLazyImages: function () {
       var lazy = [];
-      registerListener('load', setLazy);
-      registerListener('load', lazyLoad);
-      registerListener('scroll', lazyLoad);
-      registerListener('resize', lazyLoad);
 
       function setLazy() {
         lazy = document.getElementsByClassName('lazy-img');
@@ -148,14 +144,8 @@
         );
       }
 
-      function registerListener(event, func) {
-        if (window.addEventListener) {
-          window.addEventListener(event, func);
-        }
-        else {
-          window.attachEvent('on' + event, func);
-        }
-      }
+      $(window).on('load', setLazy);
+      $(window).on('resize load scroll', $.throttle(100, lazyLoad));
     }
   };
 })(jQuery);
