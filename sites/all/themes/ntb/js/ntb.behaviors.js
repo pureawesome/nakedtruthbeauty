@@ -118,8 +118,15 @@
         for (var i = 0; i < lazy.length; i++) {
           if (isInViewport(lazy[i])) {
             if (lazy[i].getAttribute('data-src')) {
-              lazy[i].src = lazy[i].getAttribute('data-src');
-              lazy[i].removeAttribute('data-src');
+              var image = lazy[i];
+              var src = image.getAttribute('data-src');
+              var preload_image = new Image();
+              preload_image.src = src;
+              preload_image.onload = function () {
+                image.src = src;
+                image.removeAttribute('data-src');
+                lazyLoad();
+              };
             }
           }
         }
