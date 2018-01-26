@@ -680,6 +680,9 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
     /** Replace www.example.com with your registered domain name */
     $primary_domain = 'nakedtruthbeauty.com';
   }
+  else if ($_ENV['PANTHEON_ENVIRONMENT'] === 'lando') {
+    return;
+  }
   else {
     // Redirect to HTTPS on every Pantheon environment.
     $primary_domain = $_SERVER['HTTP_HOST'];
