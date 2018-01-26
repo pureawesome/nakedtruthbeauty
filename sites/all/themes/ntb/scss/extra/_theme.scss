@@ -26,6 +26,9 @@ p {
 img {
   width: auto;
   max-width: 100%;
+}
+
+img:not([data-src]) {
   height: auto;
 }
 
@@ -91,34 +94,7 @@ ol li a {
 
 .form-submit, .btn {
   @include inline-button();
-  // border: 0;
-  // background: transparent;
-  // text-align: center;
-  // width: 100%;
-  // text-transform: lowercase;
-  // background: $primary-blue;
-  // margin-bottom: 10px;
-  // color: $text-dark;
-  // border-radius: 5px;
-  // font-size: 1rem;
-  // width: auto;
-  // margin-bottom: 0;
-  // padding: 6px;
-  //
-  // &:hover {
-  //   background: $secondary-blue;
-  //   color: $white;
-  // }
 }
-
-// a {
-//   color: $link-color;
-//
-//   &:hover {
-//     color: $link-color-hover;
-//     text-decoration: none;
-//   }
-// }
 
 tr.even,
 tr.odd,
@@ -188,8 +164,6 @@ ul.primary {
     &:before {
       @include fa-icon();
       color: $secondary-blue;
-      // color: darken($secondary-blue, 15%);
-      // color: $white;
       content: $fa-var-facebook;
       font-size: 2.25rem;
     }
@@ -206,7 +180,6 @@ ul.primary {
       &:before {
         color: darken($secondary-blue, 15%);
         color: $primary-blue;
-        // color: $white;
       }
     }
   }
@@ -318,7 +291,6 @@ p {
 }
 
 .form-submit {
-  // padding: 0 0.5rem;
   cursor: pointer;
 }
 
@@ -373,4 +345,8 @@ table {
   display: block;
   float: left;
   height: 20px;
+
+  & > * {
+    vertical-align: top !important;
+  }
 }

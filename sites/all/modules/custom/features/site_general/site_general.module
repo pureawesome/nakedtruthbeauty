@@ -80,7 +80,9 @@ function site_general_get_alt_title($image, $fallback = '') {
 }
 
 function site_general_make_lazy_img($style, $uri, $alt, $title) {
-  $url = image_style_url($style, $uri);
+  $path = image_style_path($style, $uri);
+  $info = image_get_info($path);
+  $url = file_create_url($path);
 
   $image = [
     'path' => drupal_get_path('theme', 'ntb') . '/images/loading.gif',
@@ -88,7 +90,9 @@ function site_general_make_lazy_img($style, $uri, $alt, $title) {
     'title' => $title,
     'attributes' => [
       'data-src' => $url,
-      'class' => ['lazy-img'],
+      'class' => ['lazy-img', $style],
+      'height' => $info['height'],
+      'width' => $info['width'],
     ],
   ];
 
