@@ -162,7 +162,9 @@ function site_products_preprocess_node(&$vars) {
       array_push($ingredient_list, $link);
     }
 
-    $products = taxonomy_select_nodes($vars['field_product_type'][LANGUAGE_NONE][0]['tid']);
+    // TODO: Fix this and make it better.
+    $tid = isset($vars['field_product_type'][LANGUAGE_NONE][1]) ? $vars['field_product_type'][LANGUAGE_NONE][1]['tid'] : $vars['field_product_type'][LANGUAGE_NONE][0]['tid'];
+    $products = taxonomy_select_nodes($tid);
     $product_links = [
       'items' => [],
       'title' => '',
