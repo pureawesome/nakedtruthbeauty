@@ -1,0 +1,13 @@
+@import 'critical';
+
+@import 'base/variables';
+@import 'base/mixins';
+@import 'compass';
+@import 'breakpoint';
+
+@import '../components/nav';
+
+.search-container,
+.cart-container {
+  opacity: 0;
+}

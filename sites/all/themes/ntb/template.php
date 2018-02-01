@@ -1,5 +1,7 @@
 <?php
 
+define('CSS_VERSION', '1.02');
+
 /**
  * Implements hook_theme().
  */
@@ -14,6 +16,52 @@ function ntb_theme() {
  * Implements hook_preprocess_HOOK().
  */
 function ntb_preprocess_page(&$vars) {
+  $ntb_css = drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION;
+
+  $noscript = array(
+    '#theme' => 'html_tag',
+    '#tag' => 'link',
+    '#attributes' => array(
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+      'href' => '/' . $ntb_css,
+    ),
+  );
+
+  $noscript_wrapper = array(
+    '#theme' => 'html_tag',
+    '#tag' => 'noscript',
+    '#value' => drupal_render($noscript),
+  );
+
+  drupal_add_html_head($noscript_wrapper, 'noscript');
+
+  if (isset($_COOKIE['STYXKEY_ntb_css']) && $_COOKIE['STYXKEY_ntb_css'] === CSS_VERSION) {
+    drupal_add_css('/' . $ntb_css, array('group' => CSS_THEME, 'preprocess' => 'false'));
+  }
+  else {
+    drupal_add_js(array('loadCSS' => 1), 'setting');
+  }
+
+  $preload_fonts = [
+    'quicksand-regular-webfont.woff2',
+    'fontawesome-webfont.woff2?v=4.6.3',
+    'quicksand-bold-webfont.woff2',
+    'have_heart_one-webfont.woff2',
+  ];
+
+  $theme_path = drupal_get_path('theme', 'ntb');
+
+  foreach ($preload_fonts as $font) {
+    $attributes = [
+      'rel' => 'preload',
+      'href' => '/' . $theme_path . '/fonts/' . $font,
+      'as' => 'font',
+      'crossorigin' => 'anonymous',
+    ];
+    drupal_add_html_head_link($attributes);
+  }
+
   drupal_add_library('ntb', 'ntb');
 
   // Get the entire main menu tree.
@@ -77,14 +125,14 @@ function ntb_preprocess_page(&$vars) {
 }
 
 /**
- * Implements THEMENAME_menu_tree__MENU_NAME()().
+ * Implements THEMENAME_menu_tree__MENU_NAME().
  */
 function ntb_menu_tree__main_menu($variables) {
   return '<ul class="links inline clearfix nav navbar-nav">' . $variables['tree'] . '</ul>';
 }
 
 /**
- * Implements THEMENAME_menu_link__MENU_NAME()().
+ * Implements THEMENAME_menu_link__MENU_NAME().
  */
 function ntb_menu_link__main_menu($variables) {
   $element = $variables['element'];
@@ -159,6 +207,23 @@ function ntb_library() {
     ),
   );
 
+  $libraries['loadcss'] = array(
+    'title' => 'loadCSS',
+    'version' => '1.3.1',
+    'js' => array(
+      libraries_get_path('node_modules') . '/fg-loadcss/src/loadCSS.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+      libraries_get_path('node_modules') . '/fg-loadcss/src/cssrelpreload.js' => array(
+        'defer' => TRUE,
+        'scope' => 'footer',
+      ),
+    ),
+  );
+
+  $critical_css = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/critical/ntb_critical.css');
+
   $libraries['ntb'] = array(
     'title' => 'NTB',
     'version' => '1.2',
@@ -167,18 +232,28 @@ function ntb_library() {
         'defer' => TRUE,
         'scope' => 'footer',
       ),
+      array(
+        'data' => array(
+          'ntb_css' => array(
+            'path' => '/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION,
+            'version' => CSS_VERSION,
+          ),
+        ),
+        'type' => 'setting',
+      ),
     ),
     'css' => array(
-      drupal_get_path('theme', 'ntb') . '/css/ntb.css' => array(
+      $critical_css => array(
         'group' => CSS_THEME,
         'every_page' => TRUE,
-        'preprocess' => FALSE,
+        'type' => 'inline',
       ),
     ),
     'dependencies' => [
       ['ntb', 'bootstrap_collapse'],
       ['ntb', 'bootstrap_dropdown'],
       ['ntb', 'modernizr'],
+      ['ntb', 'loadcss'],
     ],
   );
 
@@ -194,4 +269,15 @@ function ntb_library() {
   );
 
   return $libraries;
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function ntb_js_alter(&$javascript) {
+  foreach ($javascript as $key => &$script) {
+    if ($script['scope'] == 'header') {
+      $script['scope'] = 'footer';
+    }
+  }
 }
