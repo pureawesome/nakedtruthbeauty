@@ -81,7 +81,7 @@ function site_general_get_alt_title($image, $fallback = '') {
 
 function site_general_make_lazy_img($style, $uri, $alt, $title) {
   $path = image_style_path($style, $uri);
-  image_style_create_derivative($style, $uri, $path);
+  image_style_create_derivative(image_style_load($style), $uri, $path);
   $info = image_get_info($path);
   $url = file_create_url($path);
 
