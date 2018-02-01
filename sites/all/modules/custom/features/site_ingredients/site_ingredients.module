@@ -16,16 +16,12 @@ function site_ingredients_preprocess_node(&$vars) {
 
       $body = $vars['body'][0]['value'];
 
-      $vars['text'] = truncate_utf8($body, 150, $wordsafe = TRUE, $add_ellipsis = TRUE, $min_wordsafe_length = 5);
+      $vars['text'] = truncate_utf8($body, 150, TRUE, TRUE, 10);
 
-      $vars['image'] = field_view_field('node', $vars['node'], 'field_primary_image',
-        array(
-          'label' => 'hidden',
-          'settings' => array(
-            'image_style' => 'square_200x200',
-          )
-        )
-      );
+      $image_arr = $vars['field_primary_image'][0];
+      [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
+      $image = site_general_make_lazy_img('square_500x500', $image_arr['uri'], $image_alt, $image_title);
+      $vars['image'] = l($image, $vars['node_url'], array('html' => TRUE));
     }
   }
 }

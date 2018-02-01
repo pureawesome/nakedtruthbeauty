@@ -4,16 +4,20 @@
 
 /* Layout for search container */
 .search-container {
-	@include display-flex();
-	@include flex-direction(column);
-	@include justify-content(center);
-	@include align-items(center);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 	background: rgba(18, 23, 56, 0.9);
+  position: absolute;
+  position: absolute;
+	top: 36px;
+	right: 0;
 
   .js & {
     position: fixed;
-  	z-index: 1000;
+  	z-index: -1;
   	top: 0;
   	left: 0;
   	width: 100%;
@@ -30,7 +34,7 @@
 }
 
 .btn--search-close {
-	font-size: 2em;
+	font-size: 2rem;
 	position: absolute;
 	top: 1.25em;
 	right: 1.25em;
@@ -57,7 +61,7 @@
 	border: 0;
 	background: transparent;
 	border-radius: 0;
-	@include appearance(none);
+	appearance: none;
 
   &:focus {
     outline: none;
@@ -103,7 +107,7 @@
 }
 
 .search__related {
-	@include display-flex();
+	display: flex;
 	width: 75%;
 	pointer-events: none;
 	right: 100%;
@@ -123,7 +127,7 @@
 	}
 
 	h3 {
-		font-size: 1.35em;
+		font-size: 1.35rem;
 		margin: 0;
 
 		&::before {
@@ -134,7 +138,7 @@
 	}
 
 	p {
-		font-size: 1.15em;
+		font-size: 1.15rem;
 		line-height: 1.4;
 		margin: 0.75em 0 0 0;
 	}
@@ -147,8 +151,8 @@
 .js .search-container {
 	pointer-events: none;
 	opacity: 0;
-	@include transition-property(opacity);
-	@include transition-duration(0.5s);
+	transition-property: opacity;
+	transition-duration: 0.5s;
 }
 
 .js .search-container.search--open {
@@ -159,54 +163,54 @@
 
 .search--open::before,
 .search--open::after {
-	@include translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 
 /* Close button */
 .btn--search-close {
 	opacity: 0;
-	@include scale3d(0.8, 0.8, 1);
+	transform: scale3d(0.8, 0.8, 1);
 	cursor: pointer;
-	@include transition-property(opacity, transform);
-	@include transition-duration(0.5s, 0.5s);
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
 
 	.search--open & {
 		opacity: 1;
-		@include scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
 	}
 }
 
 /* Search form with input and description */
 .js .search__form {
 	opacity: 0;
-	@include scale3d(0.8, 0.8, 1);
-	@include transition-property(opacity, transform);
-	@include transition-duration(0.5s, 0.5s);
+	transform: scale3d(0.8, 0.8, 1);
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
 }
 
 .js .search--open .search__form {
 	opacity: 1;
-	@include scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
 }
 
 .search__suggestion {
 	opacity: 0;
-	@include translate3d(0, -30px, 0);
-	@include transition-property(opacity, transform);
-	@include transition-duration(0.5s, 0.5s);
-	@include transition-delay(0.1s);
+	transform: translate3d(0, -30px, 0);
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
+	transition-delay: 0.1s;
 	pointer-events: auto;
 
 	.search--open & {
 		opacity: 1;
-		@include translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
 
 		&:nth-child(2) {
-			@include transition-delay(0.2s);
+			transition-delay:0.2s;
 		}
 
 		&:nth-child(3) {
-			@include transition-delay(0.3s);
+			transition-delay:0.3s;
 		}
 	}
 }
@@ -216,7 +220,7 @@
 		margin: 5em 0 1em;
 	}
 	.btn--search-close {
-		font-size: 1.25em;
+		font-size: 1.25rem;
 		top: 1.5em;
 		right: 1.5em;
 	}
@@ -237,8 +241,8 @@
 	margin-bottom: 15px;
 
 	.content {
-		@include display-flex();
-		@include flex-direction(row);
+		display: flex;
+		flex-direction: row;
 	}
 
 	h2 {
@@ -248,11 +252,21 @@
 	.img {
 		max-width: 100px;
 		min-width: 80px;
-		@include display-flex();
-		@include align-items(center);
+		display: flex;
+		align-items: center;
 	}
 
 	.body {
 		padding-left: 15px;
 	}
+}
+
+.view-search {
+  .views-row {
+    width: 100%;
+    grid-column: 12 span;
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.5px solid $secondary-blue;
+  }
 }

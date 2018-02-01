@@ -1,14 +1,66 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family-sans-serif;
+}
+
+p {
+  font-family: $font-family-sans-serif;
+  font-weight: lighter;
+}
+
+.h1,h1{font-size:2.5rem}
+.h2,h2{font-size:2.125rem}
+.h3,h3{font-size:1.75rem}
+.h4,h4{font-size:1.25rem}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  font-family: $font-family-serif;
+}
+
 img {
   width: auto;
   max-width: 100%;
+}
+
+img:not([data-src]) {
   height: auto;
+}
+
+a {
+  color: $secondary-blue;
+
+  &:hover {
+    color: $text-dark;
+  }
+}
+
+.panel-pane {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
+}
+
+h3.pane-title {
+  @include flag();
+}
+
+h2.pane-title {
+  font-size: 2.5em;
+  text-align:center;
+  display: block;
 }
 
 .flex-direction-nav a {
   &:before {
     content: $fa-var-arrow-circle-left;
     @include fa-icon();
-    font-size: 40px;
+    font-size: 2.5rem;
     color: rgba($secondary-blue, 0.8);
   }
 
@@ -19,6 +71,8 @@ img {
 
 #page-title {
   text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 ul.inline li {
@@ -38,26 +92,8 @@ ol li a {
   }
 }
 
-.form-submit {
-  border: 0;
-  background: transparent;
-  text-align: center;
-  width: 100%;
-  text-transform: lowercase;
-  background: $primary-blue;
-  margin-bottom: 10px;
-  color: $text-dark;
-  @include border-radius(5px);
-
-  &:hover {
-    background: $secondary-blue;
-  }
-}
-
-a {
-  &:hover {
-    text-decoration: none;
-  }
+.form-submit, .btn {
+  @include inline-button();
 }
 
 tr.even,
@@ -79,7 +115,7 @@ table thead th,
 .field .field-label {
   font-weight: normal;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 #user-pass-reset,
@@ -108,8 +144,8 @@ ul.primary {
 
       &:hover {
         background: $secondary-blue;
-        color: #000;
-        @include border-radius(5px);
+        color: $link-color;
+        border-radius: 5px;
       }
     }
 
@@ -128,10 +164,8 @@ ul.primary {
     &:before {
       @include fa-icon();
       color: $secondary-blue;
-      // color: darken($secondary-blue, 15%);
-      // color: $white;
       content: $fa-var-facebook;
-      font-size: 36px;
+      font-size: 2.25rem;
     }
 
     &.tw:before {
@@ -146,7 +180,6 @@ ul.primary {
       &:before {
         color: darken($secondary-blue, 15%);
         color: $primary-blue;
-        // color: $white;
       }
     }
   }
@@ -171,7 +204,7 @@ ul.primary {
   display: block;
   width: 100%;
   height: 2px;
-  @include background-image(linear-gradient(left, #fff, $primary-blue,  #fff));
+  background-image: linear-gradient(to right, #fff, $primary-blue,  #fff);
   border-radius: 1px;
   margin: 45px 0;
 }
@@ -183,7 +216,7 @@ ul.primary {
 
   .form-submit {
     width: auto;
-    @include inline-block();
+    display: inline-block;
   }
 
   .form-inline.form-control {
@@ -194,7 +227,7 @@ ul.primary {
 
   table thead th,
   .field .field-label {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -203,12 +236,20 @@ ul.primary {
   text-align: center;
 }
 
-ul.ntb-top-three {
-  @include display-flex();
-  @include flex-direction(column);
+ul.ntb-top {
+  display: flex;
+  flex-direction: column;
 
   @include breakpoint($nav-break) {
-    @include flex-direction(row);
+    flex-direction: row;
+  }
+
+  @supports(display:grid) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 2rem;
+    margin: 0;
+    grid-column: 12 span;
   }
 
   &,
@@ -216,6 +257,19 @@ ul.ntb-top-three {
     margin: 0;
     padding: 0;
     list-style: none;
+    .tile {
+
+    }
+    border-bottom: 0;
+
+    @supports(display:grid) {
+      &.ntb-top-three li {
+        grid-column: 4 span;
+      }
+      &.ntb-top-four li {
+        grid-column: 3 span;
+      }
+    }
   }
 }
 
@@ -226,14 +280,73 @@ ul.ntb-top-three {
 .color-secondary {
   color: $secondary-blue;
 }
-#sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+
+#logo svg {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+.form-submit {
+  cursor: pointer;
+}
+
+.block-menu ul {
   padding: 0;
-  margin: -1px;
-  /* overflow: hidden; */
-  /* clip: rect(0, 0, 0, 0); */
-  border: 0;
-  /* overflow: visible; */
+  margin: 0;
+}
+
+#block-menu-menu-footer-menu {
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+li {
+    list-style: none;
+    display: inline-block;
+  }
+}
+
+ul.clean-list {
+  li {
+    margin: 0;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+
+.search-container,
+.cart-container {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.fb_iframe_widget[type=button] {
+  -webkit-appearance: none;
+
+  & > span {
+    vertical-align: top !important;
+  }
+}
+
+.service-links {
+  display: block;
+  float: left;
+  height: 20px;
+
+  & > * {
+    vertical-align: top !important;
+  }
 }

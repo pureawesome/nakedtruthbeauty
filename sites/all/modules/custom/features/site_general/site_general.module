@@ -18,6 +18,10 @@ function site_general_entity_info_alter(&$entity_info) {
     'label' => t('Line Teaser'),
     'custom settings' => FALSE,
   );
+  $entity_info['node']['view modes']['blog_teaser'] = array(
+    'label' => t('Blog Teaser'),
+    'custom settings' => FALSE,
+  );
 }
 
 /**
@@ -29,13 +33,19 @@ function site_general_preprocess_node(&$vars) {
     $node = $vars['node'];
     $type = $node->type;
 
-    $image_uri = $vars['field_primary_image'][0]['uri'];
+    $image_arr = $vars['field_primary_image'][0];
+    [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
+    $vars['image'] = site_general_make_lazy_img('square_500x500', $image_arr['uri'], $image_alt, $image_title);
+  }
 
-    $img_array = array(
-      'style_name' => 'square_500x500',
-      'path' => $image_uri,
-    );
-    $vars['image'] = theme('image_style', $img_array);
+  if ($vars['view_mode'] == 'blog_teaser') {
+    $vars['theme_hook_suggestions'][] = 'node__blog_teaser';
+
+    if (!empty($vars['field_primary_image'])) {
+      $image_arr = $vars['field_primary_image'][0];
+      [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
+      $vars['image'] = site_general_make_lazy_img('square_500x500', $image_arr['uri'], $image_alt, $image_title);
+    }
   }
 }
 
@@ -55,4 +65,37 @@ function site_general_library() {
     ),
   );
   return $libraries;
+}
+
+/**
+ * Description to help get alt and title tags
+ * @param  arr $image    Info about an image.
+ * @param  string $fallback Optional alt/title text option
+ * @return arr Two strings of alt and title
+ */
+function site_general_get_alt_title($image, $fallback = '') {
+  $alt = !empty($image['alt']) ? $image['alt'] : !empty($image['field_file_image_alt_text']) ? $image['field_file_image_alt_text'] : !empty($fallback) ? $fallback : 'naked truth beauty';
+  $title = !empty($image['title']) ? $image['title'] : !empty($image['field_file_image_alt_text']) ? $image['field_file_image_alt_text'] : !empty($fallback) ? $fallback : 'naked truth beauty';
+  return [$alt, $title];
+}
+
+function site_general_make_lazy_img($style, $uri, $alt, $title) {
+  $path = image_style_path($style, $uri);
+  image_style_create_derivative(image_style_load($style), $uri, $path);
+  $info = image_get_info($path);
+  $url = file_create_url($path);
+
+  $image = [
+    'path' => drupal_get_path('theme', 'ntb') . '/images/loading.gif',
+    'alt' => $alt,
+    'title' => $title,
+    'attributes' => [
+      'data-src' => $url,
+      'class' => ['lazy-img', $style],
+      'height' => $info['height'],
+      'width' => $info['width'],
+    ],
+  ];
+
+  return theme('image', $image);
 }

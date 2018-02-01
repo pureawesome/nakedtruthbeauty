@@ -1,7 +1,7 @@
 .tile {
   position: relative;
   padding-top: 15px;
-  border-bottom: 0.5px solid $border-light;
+  // border-bottom: 0.5px solid $border-light;
   padding-bottom: 15px;
 
   a {
@@ -14,18 +14,11 @@
   }
 }
 
-.tile.article {
-  .img {
-    max-width: 150px;
-    margin: auto;
-  }
-}
-
 @include breakpoint($screen-xs) {
   .tile {
-    @include display-flex();
-    @include align-items(center);
-    @include justify-content(center);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .img,
     .title {
@@ -34,10 +27,10 @@
     }
 
     .img {
-      @include flex(1);
+      flex: 1;
     }
     .title {
-      @include flex(2);
+      flex: 1;
 
       a {
         text-align: left;
@@ -58,26 +51,23 @@
     .field-name-field-product {
       width: auto;
       margin-bottom: 0;
-      @include inline-block();
+      display: inline-block;
     }
 
     h3 {
+      padding-left: 0;
       text-align: center;
     }
-  }
-
-  .tile.article {
-    flex-direction: row;
   }
 }
 
 @include breakpoint($screen-sm) {
-  .tile:not(.article) {
+  .tile {
     height: 100%;
-    @include flex-direction(column);
+    flex-direction: column;
 
     .title {
-      @include flex(1);
+      flex: 1;;
     }
 
     .title a {

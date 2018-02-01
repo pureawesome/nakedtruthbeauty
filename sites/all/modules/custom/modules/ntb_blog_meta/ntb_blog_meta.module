@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Module file for ntb blog meta.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function ntb_blog_meta_block_info() {
+  $blocks['ntb_blog_meta'] = array(
+    'info' => t('NTB blog meta'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ntb_blog_meta_block_view($delta = '') {
+  $block = [];
+
+  switch ($delta) {
+    case 'ntb_blog_meta':
+      $block['content'] = ntb_blog_meta_build_display();
+      break;
+  }
+
+  return $block;
+}
+
+function ntb_blog_meta_build_display() {
+  $node = menu_get_object();
+  $items = [];
+  $author = views_embed_view('blog_authored','default',$node->nid);
+  $changed = '<span>Updated:</span> ' . format_date($node->changed, 'custom', 'F j, Y');
+  $aff = 0;
+  if (isset($node->field_uses_affiliate_links) && !empty($node->field_uses_affiliate_links)) {
+    $aff = $node->field_uses_affiliate_links[LANGUAGE_NONE][0]['value'];
+  }
+
+  $items[] = $author;
+  $items[] = $changed;
+
+  if ($aff === 1) {
+    $items[] = '<span>Uses affiliate links</span>';
+  }
+
+  if (module_exists('service_links')) {
+    $social = module_invoke('service_links', 'block_view', 'service_links');
+    $items[] = $social['content'];
+  }
+
+  $output = [
+    'items' => $items,
+    'attributes' =>[
+      'class' => [
+        'blog-meta',
+        'clean-list',
+      ],
+    ],
+  ];
+  return theme('item_list', $output);
+}

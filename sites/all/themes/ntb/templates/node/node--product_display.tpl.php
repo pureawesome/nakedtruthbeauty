@@ -93,10 +93,10 @@
     ?>
 
     <div class="row">
-      <div class="panel-panel panel-col col-xs-offset-2 col-xs-8 col-sm-4 col-sm-offset-0 ">
+      <div class="panel-panel panel-col col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0 ">
         <?php print render($content['field_product_images']); ?>
       </div>
-      <div class="panel-panel panel-col col-xs-12 col-sm-8">
+      <div class="panel-panel panel-col col-xs-12 col-sm-8 g-st-5">
         <h1 id="product-title">
           <?php print $title; ?>
         </h1>
@@ -112,27 +112,18 @@
             <?php print render($product_type_list); ?>
           <?php endif; ?>
 
-          <!-- Nav tabs -->
-          <ul class="nav" role="tablist">
-            <li class="product active"><a href="#body" aria-controls="body" role="tab" data-toggle="tab">Product</a></li>
-            <li class="use"><a href="#use" aria-controls="use" role="tab" data-toggle="tab">Use</a></li>
-            <li class="ingredients"><a href="#ingredients" aria-controls="ingredients" role="tab" data-toggle="tab">Ingredients</a></li>
-          </ul>
+          <?php print render($content['body']); ?>
 
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade in active" id="body">
-              <?php print render($content['body']); ?>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="use">
-              <?php print render($content['field_product_use']); ?>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="ingredients">
-              <?php print render($scientific_ingredients); ?>
-              <?php print render($content['field_product_ingredients_text']); ?>
-            </div>
-          </div>
+          <?php if ($content['field_product_use']): ?>
+            <h3>Use</h3>
+            <?php print render($content['field_product_use']); ?>
+          <?php endif; ?>
 
+          <?php if ($scientific_ingredients || $content['field_product_ingredients_text']): ?>
+            <h3>Ingredients</h3>
+            <?php print render($scientific_ingredients); ?>
+            <?php print render($content['field_product_ingredients_text']); ?>
+          <?php endif; ?>
         </div>
 
       </div>

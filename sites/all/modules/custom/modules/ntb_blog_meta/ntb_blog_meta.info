@@ -1,0 +1,5 @@
+name = naked truth beauty blog meta
+core = 7.x
+package = Modules
+version = 7.x-1.0
+dependencies[] = service_links

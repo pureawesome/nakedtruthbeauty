@@ -22,21 +22,19 @@
     </div>
   <?php endif; ?>
 
-  <div class="container-fluid content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-    ?>
-    <div class="row">
-      <div class="panel-panel panel-col col-sm-6 col-sm-offset-3">
-        <?php print render($content['field_primary_image']); ?>
-      </div>
+  <?php
+    // We hide the comments and links now so that we can render them later.
+    hide($content['comments']);
+    hide($content['links']);
+  ?>
+  <div class="row">
+    <div class="panel-panel panel-col col-sm-6 col-sm-offset-3">
+      <?php print render($content['field_primary_image']); ?>
     </div>
-    <div class="row">
-      <div class="panel-panel panel-col col-sm-10 col-sm-offset-1">
-        <?php print render($content['body']); ?>
-      </div>
+  </div>
+  <div class="row">
+    <div class="panel-panel panel-col col-sm-10 col-sm-offset-1">
+      <?php print render($content['body']); ?>
     </div>
   </div>
 
