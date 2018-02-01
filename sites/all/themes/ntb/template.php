@@ -1,6 +1,6 @@
 <?php
 
-define('CSS_VERSION', '1.02');
+define('CSS_VERSION', '1.03');
 
 /**
  * Implements hook_theme().
@@ -35,13 +35,6 @@ function ntb_preprocess_page(&$vars) {
   );
 
   drupal_add_html_head($noscript_wrapper, 'noscript');
-
-  if (isset($_COOKIE['STYXKEY_ntb_css']) && $_COOKIE['STYXKEY_ntb_css'] === CSS_VERSION) {
-    drupal_add_css('/' . $ntb_css, array('group' => CSS_THEME, 'preprocess' => 'false'));
-  }
-  else {
-    drupal_add_js(array('loadCSS' => 1), 'setting');
-  }
 
   $preload_fonts = [
     'quicksand-regular-webfont.woff2',
@@ -211,18 +204,15 @@ function ntb_library() {
     'title' => 'loadCSS',
     'version' => '1.3.1',
     'js' => array(
-      libraries_get_path('node_modules') . '/fg-loadcss/src/loadCSS.js' => array(
-        'defer' => TRUE,
-        'scope' => 'footer',
+      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/src/loadCSS.min.js') => array(
+        'type' => 'inline',
       ),
-      libraries_get_path('node_modules') . '/fg-loadcss/src/cssrelpreload.js' => array(
-        'defer' => TRUE,
-        'scope' => 'footer',
+      file_get_contents(libraries_get_path('node_modules') . '/fg-loadcss/src/cssrelpreload.min.js') => array(
+        'type' => 'inline',
       ),
     ),
   );
 
-  $critical_css = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/critical/ntb_critical.css');
 
   $libraries['ntb'] = array(
     'title' => 'NTB',
@@ -232,20 +222,7 @@ function ntb_library() {
         'defer' => TRUE,
         'scope' => 'footer',
       ),
-      array(
-        'data' => array(
-          'ntb_css' => array(
-            'path' => '/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION,
-            'version' => CSS_VERSION,
-          ),
-        ),
-        'type' => 'setting',
-      ),
-    ),
-    'css' => array(
-      $critical_css => array(
-        'group' => CSS_THEME,
-        'every_page' => TRUE,
+      'loadCSS("/' . drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=' . CSS_VERSION . '");' => array(
         'type' => 'inline',
       ),
     ),
@@ -272,11 +249,26 @@ function ntb_library() {
 }
 
 /**
+ * Implements hook_preprcess_html().
+ */
+function ntb_preprocess_html(&$vars) {
+  $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/critical/ntb_critical.css');
+  $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
+}
+
+/**
+ * Implements hook_html_head_alter().
+ */
+function ntb_html_head_alter(&$head_elements) {
+  unset($head_elements['system_meta_content_type']);
+}
+
+/**
  * Implements hook_js_alter().
  */
 function ntb_js_alter(&$javascript) {
   foreach ($javascript as $key => &$script) {
-    if ($script['scope'] == 'header') {
+    if ($script['scope'] == 'header' && $script['type'] != 'inline') {
       $script['scope'] = 'footer';
     }
   }

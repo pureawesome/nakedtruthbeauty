@@ -75,7 +75,7 @@ function dc_ajax_enhancements_preprocess_dc_ajax_shopping_cart(&$variables) {
 function dc_ajax_enhancements_library() {
   $libraries['cart'] = [
     'title' => 'Site Cart',
-    'version' => '1',
+    'version' => '1.0',
     'js' => array(
       drupal_get_path('module', 'dc_ajax_enhancements') . '/js/dc_ajax_enhancements.min.js' => array(
         'defer' => TRUE,
