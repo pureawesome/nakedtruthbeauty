@@ -1,6 +1,6 @@
 <?php
 
-define('CSS_VERSION', '1.03');
+define('CSS_VERSION', '1.04');
 
 /**
  * Implements hook_theme().
@@ -252,7 +252,7 @@ function ntb_library() {
  * Implements hook_preprcess_html().
  */
 function ntb_preprocess_html(&$vars) {
-  $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/critical/ntb_critical.css');
+  $critical = file_get_contents(drupal_get_path('theme', 'ntb') . '/css/ntb_critical.css');
   $vars['critical'] = '<style type="text/css" media="all">' . $critical . '</style>';
 }
 
