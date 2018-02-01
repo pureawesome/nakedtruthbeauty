@@ -1,7 +1,7 @@
 'use strict';
 
 // Credit: filament -> adactio
-var version = 'v1.04::';
+var version = 'v1.06::';
 var staticCacheName = version + 'static';
 var pagesCacheName = version + 'pages';
 var imagesCacheName = version + 'images';
@@ -31,7 +31,7 @@ function updateStaticCache() {
         '/sites/all/modules/custom/features/site_products/js/site_products.min.js?v=1.0',
         '/sites/all/modules/contrib/dc_ajax_add_cart/js/dc_ajax_add_cart_html.js?v=1.0.0',
         '/sites/all/modules/custom/modules/dc_ajax_enhancements/js/dc_ajax_enhancements.min.js?v=1.0',
-        '/sites/all/modules/custom/modules/ntb_signup/js/ntb_signup.min.js?v=1.1'
+        '/sites/all/modules/custom/modules/ntb_signup/js/ntb_signup.min.js?v=1.2'
       ].concat(offlinePages));
       // These items must be cached for the Service Worker to complete installation
       return cache.addAll([
@@ -45,7 +45,7 @@ function updateStaticCache() {
         '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
         '/sites/all/themes/ntb/js/ntb.behaviors.min.js?v=1.2',
-        '/sites/all/themes/ntb/css/ntb.css?v=1.04',
+        '/sites/all/themes/ntb/css/ntb.css?v=1.06',
         '/sites/all/themes/ntb/logo.png',
         '/offline',
         '/'

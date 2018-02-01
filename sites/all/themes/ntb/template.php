@@ -1,6 +1,6 @@
 <?php
 
-define('CSS_VERSION', '1.04');
+define('CSS_VERSION', '1.06');
 
 /**
  * Implements hook_theme().
