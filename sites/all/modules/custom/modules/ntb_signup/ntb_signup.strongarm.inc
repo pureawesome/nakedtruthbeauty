@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ntb_signup.strongarm.inc
