@@ -42,7 +42,6 @@ function dc_ajax_enhancements_theme() {
  * Implements hook_preprocess_hook().
  */
 function dc_ajax_enhancements_preprocess_dc_ajax_add_to_cart_message(&$vars) {
-  dpm($vars['product']);
   $image_arr = $vars['product']->field_primary_image[LANGUAGE_NONE][0];
   [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars->title);
 
