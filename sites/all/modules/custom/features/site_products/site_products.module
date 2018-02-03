@@ -27,10 +27,10 @@ function site_products_menu() {
  * Get object taxonomy ids.
  *
  * @param object $object
- *    Taxonomy item.
+ *   Taxonomy item.
  *
  * @return int|null
- *    Integer or null
+ *   Integer or null
  */
 function site_products_return_tids($object) {
   if (!empty($object->tid)) {

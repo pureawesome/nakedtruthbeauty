@@ -31,10 +31,16 @@ function ntb_blog_meta_block_view($delta = '') {
   return $block;
 }
 
+/**
+ * Build view display.
+ *
+ * @return string
+ *   Rendered list.
+ */
 function ntb_blog_meta_build_display() {
   $node = menu_get_object();
   $items = [];
-  $author = views_embed_view('blog_authored','default',$node->nid);
+  $author = views_embed_view('blog_authored', 'default', $node->nid);
   $changed = '<span>Updated:</span> ' . format_date($node->changed, 'custom', 'F j, Y');
   $aff = 0;
   if (isset($node->field_uses_affiliate_links) && !empty($node->field_uses_affiliate_links)) {
@@ -54,13 +60,15 @@ function ntb_blog_meta_build_display() {
   }
 
   $output = [
-    'items' => $items,
-    'attributes' =>[
+    '#theme' => 'item_list',
+    '#items' => $items,
+    '#attributes' => [
       'class' => [
         'blog-meta',
         'clean-list',
       ],
     ],
   ];
-  return theme('item_list', $output);
+
+  return render($output);
 }

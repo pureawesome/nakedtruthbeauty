@@ -12,6 +12,9 @@ function commerce_customizations_form_element($variables) {
   return theme_form_element($variables);
 }
 
+/**
+ * Implements hook_commerce_checkout_pane_info_alter().
+ */
 function commerce_customizations_commerce_checkout_pane_info_alter(&$checkout_panes) {
   $checkout_panes['commerce_payment_redirect']['locked'] = 0;
 }
