@@ -25,7 +25,7 @@ function site_footer_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -26,
+        'weight' => -31,
       ),
       'seven' => array(
         'region' => '',
