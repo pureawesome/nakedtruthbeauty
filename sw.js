@@ -2,7 +2,7 @@
   'use strict';
 
   // Credit: filament -> adactio
-  var version = 'v1.07::';
+  var version = 'v1.08::';
   var staticCacheName = version + 'static';
   var pagesCacheName = 'pages';
   var imagesCacheName = 'images';
@@ -43,9 +43,9 @@
       // These items must be cached for the Service Worker to complete installation
       return cache.addAll([
         '/misc/jquery.once.js?v=1.2',
-        '/misc/drupal.js',
-        '/misc/ajax.js?v=7.56',
-        '/misc/progress.js?v=7.56',
+        '/misc/drupal.js?v=7.58',
+        '/misc/ajax.js?v=7.58',
+        '/misc/progress.js?v=7.58',
         '/sites/all/libraries/modernizr/modernizr-2.8.3.min.js',
         '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
