@@ -9,7 +9,7 @@
     attach: function (context, settings) {
       var self = this;
 
-      $('body', context).once('ajax', function () {
+      $('body', context).once('site-shop', function () {
         self.fadeInProducts();
 
         $('.view-product-type-taxonomy a').on('click', function (e) {
@@ -26,13 +26,13 @@
           self.popChange(e, event.state);
           self.activeMenu();
         };
-      });
 
-      $(document).ajaxSuccess(function (event, request, settings) {
-        if (request.responseText.indexOf('view-shop') !== -1) {
-          Drupal.attachBehaviors('.view-shop');
-          self.fadeInProducts();
-        }
+        $(document).ajaxSuccess(function (event, request, settings) {
+          if (request.responseText.indexOf('view-shop') !== -1) {
+            Drupal.attachBehaviors(request.responseText);
+            self.fadeInProducts();
+          }
+        });
       });
     },
 
