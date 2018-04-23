@@ -42,7 +42,7 @@ button{ text-transform: none; }
 .search-block{ float: right; display: inline-block; }
 .navbar-nav, nav{ display: -webkit-box; -webkit-box-orient: horizontal; }
 nav{ border: none; -webkit-box-direction: normal; -webkit-box-pack: justify; width: 100%; -webkit-box-align: center; }
-.nav-primary-wrapper{ -webkit-box-flex: 1; }
+ .nav-primary-wrapper{ -webkit-box-flex: 1; }
 .nav-secondary-wrapper{ -webkit-box-flex: 0; margin-right: 15px; }
 .dropdown-menu > li > a, .primary-nav > li > a{ width: 100%; color: rgb(35, 41, 39); font-size: 1.25rem; padding: 10px 15px; transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; display: inline-block; text-transform: lowercase; font-weight: 300; }
 .navbar-nav{ -webkit-box-direction: normal; margin: 0px; padding: 0px; }
