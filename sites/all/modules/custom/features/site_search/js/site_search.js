@@ -9,13 +9,13 @@
     attach: function (context, settings) {
       var self = this;
 
-      $('body').once('site-search'. function() {
+      $('body').once('site-search', function() {
         self.searchInit();
 
         $('.search-form', context).on('submit', function () {
           self.searchSubmit.call(this);
         });
-      })
+      });
 
     },
 

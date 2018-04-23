@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ntb_signup.rules_defaults.inc

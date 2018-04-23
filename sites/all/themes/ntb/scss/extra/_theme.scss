@@ -350,3 +350,13 @@ table {
     vertical-align: top !important;
   }
 }
+
+.commerce-credit-card-expiration {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.commerce-credit-card-expiration > div {
+  flex: 1 1 auto;
+}

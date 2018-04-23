@@ -95,6 +95,7 @@ function ntb_top_block_view($delta = '') {
     case 'ntb_top_4':
       $block['content'] = ntb_top_build_display(4);
       break;
+
     case 'ntb_top_3':
       $block['content'] = ntb_top_build_display(3);
       break;
@@ -103,6 +104,15 @@ function ntb_top_block_view($delta = '') {
   return $block;
 }
 
+/**
+ * Build block display.
+ *
+ * @param int $num
+ *   The total number to show.
+ *
+ * @return string
+ *   HTML output of list items.
+ */
 function ntb_top_build_display($num) {
   $fields = ['ntb_top_three', 'ntb_top_two', 'ntb_top_one', 'ntb_top_four'];
   $nids = [];
@@ -124,7 +134,16 @@ function ntb_top_build_display($num) {
   }
   $class = ['ntb-top'];
   $class[] = $num == 3 ? 'three-item' : 'four-item';
-  $output = theme('item_list', ['items' => $node_displays, 'attributes' => ['class' => $class]]);
 
-  return $output;
+  $ouput = [
+    '#theme' => 'item_list',
+    '#items' => $node_displays,
+    '#attributes' => [
+      'class' => $class,
+    ],
+  ];
+
+
+
+  return render($output);
 }

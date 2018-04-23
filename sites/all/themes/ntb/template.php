@@ -199,6 +199,7 @@ function ntb_library() {
   ];
 
   $libraries['modernizr'] = [
+    // Currently only touch
     'title' => 'Modernizr ',
     'version' => '2.3.8',
     'js' => [

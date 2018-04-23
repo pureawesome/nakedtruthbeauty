@@ -77,7 +77,7 @@ function site_general_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -21,
+        'weight' => -30,
       ),
       'seven' => array(
         'region' => '',

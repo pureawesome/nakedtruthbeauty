@@ -1,11 +1,12 @@
 <?php
+
 /**
  * @file
  * Code for the ajax add to cart enhancements.
  */
 
 /**
- * Implements hook_preprocess_page.
+ * Implements hook_preprocess_page().
  */
 function dc_ajax_enhancements_preprocess_page(&$vars) {
   $block = module_invoke('dc_ajax_add_cart', 'block_view', 'ajax_shopping_cart');
