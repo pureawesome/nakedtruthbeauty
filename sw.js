@@ -2,7 +2,7 @@
   'use strict';
 
   // Credit: filament -> adactio
-  var version = 'v1.09::';
+  var version = 'v1.10::';
   var staticCacheName = version + 'static';
   var pagesCacheName = 'pages';
   var imagesCacheName = 'images';
@@ -35,8 +35,8 @@
         '/sites/all/themes/ntb/fonts/lato-light-webfont.woff2',
         '/sites/all/themes/ntb/fonts/lato-regular-webfont.woff2',
         '/sites/all/themes/ntb/fonts/quicksand-bold-webfont.woff2',
-        '/sites/all/modules/custom/features/site_products/js/site_shop.min.js?v=1.0',
-        '/sites/all/modules/custom/features/site_search/js/site_search.min.js?v=1.0',
+        '/sites/all/modules/custom/features/site_products/js/site_shop.min.js?v=1.1',
+        '/sites/all/modules/custom/features/site_search/js/site_search.min.js?v=1.1',
         '/sites/all/modules/contrib/dc_ajax_add_cart/js/dc_ajax_add_cart_html.js?v=1.0.0',
         '/sites/all/modules/custom/modules/dc_ajax_enhancements/js/dc_ajax_enhancements.min.js?v=1.0'
       ].concat(offlinePages));
