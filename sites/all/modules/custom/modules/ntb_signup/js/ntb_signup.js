@@ -8,7 +8,7 @@
   Drupal.behaviors.ntb_signup = {
     attach: function (context, settings) {
       var self = this;
-      $('body').once('signup-popup', function () {
+      if (context === document) {
         var cookie = self.getCookie();
         Drupal.settings.ntb_signup.cookie_length = 7;
 
@@ -18,7 +18,7 @@
             self.triggerOverlay();
           }, 15000);
         }
-      });
+      }
     },
 
     buildForm: function () {

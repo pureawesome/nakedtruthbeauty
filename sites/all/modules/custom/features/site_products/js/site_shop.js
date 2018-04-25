@@ -9,7 +9,7 @@
     attach: function (context, settings) {
       var self = this;
 
-      $('body', context).once('site-shop', function () {
+      if (context === document) {
         self.fadeInProducts();
 
         $('.view-product-type-taxonomy a').on('click', function (e) {
@@ -33,7 +33,7 @@
             self.fadeInProducts();
           }
         });
-      });
+      }
     },
 
     activeMenu: function () {

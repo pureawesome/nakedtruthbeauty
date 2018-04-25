@@ -28,7 +28,7 @@ img {
   max-width: 100%;
 }
 
-img:not([data-src]) {
+img:not([data-src]):not(.image-align-left):not(.image-align-right):not(.image-align-center):not(.no-resize) {
   height: auto;
 }
 
