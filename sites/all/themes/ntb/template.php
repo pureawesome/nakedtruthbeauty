@@ -177,7 +177,7 @@ function ntb_library() {
       ],
     ],
     'css' => [
-      drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.3' => [
+      drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.4' => [
         'weight' => 9999,
         'preprocess' => FALSE,
         'every_page' => TRUE,
