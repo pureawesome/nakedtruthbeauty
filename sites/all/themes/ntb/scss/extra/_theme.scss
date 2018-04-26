@@ -28,7 +28,7 @@ img {
   max-width: 100%;
 }
 
-img:not([data-src]) {
+img:not([data-src]):not(.image-align-left):not(.image-align-right):not(.image-align-center):not(.no-resize) {
   height: auto;
 }
 
@@ -349,4 +349,14 @@ table {
   & > * {
     vertical-align: top !important;
   }
+}
+
+.commerce-credit-card-expiration {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.commerce-credit-card-expiration > div {
+  flex: 1 1 auto;
 }

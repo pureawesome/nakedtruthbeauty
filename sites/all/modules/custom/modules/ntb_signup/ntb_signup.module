@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the naked truth beauty signup popup feature.
@@ -29,7 +30,7 @@ function ntb_signup_library() {
 
   $libraries['ntb_signup'] = array(
     'title' => 'NTB Signup',
-    'version' => '1.1',
+    'version' => '1.2',
     'js' => array(
       drupal_get_path('module', 'ntb_signup') . '/js/ntb_signup.min.js' => array(
         'defer' => TRUE,

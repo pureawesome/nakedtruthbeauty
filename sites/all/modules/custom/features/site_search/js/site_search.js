@@ -8,11 +8,14 @@
   Drupal.behaviors.site_search = {
     attach: function (context, settings) {
       var self = this;
-      self.searchInit();
 
-      $('.search-form', context).on('submit', function () {
-        self.searchSubmit.call(this);
-      });
+      if (context === document) {
+        self.searchInit();
+
+        $('.search-form', context).on('submit', function () {
+          self.searchSubmit.call(this);
+        });
+      }
     },
 
     searchInit: function () {

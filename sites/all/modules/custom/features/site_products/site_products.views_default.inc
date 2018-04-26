@@ -47,7 +47,7 @@ function site_products_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<a href="shop/[field_url]" data="[field_url]">[name]</a>';
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<a href="/shop/[field_url]" data="[field_url]">[name]</a>';
   $handler->display->display_options['fields']['name']['alter']['path'] = 'shop/[field_url]';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;

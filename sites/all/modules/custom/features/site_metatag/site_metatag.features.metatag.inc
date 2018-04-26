@@ -538,19 +538,19 @@ function site_metatag_metatag_export_default() {
         'value' => '[site:url]',
       ),
       'shortlink' => array(
-        'value' => '[site:url]',
-      ),
-      'og:description' => array(
-        'value' => '[site:slogan]',
-      ),
-      'og:title' => array(
-        'value' => '[site:name]',
+        'value' => '',
       ),
       'og:type' => array(
         'value' => 'website',
       ),
       'og:url' => array(
         'value' => '[site:url]',
+      ),
+      'og:title' => array(
+        'value' => '[site:name]',
+      ),
+      'og:description' => array(
+        'value' => '[site:slogan]',
       ),
     ),
   );
