@@ -43,9 +43,9 @@
       // These items must be cached for the Service Worker to complete installation
       return cache.addAll([
         '/misc/jquery.once.js?v=1.2',
-        '/misc/drupal.js?v=7.58',
-        '/misc/ajax.js?v=7.58',
-        '/misc/progress.js?v=7.58',
+        '/misc/drupal.js?v=7.59',
+        '/misc/ajax.js?v=7.59',
+        '/misc/progress.js?v=7.59',
         '/sites/all/libraries/modernizr/modernizr-2.8.3.min.js',
         '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',
