@@ -123,6 +123,30 @@ ul.blog-meta {
       @include inline-button();
     }
   }
+
+  .pane-content {
+    .image.align-left {
+    display: inline-block;
+    float: left;
+
+    padding: 10px 10px 0px 0;
+    }
+
+    .image.align-center {
+    display: block;
+
+    padding: 10px 10px 0 10px;
+
+    text-align:center;
+    }
+
+    .image.align-right {
+    display: inline-block;
+    float: right;
+
+    padding: 10px 0 0px 10px;
+    }
+  }
 }
 
 .page-blog .col-sm-2.g-st-1 {
