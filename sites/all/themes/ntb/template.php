@@ -177,7 +177,7 @@ function ntb_library() {
       ],
     ],
     'css' => [
-      drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.4' => [
+      drupal_get_path('theme', 'ntb') . '/css/ntb.css?v=1.41' => [
         'weight' => 9999,
         'preprocess' => FALSE,
         'every_page' => TRUE,
@@ -199,7 +199,6 @@ function ntb_library() {
   ];
 
   $libraries['modernizr'] = [
-    // Currently only touch
     'title' => 'Modernizr ',
     'version' => '2.3.8',
     'js' => [
