@@ -49,7 +49,10 @@ function commerce_shippingeasy_libraries_info() {
   return $libraries;
 }
 
+/**
+ * Basic callback to approve the version.
+ */
 function simple_version_callback() {
-  //use some fancy magic to get the version number... or don't
+  // TODO check library version.
   return TRUE;
 }

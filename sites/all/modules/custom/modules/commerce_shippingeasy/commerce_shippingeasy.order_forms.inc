@@ -120,10 +120,6 @@ function commerce_shippingeasy_commerce_form($form, &$form_state, $order) {
   $form['commerce_shippingeasy_send'] = [
     '#type' => 'submit',
     '#default_value' => t('Send to ShippingEasy'),
-    // '#submit' => ['commerce_shippingeasy_send_order'],
-    // '#ajax' => [
-    //   'callback' => 'commerce_fulfillment_content_callback',
-    // ],
   ];
 
   return $form;
