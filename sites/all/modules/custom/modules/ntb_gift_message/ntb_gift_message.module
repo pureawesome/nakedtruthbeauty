@@ -28,7 +28,7 @@ function ntb_gift_message_entity_view_alter(&$build, $type) {
 
     if (!empty($order->data['ntb_gift_message'])) {
       $gift = $order->data['ntb_gift_message']['und'][0]['ntb_gift_message_pane_gift'] ? t('Yes') : t('No');
-      $markup .= t('<div class="field-label">@gift:</div>', array('@gift' => 'Send gift message'));
+      $markup = t('<div class="field-label">@gift:</div>', array('@gift' => 'Send gift message'));
       $markup .= '<div class="field-items">' . $gift . '</div>';
       $markup .= t('<div class="field-label">@message:</div>', array('@message' => 'Gift Message'));
       $markup .= '<div class="field-items">' . check_plain($order->data['ntb_gift_message']['und'][0]['ntb_gift_message_pane_message']);
