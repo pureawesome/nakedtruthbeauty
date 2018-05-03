@@ -169,7 +169,7 @@ function ntb_library() {
 
   $libraries['ntb'] = [
     'title' => 'NTB',
-    'version' => '1.3',
+    'version' => '1.4',
     'js' => [
       drupal_get_path('theme', 'ntb') . '/js/ntb.behaviors.min.js' => [
         'defer' => TRUE,
@@ -200,9 +200,9 @@ function ntb_library() {
 
   $libraries['modernizr'] = [
     'title' => 'Modernizr ',
-    'version' => '2.3.8',
+    'version' => '3.6.0',
     'js' => [
-      libraries_get_path('modernizr') . '/modernizr-2.8.3.min.js' => [
+      libraries_get_path('modernizr') . '/modernizr.min.js' => [
         'defer' => TRUE,
         'scope' => 'footer',
       ],
