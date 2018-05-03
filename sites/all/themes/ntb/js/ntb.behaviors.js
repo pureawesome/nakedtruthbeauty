@@ -10,7 +10,7 @@
       var self = this;
 
       $('body').once('nav-script', function () {
-        if (!Modernizr.touch) {
+        if (!Modernizr.touchevents) {
           $('ul.nav li.dropdown').on('mouseover', function () {
             $(this).addClass('open');
             $(this).children('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
