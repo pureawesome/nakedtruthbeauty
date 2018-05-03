@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Code for the naked truth beauty easy shipping.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function commerce_shippingeasy_menu() {
+  $items = [];
+
+  $items['admin/commerce/orders/%commerce_order/shippingeasy'] = [
+    'title' => 'Easy Shipping',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['commerce_shippingeasy_commerce_form', 3],
+    'access arguments' => ['administer site configuration'],
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'commerce_shippingeasy.order_forms.inc',
+  ];
+
+  $items['admin/commerce/config/shippingeasy'] = [
+    'title' => 'ShippingEasy Admin Options',
+    'description' => 'Configure shippingeasy settings.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['commerce_shippingeasy_commerce_admin_form'],
+    'access arguments' => ['administer site configuration'],
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'commerce_shippingeasy.admin.inc',
+  ];
+
+  return $items;
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function commerce_shippingeasy_libraries_info() {
+  $libraries['shipping_easy-php'] = array(
+    'name' => 'ShippingEasy PHP',
+    'vendor url' => 'https://shippingeasy.readme.io/docs/php-getting-started',
+    'download url' => 'https://github.com/ShippingEasy/shipping_easy-php',
+    'version callback' => 'simple_version_callback',
+    'files' => array(
+      'php' => array('lib/ShippingEasy.php'),
+    ),
+  );
+  return $libraries;
+}
+
+/**
+ * Basic callback to approve the version.
+ */
+function simple_version_callback() {
+  // TODO check library version.
+  return TRUE;
+}
