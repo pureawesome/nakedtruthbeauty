@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Template file for NTB theme.
+ */
+
+/**
  * Implements hook_theme().
  */
 function ntb_theme() {
@@ -31,6 +36,19 @@ function ntb_preprocess_page(&$vars) {
       'href' => '/' . $theme_path . '/fonts/' . $font,
       'as' => 'font',
       'crossorigin' => 'anonymous',
+    ];
+    drupal_add_html_head_link($attributes);
+  }
+
+  $dns_preloads = [
+    'https://bam.nr-data.net',
+    'https://stats.g.doubleclick.net',
+  ];
+
+  foreach ($dns_preloads as $dns_preload) {
+    $attributes = [
+      'rel' => 'dns-prefetch',
+      'href' => $dns_preload,
     ];
     drupal_add_html_head_link($attributes);
   }
