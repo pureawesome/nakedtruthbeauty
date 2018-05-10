@@ -1,13 +1,31 @@
 diff --git a/sites/all/modules/contrib/dc_ajax_add_cart/dc_ajax_add_cart.module b/sites/all/modules/contrib/dc_ajax_add_cart/dc_ajax_add_cart.module
-index 00eaa24..440db0b 100644
+index 440db0b..c17eccc 100644
 --- a/sites/all/modules/contrib/dc_ajax_add_cart/dc_ajax_add_cart.module
 +++ b/sites/all/modules/contrib/dc_ajax_add_cart/dc_ajax_add_cart.module
-@@ -901,6 +901,8 @@ function dc_ajax_add_cart_library() {
-     'js' => array(
-       $module_path . '/js/dc_ajax_add_cart_html.js' => array(
-         'group' => JS_DEFAULT,
+@@ -184,7 +184,7 @@ function dc_ajax_add_cart_form_alter(&$form, &$form_state, $form_id) {
+       'method' => 'replace',
+       'effect' => 'slide',
+     );
+-    $form['#attached']['js'][] = drupal_get_path('module', 'dc_ajax_add_cart') . '/js/dc_ajax_add_cart.js';
++    $form['#attached']['library'][] = array('dc_ajax_add_cart', 'close');
+
+     // Rebuild form.
+     $form['#submit'][] = 'dc_ajax_add_cart_rebuild_add_to_cart_form';
+@@ -913,5 +913,17 @@ function dc_ajax_add_cart_library() {
+     ),
+   );
+
++  $libraries['close'] = array(
++    'title' => '',
++    'version' => '1.0.0',
++    'js' => array(
++      $module_path . '/js/dc_ajax_add_cart.js' => array(
++        'group' => JS_DEFAULT,
 +        'defer' => TRUE,
 +        'scope' => 'footer',
-       ),
-     ),
-     'css' => array(
++      ),
++    ),
++  );
++
+   return $libraries;
+ }
