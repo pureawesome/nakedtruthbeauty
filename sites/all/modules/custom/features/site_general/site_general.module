@@ -107,7 +107,7 @@ function site_general_make_lazy_img($style, $uri, $alt, $title) {
   $url = file_create_url($path);
 
   $image = [
-    'path' => drupal_get_path('theme', 'ntb') . '/images/loading.gif',
+    'path' => drupal_get_path('theme', 'ntb') . '/images/loading.svg',
     'alt' => $alt,
     'title' => $title,
     'attributes' => [
