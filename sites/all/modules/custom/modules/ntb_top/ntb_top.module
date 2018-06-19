@@ -135,15 +135,13 @@ function ntb_top_build_display($num) {
   $class = ['ntb-top'];
   $class[] = $num == 3 ? 'three-item' : 'four-item';
 
-  $ouput = [
+  $output = [
     '#theme' => 'item_list',
     '#items' => $node_displays,
     '#attributes' => [
       'class' => $class,
     ],
   ];
-
-
 
   return render($output);
 }
