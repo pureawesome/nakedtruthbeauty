@@ -21,7 +21,14 @@ function site_ingredients_preprocess_node(&$vars) {
 
       $image_arr = $vars['field_primary_image'][0];
       [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
-      $image = site_general_make_lazy_img('square_500x500', $image_arr['uri'], $image_alt, $image_title);
+      $img_array = [
+        '#theme' => 'image_style',
+        '#style_name' => 'square_500x500',
+        '#path' => $image_arr['uri'],
+        '#alt' => $image_alt,
+        '#title' => $image_title,
+      ];
+      $image = drupal_render($img_array);
       $vars['image'] = l($image, $vars['node_url'], array('html' => TRUE));
     }
   }
