@@ -51,7 +51,13 @@ function site_search_preprocess_node(&$vars) {
     if (isset($vars['field_primary_image'])) {
       $image_arr = $vars['field_primary_image'][0];
       [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['node']->title);
-      $image = site_general_make_lazy_img('square_200x200', $image_arr['uri'], $image_alt, $image_title);
+      $img_array = [
+        'style_name' => 'square_200x200',
+        'path' => $image_arr['uri'],
+        'alt' => $image_alt,
+        'title' => $image_title,
+      ];
+      $image = drupal_render($img_array);
       $vars['image'] = l($image, $vars['node_url'], array('html' => TRUE));
     }
 

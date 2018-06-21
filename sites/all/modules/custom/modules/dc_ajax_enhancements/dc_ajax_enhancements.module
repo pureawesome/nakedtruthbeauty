@@ -47,12 +47,13 @@ function dc_ajax_enhancements_preprocess_dc_ajax_add_to_cart_message(&$vars) {
   [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars->title);
 
   $img_array = array(
-    'style_name' => 'square_500x500',
-    'path' => $image_arr['uri'],
-    'alt' => $image_alt,
-    'title' => $image_title,
+    '#theme' => 'image_style',
+    '#style_name' => 'square_500x500',
+    '#path' => $image_arr['uri'],
+    '#alt' => $image_alt,
+    '#title' => $image_title,
   );
-  $vars['product_image'] = theme('image_style', $img_array);
+  $vars['product_image'] = drupal_render($img_array);
 }
 
 /**
