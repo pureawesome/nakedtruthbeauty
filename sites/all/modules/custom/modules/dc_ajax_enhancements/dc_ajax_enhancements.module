@@ -43,7 +43,12 @@ function dc_ajax_enhancements_theme() {
  * Implements hook_preprocess_hook().
  */
 function dc_ajax_enhancements_preprocess_dc_ajax_add_to_cart_message(&$vars) {
-  $image_arr = $vars['product']->field_primary_image[LANGUAGE_NONE][0];
+  $nid = db_query('SELECT entity_id
+    FROM {field_data_field_product}
+    WHERE field_product_product_id = :product_id',
+    [":product_id" => $vars['product']->product_id])->fetchField();
+  $node = node_load($nid);
+  $image_arr = $node->field_primary_image[LANGUAGE_NONE][0];
   [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars->title);
 
   $img_array = array(
