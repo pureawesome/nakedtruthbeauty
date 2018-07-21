@@ -76,6 +76,14 @@ function dc_ajax_enhancements_preprocess_dc_ajax_shopping_cart(&$variables) {
       'fragment' => $variables['checkout_link']['fragment'],
       'html' => $variables['checkout_link']['html'],
     ));
+    
+    if (!empty($variables['products_list']) && !empty($variables['products_list']['row'])) {
+      foreach ($variables['products_list']['row'] as $key => $line_item) {
+        $replace = '<div><i class="fa fa-times"></i><span class="sr-only">Remove from cart</span></div>';
+        $new = preg_replace('/Remove from cart/', $replace, $line_item['remove']['data']);
+        $variables['products_list']['row'][$key]['remove']['data'] = $new;
+      }
+    }
   }
 }
 
