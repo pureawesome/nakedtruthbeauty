@@ -45,7 +45,7 @@ nav{ display: -webkit-box; -webkit-box-orient: horizontal; -webkit-box-direction
 .navbar-nav > li{ display: inline-block; margin: 0px; padding: 0px; }
  .navbar-nav > li > ul{ display: none; }
 .dropdown-menu{ position: absolute; display: none; min-width: 200px; max-width: 50%; padding: 0px 1rem; text-align: center; border: 1px solid rgb(198, 229, 225); border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial; }
-.dropdown-menu > li.expanded, .dropdown-menu > li.leaf{ list-style: none; }
+ .dropdown-menu > li.leaf{ list-style: none; }
 nav .dropdown-menu > li > a{ font-size: 16px; padding: 5px; }
 .dropdown > a::after{ display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; line-height: 1; font-family: FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; margin-left: 5px; content: ; }
 .custom-user-menu > li{ position: relative; }
