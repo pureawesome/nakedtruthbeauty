@@ -1,12 +1,16 @@
 #logo {
   margin: auto;
   max-width: 75%;
-  width: 500px;
+  width: 160px;
   display: block;
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  // margin-bottom: 20px;
+  // margin-top: 10px;
   padding: 0;
+
+  @include breakpoint($screen-sm) {
+    width: 260px;
+  }
 }
 
 .icon-menu-fixed,
@@ -26,7 +30,7 @@
   font-size: 1.625rem;
   background: none;
   border: 0;
-  color: $secondary-blue;
+  color: $link-color;
   line-height: 1;
   padding: 0;
   display: inline-block;
@@ -36,7 +40,7 @@
   }
 
   &:hover {
-    color: $primary-blue;
+    color: $blue;
   }
 }
 
