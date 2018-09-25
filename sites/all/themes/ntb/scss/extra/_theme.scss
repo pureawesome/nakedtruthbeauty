@@ -42,10 +42,8 @@ a {
 }
 
 .panel-pane {
-  margin-bottom: 2rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
-
-  border-bottom: 1px solid #eee;
 }
 
 h3.pane-title {
@@ -427,5 +425,98 @@ table {
     border: 0;
     border-radius: 5px;
     background: #91cdc5;
+  }
+}
+
+.front {
+  .panel-pane {
+    min-height: 85vh;
+    border-bottom: 0px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  .pane-title {
+    width: 100%;
+  }
+
+  .pane-block-1,
+  .pane-block-14 {
+    padding: 2rem;
+  }
+
+  .pane-block-1 {
+    background: $pink;
+  }
+
+  .pane-block-14 {
+    background: $taupe;
+  }
+
+  .pane-ntb-top-ntb-top-3 {
+    padding: 2rem 0;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  max-height: 55px;
+
+  & > * {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-primary-wrapper,
+  .nav-secondary-wrapper {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(50% - 80px);
+
+    @include breakpoint($screen-sm) {
+      flex-basis: calc(50% - 160px);
+    }
+  }
+
+  .nav-primary-wrapper {
+    justify-content: flex-start;
+  }
+
+  .nav-secondary-wrapper {
+    justify-content: flex-end;
+  }
+
+  #logo {
+    flex: 0 0 160px;
+    margin: 0;
+
+    @include breakpoint($screen-sm) {
+      flex-basis: 250px;
+    }
+  }
+}
+
+.alert-strip{
+  &.main {
+    display: block;
+    width: 100%;
+
+    @include breakpoint($screen-sm) {
+      display: none;
+    }
+  }
+
+  &.nav {
+    display: none;
+    width: auto;
+
+    @include breakpoint($screen-sm) {
+      display: block;
+    }
   }
 }
