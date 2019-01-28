@@ -25,6 +25,12 @@ function commerce_shippingeasy_commerce_form($form, &$form_state, $order) {
   $profile = $order_wrapper->commerce_customer_shipping;
   $address = $profile->commerce_customer_address->value();
 
+  $form['email'] = [
+    '#type' => 'textfield',
+    '#title' => 'Email',
+    '#default_value' => $order->mail,
+  ];
+
   $form['first_name'] = [
     '#type' => 'textfield',
     '#title' => 'First Name',
@@ -153,6 +159,7 @@ function commerce_shippingeasy_commerce_form_submit($form, &$form_state) {
           "country" => $values["country"],
           "items_total" => $values["items_total"],
           "line_items" => [],
+          "email" => $values["email"],
         ],
       ],
     ];

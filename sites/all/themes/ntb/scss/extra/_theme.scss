@@ -401,3 +401,31 @@ table {
   width: 100px;
   height: 100px;
 }
+
+.dropdown-menu {
+  z-index: 1;
+}
+
+.view-id-tags {
+  .view-content .item-list {
+    grid-column: span 12;
+  }
+
+  ul li {
+    font-size: 1rem;
+
+    display: inline-block;
+
+    width: 100%;
+    margin: 0 0 5px;
+    padding: 6px;
+
+    text-align: center;
+    text-transform: lowercase;
+
+    color: #232927;
+    border: 0;
+    border-radius: 5px;
+    background: #91cdc5;
+  }
+}

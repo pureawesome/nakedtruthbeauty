@@ -36,7 +36,15 @@ function site_general_preprocess_node(&$vars) {
 
     $image_arr = $vars['field_primary_image'][0];
     [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
-    $vars['image'] = site_general_make_lazy_img('square_500x500', $image_arr['uri'], $image_alt, $image_title);
+
+    $img_array = [
+      '#theme' => 'image_style',
+      '#style_name' => 'square_500x500',
+      '#path' => $image_arr['uri'],
+      '#alt' => $image_alt,
+      '#title' => $image_title,
+    ];
+    $vars['image'] = drupal_render($img_array);
   }
 
   if ($vars['view_mode'] == 'blog_teaser') {
@@ -45,7 +53,15 @@ function site_general_preprocess_node(&$vars) {
     if (!empty($vars['field_primary_image'])) {
       $image_arr = $vars['field_primary_image'][0];
       [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['title']);
-      $vars['image'] = site_general_make_lazy_img('square_500x500', $image_arr['uri'], $image_alt, $image_title);
+
+      $img_array = [
+        '#theme' => 'image_style',
+        '#style_name' => 'square_500x500',
+        '#path' => $image_arr['uri'],
+        '#alt' => $image_alt,
+        '#title' => $image_title,
+      ];
+      $vars['image'] = drupal_render($img_array);
     }
   }
 }
@@ -86,37 +102,22 @@ function site_general_get_alt_title(array $image, $fallback = '') {
 }
 
 /**
- * Description to help get alt and title tags.
- *
- * @param string $style
- *   Image style.
- * @param string $uri
- *   Image uri value.
- * @param string $alt
- *   Image alt value.
- * @param string $title
- *   Image title value.
- *
- * @return array
- *   Two strings of alt and title.
+ * Implements hook_theme_registry_alter().
  */
-function site_general_make_lazy_img($style, $uri, $alt, $title) {
-  $path = image_style_path($style, $uri);
-  image_style_create_derivative(image_style_load($style), $uri, $path);
-  $info = image_get_info($path);
-  $url = file_create_url($path);
+function site_general_theme_registry_alter(&$theme_registry) {
+  if (!empty($theme_registry['image'])) {
+    $theme_registry['image']['preprocess functions'][] = 'site_general_image_preprocess';
+  }
+}
 
-  $image = [
-    'path' => drupal_get_path('theme', 'ntb') . '/images/loading.gif',
-    'alt' => $alt,
-    'title' => $title,
-    'attributes' => [
-      'data-src' => $url,
-      'class' => ['lazy-img', $style],
-      'height' => $info['height'],
-      'width' => $info['width'],
-    ],
-  ];
-
-  return theme('image', $image);
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function site_general_image_preprocess(array &$variables, string $hook) {
+  // Ony lazy loaded image style based files.
+  if (valid_url($variables['path'], TRUE) && !empty($variables['style_name'])) {
+    $variables['attributes']['data-src'] = $variables['path'];
+    $variables['path'] = drupal_get_path('theme', 'ntb') . '/images/loading.svg';
+    $variables['attributes']['class'][] = 'lazy-img';
+  }
 }
