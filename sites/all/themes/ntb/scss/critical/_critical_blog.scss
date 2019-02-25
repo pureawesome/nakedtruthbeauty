@@ -43,7 +43,7 @@ button{ text-transform: none; }
 nav{ -webkit-box-direction: normal; width: 100%; margin-bottom: 0px; border: none; -webkit-box-pack: justify; -webkit-box-align: center; }
  .nav-primary-wrapper{ -webkit-box-flex: 1; }
 .nav-secondary-wrapper{ margin-right: 15px; -webkit-box-flex: 0; }
-.dropdown-menu > li > a, .primary-nav > li > a{ font-size: 1.25rem; font-weight: 300; display: inline-block; width: 100%; padding: 10px 15px; transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; text-transform: lowercase; color: rgb(35, 41, 39); }
+.dropdown-menu > li > a, .primary-nav > li > a{ font-size: 1.25rem; font-weight: 300; display: inline-block; width: 100%; padding: 10px 15px; transition: 0.2s ease-in-out; -webkit-transition: 0.2s ease-in-out; text-transform: lowercase; color: rgb(35, 41, 39); }
 .navbar-nav{ -webkit-box-direction: normal; margin: 0px; padding: 0px; }
 .cart-container, .search-container{ -webkit-box-orient: vertical; -webkit-box-direction: normal; }
 .navbar-nav.primary-nav{ }
@@ -72,10 +72,10 @@ nav .dropdown-menu > li > a{ font-size: 16px; padding: 5px; }
 .search__suggestion h3::before{ content: ⇾; display: inline-block; padding: 0px 0.5em 0px 0px; }
  .search__suggestion p{ font-size: 1.15rem; line-height: 1.4; margin: 0.75em 0px 0px; }
 .js .cart-container, .js .search-container{ pointer-events: none; opacity: 0; transition: opacity 0.5s; -webkit-transition: opacity 0.5s; }
-.btn--search-close{ opacity: 0; -webkit-transform: scale3d(0.8, 0.8, 1); cursor: pointer; transition: opacity 0.5s, -webkit-transform; -webkit-transition: opacity 0.5s, -webkit-transform; }
+.btn--search-close{ opacity: 0; -webkit-transform: scale3d(0.8, 0.8, 1); cursor: pointer; -webkit-transition: opacity 0.5s, -webkit-transform; transition: opacity 0.5s, -webkit-transform; }
 .js .search__form, .search__suggestion{ opacity: 0; -webkit-transition: opacity 0.5s, -webkit-transform; transition: opacity 0.5s, -webkit-transform; }
-.js .search__form{ -webkit-transform: scale3d(0.8, 0.8, 1); transition: opacity 0.5s, -webkit-transform; -webkit-transition: opacity 0.5s, -webkit-transform; }
-.search__suggestion{ width: 50%; text-align: left; -webkit-transform: translate3d(0px, -30px, 0px); transition: opacity 0.5s 0.1s, -webkit-transform; -webkit-transition: opacity 0.5s 0.1s, -webkit-transform; pointer-events: auto; }
+.js .search__form{ -webkit-transform: scale3d(0.8, 0.8, 1); transition: 0.5s; -webkit-transition: 0.5s; }
+.search__suggestion{ width: 50%; text-align: left; -webkit-transform: translate3d(0px, -30px, 0px); transition: 0.5s 0.1s; -webkit-transition: 0.5s 0.1s; pointer-events: auto; }
 .btn--cart-close{ -webkit-transition: opacity 0.5s, -webkit-transform; transition: opacity 0.5s, -webkit-transform; }
 @media screen and (max-width: 40em){
 .search__form{ margin: 5em 0px 1em; }
@@ -87,7 +87,7 @@ nav .dropdown-menu > li > a{ font-size: 16px; padding: 5px; }
 .js .cart-container{ z-index: 1000; }
 .btn--cart-close{ font-size: 2rem; position: absolute; top: 1.25em; right: 1.25em; display: none; cursor: pointer; }
 .js .btn--cart-close{ display: block; }
-.btn--cart-close{ opacity: 0; -webkit-transform: scale3d(0.8, 0.8, 1); transition: opacity 0.5s, -webkit-transform; -webkit-transition: opacity 0.5s, -webkit-transform; }
+.btn--cart-close{ opacity: 0; -webkit-transform: scale3d(0.8, 0.8, 1); transition: 0.5s; -webkit-transition: 0.5s; }
 @media screen and (max-width: 40em){
 .btn--cart-close{ font-size: 1.25rem; top: 1.5em; right: 1.5em; }
 }
@@ -104,7 +104,7 @@ html{ font-size: 16px; }
 body, p{ font-family: lato, Lato, sans-serif; }
 p{ margin-bottom: 1rem; font-weight: lighter; }
  h3{ font-size: 1.75rem; }
- h3{ font-family: quicksand, Verdana, Tahoma, sans-serif; font-weight: 500; line-height: 1.1; color: inherit; }
+ h3{ font-family: merriweather, sans-serif; font-weight: 500; line-height: 1.1; color: inherit; }
 a{ text-decoration: none; background-color: transparent; color: rgb(60, 127, 120); }
 #logo svg{ max-width: 100%; }
 p{ font-size: 1.125rem; }
