@@ -11,18 +11,29 @@ $text-dark: #333;
 
 $link1: #111F29;
 $link2: #0C1918;
-$link3: #232927;
+$blackish: #232927;
 $link4: #B9E7F5;
+
+// V2
+$blue: #cdd4d6;
+$pink: #e4d7d8;
+// e1cfd1
+$rose: #d8c3ca;
+$green: #a9ab9a;
+$taupe: #ccb0a6;
+
 
 $brand-primary: $secondary-blue;
 // $link-color: darken($secondary-blue, 12%);
 $link-color: $secondary-blue;
 $link-color-hover: $primary-blue;
 
-$link-color: $link3;
+$link-color: $blackish;
 $link-color-hover: $secondary-blue;
+$link-hover-color: $link-color-hover;
 
-$btn-color: $link-color;
+// $btn-color: $link-color;
+$btn-color: $blackish;
 $btn-color-hover: $link4;
 
 $font-family-sans-serif: 'lato', 'Lato', sans-serif;
@@ -37,7 +48,7 @@ $table-border-color: $primary-blue;
 $table-bg-accent: lighten($primary-blue, 30%);
 $table-bg-hover: lighten($primary-blue, 20%);
 
-$link-hover-color: darken($link-color, 15%);
+// $link-hover-color: darken($link-color, 15%);
 
 // Extra small screen / phone
 //** Deprecated `$screen-xs` as of v3.0.1
