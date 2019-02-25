@@ -74,7 +74,7 @@ table.checkout-review .pane-data-full {
 }
 
 #commerce-braintree-tr-redirect-form > div > a {
-  border-radius: 5px;
+  // border-radius: 5px;
   margin-top: 15px;
   width: 100%;
   text-transform: lowercase;
@@ -158,9 +158,9 @@ ul.commerce-checkout-progress {
   .braintree-form .form-item {
     display: block;
     padding: 10px;
-    border: 1px solid $primary-blue;
+    // border: 1px solid $primary-blue;
     margin: 1rem 0;
-    border-radius: 3px;
+    // border-radius: 3px;
 
    & > label {
       display: block;
