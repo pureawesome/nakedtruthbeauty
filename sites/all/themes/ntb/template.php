@@ -20,9 +20,9 @@ function ntb_theme() {
  */
 function ntb_preprocess_page(&$vars) {
   $preload_fonts = [
-    'quicksand-regular-webfont.woff2',
+    'Merriweather-Regular.ttf',
     'fontawesome-webfont.woff2?v=4.6.3',
-    'quicksand-bold-webfont.woff2',
+    'Merriweather-Bold.ttf',
     'lato-bold-webfont.woff2',
     'lato-light-webfont.woff2',
     'lato-regular-webfont.woff2',
