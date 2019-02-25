@@ -152,8 +152,8 @@ ul.primary {
 
       &:hover {
         color: $link-color;
-        border-radius: 5px;
-        background: $secondary-blue;
+        // border-radius: 5px;
+        // background: $secondary-blue;
       }
     }
 
@@ -421,16 +421,16 @@ table {
     text-align: center;
     text-transform: lowercase;
 
-    color: #232927;
+    color: $blackish;
     border: 0;
-    border-radius: 5px;
-    background: #91cdc5;
+    // border-radius: 5px;
+    // background: #91cdc5;
   }
 }
 
 .front {
   .panel-pane {
-    min-height: 85vh;
+    // min-height: 85vh;
     border-bottom: 0px solid #eee;
     display: flex;
     justify-content: center;
