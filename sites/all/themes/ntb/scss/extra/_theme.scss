@@ -320,7 +320,7 @@ p {
   padding: 0;
 }
 
-#block-menu-menu-footer-menu {
+#block-menu-menu-footer-menu .content {
 ul {
   display: flex;
   flex-direction: row;
@@ -410,21 +410,25 @@ table {
   }
 
   ul li {
-    font-size: 1rem;
+    // font-size: 1rem;
+    //
+    // display: inline-block;
+    //
+    // width: 100%;
+    // margin: 0 0 5px;
+    // padding: 6px;
+    //
+    // text-align: center;
+    // text-transform: lowercase;
 
-    display: inline-block;
-
-    width: 100%;
-    margin: 0 0 5px;
-    padding: 6px;
-
-    text-align: center;
-    text-transform: lowercase;
-
-    color: $blackish;
-    border: 0;
+    // color: $blackish;
+    // border: 0;
     // border-radius: 5px;
     // background: #91cdc5;
+
+    .field-content {
+      @include inline-button();
+    }
   }
 }
 
@@ -465,22 +469,29 @@ table {
   display: flex;
   align-items: center;
   margin: 1rem 0;
-  max-height: 55px;
+  height: 120px;
+  padding: 0 2rem;
 
   & > * {
     display: flex;
     align-items: center;
   }
 
-  .nav-primary-wrapper,
-  .nav-secondary-wrapper {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: calc(50% - 80px);
+  .nav-primary-wrapper {
+    flex: 1 1 auto;
+  }
 
-    @include breakpoint($screen-sm) {
-      flex-basis: calc(50% - 160px);
-    }
+  .nav-secondary-wrapper {
+    flex: 0 0 auto;
+  }
+  .nav-secondary-wrapper {
+    // flex-grow: 1;
+    // flex-shrink: 1;
+    // flex-basis: calc(50% - 80px);
+    //
+    // @include breakpoint($screen-sm) {
+    //   flex-basis: calc(50% - 160px);
+    // }
   }
 
   .nav-primary-wrapper {
@@ -497,6 +508,7 @@ table {
 
     @include breakpoint($screen-sm) {
       flex-basis: 250px;
+      margin-right: 20px;
     }
   }
 }
@@ -506,17 +518,17 @@ table {
     display: block;
     width: 100%;
 
-    @include breakpoint($screen-sm) {
-      display: none;
-    }
+    // @include breakpoint($screen-sm) {
+    //   display: none;
+    // }
   }
 
   &.nav {
     display: none;
     width: auto;
 
-    @include breakpoint($screen-sm) {
-      display: block;
-    }
+    // @include breakpoint($screen-sm) {
+    //   display: block;
+    // }
   }
 }

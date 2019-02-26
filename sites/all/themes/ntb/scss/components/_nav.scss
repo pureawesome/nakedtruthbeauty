@@ -33,18 +33,20 @@ nav {
 
 .primary-nav > li > a,
 .dropdown-menu > li > a {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 300;
 
   display: inline-block;
 
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px 20px;
 
   transition: all 0.2s ease-in-out;
   text-transform: lowercase;
 
   color: $link-color;
+
+  font-family: $font-family-serif;
 
   &:hover,
   &:focus {
