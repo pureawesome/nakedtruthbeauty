@@ -9,39 +9,53 @@
   .views-row {
     text-align: center;
 
+    .field-content {
+      @include inline-button();
+    }
+
     @supports(display: grid) {
       grid-column: span 6;
       margin: 0;
     }
   }
 
-  @include breakpoint($screen-xs) {
-    .views-row {
-      display: inline-block;
-      text-transform: lowercase;
-      font-size: 1.25rem;
-      margin: 0 25px;
-
-      @supports(display: grid) {
-        grid-column: span 4;
-        margin: 0;
-      }
-    }
+  .view-content {
+    display: flex;
+    // flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
-  @include breakpoint($screen-sm) {
-    .view-content {
-      display: flex;
-      flex-direction: column;
-    }
+  // @include breakpoint($screen-xs) {
+  //   .views-row {
+  //     display: inline-block;
+  //     text-transform: lowercase;
+  //     font-size: 1.25rem;
+  //     margin: 0 25px;
+  //
+  //     @supports(display: grid) {
+  //       grid-column: span 4;
+  //       margin: 0;
+  //     }
+  //   }
+  // }
 
+  // @include breakpoint($screen-sm) {
+  //   .view-content {
+  //     display: flex;
+  //     // flex-direction: column;
+  //     flex-direction: row;
+  //     justify-content: center;
+  //   }
+  //
     .views-row {
       display: block;
       text-align: center;
-      margin: 10px 0;
-      width: 100%;
+      margin: 10px;
+      // width: 100%;
     }
-  }
+  // }
 }
 
 .view-shop {

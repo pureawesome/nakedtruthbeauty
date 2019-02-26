@@ -18,15 +18,18 @@
   text-transform: lowercase;
   // background: $primary-blue;
   background: transparent;
-  border: 3px solid $btn-color;
+  // border: 3px solid $btn-color;
   margin: 0 0 5px 0;
   padding: 2px 5px;
   display: inline-block;
   // border-radius: 5px;
   border-radius: 0;
   color: $btn-color;
-  font-size: 1rem;
-  padding: 6px;
+  font-size: 0.875rem;
+  padding: 10px 20px;
+  color: #fff;
+  background:  $pink;
+  text-transform: uppercase;
 
   &:hover {
     // background: $secondary-blue;
@@ -35,6 +38,7 @@
     text-decoration: none;
 
     a {
+      color: #fff;
       // color: $btn-color-hover;
     }
   }

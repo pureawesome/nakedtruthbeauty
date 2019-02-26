@@ -46,8 +46,12 @@
   }
 
   img {
-    max-width: 100%;
-    height: auto !important;
+    object-fit: cover;
+    position: absolute;
+    height: 98% !important;
+    width: 98% !important;
+    left: 0;
+    top: 0;
   }
 
   .pane-content {
@@ -58,8 +62,18 @@
         flex-wrap: wrap;
     width: 100%;
   }
-}
 
+  a:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  a {
+    position: relative;
+    width: 33.333%;
+  }
+}
 
 .view-front-tiles {
   .views-row {
