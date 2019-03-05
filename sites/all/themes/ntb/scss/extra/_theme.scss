@@ -105,15 +105,17 @@ tr.even,
 tr.odd,
 legend {
   border-bottom: $border-default;
+  border-bottom: 1px solid #f3f3f3;
 }
 
 tbody {
-  border-top: $border-default;
+  border-top: $blackish;
 }
 
 tr.even,
 tr.odd {
   background: $table-bg-accent;
+  background: $white;
 }
 
 table thead th,
@@ -410,6 +412,7 @@ table {
   }
 
   ul li {
+    list-style: none;
     // font-size: 1rem;
     //
     // display: inline-block;
@@ -532,3 +535,18 @@ table {
     // }
   }
 }
+
+// .row {
+//   &:after {
+//     content: "";
+//     width: 100%;
+//     /* margin: 0 20px; */
+//     height: 1px;
+//     background: #f3f3f3;
+//     /* position: absolute; */
+//     display: block;
+//     position: relative;
+//     grid-column: span 12;
+//     margin-top: -1rem;
+//   }
+// }

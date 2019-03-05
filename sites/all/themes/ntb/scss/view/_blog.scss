@@ -1,10 +1,10 @@
 .view-blog {
   .views-row {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     padding-bottom: 2rem;
 
-    border-bottom: 0.5px solid $secondary-blue;
+    border-bottom: 0.5px solid #f3f3f3;
     grid-column: 12 span;
   }
 
@@ -12,6 +12,12 @@
     display: inline-block;
 
     margin-right: 15px;
+  }
+}
+
+.node-type-article {
+  .panel-pane {
+    padding: 0;
   }
 }
 
@@ -122,6 +128,7 @@ ul.blog-meta {
 
       li {
         @include inline-button();
+        font-size: 0.6rem;
       }
     }
   }

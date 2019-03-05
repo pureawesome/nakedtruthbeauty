@@ -46,17 +46,18 @@ nav{ -webkit-box-direction: normal; width: 100%; margin-bottom: 0px; border: non
 .dropdown-menu > li > a, .primary-nav > li > a{ font-size: 1.125rem; font-weight: 300; display: inline-block; width: 100%; padding: 10px 20px; transition: 0.2s ease-in-out; -webkit-transition: 0.2s ease-in-out; text-transform: lowercase; color: rgb(35, 41, 39); font-family: merriweather, sans-serif; }
 .navbar-nav{ -webkit-box-direction: normal; margin: 0px; padding: 0px; }
 .cart-container, .search-container{ -webkit-box-orient: vertical; -webkit-box-direction: normal; }
+.dropdown-menu{ padding: 0px 1rem; }
 .navbar-nav.primary-nav{ }
 .navbar-nav > li{ display: inline-block; margin: 0px; padding: 0px; }
-.dropdown-menu{ display: none; min-width: 200px; max-width: 50%; padding: 0px 1rem; border: 1px solid rgb(35, 41, 39); border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial; }
+.dropdown-menu{ display: none; min-width: 200px; max-width: 50%; border: 1px solid rgb(35, 41, 39); border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial; }
  .dropdown-menu > li.leaf{ list-style: none; }
 nav .dropdown-menu > li > a{ font-size: 16px; padding: 5px; }
 .dropdown > a::after{ display: inline-block; font-size: inherit; -webkit-font-smoothing: antialiased; margin-left: 5px; content: ; }
 .dropdown-menu-right{ right: 0px; }
-.overlay{ background-image: linear-gradient(rgba(145, 205, 197, 0.901961), rgba(255, 204, 153, 0.901961)); top: 0px; right: 0px; left: 0px; bottom: 0px; background-position: initial initial; background-repeat: initial initial; }
+.overlay{ background-color: rgb(255, 255, 255); top: 0px; right: 0px; left: 0px; bottom: 0px; background-position: initial initial; background-repeat: initial initial; }
 .overlay .close{ top: 15px; right: 15px; }
 .js .cart-container, .js .search-container{ position: fixed; width: 100%; height: 100vh; left: 0px; }
-.overlay .close i{ font-size: 2.25rem; color: rgb(255, 204, 153); }
+.overlay .close i{ font-size: 2.25rem; color: rgb(35, 41, 39); }
 .ajax-shopping-cart-wrapper, .search-container-wrapper{ width: auto; }
 .cart-container, .search-container{ display: -webkit-box; -webkit-box-pack: center; -webkit-box-align: center; text-align: center; background-color: rgba(18, 23, 56, 0.901961); position: absolute; top: 36px; right: 0px; background-position: initial initial; background-repeat: initial initial; }
  .search__input{ font-family: inherit; line-height: 1; color: rgb(51, 51, 51); background-position: 0px 0px; background-repeat: initial initial; }
@@ -99,8 +100,8 @@ nav .dropdown-menu > li > a{ font-size: 16px; padding: 5px; }
 #logo{ width: 260px; }
 }
 .navbar, .navbar > *{ display: -webkit-box; -webkit-box-align: center; }
-.btn{ border: 0px; text-align: center; width: auto; background-color: rgb(228, 215, 216); margin: 0px 0px 5px; padding: 10px 20px; display: inline-block; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; font-size: 0.875rem; color: rgb(255, 255, 255); text-transform: uppercase; background-position: initial initial; background-repeat: initial initial; }
 .cart-container, .search-container{ opacity: 0; }
+ .btn{ border: 0px; text-align: center; width: auto; background-color: rgb(228, 215, 216); margin: 0px 0px 5px; padding: 10px 20px; display: inline-block; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; font-size: 0.875rem; color: rgb(255, 255, 255); text-transform: uppercase; background-position: initial initial; background-repeat: initial initial; }
 html{ font-size: 16px; }
 body, p{ font-family: lato, Lato, sans-serif; }
 p{ margin-bottom: 1rem; font-weight: lighter; }

@@ -1,5 +1,6 @@
 .overlay {
-  background: linear-gradient(rgba($primary-blue, 0.9),rgba($primary-peach, 0.9));
+  // background: linear-gradient(rgba($primary-blue, 0.9),rgba($primary-peach, 0.9));
+  background: rgba(255, 255, 255, 1);
   position: absolute;
   top: 0;
   right: 0;
@@ -13,7 +14,7 @@
 
     i {
       font-size: 2.25rem;
-      color: $primary-peach;
+      color: $blackish;
     }
   }
 }
