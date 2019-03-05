@@ -550,3 +550,11 @@ table {
 //     margin-top: -1rem;
 //   }
 // }
+.page-user-orders {
+  .view-commerce-user-orders,
+  .view-commerce-line-item-table {
+    .table {
+      grid-column: 12 span;
+    }
+  }
+}
