@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * site_products.views_default.inc

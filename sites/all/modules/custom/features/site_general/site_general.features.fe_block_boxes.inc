@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * site_general.features.fe_block_boxes.inc
@@ -23,6 +24,8 @@ function site_general_default_fe_block_boxes() {
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'ntb_mission';
   $fe_block_boxes->body = '<div>
+<h1 class="sr-only">Naked Truth Beauty</h1>
+
 <p>&nbsp;</p>
 
 <h2 class="rtecenter"><span class="color-secondary">SOCIALLY RESPONSIBLE COSMETICS</span></h2>

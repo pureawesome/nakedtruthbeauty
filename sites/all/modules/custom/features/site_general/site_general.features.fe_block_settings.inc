@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * site_general.features.fe_block_settings.inc
@@ -77,7 +78,7 @@ function site_general_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -30,
+        'weight' => -33,
       ),
       'seven' => array(
         'region' => '',

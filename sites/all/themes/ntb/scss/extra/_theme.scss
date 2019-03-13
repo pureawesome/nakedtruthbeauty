@@ -188,6 +188,10 @@ ul.primary {
       content: $fa-var-instagram;
     }
 
+    &.pinterest:before {
+      content: $fa-var-pinterest;
+    }
+
     &:hover {
       &:before {
         color: darken($secondary-blue, 15%);
@@ -557,4 +561,43 @@ table {
       grid-column: 12 span;
     }
   }
+}
+
+
+#mc_embed_signup input.email {
+    font-size: 15px;
+    padding: 0 0.4em;
+    min-height: 32px;
+    width: 58%;
+    min-width: 130px;
+    margin-bottom: 11px;
+}
+
+#mc_embed_signup input {
+    -webkit-appearance: none;
+    margin: 0 auto 10px;
+    display: block;
+border: 0;
+}
+
+#mc_embed_signup input.submit {
+margin-bottom: 22px;
+}
+
+#mc_embed_signup input.submit:hover {
+background: #232927;
+}
+
+#mc_embed_signup h3,
+#mc_embed_signup h2 {
+margin-top: 20px;
+text-align:center;
+color: #232927;
+}
+
+
+#mc_embed_signup {
+background: rgba(228, 215, 216, 0.55);
+padding: 10px;
+margin: 20px -30px;
 }

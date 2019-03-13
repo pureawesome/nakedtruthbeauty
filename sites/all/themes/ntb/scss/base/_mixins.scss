@@ -31,6 +31,10 @@
   background:  $pink;
   text-transform: uppercase;
 
+  a {
+    color: #fff;
+  }
+
   &:hover {
     // background: $secondary-blue;
     background: $pink;
@@ -38,7 +42,7 @@
     text-decoration: none;
 
     a {
-      color: #fff;
+      color: $btn-color;
       // color: $btn-color-hover;
     }
   }

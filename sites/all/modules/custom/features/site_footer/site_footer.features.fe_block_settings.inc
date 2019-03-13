@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * site_footer.features.fe_block_settings.inc
@@ -12,10 +13,10 @@ function site_footer_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-footer_menu'] = array(
+  $export['block-mailchimp'] = array(
     'cache' => -1,
     'custom' => 0,
-    'machine_name' => 'footer_menu',
+    'machine_name' => 'mailchimp',
     'module' => 'block',
     'node_types' => array(),
     'pages' => '',
@@ -25,7 +26,7 @@ function site_footer_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -31,
+        'weight' => -36,
       ),
       'seven' => array(
         'region' => '',
