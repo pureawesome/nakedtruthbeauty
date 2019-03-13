@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * site_metatag.features.metatag.inc
@@ -65,6 +66,9 @@ function site_metatag_metatag_export_default() {
       'canonical' => array(
         'value' => '[current-page:url:absolute]',
       ),
+      'set_cookie' => array(
+        'value' => '',
+      ),
       'shortlink' => array(
         'value' => '[current-page:url:unaliased]',
       ),
@@ -106,6 +110,73 @@ function site_metatag_metatag_export_default() {
         'value' => '',
       ),
       'expires' => array(
+        'value' => '',
+      ),
+      'shortcut icon' => array(
+        'value' => '',
+      ),
+      'mask-icon' => array(
+        'value' => '',
+        'color' => '',
+      ),
+      'icon_16x16' => array(
+        'value' => '',
+      ),
+      'icon_32x32' => array(
+        'value' => '',
+      ),
+      'icon_96x96' => array(
+        'value' => 'https://nakedtruthbeauty.com/offline/logo-96.png',
+      ),
+      'icon_192x192' => array(
+        'value' => 'https://nakedtruthbeauty.com/offline/logo-192.png',
+      ),
+      'apple-touch-icon' => array(
+        'value' => 'https://nakedtruthbeauty.com/offline/logo-60.png',
+      ),
+      'apple-touch-icon_72x72' => array(
+        'value' => '',
+      ),
+      'apple-touch-icon_76x76' => array(
+        'value' => 'https://nakedtruthbeauty.com/offline/logo-76.png',
+      ),
+      'apple-touch-icon_114x114' => array(
+        'value' => '',
+      ),
+      'apple-touch-icon_120x120' => array(
+        'value' => 'https://nakedtruthbeauty.com/offline/logo-120.png',
+      ),
+      'apple-touch-icon_144x144' => array(
+        'value' => '',
+      ),
+      'apple-touch-icon_152x152' => array(
+        'value' => 'https://nakedtruthbeauty.com/offline/logo-152.png',
+      ),
+      'apple-touch-icon_180x180' => array(
+        'value' => 'https://nakedtruthbeauty.com/offline/logo-180.png',
+      ),
+      'apple-touch-icon-precomposed' => array(
+        'value' => '',
+      ),
+      'apple-touch-icon-precomposed_72x72' => array(
+        'value' => '',
+      ),
+      'apple-touch-icon-precomposed_76x76' => array(
+        'value' => '',
+      ),
+      'apple-touch-icon-precomposed_114x114' => array(
+        'value' => '',
+      ),
+      'apple-touch-icon-precomposed_120x120' => array(
+        'value' => '',
+      ),
+      'apple-touch-icon-precomposed_144x144' => array(
+        'value' => '',
+      ),
+      'apple-touch-icon-precomposed_152x152' => array(
+        'value' => '',
+      ),
+      'apple-touch-icon-precomposed_180x180' => array(
         'value' => '',
       ),
       'theme-color' => array(
