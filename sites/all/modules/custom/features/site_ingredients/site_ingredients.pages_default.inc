@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * site_ingredients.pages_default.inc
@@ -16,7 +17,10 @@ function site_ingredients_default_page_manager_pages() {
   $page->admin_title = 'Ingredients';
   $page->admin_description = '';
   $page->path = 'ingredients';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Ingredients',
@@ -77,43 +81,45 @@ function site_ingredients_default_page_manager_pages() {
   $display->cache = array();
   $display->title = 'ingredients';
   $display->uuid = '15c7e1ab-45c9-46f5-8469-5a06980037ba';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_ingredients__panel';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-a580a4e7-48ad-4412-9eaf-e6fb3b65c6a4';
-    $pane->panel = 'bottom';
-    $pane->type = 'views';
-    $pane->subtype = 'ingredients';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'block',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'a580a4e7-48ad-4412-9eaf-e6fb3b65c6a4';
-    $display->content['new-a580a4e7-48ad-4412-9eaf-e6fb3b65c6a4'] = $pane;
-    $display->panels['bottom'][0] = 'new-a580a4e7-48ad-4412-9eaf-e6fb3b65c6a4';
+  $pane = new stdClass();
+  $pane->pid = 'new-a580a4e7-48ad-4412-9eaf-e6fb3b65c6a4';
+  $pane->panel = 'bottom';
+  $pane->type = 'views';
+  $pane->subtype = 'ingredients';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'block',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'a580a4e7-48ad-4412-9eaf-e6fb3b65c6a4';
+  $display->content['new-a580a4e7-48ad-4412-9eaf-e6fb3b65c6a4'] = $pane;
+  $display->panels['bottom'][0] = 'new-a580a4e7-48ad-4412-9eaf-e6fb3b65c6a4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-a580a4e7-48ad-4412-9eaf-e6fb3b65c6a4';
   $handler->conf['display'] = $display;

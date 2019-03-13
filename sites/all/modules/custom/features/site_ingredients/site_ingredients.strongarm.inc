@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * site_ingredients.strongarm.inc
@@ -87,12 +88,6 @@ function site_ingredients_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
-        'custom_settings' => FALSE,
-      ),
-      'slider' => array(
-        'custom_settings' => FALSE,
-      ),
-      'product' => array(
         'custom_settings' => FALSE,
       ),
     ),
