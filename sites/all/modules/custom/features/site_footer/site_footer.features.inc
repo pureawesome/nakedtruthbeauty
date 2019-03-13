@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * site_footer.features.inc
