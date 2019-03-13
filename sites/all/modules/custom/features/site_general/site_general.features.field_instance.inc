@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * site_general.features.field_instance.inc
@@ -267,7 +268,7 @@ function site_general_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_primary_image',
     'label' => 'Primary Image',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
