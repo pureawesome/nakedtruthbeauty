@@ -582,10 +582,7 @@ border: 0;
 
 #mc_embed_signup input.submit {
 margin-bottom: 22px;
-}
-
-#mc_embed_signup input.submit:hover {
-background: #232927;
+@include inline-button();
 }
 
 #mc_embed_signup h3,
