@@ -44,6 +44,18 @@
     </div>
   <?php endif; ?>
 
+  <?php if ($content['middle-bottom-left'] || $content['middle-bottom-right']): ?>
+    <div class="row">
+      <div class="panel-panel panel-col col-sm-8 g-st-1">
+        <?php if ($content['middle-bottom-left']): ?><?php print $content['middle-bottom-left']; ?><?php endif; ?>
+      </div>
+
+      <div class="panel-panel panel-col col-sm-4 g-st-9">
+        <?php if ($content['middle-bottom-right']): ?><?php print $content['middle-bottom-right']; ?><?php endif; ?>
+      </div>
+    </div>
+  <?php endif; ?>
+
   <?php if ($content['lower-left'] || $content['lower-middle'] || $content['lower-right']): ?>
     <div class="row">
       <div class="panel-panel panel-col col-sm-2 g-st-1">

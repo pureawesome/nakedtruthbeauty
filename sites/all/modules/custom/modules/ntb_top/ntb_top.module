@@ -17,6 +17,10 @@ function ntb_top_block_info() {
     'info' => t('NTB top 4'),
   );
 
+  $blocks['ntb_top_blog_3'] = array(
+    'info' => t('NTB top 3 blog posts'),
+  );
+
   return $blocks;
 }
 
@@ -69,6 +73,44 @@ function ntb_top_block_configure($delta = '') {
     ];
   }
 
+  if ($delta == 'ntb_top_blog_3') {
+    $form = [];
+    $type = 'article';
+    $query = [];
+
+    $query = db_select('node', 'n')
+      ->fields('n')
+      ->condition('type', $type)
+      ->condition('status', 1)
+      ->execute()
+      ->fetchAll();
+
+    foreach ($query as $value) {
+      $options[$value->nid] = $value->title;
+    }
+
+    $form['ntb_top_blog_one'] = [
+      '#type' => 'select',
+      '#title' => t('NTB Top Blog One'),
+      '#options' => $options,
+      '#default_value' => variable_get('ntb_top_blog_one', NULL),
+    ];
+
+    $form['ntb_top_blog_two'] = [
+      '#type' => 'select',
+      '#title' => t('NTB Top Blog Two'),
+      '#options' => $options,
+      '#default_value' => variable_get('ntb_top_blog_two', NULL),
+    ];
+
+    $form['ntb_top_blog_three'] = [
+      '#type' => 'select',
+      '#title' => t('NTB Top Blog Three'),
+      '#options' => $options,
+      '#default_value' => variable_get('ntb_top_blog_three', NULL),
+    ];
+  }
+
   return $form;
 }
 
@@ -78,6 +120,14 @@ function ntb_top_block_configure($delta = '') {
 function ntb_top_block_save($delta = '', $edit = array()) {
   if ($delta == 'ntb_top_3' || $delta == 'ntb_top_4') {
     $tops = ['ntb_top_four', 'ntb_top_three', 'ntb_top_two', 'ntb_top_one'];
+
+    foreach ($tops as $top) {
+      variable_set($top, $edit[$top]);
+    }
+  }
+
+  if ($delta == 'ntb_top_blog_3') {
+    $tops = ['ntb_top_blog_three', 'ntb_top_blog_two', 'ntb_top_blog_one'];
 
     foreach ($tops as $top) {
       variable_set($top, $edit[$top]);
@@ -98,6 +148,10 @@ function ntb_top_block_view($delta = '') {
 
     case 'ntb_top_3':
       $block['content'] = ntb_top_build_display(3);
+      break;
+
+    case 'ntb_top_blog_3':
+      $block['content'] = ntb_top_blog_build_display(3);
       break;
   }
 
@@ -133,6 +187,67 @@ function ntb_top_build_display($num) {
     $node_displays[] = render($node_view);
   }
   $class = ['ntb-top'];
+  $class[] = $num == 3 ? 'three-item' : 'four-item';
+
+  $output = [
+    '#theme' => 'item_list',
+    '#items' => $node_displays,
+    '#attributes' => [
+      'class' => $class,
+    ],
+  ];
+
+  return render($output);
+}
+
+/**
+ * Build block display.
+ *
+ * @param int $num
+ *   The total number to show.
+ *
+ * @return string
+ *   HTML output of list items.
+ */
+function ntb_top_blog_build_display($num) {
+  $fields = ['ntb_top_blog_three', 'ntb_top_blog_two', 'ntb_top_blog_one'];
+  $nids = [];
+
+  foreach ($fields as $field) {
+    $nids[] = variable_get($field, NULL);
+  }
+
+  $nodes = node_load_multiple($nids);
+
+  $node_displays = [];
+  foreach ($nodes as $node) {
+    // xdebug_break();
+    // dpm($node);
+    $output = '';
+    $output .= '<h4>' . $node->title . '</h4>';
+
+    $image_arr = $node->field_primary_image[LANGUAGE_NONE][0];
+    [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $node->title);
+
+    $img_array = [
+      '#theme' => 'image_style',
+      '#style_name' => 'square_500x500',
+      '#path' => $image_arr['uri'],
+      '#alt' => $image_alt,
+      '#title' => $image_title,
+    ];
+
+
+
+    $output .= '<p>';
+    $output .= drupal_render($img_array);
+    $output .= '</p>';
+    $node_displays[] = $output;
+    // $node_view = node_view($node, 'teaser', NULL);
+    // $node_displays[] = render($node_view);
+
+  }
+  $class = ['ntb-top-blog'];
   $class[] = $num == 3 ? 'three-item' : 'four-item';
 
   $output = [

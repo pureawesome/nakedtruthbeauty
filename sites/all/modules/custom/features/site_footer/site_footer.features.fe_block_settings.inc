@@ -13,6 +13,32 @@ function site_footer_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-footer_menu_copyright'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'footer_menu_copyright',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ntb' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'ntb',
+        'weight' => -32,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['block-mailchimp'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -26,7 +52,7 @@ function site_footer_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -36,
+        'weight' => -35,
       ),
       'seven' => array(
         'region' => '',

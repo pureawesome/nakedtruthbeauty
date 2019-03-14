@@ -13,6 +13,32 @@ function site_general_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-css_fixes'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'css_fixes',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ntb' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'ntb',
+        'weight' => -31,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['block-line_break'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -192,6 +218,32 @@ function site_general_default_fe_block_settings() {
       ),
     ),
     'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['ntb_top-ntb_top_blog_3'] = array(
+    'cache' => 1,
+    'custom' => 0,
+    'delta' => 'ntb_top_blog_3',
+    'module' => 'ntb_top',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'ntb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ntb',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'popular articles',
     'visibility' => 0,
   );
 
