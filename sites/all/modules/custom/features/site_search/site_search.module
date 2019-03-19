@@ -48,7 +48,7 @@ function site_search_preprocess_node(&$vars) {
   if ($vars['view_mode'] == 'search') {
     $vars['theme_hook_suggestions'][] = 'node__search';
 
-    if (isset($vars['field_primary_image'])) {
+    if (isset($vars['field_primary_image']) && !empty($vars['field_primary_image'])) {
       $image_arr = $vars['field_primary_image'][0];
       [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $vars['node']->title);
       $img_array = [

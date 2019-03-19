@@ -121,7 +121,7 @@
   }
 
   .node-type-product-display #product-title {
-    text-align: center;
+    text-align: left;
     display: block;
   }
 
@@ -142,6 +142,25 @@
 
   .field-name-commerce-price {
     font-size: 1.625rem;
+  }
+
+  .field-name-commerce-price,
+  .field-name-field-product {
+    display: block;
+    width: 100%;
+
+    & > div {
+      width: auto;
+      float: left;
+    }
+  }
+
+  .product-body .item-list {
+    width: 100%;
+    text-align: left;
+    li {
+      margin: 0;
+    }
   }
 }
 

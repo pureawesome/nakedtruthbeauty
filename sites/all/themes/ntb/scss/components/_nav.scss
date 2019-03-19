@@ -52,7 +52,7 @@ nav {
   &:focus {
     text-decoration: none;
 
-    color: $link-color-hover;
+    color: $gray;
   }
 }
 
@@ -86,7 +86,7 @@ nav {
     &,
     &:hover,
     &:focus {
-      color: $link-color-hover;
+      color: $gray;
       background: #fff;
     }
   }
@@ -118,7 +118,7 @@ nav {
 
   & > li > a:hover,
   & > li > a:focus {
-    color: $link-color-hover;
+    color: $gray;
     background: $white;
   }
 
@@ -161,56 +161,6 @@ nav {
 .dropdown-menu-right {
   right: 0;
 }
-
-// .custom-user-menu .user-dropdown {
-//   display: block;
-// }
-
-// nav .navbar-nav > li > a {
-//   padding: 10px 15px;
-//   color: $link-color;
-//
-//   &:hover {
-//     color: $link-color-hover;
-//   }
-// }
-
-// nav .navbar-nav
-// }
-//
-// nav .navbar-nav .open .dropdown-menu > li > a {
-//   color: $link-color;
-//
-//   &:hover {
-//     color: $link-color-hover;
-//   }
-// }
-//
-// nav .navbar-nav > .active > a {
-//   &,
-//   &:hover,
-//   &:focus {
-//     background: transparent;
-//   }
-// }
-//
-// nav .navbar-nav.inline {
-//   width: auto;
-// }
-//
-// nav {
-//   text-align: center;
-//
-//   .navbar-collapse {
-//     background: $white;
-//   }
-// }
-// nav .navbar-nav > li > a {
-//   &:hover,
-//   &:focus {
-//     color: $link-color-hover;
-//   }
-// }
 
 #secondary-menu {
   display: none;
