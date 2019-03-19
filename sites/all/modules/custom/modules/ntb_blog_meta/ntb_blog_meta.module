@@ -40,7 +40,6 @@ function ntb_blog_meta_block_view($delta = '') {
 function ntb_blog_meta_build_display() {
   $node = menu_get_object();
   $items = [];
-  dpm($node);
   if ($node) {
     $author = views_embed_view('blog_authored', 'default', $node->nid);
   }

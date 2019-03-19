@@ -221,8 +221,6 @@ function ntb_top_blog_build_display($num) {
 
   $node_displays = [];
   foreach ($nodes as $node) {
-    // xdebug_break();
-    // dpm($node);
     $output = '';
     $output .= '<h4>' . $node->title . '</h4>';
 
