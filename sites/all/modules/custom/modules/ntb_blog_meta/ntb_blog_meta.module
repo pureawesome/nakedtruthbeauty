@@ -39,40 +39,44 @@ function ntb_blog_meta_block_view($delta = '') {
  */
 function ntb_blog_meta_build_display() {
   $node = menu_get_object();
+  $items = [];
+  dpm($node);
   if ($node) {
-    $items = [];
     $author = views_embed_view('blog_authored', 'default', $node->nid);
-    $about = "<p>Hi! I'm Lauren.</p><p>This is some stuff about me</p>";
-    // $changed = '<p><span>Updated:</span> ' . format_date($node->changed, 'custom', 'F j, Y') . '</p>';
-    $aff = 0;
-    if (isset($node->field_uses_affiliate_links) && !empty($node->field_uses_affiliate_links)) {
-      $aff = $node->field_uses_affiliate_links[LANGUAGE_NONE][0]['value'];
-    }
-
-    $items[] = $author;
-    $items[] = $about;
-    // $items[] = $changed;
-
-    if ($aff === 1) {
-      $items[] = '<span>Uses affiliate links</span>';
-    }
-
-    if (module_exists('service_links')) {
-      $social = module_invoke('service_links', 'block_view', 'service_links');
-      $items[] = $social['content'];
-    }
-
-    $output = [
-      '#theme' => 'item_list',
-      '#items' => $items,
-      '#attributes' => [
-        'class' => [
-          'blog-meta',
-          'clean-list',
-        ],
-      ],
-    ];
-
-    return render($output);
   }
+  else {
+    $author = views_embed_view('blog_authored', 'default', 89);
+  }
+  $about = "<p>Hi! I'm Lauren.</p><p>This is some stuff about me</p>";
+  // $changed = '<p><span>Updated:</span> ' . format_date($node->changed, 'custom', 'F j, Y') . '</p>';
+  $aff = 0;
+  if (isset($node->field_uses_affiliate_links) && !empty($node->field_uses_affiliate_links)) {
+    $aff = $node->field_uses_affiliate_links[LANGUAGE_NONE][0]['value'];
+  }
+
+  $items[] = $author;
+  $items[] = $about;
+  // $items[] = $changed;
+
+  if ($aff === 1) {
+    $items[] = '<span>Uses affiliate links</span>';
+  }
+
+  if (module_exists('service_links')) {
+    $social = module_invoke('service_links', 'block_view', 'service_links');
+    $items[] = $social['content'];
+  }
+
+  $output = [
+    '#theme' => 'item_list',
+    '#items' => $items,
+    '#attributes' => [
+      'class' => [
+        'blog-meta',
+        'clean-list',
+      ],
+    ],
+  ];
+
+  return render($output);
 }

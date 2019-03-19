@@ -6,6 +6,7 @@
 
     border-bottom: 0.5px solid #f3f3f3;
     grid-column: 12 span;
+    grid-column-gap: 2rem;
   }
 
   .field-name-field-tags .field-item {
@@ -76,17 +77,17 @@ ul.blog-meta {
 
     display: inline-block;
 
-    &:after {
-      display: inline-block;
-
-      margin: 0 10px;
-
-      content: '|';
-    }
-
-    &:last-child:after {
-      content:'';
-    }
+    // &:after {
+    //   display: inline-block;
+    //
+    //   margin: 0 10px;
+    //
+    //   content: '|';
+    // }
+    //
+    // &:last-child:after {
+    //   content:'';
+    // }
   }
 
   & > li {
