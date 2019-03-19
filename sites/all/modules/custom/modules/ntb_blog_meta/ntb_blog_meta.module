@@ -43,7 +43,7 @@ function ntb_blog_meta_build_display() {
     $items = [];
     $author = views_embed_view('blog_authored', 'default', $node->nid);
     $about = "<p>Hi! I'm Lauren.</p><p>This is some stuff about me</p>";
-    $changed = '<p><span>Updated:</span> ' . format_date($node->changed, 'custom', 'F j, Y') . '</p>';
+    // $changed = '<p><span>Updated:</span> ' . format_date($node->changed, 'custom', 'F j, Y') . '</p>';
     $aff = 0;
     if (isset($node->field_uses_affiliate_links) && !empty($node->field_uses_affiliate_links)) {
       $aff = $node->field_uses_affiliate_links[LANGUAGE_NONE][0]['value'];
@@ -51,7 +51,7 @@ function ntb_blog_meta_build_display() {
 
     $items[] = $author;
     $items[] = $about;
-    $items[] = $changed;
+    // $items[] = $changed;
 
     if ($aff === 1) {
       $items[] = '<span>Uses affiliate links</span>';

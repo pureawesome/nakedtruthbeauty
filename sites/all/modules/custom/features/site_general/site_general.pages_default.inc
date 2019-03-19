@@ -310,7 +310,7 @@ function site_general_default_page_manager_handlers() {
     'term_delimiter' => ', ',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => 'article tags',
+    'override_title_text' => 'search by tag',
     'override_title_heading' => 'h3',
   );
   $pane->cache = array();
@@ -593,7 +593,10 @@ function site_general_default_page_manager_pages() {
   $page->admin_title = 'Front Page';
   $page->admin_description = '';
   $page->path = 'home';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => '',

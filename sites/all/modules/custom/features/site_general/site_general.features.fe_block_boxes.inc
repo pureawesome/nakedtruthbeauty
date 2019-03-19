@@ -116,6 +116,15 @@ margin: 0 10px;
   $export['css_fixes'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'free_shipping';
+  $fe_block_boxes->format = 'raw_html';
+  $fe_block_boxes->machine_name = 'free_shipping';
+  $fe_block_boxes->body = '<div class="alert-banner" style="text-align:center; color: #333;width: 100%; background: #e4d7d8">FREE SHIPPING ON ORDERS OVER $50</div>
+';
+
+  $export['free_shipping'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'line_break';
   $fe_block_boxes->format = 'raw_html';
   $fe_block_boxes->machine_name = 'line_break';

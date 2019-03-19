@@ -19,6 +19,10 @@
   .panel-pane {
     padding: 0;
   }
+
+  .row {
+    grid-column-gap: 2rem;
+  }
 }
 
 .view-blog-authored {
@@ -61,6 +65,11 @@ ul.blog-meta {
   list-style: none;
   align-items: center;
   flex-wrap:wrap;
+
+  justify-content: center;
+  max-width: 300px;
+  align-content: center;
+  margin: auto;
 
   li {
     font-size: 0.825rem;
