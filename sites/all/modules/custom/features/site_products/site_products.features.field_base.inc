@@ -228,6 +228,25 @@ function site_products_field_default_field_bases() {
     'type' => 'commerce_product_reference',
   );
 
+  // Exported field_base: 'field_product_details'.
+  $field_bases['field_product_details'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_product_details',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_product_images'.
   $field_bases['field_product_images'] = array(
     'active' => 1,

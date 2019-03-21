@@ -734,6 +734,46 @@ function site_products_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-product_display-field_product_details'.
+  $field_instances['node-product_display-field_product_details'] = array(
+    'bundle' => 'product_display',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_product_details',
+    'label' => 'Product Details',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-product_display-field_product_images'.
   $field_instances['node-product_display-field_product_images'] = array(
     'bundle' => 'product_display',
@@ -827,7 +867,7 @@ function site_products_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -868,7 +908,7 @@ function site_products_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -944,7 +984,7 @@ function site_products_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
@@ -1034,6 +1074,7 @@ function site_products_field_default_field_instances() {
   t('Price');
   t('Primary Image');
   t('Product');
+  t('Product Details');
   t('Product Images');
   t('Product Ingredients');
   t('Product Ingredients Text');
