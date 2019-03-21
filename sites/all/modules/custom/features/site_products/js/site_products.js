@@ -8,7 +8,6 @@
   Drupal.behaviors.site_products = {
     attach: function (context, settings) {
       var self = this;
-
       if (context === document) {
         var $items = $('.product-desc-list .product-desc-item');
 
@@ -22,7 +21,10 @@
           }
           else {
             $items.removeClass('active');
-            $target.addClass('active');
+            setTimeout(function() {
+              $target.addClass('active');
+            }, 250);
+
           }
         })
       }

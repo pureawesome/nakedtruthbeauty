@@ -39,14 +39,15 @@
   //   }
   // }
 
-  // .views-field-picture {
+  .views-field-picture {
     // display: inline-block;
     // overflow: hidden;
     //
     // max-width: 200px;
     //
     // border-radius: 200px;
-  // }
+    margin-bottom: 1rem;
+  }
 
   .views-field-name {
     display: none !important;
@@ -68,10 +69,11 @@ ul.blog-meta {
   flex-wrap:wrap;
 
   justify-content: center;
-  max-width: 300px;
+  // max-width: 300px;
   align-content: center;
   margin: auto;
-
+  margin-left: 1.5rem;
+  
   li {
     font-size: 0.825rem;
 
@@ -189,5 +191,13 @@ ul.blog-meta {
 .node-type-article {
   .region-content {
     padding: 0 30px;
+  }
+
+  .col-sm-4.g-st-9 {
+    padding-top: 2rem;
+    .panel-pane {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
   }
 }

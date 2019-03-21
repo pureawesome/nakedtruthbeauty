@@ -228,7 +228,47 @@ function site_general_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_article_type'.
+  $field_instances['node-article-field_article_type'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_article_type',
+    'label' => 'Article Type',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 2,
     ),
   );
 
@@ -288,7 +328,7 @@ function site_general_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 42,
+      'weight' => 7,
     ),
   );
 
@@ -334,7 +374,7 @@ function site_general_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => -4,
+      'weight' => 3,
     ),
   );
 
@@ -377,7 +417,7 @@ function site_general_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 43,
+      'weight' => 8,
     ),
   );
 
@@ -425,10 +465,45 @@ function site_general_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-article_types-field_url'.
+  $field_instances['taxonomy_term-article_types-field_url'] = array(
+    'bundle' => 'article_types',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_url',
+    'label' => 'URL',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Alt Text');
   t('Alternative text is used by screen readers, search engines, and when the image cannot be loaded. By adding alt text you improve accessibility and search engine optimization.');
+  t('Article Type');
   t('Body');
   t('Comment');
   t('Enter a comma-separated list of words to describe your content.');
@@ -436,6 +511,7 @@ function site_general_field_default_field_instances() {
   t('Tags');
   t('Title Text');
   t('Title text is used in the tool tip when a user hovers their mouse over the image. Adding title text makes it easier to understand the context of an image and improves usability.');
+  t('URL');
   t('Uses Affiliate Links');
 
   return $field_instances;
