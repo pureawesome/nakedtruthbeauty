@@ -17,7 +17,10 @@ function site_products_default_page_manager_pages() {
   $page->admin_title = 'Shop';
   $page->admin_description = '';
   $page->path = 'shop';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Shop',

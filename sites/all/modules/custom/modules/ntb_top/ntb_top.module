@@ -221,8 +221,9 @@ function ntb_top_blog_build_display($num) {
 
   $node_displays = [];
   foreach ($nodes as $node) {
-    $output = '';
-    $output .= '<h4>' . $node->title . '</h4>';
+    $path = drupal_get_path_alias('node/' . $node->nid);
+    $output = '<div class="blog-top">';
+    $output .= '<h4>' . l($node->title, $path) . '</h4>';
 
     $image_arr = $node->field_primary_image[LANGUAGE_NONE][0];
     [$image_alt, $image_title] = site_general_get_alt_title($image_arr, $node->title);
@@ -235,11 +236,14 @@ function ntb_top_blog_build_display($num) {
       '#title' => $image_title,
     ];
 
+    $image = drupal_render($img_array);
 
 
-    $output .= '<p>';
-    $output .= drupal_render($img_array);
-    $output .= '</p>';
+
+    $output .= '<div class="image">';
+    $output .= l($image, $path, ['html' => TRUE]);
+    $output .= '</div>';
+    $output .= '</div>';
     $node_displays[] = $output;
     // $node_view = node_view($node, 'teaser', NULL);
     // $node_displays[] = render($node_view);

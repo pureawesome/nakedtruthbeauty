@@ -102,6 +102,15 @@ function site_products_strongarm() {
       'add_to_cart' => array(
         'custom_settings' => FALSE,
       ),
+      'blog_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'product_square' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

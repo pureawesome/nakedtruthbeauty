@@ -112,17 +112,38 @@
             <?php print render($product_type_list); ?>
           <?php endif; ?>
 
-          <?php print render($content['body']); ?>
+          <?php if ($content['body'] || $content['field_product_use']): ?>
+            <div class="product-desc-list">
+              <?php if ($content['body']): ?>
+                <div class="product-desc-item active">
+                  <h3>Description</h3>
+                  <?php print render($content['body']); ?>
+                </div>
+              <?php endif; ?>
 
-          <?php if ($content['field_product_use']): ?>
-            <h3>Use</h3>
-            <?php print render($content['field_product_use']); ?>
-          <?php endif; ?>
+              <?php if ($scientific_ingredients || $content['field_product_ingredients_text']): ?>
+                <div class="product-desc-item">
+                  <h3>Ingredients</h3>
+                  <?php print render($scientific_ingredients); ?>
+                  <?php print render($content['field_product_ingredients_text']); ?>
+                </div>
+              <?php endif; ?>
 
-          <?php if ($scientific_ingredients || $content['field_product_ingredients_text']): ?>
-            <h3>Ingredients</h3>
-            <?php print render($scientific_ingredients); ?>
-            <?php print render($content['field_product_ingredients_text']); ?>
+              <?php if ($content['field_product_use']): ?>
+                <div class="product-desc-item">
+                  <h3>Use</h3>
+                  <?php print render($content['field_product_use']); ?>
+                </div>
+              <?php endif; ?>
+
+              <?php if ($content['field_product_details']): ?>
+                <div class="product-desc-item">
+                  <h3>Details</h3>
+                  <?php print render($content['field_product_details']); ?>
+                </div>
+              <?php endif; ?>
+
+            </div>
           <?php endif; ?>
         </div>
 
