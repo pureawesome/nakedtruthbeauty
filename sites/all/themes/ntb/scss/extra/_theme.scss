@@ -631,7 +631,7 @@ table {
 
 .region-footer {
   .block {
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
   }
 }
 
@@ -684,4 +684,56 @@ table {
       max-height: 600px;
     }
   }
+}
+
+.dropdown-menu {
+z-index: 1;
+}
+
+.row, .view-content {
+grid-column-gap: 1rem;
+}
+
+.node-type-article .content p {
+  font-size: 1.25em;
+}
+
+img:not([data-src]):not(.image-align-left):not(.image-align-right):not(.image-align-center):not(.no-resize) {
+  height: auto
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+}
+.service_links ul {
+  margin: 0;
+}
+
+.service-links ul li > *,
+.service-links ul li {
+  vertical-align: top !important;
+}
+
+.service-links ul li:after {
+  content: '';
+  margin: 0 5px;
+}
+
+.commerce-credit-card-expiration {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.commerce-credit-card-expiration > div {
+  flex: 1 1 auto;
+}
+
+.commerce-month-year-divider {
+  margin: 0 10px;
+}
+
+td.active {
+  background: $pink;
 }

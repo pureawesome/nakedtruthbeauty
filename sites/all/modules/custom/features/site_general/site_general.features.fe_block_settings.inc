@@ -26,7 +26,7 @@ function site_general_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -31,
+        'weight' => -33,
       ),
       'seven' => array(
         'region' => '',
@@ -104,7 +104,7 @@ function site_general_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -33,
+        'weight' => -35,
       ),
       'seven' => array(
         'region' => '',
@@ -153,10 +153,10 @@ function site_general_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'ntb' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'footer',
+        'status' => 1,
         'theme' => 'ntb',
-        'weight' => 0,
+        'weight' => -37,
       ),
       'seven' => array(
         'region' => '',
@@ -165,7 +165,7 @@ function site_general_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '@nakedtruthbeauty',
+    'title' => '<none>',
     'visibility' => 0,
   );
 

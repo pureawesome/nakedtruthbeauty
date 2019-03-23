@@ -30,6 +30,22 @@ function site_general_views_api($module = NULL, $api = NULL) {
 function site_general_image_default_styles() {
   $styles = array();
 
+  // Exported image style: scale_600w.
+  $styles['scale_600w'] = array(
+    'label' => 'scale_600w',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 600,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: square_1000x1000.
   $styles['square_1000x1000'] = array(
     'label' => 'Square_1000x1000',

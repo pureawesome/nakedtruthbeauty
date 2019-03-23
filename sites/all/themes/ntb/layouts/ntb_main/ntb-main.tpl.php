@@ -102,8 +102,10 @@
 
 
   <?php if ($content['bottom']): ?>
-    <div class="panel-panel panel-col col-sm-12 g-st-1">
-      <?php print $content['bottom']; ?>
+    <div class="row">
+      <div class="panel-panel panel-col col-sm-12 g-st-1">
+        <?php print $content['bottom']; ?>
+      </div>
     </div>
   <?php endif; ?>
 </div>

@@ -27,7 +27,10 @@
   content: $fa-var-twitter;
 }
 
+.block-instagram-block,
 .pane-instagram-block-instagram-block {
+  margin-top: -1rem;
+
   h2.pane-title {
     margin-left: -5px;
   }
@@ -54,12 +57,13 @@
     top: 0;
   }
 
-  .pane-content {
+  .pane-content,
+  .content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     width: 100%;
   }
 

@@ -26,7 +26,7 @@ function site_footer_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -32,
+        'weight' => -34,
       ),
       'seven' => array(
         'region' => '',
@@ -52,7 +52,7 @@ function site_footer_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'ntb',
-        'weight' => -35,
+        'weight' => -38,
       ),
       'seven' => array(
         'region' => '',
