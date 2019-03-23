@@ -73,7 +73,7 @@ ul.blog-meta {
   align-content: center;
   margin: auto;
   margin-left: 1.5rem;
-  
+
   li {
     font-size: 0.825rem;
 
@@ -155,14 +155,16 @@ ul.blog-meta {
   }
 
   .pane-content {
-    .image.align-left {
+    .image.align-left,
+    .image-align-left {
       display: inline-block;
       float: left;
 
       padding: 10px 10px 00;
     }
 
-    .image.align-center {
+    .image.align-center,
+    .image-align-center {
       display: block;
 
       padding: 10px 10px 0 10px;
@@ -170,7 +172,8 @@ ul.blog-meta {
       text-align:center;
     }
 
-    .image.align-right {
+    .image.align-right,
+    .image-align-right {
       display: inline-block;
       float: right;
 

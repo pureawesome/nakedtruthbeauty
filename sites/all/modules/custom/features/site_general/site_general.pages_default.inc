@@ -1145,29 +1145,6 @@ function site_general_default_page_manager_pages() {
   $display->content['new-179a4ed8-a4e9-4334-925a-ea4a66c4990c'] = $pane;
   $display->panels['lower-middle'][0] = 'new-179a4ed8-a4e9-4334-925a-ea4a66c4990c';
   $pane = new stdClass();
-  $pane->pid = 'new-a6285544-bb31-42d5-9875-a403654a3a3b';
-  $pane->panel = 'lower-middle';
-  $pane->type = 'block';
-  $pane->subtype = 'instagram_block-instagram_block';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'nakedtruthbeauty',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'a6285544-bb31-42d5-9875-a403654a3a3b';
-  $display->content['new-a6285544-bb31-42d5-9875-a403654a3a3b'] = $pane;
-  $display->panels['lower-middle'][1] = 'new-a6285544-bb31-42d5-9875-a403654a3a3b';
-  $pane = new stdClass();
   $pane->pid = 'new-f0e27d82-4fbf-4efb-8235-0f3393ca9b9d';
   $pane->panel = 'top';
   $pane->type = 'block';

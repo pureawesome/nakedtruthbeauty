@@ -60,6 +60,7 @@ features[filter][] = filtered_html
 features[filter][] = full_html
 features[filter][] = plain_text
 features[filter][] = raw_html
+features[image][] = scale_600w
 features[image][] = square_1000x1000
 features[image][] = square_200x200
 features[image][] = square_500x500

@@ -63,7 +63,9 @@ function ntb_blog_meta_build_display() {
 
   if (module_exists('service_links')) {
     $social = module_invoke('service_links', 'block_view', 'service_links');
-    $items[] = $social['content'];
+    if (!empty($social['content'])) {
+      $items[] = $social['content'];
+    }
   }
 
   $output = [
