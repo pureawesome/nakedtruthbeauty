@@ -186,6 +186,15 @@ function site_general_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'blog_recent_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 500,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
+      ),
       'blog_teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -239,6 +248,12 @@ function site_general_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'blog_recent_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -278,6 +293,16 @@ function site_general_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'blog_recent_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'square_1000x1000',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
       'blog_teaser' => array(
         'label' => 'above',
         'module' => 'image',
@@ -339,6 +364,12 @@ function site_general_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Enter a comma-separated list of words to describe your content.',
     'display' => array(
+      'blog_recent_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'blog_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -389,6 +420,12 @@ function site_general_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Uses Affiliate Links',
     'display' => array(
+      'blog_recent_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
