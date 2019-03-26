@@ -46,7 +46,7 @@ function ntb_blog_meta_build_display() {
   else {
     $author = views_embed_view('blog_authored', 'default', 89);
   }
-  $about = "<p>Hi! I'm Lauren.</p><p>This is some stuff about me</p>";
+  $about = "<p>Hi! I'm Lauren.</p><p>Welcome to the NTB blog, a science-based exploration of information for living our healthiest and happiest lives. I hold a certificate from the University of Washington in Green Chemistry & Sustainability, and believe that living well is doing the best we can in every moment, not doing it perfectly.</p>";
   // $changed = '<p><span>Updated:</span> ' . format_date($node->changed, 'custom', 'F j, Y') . '</p>';
   $aff = 0;
   if (isset($node->field_uses_affiliate_links) && !empty($node->field_uses_affiliate_links)) {

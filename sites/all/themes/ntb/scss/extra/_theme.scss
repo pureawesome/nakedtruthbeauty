@@ -197,7 +197,7 @@ ul.primary {
       &:before {
         // color: darken($secondary-blue, 15%);
         // color: $primary-blue;
-        color: $pink;
+        color: $gray;
       }
     }
   }
@@ -736,4 +736,34 @@ img:not([data-src]):not(.image-align-left):not(.image-align-right):not(.image-al
 
 td.active {
   background: $pink;
+}
+
+.view-recent-blog-posts-homepage {
+  .views-row {
+    margin-bottom: 2rem;
+  }
+  .content {
+    padding: 1rem;
+    .title {
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  @include breakpoint($screen-sm) {
+    .blog-recent-teaser {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .content,
+      .img {
+        width: 50%;
+        padding: 1rem;
+      }
+    }
+    .views-row:nth-child(2) .blog-recent-teaser {
+      flex-direction: row-reverse;
+    }
+  }
+
 }
