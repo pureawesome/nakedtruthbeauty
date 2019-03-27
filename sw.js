@@ -21,7 +21,6 @@
     '/shop/beam/',
     '/shop/lid/',
     '/shop/lip-cheek/',
-    '/shop/bath/',
     '/shop/sets/'
   ];
 
@@ -29,13 +28,15 @@
     return caches.open(staticCacheName).then(function (cache) {
       // These items won't block the installation of the Service Worker
       cache.addAll([
-        '/sites/all/themes/ntb/fonts/quicksand-regular-webfont.woff2',
         '/sites/all/themes/ntb/fonts/fontawesome-webfont.woff2?v=4.6.3',
         '/sites/all/themes/ntb/fonts/lato-bold-webfont.woff2',
         '/sites/all/themes/ntb/fonts/lato-light-webfont.woff2',
         '/sites/all/themes/ntb/fonts/lato-regular-webfont.woff2',
-        '/sites/all/themes/ntb/fonts/quicksand-bold-webfont.woff2',
+        '/sites/all/themes/ntb/fonts/Merriweather-Light.ttf',
+        '/sites/all/themes/ntb/fonts/Merriweather-Regular.ttf',
+        '/sites/all/themes/ntb/fonts/Merriweather-Bold.ttf',
         '/sites/all/modules/custom/features/site_products/js/site_shop.min.js?v=1.1',
+        '/sites/all/modules/custom/features/site_products/js/site_products.min.js?v=1.1',
         '/sites/all/modules/custom/features/site_search/js/site_search.min.js?v=1.1',
         '/sites/all/modules/contrib/dc_ajax_add_cart/js/dc_ajax_add_cart_html.js?v=1.0.0',
         '/sites/all/modules/custom/modules/dc_ajax_enhancements/js/dc_ajax_enhancements.min.js?v=1.0'
@@ -43,9 +44,9 @@
       // These items must be cached for the Service Worker to complete installation
       return cache.addAll([
         '/misc/jquery.once.js?v=1.2',
-        '/misc/drupal.js?v=7.59',
-        '/misc/ajax.js?v=7.59',
-        '/misc/progress.js?v=7.59',
+        '/misc/drupal.js?v=7.65',
+        '/misc/ajax.js?v=7.65',
+        '/misc/progress.js?v=7.65',
         '/sites/all/libraries/modernizr/modernizr.min.js?v=3.6.0',
         '/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2',
         '/sites/all/modules/contrib/google_analytics/googleanalytics.js',

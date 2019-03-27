@@ -23,6 +23,7 @@ function ntb_preprocess_page(&$vars) {
     'Merriweather-Regular.ttf',
     'fontawesome-webfont.woff2?v=4.6.3',
     'Merriweather-Bold.ttf',
+    'Merriweather-Light.ttf',
     'lato-bold-webfont.woff2',
     'lato-light-webfont.woff2',
     'lato-regular-webfont.woff2',
