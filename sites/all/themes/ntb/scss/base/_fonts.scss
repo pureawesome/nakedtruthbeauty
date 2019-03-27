@@ -1,33 +1,4 @@
 @font-face {
-    font-family: 'quicksand';
-    src: url('../fonts/quicksand-regular-webfont.eot');
-    src: url('../fonts/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/quicksand-regular-webfont.woff2') format('woff2'),
-         url('../fonts/quicksand-regular-webfont.woff') format('woff'),
-         url('../fonts/quicksand-regular-webfont.ttf') format('truetype'),
-         url('../fonts/quicksand-regular-webfont.svg#quicksandregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'quicksand';
-    src: url('../fonts/quicksand-bold-webfont.eot');
-    src: url('../fonts/quicksand-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/quicksand-bold-webfont.woff2') format('woff2'),
-         url('../fonts/quicksand-bold-webfont.woff') format('woff'),
-         url('../fonts/quicksand-bold-webfont.ttf') format('truetype'),
-         url('../fonts/quicksand-bold-webfont.svg#quicksandbold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-// @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
-
-
-@font-face {
     font-family: 'lato';
     src: url('../fonts/lato-bold-webfont.woff2') format('woff2'),
          url('../fonts/lato-bold-webfont.woff') format('woff');
@@ -35,33 +6,6 @@
     font-style: normal;
     font-display: swap;
 }
-
-
-
-//
-// @font-face {
-//     font-family: 'latobold_italic';
-//     src: url('lato-bolditalic-webfont.woff2') format('woff2'),
-//          url('lato-bolditalic-webfont.woff') format('woff');
-//     font-weight: normal;
-//     font-style: normal;
-//
-// }
-//
-//
-// //
-//
-// @font-face {
-//     font-family: 'latoitalic';
-//     src: url('lato-italic-webfont.woff2') format('woff2'),
-//          url('lato-italic-webfont.woff') format('woff');
-//     font-weight: normal;
-//     font-style: normal;
-//
-// }
-
-
-
 
 @font-face {
     font-family: 'lato';
@@ -72,21 +16,6 @@
     font-display: swap;
 }
 
-
-
-//
-// @font-face {
-//     font-family: 'latolight_italic';
-//     src: url('lato-lightitalic-webfont.woff2') format('woff2'),
-//          url('lato-lightitalic-webfont.woff') format('woff');
-//     font-weight: normal;
-//     font-style: normal;
-//
-// }
-
-
-
-
 @font-face {
     font-family: 'lato';
     src: url('../fonts/lato-regular-webfont.woff2') format('woff2'),
@@ -95,67 +24,6 @@
     font-style: normal;
     font-display: swap;
 }
-
-
-
-
-// @font-face {
-//     font-family: 'have_heart_swashregular';
-//     src: url('../fonts/have_heart_swash-webfont.eot');
-//     src: url('../fonts/have_heart_swash-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('../fonts/have_heart_swash-webfont.woff2') format('woff2'),
-//          url('../fonts/have_heart_swash-webfont.woff') format('woff'),
-//          url('../fonts/have_heart_swash-webfont.ttf') format('truetype'),
-//          url('../fonts/have_heart_swash-webfont.svg#have_heart_swashregular') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
-// }
-//
-// @font-face {
-//     font-family: 'have_heart_tworegular';
-//     src: url('../fonts/have_heart_two-webfont.eot');
-//     src: url('../fonts/have_heart_two-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('../fonts/have_heart_two-webfont.woff2') format('woff2'),
-//          url('../fonts/have_heart_two-webfont.woff') format('woff'),
-//          url('../fonts/have_heart_two-webfont.ttf') format('truetype'),
-//          url('../fonts/have_heart_two-webfont.svg#have_heart_tworegular') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
-// }
-//
-// @font-face {
-//     font-family: 'zeyada';
-//     src: url('../fonts/zeyada-webfont.eot');
-//     src: url('../fonts/zeyada-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('../fonts/zeyada-webfont.woff2') format('woff2'),
-//          url('../fonts/zeyada-webfont.woff') format('woff'),
-//          url('../fonts/zeyada-webfont.ttf') format('truetype'),
-//          url('../fonts/zeyada-webfont.svg#quicksandbold') format('svg');
-//     font-weight: bold;
-//     font-style: normal;
-// }
-//
-// @font-face {
-//     font-family: 'cinzel';
-//     src: url('../fonts/Cinzel-Regular-webfont.eot');
-//     src: url('../fonts/Cinzel-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('../fonts/Cinzel-Regular-webfont.woff') format('woff'),
-//          url('../fonts/Cinzel-Regular-webfont.ttf') format('truetype'),
-//          url('../fonts/Cinzel-Regular-webfont.svg#cinzelregular') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
-// }
-//
-// @font-face {
-//     font-family: 'cinzel';
-//     src: url('../fonts/Cinzel-Bold-webfont.eot');
-//     src: url('../fonts/Cinzel-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('../fonts/Cinzel-Bold-webfont.woff') format('woff'),
-//          url('../fonts/Cinzel-Bold-webfont.ttf') format('truetype'),
-//          url('../fonts/Cinzel-Bold-webfont.svg#cinzelbold') format('svg');
-//     font-weight: bold;
-//     font-style: normal;
-// }
 
 @font-face {
     font-family: 'merriweather';
