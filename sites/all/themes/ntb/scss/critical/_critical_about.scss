@@ -113,7 +113,7 @@ nav .dropdown-menu > li > a{ font-size: 16px; padding: 5px; }
  .btn{ border: 0px; text-align: center; width: auto; background-color: rgb(228, 215, 216); margin: 0px 0px 5px; padding: 10px 20px; display: inline-block; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; font-size: 0.875rem; color: rgb(255, 255, 255); text-transform: uppercase; background-position: initial initial; background-repeat: initial initial; }
 html{ font-size: 16px; }
 body, p{ font-family: lato, Lato, sans-serif; }
-p{ margin-bottom: 1rem; font-weight: lighter; }
+ p{ font-weight: lighter; }
  h1{ font-size: 2.5rem; }
  h3{ font-size: 1.75rem; }
  h1, h3{ font-family: merriweather, sans-serif; font-weight: 500; line-height: 1.1; color: inherit; }
@@ -121,7 +121,7 @@ a{ text-decoration: none; background-color: transparent; color: rgb(35, 41, 39);
 .panel-pane{ padding-top: 2rem; padding-bottom: 2rem; }
 #page-title{ width: 100%; margin-bottom: 20px; text-align: center; }
 .region-content{ max-width: 1200px; margin: auto; }
-p{ font-size: 1.125rem; }
+p{ margin-bottom: 1rem; font-size: 1.125rem; }
 .navbar{ margin: 1rem 0px; height: 120px; padding: 0px 2rem; }
 .navbar .nav-secondary-wrapper{ -webkit-box-flex: 0; }
 .navbar .nav-primary-wrapper{ -webkit-box-pack: start; }

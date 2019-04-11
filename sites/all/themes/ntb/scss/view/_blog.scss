@@ -190,8 +190,7 @@ ul.blog-meta {
   }
 }
 
-.page-blog,
-.node-type-article {
+.page-blog {
   .region-content {
     padding: 0 30px;
   }
@@ -201,6 +200,30 @@ ul.blog-meta {
     .panel-pane {
       padding-bottom: 0;
       padding-top: 0;
+    }
+  }
+}
+
+.node-type-article {
+  .region-content {
+    padding: 0 30px;
+  }
+
+  .col-sm-4.g-st-9 {
+    padding-top: 0;
+    .panel-pane {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  .pane-node-body a {
+    color: #95a7ac;
+    color: #64848d;
+    font-weight: bold;
+
+    &:hover {
+      color: $link-color;
     }
   }
 }

@@ -6,7 +6,7 @@ body {
   font-family: $font-family-sans-serif;
 }
 
-p {
+p, ol {
   font-family: $font-family-sans-serif;
   font-weight: lighter;
 }
@@ -765,5 +765,4 @@ td.active {
       flex-direction: row-reverse;
     }
   }
-
 }
