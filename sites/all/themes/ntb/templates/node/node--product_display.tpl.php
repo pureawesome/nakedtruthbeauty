@@ -136,7 +136,7 @@
                 </div>
               <?php endif; ?>
 
-              <?php if ($content['field_product_details']): ?>
+              <?php if (!empty($content['field_product_details'])): ?>
                 <div class="product-desc-item">
                   <h3>Details</h3>
                   <?php print render($content['field_product_details']); ?>

@@ -162,7 +162,7 @@
         return (
           rect.bottom >= 0 &&
           rect.right >= 0 &&
-          rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+          ((rect.top - 200) <= (window.innerHeight || document.documentElement.clientHeight)) &&
           rect.left <= (window.innerWidth || document.documentElement.clientWidth)
         );
       }
