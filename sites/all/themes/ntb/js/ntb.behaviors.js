@@ -67,7 +67,7 @@
         navwidth += $(this).outerWidth(true);
       });
       var availablespace = $('.nav-primary-wrapper').outerWidth(true) - morewidth - 15;
-      if ((navwidth > availablespace) && $('.primary-nav > li').length > 1) {
+      if (navwidth > availablespace) {
         var lastItem = $('.primary-nav > li:not(.more)').last();
         lastItem.attr('data-width', lastItem.outerWidth(true));
         lastItem.prependTo($('.primary-nav > .more > ul'));

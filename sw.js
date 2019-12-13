@@ -2,11 +2,7 @@
   'use strict';
 
   // Credit: filament -> adactio
-<<<<<<< HEAD
-  var version = 'v1.14::';
-=======
   var version = 'v1.15::';
->>>>>>> d3cae5cbcd10e63b131168dd1e6a52e1aa1a648a
   var staticCacheName = version + 'static';
   var pagesCacheName = 'pages';
   var imagesCacheName = 'images';
