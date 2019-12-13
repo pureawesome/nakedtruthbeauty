@@ -130,7 +130,6 @@
                 image.src = src;
                 image.removeAttribute('data-src');
                 image.classList.remove('lazy-img');
-                lazyLoad();
               };
             }
           }
