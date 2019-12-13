@@ -147,10 +147,14 @@ function site_general_theme_registry_alter(&$theme_registry) {
  * Implements hook_preprocess_HOOK().
  */
 function site_general_image_preprocess(array &$variables, string $hook) {
-  // Ony lazy loaded image style based files.
-  if (valid_url($variables['path'], TRUE) && !empty($variables['style_name'])) {
-    $variables['attributes']['data-src'] = $variables['path'];
-    $variables['path'] = drupal_get_path('theme', 'ntb') . '/images/loading.svg';
-    $variables['attributes']['class'][] = 'lazy-img';
+  if (variable_get('ntb_lazy_img', TRUE) && !path_is_admin(current_path())) {
+    // Ony lazy loaded image style based files.
+    if (valid_url($variables['path'], TRUE) && !empty($variables['style_name'])) {
+      $variables['attributes']['data-src'] = $variables['path'];
+      $variables['attributes']['data-rand'] = rand();
+      $variables['path'] = drupal_get_path('theme', 'ntb') . '/images/loading.svg';
+      $variables['attributes']['class'][] = 'lazy-img';
+    }
   }
+
 }

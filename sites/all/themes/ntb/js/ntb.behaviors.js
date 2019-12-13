@@ -112,6 +112,9 @@
         lazyLoad();
       }
       var lazy = [];
+      var images = [];
+      var src = [];
+      var queue = [];
 
       function setLazy() {
         lazy = document.getElementsByClassName('lazy-img');
@@ -120,17 +123,26 @@
       function lazyLoad() {
         setLazy();
         for (var i = 0; i < lazy.length; i++) {
-          if (isInViewport(lazy[i])) {
+          if ((lazy[i].getAttribute('data-rand') && queue.indexOf(lazy[i].getAttribute('data-rand')) == -1) && isInViewport(lazy[i])) {
             if (lazy[i].getAttribute('data-src')) {
-              var image = lazy[i];
-              var src = image.getAttribute('data-src');
-              var preload_image = new Image();
-              preload_image.src = src;
-              preload_image.onload = function () {
-                image.src = src;
-                image.removeAttribute('data-src');
-                image.classList.remove('lazy-img');
+              if (src.indexOf(lazy[i].getAttribute('data-src')) != -1) {
+                lazy[i].src = lazy[i].getAttribute('data-src')
+                lazy[i].removeAttribute('data-src');
+                lazy[i].classList.remove('lazy-img');
+              }
+              images[i] = {};
+              images[i]['image'] = lazy[i];
+              images[i]['src'] = lazy[i].getAttribute('data-src');
+              images[i]['preload_image'] = new Image();
+              images[i]['preload_image'].src = images[i]['src'];
+              images[i]['preload_image'].data = i;
+              images[i]['preload_image'].onload = function () {
+                images[this.data]['image'].src = images[this.data]['src'];
+                images[this.data]['image'].removeAttribute('data-src');
+                images[this.data]['image'].classList.remove('lazy-img');
+                src.push(images[this.data]['src']);
               };
+              queue.push(lazy[i].getAttribute('data-rand'));
             }
           }
         }
