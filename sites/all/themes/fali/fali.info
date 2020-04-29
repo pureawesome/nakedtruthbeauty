@@ -1,0 +1,100 @@
+;Theme info
+name = Fali
+description = 
+package = Core
+version = VERSION
+core = 7.x
+screenshot = 'screenshot.png'
+
+; Add a style sheet
+stylesheets[all][] = css/flexslider.css
+stylesheets[all][] = css/font-awesome.min.css
+stylesheets[all][] = css/instag-slider.css
+stylesheets[all][] = css/mediaelementplayer.min.css
+stylesheets[all][] = css/owl.carousel.css
+stylesheets[all][] = css/owl.theme.css
+stylesheets[all][] = css/owl.transitions.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/styles.css
+stylesheets[all][] = css/wp-mediaelement.css
+stylesheets[all][] = css/wpp.css
+stylesheets[all][] = css/responsive.css
+stylesheets[all][] = css/update.css
+
+; Add a script
+scripts[] = js/jquery.js
+scripts[] = js/jquery.flexslider-min.js
+scripts[] = js/jquery.form.min.js
+scripts[] = js/jquery.isotope.min.js
+scripts[] = js/jquery-migrate.min.js
+scripts[] = js/mediaelement-and-player.min.js
+scripts[] = js/events.min.js
+scripts[] = js/imagesloaded.pkgd.min.js
+scripts[] = js/jquery.cookie.js
+scripts[] = js/mutate.min.js
+scripts[] = js/owl.carousel.min.js
+scripts[] = js/wp-mediaelement.js
+scripts[] = js/retina.min.js
+scripts[] = js/scripts.js
+scripts[] = js/waypoints.js
+scripts[] = js/comment-reply.min.js
+scripts[] = js/jquery.hoverIntent.js
+scripts[] = js/jquery.jfollowsidebar.js
+scripts[] = js/main.js
+scripts[] = js/update.js
+
+;Core regions
+regions[highlighted] = 'Highlighted'
+regions[header_search] = 'Header search'
+regions[main_menu] = 'Main menu'
+regions[header_socials] = 'Header socials'
+regions[help] = 'Help'
+regions[home_top_content] = 'Home top content'
+regions[content] = 'Content'
+regions[sidebar_first] = 'Left sidebar'
+regions[sidebar_second] = 'Right sidebar'
+regions[subscribe_footer] = 'Subscribe footer'
+regions[footer] = 'Footer'
+
+;Features (core settings)
+features[] = 'logo'
+features[] = 'name'
+features[] = 'slogan'
+features[] = 'node_user_picture'
+features[] = 'comment_user_picture'
+features[] = 'comment_user_verification'
+features[] = 'favicon'
+features[] = 'go_to_top_button'
+features[] = 'secondary_menu'
+
+;Settings default values
+settings[tracking_code] = ''
+settings[custom_css] = ''
+settings[custom_js] = ''
+
+settings[header_style] = '1'
+settings[header_sticky] = '0'
+settings[header_socials] = '1'
+settings[header_search] = '1'
+settings[header_banner] = '1'
+settings[header_banner_image] = ''
+settings[header_multilogo] = '1'
+settings[header_logo_images_1] = ''
+settings[header_logo_images_2] = ''
+settings[header_logo_images_3] = ''
+settings[header_logo_images_4] = ''
+settings[header_logo_images_5] = ''
+
+settings[boxed_container] = '0'
+settings[boxed_bg_image] = ''
+settings[homepage_layout] = 'normal'
+settings[disable_sidebar] = '0'
+settings[disable_right_related_box] = '0'
+
+settings[show_subscribe_form] = '1'
+settings[copyright] = ''
+
+
+version = "7.x"
+project = "Active"
+datestamp = "1365027012"
