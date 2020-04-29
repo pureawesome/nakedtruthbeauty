@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Fali feature.
+ */
+
+include_once 'fali.features.inc';
