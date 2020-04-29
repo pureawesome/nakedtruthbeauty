@@ -1009,7 +1009,7 @@ function site_general_default_page_manager_pages() {
   $pages['blog'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'front_page';
   $page->task = 'page';

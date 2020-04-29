@@ -145,6 +145,138 @@ function fali_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['multiblock-1'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 1,
+    'module' => 'multiblock',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'fali' => array(
+        'region' => 'sidebar_second',
+        'status' => 1,
+        'theme' => 'fali',
+        'weight' => -48,
+      ),
+      'ntb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ntb',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['multiblock-2'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 2,
+    'module' => 'multiblock',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'fali' => array(
+        'region' => 'header_search',
+        'status' => 1,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
+      'ntb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ntb',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['multiblock-3'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 3,
+    'module' => 'multiblock',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
+      'ntb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ntb',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['multiblock-4'] = array(
+    'cache' => 8,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 4,
+    'module' => 'multiblock',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'fali' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'fali',
+        'weight' => -47,
+      ),
+      'ntb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ntb',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-020ede4b08f7fb0eedfd2699317c55e3'] = array(
     'cache' => -1,
     'css_class' => '',
