@@ -15,6 +15,7 @@ function site_footer_default_fe_block_settings() {
 
   $export['block-footer_menu_copyright'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'machine_name' => 'footer_menu_copyright',
     'module' => 'block',
@@ -22,6 +23,12 @@ function site_footer_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => -43,
+      ),
       'ntb' => array(
         'region' => 'footer',
         'status' => 1,
@@ -41,6 +48,7 @@ function site_footer_default_fe_block_settings() {
 
   $export['block-mailchimp'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'machine_name' => 'mailchimp',
     'module' => 'block',
@@ -48,6 +56,12 @@ function site_footer_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => 'subscribe_footer',
+        'status' => 1,
+        'theme' => 'fali',
+        'weight' => -45,
+      ),
       'ntb' => array(
         'region' => 'footer',
         'status' => 1,

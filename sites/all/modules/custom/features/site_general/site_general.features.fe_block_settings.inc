@@ -15,6 +15,7 @@ function site_general_default_fe_block_settings() {
 
   $export['block-css_fixes'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'machine_name' => 'css_fixes',
     'module' => 'block',
@@ -22,6 +23,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => -41,
+      ),
       'ntb' => array(
         'region' => 'footer',
         'status' => 1,
@@ -41,6 +48,7 @@ function site_general_default_fe_block_settings() {
 
   $export['block-line_break'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'machine_name' => 'line_break',
     'module' => 'block',
@@ -48,6 +56,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -67,6 +81,7 @@ function site_general_default_fe_block_settings() {
 
   $export['block-ntb_mission'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'machine_name' => 'ntb_mission',
     'module' => 'block',
@@ -74,6 +89,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -93,6 +114,7 @@ function site_general_default_fe_block_settings() {
 
   $export['block-social_footer'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'machine_name' => 'social_footer',
     'module' => 'block',
@@ -100,6 +122,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => -44,
+      ),
       'ntb' => array(
         'region' => 'footer',
         'status' => 1,
@@ -119,6 +147,7 @@ function site_general_default_fe_block_settings() {
 
   $export['block-twitter'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'machine_name' => 'twitter',
     'module' => 'block',
@@ -126,6 +155,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -145,6 +180,7 @@ function site_general_default_fe_block_settings() {
 
   $export['instagram_block-instagram_block'] = array(
     'cache' => 8,
+    'css_class' => 'jr-insta-slider',
     'custom' => 0,
     'delta' => 'instagram_block',
     'module' => 'instagram_block',
@@ -152,6 +188,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => 'sidebar_second',
+        'status' => 1,
+        'theme' => 'fali',
+        'weight' => -45,
+      ),
       'ntb' => array(
         'region' => 'footer',
         'status' => 1,
@@ -165,12 +207,13 @@ function site_general_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '<none>',
+    'title' => 'Instagram Slider',
     'visibility' => 0,
   );
 
   $export['ntb_top-ntb_top_3'] = array(
     'cache' => 1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'ntb_top_3',
     'module' => 'ntb_top',
@@ -178,6 +221,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -197,6 +246,7 @@ function site_general_default_fe_block_settings() {
 
   $export['ntb_top-ntb_top_4'] = array(
     'cache' => 1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'ntb_top_4',
     'module' => 'ntb_top',
@@ -204,6 +254,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -223,6 +279,7 @@ function site_general_default_fe_block_settings() {
 
   $export['ntb_top-ntb_top_blog_3'] = array(
     'cache' => 1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'ntb_top_blog_3',
     'module' => 'ntb_top',
@@ -230,6 +287,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -249,6 +312,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-4268140b6622172a11e71205b400fc58'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => '4268140b6622172a11e71205b400fc58',
     'module' => 'views',
@@ -256,6 +320,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -275,6 +345,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-article_type_taxonomy-block'] = array(
     'cache' => 8,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'article_type_taxonomy-block',
     'module' => 'views',
@@ -282,6 +353,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -301,6 +378,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-blog-block'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'blog-block',
     'module' => 'views',
@@ -308,6 +386,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -327,6 +411,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-blog-block_1'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'blog-block_1',
     'module' => 'views',
@@ -334,6 +419,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -353,6 +444,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-blog-block_2'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'blog-block_2',
     'module' => 'views',
@@ -360,6 +452,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -379,6 +477,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-blog_authored-block'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'blog_authored-block',
     'module' => 'views',
@@ -386,6 +485,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -405,6 +510,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-blog_related-block'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'blog_related-block',
     'module' => 'views',
@@ -412,6 +518,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -431,6 +543,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-blog_related-block_1'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'blog_related-block_1',
     'module' => 'views',
@@ -438,6 +551,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -457,6 +576,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-front_tiles-block_1'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'front_tiles-block_1',
     'module' => 'views',
@@ -464,6 +584,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -483,6 +609,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-front_tiles-block_2'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'front_tiles-block_2',
     'module' => 'views',
@@ -490,6 +617,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -509,6 +642,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-front_tiles-block_3'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'front_tiles-block_3',
     'module' => 'views',
@@ -516,6 +650,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -535,6 +675,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-front_tiles-block_4'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'front_tiles-block_4',
     'module' => 'views',
@@ -542,6 +683,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -561,6 +708,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-front_tiles-front_tile_article'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'front_tiles-front_tile_article',
     'module' => 'views',
@@ -568,6 +716,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -587,6 +741,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-product_type_taxonomy-block'] = array(
     'cache' => 8,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'product_type_taxonomy-block',
     'module' => 'views',
@@ -594,6 +749,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -613,6 +774,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-recent_blog_posts-block'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'recent_blog_posts-block',
     'module' => 'views',
@@ -620,6 +782,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,
@@ -639,6 +807,7 @@ function site_general_default_fe_block_settings() {
 
   $export['views-recent_blog_posts-block_1'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'recent_blog_posts-block_1',
     'module' => 'views',
@@ -646,6 +815,12 @@ function site_general_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'fali' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'fali',
+        'weight' => 0,
+      ),
       'ntb' => array(
         'region' => '',
         'status' => 0,

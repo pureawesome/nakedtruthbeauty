@@ -164,16 +164,16 @@ function site_general_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '6',
+          'weight' => '22',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '21',
         ),
         'xmlsitemap' => array(
-          'weight' => '5',
+          'weight' => '23',
         ),
       ),
       'display' => array(),
@@ -190,16 +190,16 @@ function site_general_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '11',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '9',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '10',
         ),
       ),
       'display' => array(),
@@ -346,6 +346,16 @@ function site_general_strongarm() {
     'priority' => '0.5',
   );
   $export['xmlsitemap_settings_taxonomy_term_article_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_categories';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_categories'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
