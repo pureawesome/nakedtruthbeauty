@@ -241,10 +241,10 @@ function instagram_block_block_view($delta = '') {
     $img_resolution = isset($values['img_resolution']) ? $values['img_resolution'] : 'thumbnail';
 
     $response = $request->get_instagram_posts();
+    $i = 0;
     foreach ($response as $post) {
       $url = $post->images->{$img_resolution}->url;
       $components = parse_url($url);
-
       $content['children'][] = array(
         '#markup' => '',
         '#theme' => 'instagram_block_image',
@@ -253,7 +253,10 @@ function instagram_block_block_view($delta = '') {
         '#src' => str_replace($components['scheme'] . '://', '//', $url),
         '#width' => $values['width'],
         '#height' => $values['height'],
+        '#count' => $i,
+        '#limit' => $values['count'],
       );
+      $i++;
     }
   }
 
@@ -287,7 +290,7 @@ function instagram_block_menu() {
 function instagram_block_theme() {
   return array(
     'instagram_block_image' => array(
-      'variables' => array('height' => NULL,'width' => NULL, 'src' => NULL, 'href' => NULL, 'post' => NULL),
+      'variables' => array('height' => NULL,'width' => NULL, 'src' => NULL, 'href' => NULL, 'post' => NULL, 'count' => NULL, 'limit' => NULL),
       'template' => 'instagram-block-image',
     ),
     'instagram_block' => array(

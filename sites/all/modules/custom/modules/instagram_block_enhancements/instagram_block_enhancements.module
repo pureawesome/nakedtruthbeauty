@@ -18,6 +18,8 @@ function instagram_block_enhancements_theme() {
         'href' => NULL,
         'post' => NULL,
         'loading' => '/' . drupal_get_path('theme', 'ntb') . '/images/loading.svg',
+        'count' => NULL,
+        'limit' => NULL,
       ],
       'template' => 'templates/instagram-block-image-enhancements',
     ],

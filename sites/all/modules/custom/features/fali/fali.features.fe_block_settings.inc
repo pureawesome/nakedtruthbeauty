@@ -147,7 +147,7 @@ function fali_default_fe_block_settings() {
 
   $export['multiblock-1'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'block-search',
     'custom' => 0,
     'delta' => 1,
     'module' => 'multiblock',
@@ -543,7 +543,7 @@ function fali_default_fe_block_settings() {
 
   $export['views-e66309f03a2f139ef8a8410680d7099e'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'widget_jeg_last_post',
     'custom' => 0,
     'delta' => 'e66309f03a2f139ef8a8410680d7099e',
     'module' => 'views',
@@ -570,7 +570,7 @@ function fali_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Latest Post',
     'visibility' => 0,
   );
 
