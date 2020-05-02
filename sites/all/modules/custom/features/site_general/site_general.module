@@ -133,28 +133,3 @@ function site_general_get_alt_title(array $image, $fallback = '') {
   $title = !empty($image['title']) ? $image['title'] : !empty($image['field_file_image_alt_text']) ? $image['field_file_image_alt_text'] : !empty($fallback) ? $fallback : 'naked truth beauty';
   return [$alt, $title];
 }
-
-/**
- * Implements hook_theme_registry_alter().
- */
-function site_general_theme_registry_alter(&$theme_registry) {
-  if (!empty($theme_registry['image'])) {
-    $theme_registry['image']['preprocess functions'][] = 'site_general_image_preprocess';
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function site_general_image_preprocess(array &$variables, string $hook) {
-  if (variable_get('ntb_lazy_img', TRUE) && !path_is_admin(current_path())) {
-    // Ony lazy loaded image style based files.
-    if (valid_url($variables['path'], TRUE) && !empty($variables['style_name'])) {
-      $variables['attributes']['data-src'] = $variables['path'];
-      $variables['attributes']['data-rand'] = rand();
-      $variables['path'] = drupal_get_path('theme', 'ntb') . '/images/loading.svg';
-      $variables['attributes']['class'][] = 'lazy-img';
-    }
-  }
-
-}
