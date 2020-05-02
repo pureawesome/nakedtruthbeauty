@@ -17,13 +17,13 @@
 <?php endif; ?>
 			<li>
 				<a href="<?php print $href ?>" target="_blank" title="">
-					<img src="<?php print $src ?>" alt="" title="" />
+					<img data-src="<?php print $src ?>" alt="" title="" loading="lazy" class="lazy-img" />
 				</a>
 			</li>
 <?php
 	$count++;
 	if($count>=$limit):
-?> 
+?>
 		</ul>
 	</div>
 <?php endif; ?>
