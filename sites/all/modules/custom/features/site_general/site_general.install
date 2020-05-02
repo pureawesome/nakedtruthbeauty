@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * Enable fali theme.
+ */
+function site_general_update_7001() {
+  $theme_list = array(
+    'fali',
+  );
+  theme_enable($theme_list);
+}
+
+/**
+ * Enable fali feature.
+ */
+function site_general_update_7002() {
+  $module_list = array(
+    'fali',
+  );
+  module_enable($module_list, TRUE);
+}
+
+/**
+ * Revert features.
+ */
+function site_general_update_7003() {
+  features_revert_module('site_general');
+  features_revert_module('site_footer');
+}
+
+/**
+ * Copy image data to new field.
+ */
+function site_general_update_7004() {
+  // Set variables
+  $old_name = 'field_primary_image';
+  $new_name = 'field_image';
+  $entity_type = 'node';
+  $bundle = 'article';
+
+  // Migrate old field data to the new ones
+  $field_data = db_select('field_data_' . $old_name, 'old')
+    ->fields('old')
+    ->condition('entity_type', $entity_type)
+    ->condition('bundle', $bundle)
+    ->execute();
+
+  while ($data = $field_data->fetchAssoc()) {
+    $data_new = array();
+    foreach ($data as $column => $value) {
+      $column = str_replace($old_name, $new_name, $column);
+      $data_new[$column] = $value;
+    }
+    db_insert('field_data_' . $new_name)
+      ->fields($data_new)
+      ->execute();
+  }
+
+  // Migrate old fields revision data to the new ones
+  $field_revision = db_select('field_revision_' . $old_name, 'old')
+    ->fields('old')
+    ->condition('entity_type', $entity_type)
+    ->condition('bundle', $bundle)
+    ->execute();
+
+  while ($revision = $field_revision->fetchAssoc()) {
+    $revision_new = array();
+    foreach ($revision as $column => $value) {
+      $column = str_replace($old_name, $new_name, $column);
+      $revision_new[$column] = $value;
+    }
+    db_insert('field_revision_' . $new_name)
+      ->fields($revision_new)
+      ->execute();
+  }
+}
+
+/**
+ * Enable fali feature.
+ */
+function site_general_update_7005() {
+  $module_list = array(
+    'ntb_lazy_img',
+  );
+  module_enable($module_list, TRUE);
+}

@@ -1,0 +1,5 @@
+name = naked truth beauty lazy images
+core = 7.x
+package = Modules
+version = 7.x-1.0
+scripts[] = js/ntb_lazy_img.js

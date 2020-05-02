@@ -3,7 +3,7 @@ global $base_url;
 
 function fali_preprocess_html(&$variables) {
 	//-- Google web fonts -->
-	drupal_add_css('http://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C400italic%2C700%7CPlayfair+Display%3A400%2C400italic%2C700%7CLato%3A400%2C400italic%2C700', array('type' => 'external','media' => 'all'));
+	drupal_add_css('//fonts.googleapis.com/css?family=Droid+Serif%3A400%2C400italic%2C700%7CPlayfair+Display%3A400%2C400italic%2C700%7CLato%3A400%2C400italic%2C700', array('type' => 'external','media' => 'all'));
 }
 
 function fali_form_comment_form_alter(&$form, &$form_state) {
@@ -14,12 +14,12 @@ function fali_form_comment_form_alter(&$form, &$form_state) {
 
 	$form['author']['name']['#title'] = t('Name');
 	$form['author']['name']['#required'] = TRUE;
-	
+
 	$form['author']['mail']['#title'] = t('E-mail');
 	$form['author']['mail']['#required'] = TRUE;
 	$form['author']['mail']['#access'] = TRUE;
 	unset($form['author']['mail']['#description']);
-	
+
 
 	$form['author']['homepage']['#title'] = t('Website');
 	$form['author']['homepage']['#access'] = TRUE;
@@ -207,7 +207,7 @@ function random_related_node_by_taxonomy($node,$numberNode=1,$orderby=false){
 	$tids = db_query($query)->fetchCol();
 	$tidsString = implode(", ",$tids);
 	$query = 'SELECT nid FROM {taxonomy_index} WHERE tid IN ('.$tidsString.') AND nid <> '.$node->nid.' GROUP BY nid';
-	
+
 	if($orderby===true){
 		$query .= ' ORDER BY RAND()';
 	}elseif(is_array($orderby)){
