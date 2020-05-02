@@ -16,6 +16,18 @@ function site_general_update_7001() {
 function site_general_update_7002() {
   $module_list = array(
     'fali',
+    'image_url_formatter',
+    'contact_form_blocks',
+    'block_class',
+    'multiblock',
+    'menu_attributes',
+    'semanticviews',
+    'context',
+    'context_layouts',
+    'context_ui',
+    'simplenews',
+    'simplenews_rules',
+    'ntb_lazy_img',
   );
   module_enable($module_list, TRUE);
 }
@@ -73,14 +85,4 @@ function site_general_update_7004() {
       ->fields($revision_new)
       ->execute();
   }
-}
-
-/**
- * Enable fali feature.
- */
-function site_general_update_7005() {
-  $module_list = array(
-    'ntb_lazy_img',
-  );
-  module_enable($module_list, TRUE);
 }
