@@ -18,7 +18,7 @@
     "breakpoint-sass": "^2.7.1",
     "criticalcss": "^2.1.0",
     "cssnano": "^3.10.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^3.10.0",
     "gulp-css-purge": "^1.0.27",
     "gulp-postcss": "^7.0.1",
